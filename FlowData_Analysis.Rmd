@@ -1,0 +1,278 @@
+---
+title: "Noise_Plasticity_Coupling_in_E.coli"
+author: "Tsuru"
+date: "2024/5/7"
+output: html_document
+---
+# 0. Set the codes public or private 
+```{r Set,warning=FALSE, message=FALSE}
+# TODO
+my_public<-FALSE # TRUE: public, FALSE: private 
+```
+# 1. General settings
+## 1.1. Load workspace
+```{r General,warning=FALSE, message=FALSE}
+# load("./Main.RData")
+```
+## 1.2. Save workspace
+```{r General,warning=FALSE, message=FALSE}
+# save.image("./Main.RData")
+```
+## 1.3. Library loading
+```{r library,warning=FALSE, message=FALSE}
+library(dplyr)# dataframe
+library(tidyverse)# dataframe
+library(magrittr)# pipe
+library(readxl) # read xlsx
+library(flowCore) # flow cytometry
+# library(flowViz) # flow cytometry
+# 
+# library(stringr)# regular expression
+# 
+# library(KernSmooth)
+# library(ggplot2)# visualization
+# library(gridExtra)# visualization
+# library(grid)# visualization
+# library(scales)# visualization
+# library(ggfortify)
+# library(reshape2) # dataframe
+# library(cowplot)
+# library(ggpubr)# visualization
+# library(rstatix)# statistical test
+# library(boot)
+# library(qvalue)# statistical test
+# library(ppcor)# calc. partial correlation coeff. 
+# library(GGally)# visualization
+# library(gtable)# visualization
+# 
+# library(matrixStats) # rowMeans etc.
+# library(preprocessCore)
+# library(RColorBrewer)# visualization
+# 
+# library(fitdistrplus)
+# 
+# library(clusterProfiler) # statistical test
+
+Sys.time()
+```
+## 1.4. versatile user functions
+The [qw](https://ja.coder.work/so/r/240447) function in Perl.  
+The [createEmptyDf](https://htsuda.net/archives/2560) function.
+The [g_legend](https://github.com/hadley/ggplot2/wiki/Share-a-legend-between-two-ggplot2-graphs) function to extract legend.
+```{r General}
+qw <- function(...) {
+  sapply(match.call()[-1], deparse)
+}
+
+createEmptyDf = function( nrow, ncol, colnames = c() ){
+  data.frame( matrix( vector(), nrow, ncol, dimnames = list( c(), colnames ) ) )
+}
+Sys.time()
+```
+## 1.5 Font size
+```{r General}
+# my_fontsize<-16
+# Sys.time()
+```
+## 1.6. External ssd/hdd
+```{r General}
+my_volume<-"/Volumes/DailyUse"
+my_playgrnd<-paste(my_volume,"Noise_Plasticity",sep="/")
+
+if (my_public){
+  my_playgrnd<-getwd()
+}
+
+Sys.time()
+```
+## 1.7. Versatile color palletes
+```{r color}
+# mycolpal<-get_palette("lancet",9)
+# print(c("#00468BFF","#ED0000FF","#42B540FF","#0099B4FF","#925E9FFF","#FDAF91FF","#AD002AFF","#ADB6B6FF","#1B1919FF"))
+# mycolpal.BuRd<-c(get_palette(palette = "Blues", 4)[2:4],get_palette(palette = "Reds", 4)[2:4])
+# print(c("#FEE5D9","#FCAE91","#FB6A4A","#CB181D"))
+# print(c("#EFF3FF","#BDD7E7","#6BAED6","#2171B5"))
+Sys.time()
+```
+
+#### Directory
+define the directory of the file which describes information of each fcs file.
+```{r directory,warning=FALSE, message=FALSE}
+d<-getwd()
+dfileinfo<-paste(d,"Noise_Plasticity_FileInfo_h.csv",sep="/")
+bkgfile <-paste(my_playgrnd,"FACS_data/Tsuru/T20191209/Plate_00_BW25113.fcs",sep = "/")
+if(my_public){
+  bkgfile <-paste(my_playgrnd,"Zenodo/T20191209/Plate_00_BW25113.fcs",sep = "/")
+}
+```
+
+# 2. Initial Curation
+## 2.1. 
+This section defines 
+- maximal # of events per fcs file
+- well postions showing aggregation of YFP fused protein
+```{r initialize,warning=FALSE, message=FALSE}
+Nbtot<-50000
+Forci<-qw(B3,B12,D3,F3,G2,G5,H3)
+mycol<-qw(FSC, SSC, FITC, logFSC, logSSC, logFITC, TubeID, Medium, Pos, FSCgate, FITCgate, TotalEvent)
+mycol2<-qw(TotalEvent, Event, Med_FITC, rSD_FITC, rCV_FITC, rCV2_FITC, Av_FITC, SD_FITC, CV_FITC, CV2_FITC, log10Av_FITC, log10SD_FITC, Med_FSC,log10Av_FSC)
+chsize<-24 # font size
+# myescol<-get_palette(palette = "lancet", 2)
+Sys.time()
+```
+
+## 2.2. Calculate BKG fluorescence for N1 strains
+```{r bacground,warning=FALSE, message=FALSE}
+bkgfile <-paste(my_playgrnd,"FACS_data/Tsuru/T20191209/Plate_00_BW25113.fcs",sep = "/")
+if(my_public){
+  bkgfile <-paste(my_playgrnd,"Zenodo/T20191209/Plate_00_BW25113.fcs",sep = "/")
+}
+dbkg=createEmptyDf(Nbtot, length(mycol), colnames = mycol )
+fcs<-read.FCS(bkgfile)
+dbkg[,c(1:3)]<-fcs@exprs[, c("FSC-A","SSC-A","FITC-A")]
+FITCbkg<-median(dbkg$FITC,na.rm = T)
+rm(fcs)
+Sys.time()
+```
+
+## 2.3. Load file list and extract information about N1 strains
+```{r Filelist,warning=FALSE, message=FALSE}
+dat<-paste(getwd(),"Meta","fcs_fileinfo.xlsx",sep = "/") %>% read_xlsx()
+my_meta<-dat[(dat$Strain=="N1")&(dat$Use=="Y"),]
+tmp=createEmptyDf(nrow(dat), length(mycol2), colnames = mycol2 )
+dat<-cbind(dat,tmp)
+dat<-subset(dat, dat$Strain=="N1"&dat$Use=="Y")
+Sys.time()
+```
+
+## 2.4. Define focal medium
+Run only first time
+```{r Medium,warning=FALSE, message=FALSE}
+# df_med<-dat %>% select(Medium_Series,Medium,YYMMDD) %>% distinct(Medium,YYMMDD,.keep_all = TRUE)
+# df_med<-df_med[order(df_med$Medium),]
+# rownames(df_med)<-seq(1,nrow(df_med))
+# df_med$FSClogmed<-NA
+# df_med$FSCupr<-NA
+# df_med$FSClwr<-NA
+# Sys.time()
+```
+## 2.3. Define FSC gate
+Run only first time
+```{r MainLoop,warning=FALSE, message=FALSE}
+# for(jj in 1:nrow(df_med)){
+#   my_tmp<-dat[(dat$Medium_Series==df_med$Medium_Series[jj])&
+#                 (dat$Medium==df_med$Medium[jj])&
+#                 (dat$YYMMDD==df_med$YYMMDD[jj]),] %>%
+#     select(Folder,FCS)
+#   df=createEmptyDf(nrow = Nbtot*nrow(my_tmp),ncol = 1,colnames = qw(logFSC))
+#   Cell=1
+#   for(j in 1:nrow(my_tmp)){
+#     dfcs=createEmptyDf(nrow = Nbtot,ncol = 2, colnames = qw(FSC,logFSC))
+#     fcs<-paste(my_playgrnd,my_tmp$Folder[j],my_tmp$FCS[j],sep="/") %>%
+#       read.FCS()
+#     fcs<-fcs@exprs[, c("FSC-A")]
+#     my_count<-length(fcs)
+#     if(my_count<=Nbtot){
+#       dfcs$FSC[1:my_count]<-fcs
+#     }else{
+#       dfcs$FSC<-fcs[1:Nbtot]
+#     }
+#     dfcs[(!is.na(dfcs$FSC))&(dfcs$FSC>0),]$logFSC<-log10(dfcs[(!is.na(dfcs$FSC))&(dfcs$FSC>0),]$FSC)
+#     df$logFSC[Cell:c(Cell+Nbtot-1)]<-dfcs$logFSC
+#     Cell=Cell+Nbtot
+#   }
+#   FSClogmed<-median(df$logFSC,na.rm=T)
+#   df_med$FSClogmed[jj]<-FSClogmed
+#   df_med$FSCupr[jj]<-FSClogmed+0.1
+#   df_med$FSClwr[jj]<-FSClogmed-0.1
+#   print(Sys.time())
+#   print(paste(jj,nrow(df_med),sep="/"))
+# }
+# rm(df)
+# # write_csv(x = df_med,file = paste(getwd(),"FlowData_Output","df_med.csv",sep="/"))
+# Sys.time()
+```
+## 2.5. load FSC gates
+```{r MainLoop,warning=FALSE, message=FALSE}
+df_med<-paste(getwd(),"FlowData_Output","df_med.csv",sep="/") %>% 
+  read_csv()
+Sys.time()
+```
+## 2.6. Main loop
+Run only first time
+```{r MainLoop,warning=FALSE, message=FALSE}
+for(jj in 1:nrow(df_med)){
+  my_tmp<-dat[(dat$Medium_Series==df_med$Medium_Series[jj])&
+                (dat$Medium==df_med$Medium[jj])&
+                (dat$YYMMDD==df_med$YYMMDD[jj]),] %>%
+    select(TubeID,Folder,FCS)
+  my_tmp$Event<-NA
+  my_tmp$Med_FITC<-NA
+  my_tmp$rSD_FITC<-NA
+  my_tmp$rCV_FITC<-NA
+  my_tmp$rCV2_FITC<-NA
+  my_tmp$Av_FITC<-NA
+  my_tmp$SD_FITC<-NA
+  my_tmp$CV_FITC<-NA
+  my_tmp$CV2_FITC<-NA
+  my_tmp$log10Av_FITC<-NA
+  my_tmp$log10SD_FITC<-NA
+  my_tmp$log10Av_FSC<-NA
+  my_tmp$log10Med_FSC<-NA
+
+  FSClogmed<-df_med$FSClogmed[jj]
+  FSCupr<-df_med$FSCupr[jj]
+  FSClwr<-df_med$FSClwr[jj]
+  j<-1
+  for(j in 1:nrow(my_tmp)){
+    dfcs=createEmptyDf(nrow = Nbtot,ncol = length(mycol), colnames = mycol )
+    dfcs<-dfcs %>% select(FSC,FITC,logFSC,logFITC)
+    my_path<-paste(my_playgrnd,my_tmp$Folder[j],my_tmp$FCS[j],sep="/")
+    if(my_public){
+      my_path<-my_path %>% str_replace(string = .,pattern = "FACS_data/Tsuru",replacement = "Zenodo")
+    }
+    fcs<-my_path %>%
+      read.FCS()
+    fcs<-fcs@exprs[, c("FSC-A","FITC-A")] %>%
+      data.frame() %>%
+      select(FSC.A,FITC.A)
+    colnames(fcs)<-qw(FSC,FITC)
+    my_count<-nrow(fcs)
+    if(my_count<=Nbtot){
+      dfcs[1:my_count,c(qw(FSC,FITC))]<-fcs
+    }else{
+      dfcs[1:Nbtot,c(qw(FSC,FITC))]<-fcs[1:Nbtot,]
+    }
+    dfcs$FITC<-dfcs$FITC-FITCbkg# subtract autofluorescence
+    dfcs[(!is.na(dfcs$FSC))&(dfcs$FSC>0),]$logFSC<-log10(dfcs[(!is.na(dfcs$FSC))&(dfcs$FSC>0),]$FSC)
+    dfcs<-dfcs[!is.na(dfcs$logFSC)&(dfcs$logFSC>=FSClwr)&(dfcs$logFSC<=FSCupr)&(dfcs$FITC>0),]
+    dfcs$logFITC<-log10(dfcs$FITC)
+
+    my_tmp$Event[j]<-nrow(dfcs)
+    my_tmp$Med_FITC[j]<-median(dfcs$FITC,na.rm = T)
+    my_tmp$rSD_FITC[j]<-median(abs(dfcs$FITC-my_tmp$Med_FITC[j]),na.rm = T)*1.4826 # robust SD
+    my_tmp$rCV_FITC[j]<-my_tmp$rSD_FITC[j]/my_tmp$Med_FITC[j]
+    my_tmp$rCV2_FITC[j]<-my_tmp$rCV_FITC[j]^2
+    my_tmp$Av_FITC[j]<-mean(dfcs$FITC,na.rm = T)
+    my_tmp$SD_FITC[j]<-sd(dfcs$FITC,na.rm = T)
+    my_tmp$CV_FITC[j]<-my_tmp$SD_FITC[j]/my_tmp$Av_FITC[j]
+    my_tmp$CV2_FITC[j]<-my_tmp$CV_FITC[j]^2
+    my_tmp$log10Av_FITC[j]<-mean(dfcs$logFITC,na.rm = T)
+    my_tmp$log10SD_FITC[j]<-sd(dfcs$logFITC,na.rm = T)
+    my_tmp$log10Av_FSC[j]<-mean(dfcs$logFSC,na.rm = T)
+    my_tmp$log10Med_FSC[j]<-FSClogmed
+  }
+  my_tmp<-my_tmp %>% select(-Folder,-FCS)
+  if(jj==1){
+    my_df<-my_tmp
+  }else{
+    my_df<-bind_rows(my_df,my_tmp)
+  }
+  print(Sys.time())
+  print(paste(jj,nrow(df_med),sep="/"))
+}
+my_tmp<-my_meta[my_meta$Use=="Y",]
+my_tmp<-left_join(my_tmp,my_df)
+write_csv(x = my_tmp,file = paste(getwd(),"FlowData_Output","stats_flowdata.csv",sep="/"))
+Sys.time()
+```
