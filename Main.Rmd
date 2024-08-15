@@ -915,6 +915,9 @@ my_tmp<-paste(getwd(),"Metabolite_TF_Interactions","TR_name_cure.xlsx",sep = "/"
 for(i in 1:nrow(my_tmp)){
   df_msr[df_msr$regulator==my_tmp$Before[i],]$regulator<-my_tmp$After[i]
 }
+
+df_msr[!is.na(df_msr$Nb_of_Metabolite),] %>% nrow()
+
 Sys.time()
 ```
 ## 5.4. Integrate all regulatory infomation and Noise/Plasticity data into one
@@ -983,7 +986,36 @@ dtf<-left_join(df_reg,df_plst_noise)
 
 Sys.time()
 ```
-## 5.5. Plasticity vs. Number of Regulators (TRs, SRs, MSRs and TRcoms)
+## 5.5.
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
+#TRs
+p1<-ggdotplot(dtf,x="Essentiality",y="Nb_reg",
+                add="mean_sd",
+          color="Essentiality",palette = mycolpal[c(1,2)],alpha=0.3,
+          # palette = mycolpal[1],
+          # add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          legend="",xlab="",ylab="Number of TRs")+
+  stat_compare_means(size=5,label.y = 15)+
+  scale_y_continuous(breaks = get_breaks(by=5,from = 0),limits = c(-1,17))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+#MSRs
+p2<-ggdotplot(dtf,x="Essentiality",y="Nb_MSR",
+                add="mean_sd",
+          color="Essentiality",palette = mycolpal[c(1,2)],alpha=0.3,
+          # palette = mycolpal[1],
+          # ,add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          legend="",xlab="",ylab="Number of MSRs")+
+  stat_compare_means(size=5,label.y = 10)+
+  scale_y_continuous(breaks = get_breaks(by=5,from = 0),limits = c(-1,11))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+
+Sys.time()
+```
+## 5.6. Plasticity vs. Number of Regulators (TRs, SRs, MSRs and TRcoms)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 #TRs
 p1<-ggboxplot(dtf[dtf$Essentiality=="nonessential",],x="TR_flag",y="SD_logAvFITC",
@@ -1054,7 +1086,7 @@ p4.1
 
 Sys.time()
 ```
-## 5.6. Noise vs. Number of Regulators (TRs, SRs and TRcoms)
+## 5.7. Noise vs. Number of Regulators (TRs, SRs and TRcoms)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 #TRs
 p1<-ggboxplot(dtf[dtf$Essentiality=="nonessential",],x="TR_flag",y="Mean_DMv",
@@ -1122,7 +1154,7 @@ p4.1<-ggpar(p4.1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fonts
 p4.1
 Sys.time()
 ```
-## 5.7.1. Correlation between Noise/Plasticity and Nb of Metabolic sensory regulators (MSRs)
+## 5.8. Correlation between Noise/Plasticity and Nb of Metabolic sensory regulators (MSRs)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_MSR)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1193,7 +1225,7 @@ p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p4
 Sys.time()
 ```
-## 5.7.2. Cumulative analysis for 5.7.1.
+## 5.9. Cumulative analysis for 5.8
 Following a previous study
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4468965/
 Fig. 2
@@ -1260,7 +1292,7 @@ p3
 
 Sys.time()
 ```
-## 5.8. Correlation between Noise/Plasticity and Nb of TRcoms
+## 5.10. Correlation between Noise/Plasticity and Nb of TRcoms
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-data_frame(Nb_TRcom=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_TRcom)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1295,7 +1327,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-## 5.9.1. Correlation between Noise/Plasticity and Nb of TR (Nonessential)
+## 5.11. Correlation between Noise/Plasticity and Nb of TR (Nonessential)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 my_tmp<-data_frame(Nb_TR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_reg)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1331,7 +1363,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-## 5.9.2. Correlation between Noise/Plasticity and Nb of TR (Essential)
+## 5.12. Correlation between Noise/Plasticity and Nb of TR (Essential)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 my_tmp<-data_frame(Nb_TR=seq(0,max(dtf[dtf$Essentiality=="essential",]$Nb_reg)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1367,7 +1399,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-## 5.10. Correlation between Noise/Plasticity and Nb of Sensory regulators (SRs)
+## 5.13. Correlation between Noise/Plasticity and Nb of Sensory regulators (SRs)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-data_frame(Nb_SR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_SR)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
