@@ -1,0 +1,87 @@
+---
+title: "W3110 namespace"
+author: "Tsuru"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+# General Settings
+## Workspace
+### Load workspace
+```{r workspace_load,warning=FALSE, message=FALSE}
+# load("./XXXYYYZZZ.RData")
+```
+### Save workspace
+```{r workspace_save,warning=FALSE, message=FALSE}
+# save.image("./XXXYYYZZZ.RData")
+```
+### Library loading
+```{r library,warning=FALSE, message=FALSE}
+library(preprocessCore)
+library(dplyr)
+library(tidyverse)
+library(magrittr)
+library(Hmisc)
+library(stringr)
+```
+### versatile user functions
+The [qw](https://ja.coder.work/so/r/240447) function in Perl.  
+The [createEmptyDf](https://htsuda.net/archives/2560) function.
+The [g_legend](https://github.com/hadley/ggplot2/wiki/Share-a-legend-between-two-ggplot2-graphs) function to extract legend.
+```{r functions}
+qw <- function(...) {
+  sapply(match.call()[-1], deparse)
+}
+
+createEmptyDf = function( nrow, ncol, colnames = c() ){
+  data.frame( matrix( vector(), nrow, ncol, dimnames = list( c(), colnames ) ) )
+}
+```
+
+
+```{r Load_genome_seq,warning=FALSE, message=FALSE}
+w3110_ftr<-read_delim("AP009048.gff3",skip=2)
+colnames(w3110_ftr)<-qw(ACCID,DB,Feature,Start,End,misc1,Strand,misc2,Notes)
+w3110_ftr$gene_synonym<-str_remove(str_extract(w3110_ftr$Notes,"Note=(.*?)(;|$)"),"Note=")
+w3110_ftr$gene_synonym<-str_extract(w3110_ftr$gene_synonym,"ECK(.*?)(;|$)")
+w3110_ftr$gene_synonym<-str_remove(w3110_ftr$gene_synonym,";")
+w3110_ftr$ECKnb<-str_extract_all(w3110_ftr$gene_synonym,"ECK[0-9]{4}") %>% paste(.,sep = ";")
+w3110_ftr$JWnb<-str_extract_all(w3110_ftr$gene_synonym,"JW[R]*[S]*[0-9]{4}") %>% paste(.,sep = ";")
+w3110_ftr$JWnb<-str_remove(w3110_ftr$JWnb,"^c[[:punct:]]{2}")
+w3110_ftr$JWnb<-str_remove(w3110_ftr$JWnb,"[[:punct:]]{2}$")
+w3110_ftr$JWnb<-str_replace_all(w3110_ftr$JWnb,"[[:punct:]],[[:space:]][[:punct:]]",";")
+w3110_ftr$Bnb<-str_extract_all(w3110_ftr$gene_synonym,"b[0-9]{4}") %>% paste(.,sep = ";")
+w3110_ftr$locus_tag<-str_remove(str_extract(w3110_ftr$Notes,"locus_tag=(.*?)(;|$)"),"locus_tag=")
+w3110_ftr$locus_tag<-str_remove(w3110_ftr$locus_tag,";")
+w3110_ftr$GeneID<-str_remove(str_extract(w3110_ftr$Notes,"GeneID\\:(.*?)(;|$)"),"GeneID\\:")
+w3110_ftr$GeneID<-str_remove(w3110_ftr$GeneID,";")
+w3110_ftr$Parent<-str_remove(str_extract(w3110_ftr$Notes,"Parent=(.*?)(;|$)"),"Parent=")
+w3110_ftr$Parent<-str_remove(w3110_ftr$Parent,";")
+w3110_ftr$ID<-str_remove(str_extract(w3110_ftr$Notes,"ID=(.*?)(;|$)"),"ID=")
+w3110_ftr$ID<-str_remove(w3110_ftr$ID,";")
+w3110_ftr$gbkey<-str_remove(str_extract(w3110_ftr$Notes,"gbkey=(.*?)(;|$)"),"gbkey=")
+w3110_ftr$gbkey<-str_remove(w3110_ftr$gbkey,";")
+w3110_ftr$gene_biotype<-str_remove(str_extract(w3110_ftr$Notes,"gene_biotype=(.*?)(;|$)"),"gene_biotype=")
+w3110_ftr$gene_biotype<-str_remove(w3110_ftr$gene_biotype,";")
+w3110_ftr$gene<-str_remove(str_extract(w3110_ftr$Notes,"gene=(.*?)(;|$)"),"gene=")
+w3110_ftr$gene<-str_remove(w3110_ftr$gene,";")
+w3110_ftr$product<-str_remove(str_extract(w3110_ftr$Notes,"product=(.*?)(;|$)"),"product=")
+w3110_ftr$product<-str_remove(w3110_ftr$product,";")
+w3110_ftr2<-w3110_ftr[(!is.na(w3110_ftr$ECKnb))&(w3110_ftr$ECKnb!="NA"),]
+
+for(i in 1:nrow(w3110_ftr2)){
+  if(!is.na(w3110_ftr2$Parent[i])){
+    my_tmp<-w3110_ftr[w3110_ftr$ID==w3110_ftr2$Parent[i],]
+    if(nrow(my_tmp)==1){
+      if(!is.na(my_tmp$gene_biotype)){
+        w3110_ftr2$gene_biotype[i]<-my_tmp$gene_biotype
+      }else{
+        my_tmp2<-w3110_ftr[w3110_ftr$ID==my_tmp$Parent,]
+        if(nrow(my_tmp2)==1){
+          w3110_ftr2$gene_biotype[i]<-my_tmp2$gene_biotype
+        }
+      }
+    }
+  }
+}
+write_csv(x = w3110_ftr2,file = "W3110_gnftr.csv") #<--------------------------------------------------------------------- OUTPUT
+```
