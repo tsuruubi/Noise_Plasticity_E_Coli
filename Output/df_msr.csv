@@ -1,0 +1,211 @@
+regulator,Nb_of_Metabolite,List_of_Metabolites
+AcrR,NA,NA
+Ada,NA,NA
+AdiY,NA,NA
+AgaR,1,Dihydroxyacetone-P
+AidB,NA,NA
+AlaS,NA,NA
+AllR,2,NADH;ADP
+AllS,NA,NA
+AlsR,NA,NA
+AppY,2,Xanthosine;dCMP
+AraC,NA,NA
+ArcA,NA,NA
+ArgP,2,Arginine;Diaminopimelic acid
+ArgR,19,Aspartic acid;Ornithine;Glutamine;Lysine;Glutamic acid;Histidine;Arginine;Diaminopimelic acid;N-Acetyl-Glutamic acid;5-Methylthioadenosine;NADPH;Acetyl-CoA;Succinyl-CoA;Citrulline;Argininosuccinic acid;AMP;ATP;Coenzyme A;N-Acetyl-Ornithine
+ArsR,1,ADP
+AscG,NA,NA
+AsnC,1,Alanine
+AtoC,NA,NA
+BaeR,NA,NA
+BasR,NA,NA
+AccB,NA,NA
+BetI,1,NADPH
+BirA,3,Pyridoxamine;Oxidized glutathione;Dihydroneopterin
+BluR,2,Isopentenyl diphosphate / Dimethylallyl diphosphate;Pyridoxamine
+CadC,NA,NA
+CaiF,NA,NA
+Cbl,6,"Succinate;Riboflavin;2,3-dihydroxybenzoylserine;ADP;ATP;Protoheme"
+CdaR,1,3-Phosphoserine
+CecR,1,Propionyl-CoA
+ComR,NA,NA
+CpxR,NA,NA
+Cra,1,Dihydroneopterin
+CreB,NA,NA
+Crp,41,"Glycolaldehyde;Malate;a-Ketoglutaric acid;(2R,3R)-2,3-Dihydroxy-3-methylpentanoate;N-Carbamoyl-aspartate;Pentose-P;Seduheptulose 7-P;UDP-N-acetyl-D-Glucosamine;Asparagine;Guanine;Pyridoxamine;N-Acetyl-Glutamic acid;D-Pantothenic acid;N2-Succinyl-glutamate;5-Amino-1-(5-phospho-D-ribosyl)imidazole;Xanthosine 5-P;Riboflavin;Fumarate;Phosphoenolpyruvate;Dihydroxyacetone-P;2-Isopropylmalic acid;4-Hydroxyphenylpyruvate;Citrate;Fructose-1,6-Bisphosphate;UDP;NADH;Acetyl-CoA;Succinyl-CoA;Citrulline;Argininosuccinic acid;cAMP;GTP;Oxidized glutathione;O-Acetyl-Serine;N-Acetyl-Ornithine;3-Carboxy-4-methyl-2-oxopentanoate;3-Phosphoserine;Pyridoxamine 5-Phosphate;Dihydroneopterin;Inosine diphosphate;Adenylosuccinic acid"
+CsgD,NA,NA
+GlaR,5,a-Ketoglutaric acid;Glutamic acid;N2-Succinyl-glutamate;NADPH;O-Acetyl-Serine
+CspA,NA,NA
+CueR,10,Glycolaldehyde;D-Pantothenic acid;Riboflavin;NADH;NADP;ADP;GTP;Coenzyme A;Pyridoxamine 5-Phosphate;Dihydroneopterin
+CusR,NA,NA
+CynR,2,NADH;Dihydroneopterin
+CysB,8,Glycolaldehyde;a-Ketoglutaric acid;gamma-Glutamyl-cysteine;Reduced glutathione;NADPH;O-Acetyl-Serine;Pyridoxamine 5-Phosphate;Dihydroneopterin
+CytR,1,dTDP
+DcuR,NA,NA
+DeoR,4,dTDP;Xanthosine;dCMP;Propionyl-CoA
+DhaR,2,Phosphoenolpyruvate;Dihydroxyacetone-P
+DicA,NA,NA
+DinJ-YafQ,NA,NA
+DnaA,19,Glycolaldehyde;Orotate;Dihydroorotate;N-Carbamoyl-aspartate;Deoxyribose-P;Hypoxanthine;5-Amino-1-(5-phospho-D-ribosyl)imidazole;Xanthosine 5-P;UDP;NADH;UMP;cAMP;AMP;ADP;ATP;GTP;Inosine diphosphate;5-Methyltetrahydrofolic acid;Adenylosuccinic acid
+DpiA,NA,NA
+DsdC,NA,NA
+EbgR,NA,NA
+EnvR,NA,NA
+EnvY,NA,NA
+EvgA,NA,NA
+ExuR,1,NADH
+FabR,NA,NA
+FadR,12,Glycolaldehyde;Pentose-P;Udp-Glucose;UDP-N-acetyl-D-Glucosamine;Pyridoxamine;D-Pantothenic acid;NADH;NADPH;Acetyl-CoA;AMP;Pyridoxamine 5-Phosphate;Dihydroneopterin
+FeaR,NA,NA
+FhlA,NA,NA
+Fis,10,"Malate;N-Acetyl-Glutamic acid;gamma-Glutamyl-cysteine;5-Amino-1-(5-phospho-D-ribosyl)imidazole;Fructose-1,6-Bisphosphate;Succinyl-CoA;Citrulline;UTP;GTP;N-Acetyl-Ornithine"
+FlhDC,NA,NA
+FliZ,NA,NA
+Fnr,NA,NA
+FucR,NA,NA
+Fur,7,Aspartic acid;Orotate;Erythrose 4-P;Asparagine;Pyridoxamine;IMP;Adenylosuccinic acid
+GadE,11,Glycolaldehyde;a-Ketoglutaric acid;UDP-N-acetyl-D-Glucosamine;Glutamine;D-Alanyl-Alanine;Pyridoxamine;Xanthosine 5-P;NADPH;UTP;Pyridoxamine 5-Phosphate;Dihydroneopterin
+GadE-RcsB,NA,NA
+GadW,3,Orotate;IMP;Adenylosuccinic acid
+GadX,2,Pentose-P;Asparagine
+GalR,3,Pentose-P;Udp-Glucose;ADP
+GatR,1,Propionyl-CoA
+GcvA,NA,NA
+GlcC,NA,NA
+GlpR,NA,NA
+GlrR,NA,NA
+GntR,NA,NA
+GutM,NA,NA
+HcaR,NA,NA
+HdfR,NA,NA
+HigA,NA,NA
+HipAB,1,Dihydropteroate
+HipB,7,Isopentenyl diphosphate / Dimethylallyl diphosphate;gamma-Glutamyl-cysteine;Dihydropteroate;NAD;AMP;ATP;Coenzyme A
+His.Att,NA,NA
+H-NS,NA,NA
+HU,4,Pentose-P;Udp-Glucose;ADP;ATP
+HyfR,NA,NA
+HypT,8,Aspartic acid;Lysine;Methionine;Diaminopimelic acid;ATP;O-Succinyl-homoserine;S-Adenosyl-homocysteine;S-Adenosylmethionine
+IclR,NA,NA
+IdnR,NA,NA
+IHF,6,Glutamic acid;gamma-Glutamyl-cysteine;Citrate;NADPH;Succinyl-CoA;Propionyl-CoA
+Ile.Att,NA,NA
+IlvY,9,"(2R,3R)-2,3-Dihydroxy-3-methylpentanoate;Reduced glutathione;Riboflavin;2-Isopropylmalic acid;NADP;Oxidized glutathione;Coenzyme A;3-Carboxy-4-methyl-2-oxopentanoate;Pyridoxamine 5-Phosphate"
+IscR,17,"(2R,3R)-2,3-Dihydroxy-3-methylpentanoate;Deoxyribose-P;Isopentenyl diphosphate / Dimethylallyl diphosphate;Alanine;Leucine/Isoleucine;Hypoxanthine;Dihydropteroate;Riboflavin;2-Isopropylmalic acid;2,3-dihydroxybenzoylserine;UDP;ADP;ATP;Coenzyme A;3-Carboxy-4-methyl-2-oxopentanoate;Pyridoxamine 5-Phosphate;Inosine diphosphate"
+KdgR,NA,NA
+KdpE,NA,NA
+LacI,NA,NA
+Leu.Att,NA,NA
+LeuO,2,Leucine/Isoleucine;Valine
+LexA,NA,NA
+LldR,NA,NA
+LrhA,NA,NA
+Lrp,14,Glycolaldehyde;a-Ketoglutaric acid;Leucine/Isoleucine;Glutamine;Glutamic acid;Phenylalanine;N2-Succinyl-glutamate;gamma-Glutamyl-cysteine;Xanthosine;dCMP;NADPH;Valine;Pyridoxamine 5-Phosphate;Dihydroneopterin
+LsrR,2,S-Adenosyl-homocysteine;S-Adenosylmethionine
+LysR,1,"1,5-Diaminopentane"
+MalI,3,Lysine;O-Succinyl-homoserine;S-Adenosylmethionine
+MalT,NA,NA
+MarA,NA,NA
+MarR,NA,NA
+MatA,NA,NA
+MazE,NA,NA
+McbR,8,Deoxyribose-P;Adenine;Guanine;Hypoxanthine;UDP;Cytidine;cAMP;Inosine diphosphate
+MelR,NA,NA
+MetJ,14,Aspartic acid;Isopentenyl diphosphate / Dimethylallyl diphosphate;Lysine;Methionine;Diaminopimelic acid;gamma-Glutamyl-cysteine;Flavin adenine dinucleotide;Succinyl-CoA;ATP;Coenzyme A;O-Succinyl-homoserine;S-Adenosyl-homocysteine;S-Adenosylmethionine;5-Methyltetrahydrofolic acid
+MetR,13,Glycolaldehyde;Alanine;Lysine;Diaminopimelic acid;D-Pantothenic acid;Riboflavin;NADH;NADP;Coenzyme A;3-Phosphoserine;O-Succinyl-homoserine;Pyridoxamine 5-Phosphate;S-Adenosyl-homocysteine
+MhpR,NA,NA
+Mlc,NA,NA
+MlrA,1,Propionyl-CoA
+MngR,1,Phosphoenolpyruvate
+MntR,NA,NA
+ModE,5,Guanine;Inosine;Pyridoxamine;Oxidized glutathione;Dihydroneopterin
+MprA,NA,NA
+MqsA,NA,NA
+MraZ,1,Udp-Glucose
+MurR,NA,NA
+Nac,3,Guanine;N2-Succinyl-glutamate;cAMP
+NadR,14,Glycolaldehyde;Isopentenyl diphosphate / Dimethylallyl diphosphate;D-Pantothenic acid;gamma-Glutamyl-cysteine;Dihydropteroate;Riboflavin;Fumarate;Dihydroxyacetone-P;NADH;NADPH;ADP;ATP;Coenzyme A;Pyridoxamine 5-Phosphate
+NagC,1,Pentose-P
+NanR,1,N-Acetyl-D-Glucosamine-P
+NarL,NA,NA
+NarP,NA,NA
+NhaR,NA,NA
+NikR,NA,NA
+NorR,NA,NA
+NrdR,10,Deoxyribose-P;Guanine;Hypoxanthine;UDP;Cytidine;cAMP;ADP;ATP;GTP;Inosine diphosphate
+NsrR,31,"Glycolaldehyde;a-Ketoglutaric acid;Deoxyribose-P;Pentose-P;Isopentenyl diphosphate / Dimethylallyl diphosphate;Udp-Glucose;UDP-N-acetyl-D-Glucosamine;Glutamic acid;Adenosine;Hypoxanthine;D-Pantothenic acid;gamma-Glutamyl-cysteine;Dihydropteroate;Riboflavin;Phosphoenolpyruvate;Dihydroxyacetone-P;Glycerol 3-Phosphate;Fructose-1,6-Bisphosphate;UDP;NADH;NADPH;Acetyl-CoA;CMP;UMP;AMP;ADP;ATP;Coenzyme A;O-Acetyl-Serine;Pyridoxamine 5-Phosphate;Inosine diphosphate"
+NtrC,NA,NA
+OmpR,NA,NA
+OxyR,23,Glycolaldehyde;Deoxyribose-P;Isopentenyl diphosphate / Dimethylallyl diphosphate;Homoserine;Adenosine;Hypoxanthine;D-Pantothenic acid;gamma-Glutamyl-cysteine;Dihydropteroate;Riboflavin;UDP;NADH;NADPH;CMP;ADP;ATP;Coenzyme A;O-Acetyl-Serine;O-Succinyl-homoserine;Pyridoxamine 5-Phosphate;S-Adenosyl-homocysteine;S-Adenosylmethionine;Inosine diphosphate
+PaaX,3,NADPH;Succinyl-CoA;Propionyl-CoA
+PdhR,28,"Glycolaldehyde;Malate;a-Ketoglutaric acid;Pentose-P;Isopentenyl diphosphate / Dimethylallyl diphosphate;Udp-Glucose;UDP-N-acetyl-D-Glucosamine;D-Pantothenic acid;gamma-Glutamyl-cysteine;Dihydropteroate;Riboflavin;Fumarate;Phosphoenolpyruvate;Dihydroxyacetone-P;Glycerol 3-Phosphate;Citrate;Fructose-1,6-Bisphosphate;UDP;NADH;NADPH;Acetyl-CoA;Succinyl-CoA;UMP;ADP;ATP;Coenzyme A;Pyridoxamine 5-Phosphate;5-Methyltetrahydrofolic acid"
+PepA,NA,NA
+PgrR,NA,NA
+PhoB,NA,NA
+PhoP,NA,NA
+DksA,NA,NA
+PrpR,NA,NA
+PspF,NA,NA
+PurR,41,Glycolaldehyde;Dihydroorotate;N-Carbamoyl-aspartate;Deoxyribose-P;Isopentenyl diphosphate / Dimethylallyl diphosphate;Proline;Glutamine;Lysine;Glutamic acid;Diaminopimelic acid;Adenosine;Hypoxanthine;N-Acetyl-Glutamic acid;D-Pantothenic acid;N2-Succinyl-glutamate;gamma-Glutamyl-cysteine;5-Amino-1-(5-phospho-D-ribosyl)imidazole;Dihydropteroate;Xanthosine 5-P;Riboflavin;Fumarate;UDP;NADH;NADPH;Citrulline;Argininosuccinic acid;CMP;UMP;AMP;ADP;CTP;UTP;ATP;GTP;Coenzyme A;N-Acetyl-Ornithine;3-Phosphoserine;Pyridoxamine 5-Phosphate;Inosine diphosphate;5-Methyltetrahydrofolic acid;Adenylosuccinic acid
+PutA,NA,NA
+PuuR,7,Glutamine;Glutamic acid;Arginine;N-Acetyl-Glutamic acid;5-Methylthioadenosine;GABA;N-Acetyl-Ornithine
+QseB,NA,NA
+RbsR,4,Xanthosine;dCMP;CMP;CTP
+RcdA,NA,NA
+RclR,NA,NA
+RcnR,NA,NA
+RcsAB,NA,NA
+RcsB,NA,NA
+RcsB-BglJ,NA,NA
+RelB,NA,NA
+RhaR,NA,NA
+RhaS,NA,NA
+Rob,NA,NA
+RstA,NA,NA
+RtcR,NA,NA
+RutR,5,Guanine;N2-Succinyl-glutamate;UDP;cAMP;ADP
+SdiA,NA,NA
+SgrR,1,Glutamic acid
+FecI,NA,NA
+RpoE,NA,NA
+RpoB,NA,NA
+RpoH,NA,NA
+RpoS,NA,NA
+RpoN,NA,NA
+RpoD,NA,NA
+SlyA,NA,NA
+SoxR,1,Tryptophan
+SoxS,NA,NA
+StpA,NA,NA
+SutR,NA,NA
+TdcA,NA,NA
+Thr.Att,NA,NA
+TorR,NA,NA
+TreR,NA,NA
+Trp.Att,NA,NA
+TrpR,5,Glutamine;Glutamic acid;Tryptophan;Tyrosine;ATP
+TtdR,NA,NA
+TyrR,NA,NA
+UhpA,NA,NA
+UidR,NA,NA
+UlaR,NA,NA
+UTP.Att,NA,NA
+UvrY,NA,NA
+UxuR,NA,NA
+Val.Att,NA,NA
+XapR,NA,NA
+XylR,1,gamma-Glutamyl-cysteine
+YdeO,1,Deoxyribose-P
+YefM,NA,NA
+YeiL,NA,NA
+YhaJ,NA,NA
+PlaR,NA,NA
+YjjQ,NA,NA
+PyrR,NA,NA
+YqhC,NA,NA
+NfeR,NA,NA
+ZntR,NA,NA
+ZraR,NA,NA
+Zur,NA,NA
+RNAP,NA,NA
+BtsR,NA,NA

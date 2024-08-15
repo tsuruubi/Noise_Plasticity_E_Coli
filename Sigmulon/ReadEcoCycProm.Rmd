@@ -1,0 +1,144 @@
+---
+title: "EcoCyc All Promoters"
+author: "Tsuru"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+# General Settings
+## Load workspace
+```{r workspace_load,warning=FALSE, message=FALSE}
+# load(".XXXYYYZZZ.RData")
+```
+## Save workspace
+```{r workspace_save,warning=FALSE, message=FALSE}
+# save.image("XXXYYYZZZ.RData")
+```
+## Library loading
+```{r library,warning=FALSE, message=FALSE}
+library(dplyr) # dataframe
+library(tidyverse) # dataframe
+library(magrittr) # pipe
+library(Biostrings)
+library(stringr)
+library(Hmisc) # %nin%
+library(readr) # read_csv
+library(readxl) # read_xls
+library(stringdist) # Levenshtein distance
+```
+## versatile user functions
+The [qw](https://ja.coder.work/so/r/240447) function in Perl.  
+The [createEmptyDf](https://htsuda.net/archives/2560) function.
+The [g_legend](https://github.com/hadley/ggplot2/wiki/Share-a-legend-between-two-ggplot2-graphs) function to extract legend.
+```{r functions}
+qw <- function(...) {
+  sapply(match.call()[-1], deparse)
+}
+
+createEmptyDf = function( nrow, ncol, colnames = c() ){
+  data.frame( matrix( vector(), nrow, ncol, dimnames = list( c(), colnames ) ) )
+}
+```
+
+# Load raw smart tables downloaded from EcoCyc
+```{r Load_raw,warning=FALSE, message=FALSE}
+df_ecocyc_prom<-paste(getwd(),"Copy-of-All-promoters-of-E.-coli-K-12-substr.-MG1655.txt",sep="/") %>%
+  read_delim()
+df_ecocyc_prom$Rel_plus_1_pos<-NA
+for(i in 1:nrow(df_ecocyc_prom)){
+  if(!is.na(df_ecocyc_prom$`Absolute-Plus-1-Position`[i])){
+    df_ecocyc_prom$Rel_plus_1_pos[i]<-gregexpr(pattern = "[A-Z]",text = df_ecocyc_prom$`Sequence - DNA sequence`[i])[[1]][1]
+  }
+}
+df_ecocyc_prom$Rel_minus_10_left_pos<-NA
+df_ecocyc_prom$Rel_minus_10_right_pos<-NA
+df_ecocyc_prom$Rel_minus_35_left_pos<-NA
+df_ecocyc_prom$Rel_minus_35_right_pos<-NA
+for(i in 1:nrow(df_ecocyc_prom)){
+  if(df_ecocyc_prom$Direction[i]=="+"){
+    df_ecocyc_prom$Rel_minus_10_left_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-10-LEFT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+    df_ecocyc_prom$Rel_minus_10_right_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-10-RIGHT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+    df_ecocyc_prom$Rel_minus_35_left_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-35-LEFT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+    df_ecocyc_prom$Rel_minus_35_right_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-35-RIGHT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+  }else{
+    df_ecocyc_prom$Rel_minus_10_left_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-10-RIGHT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+    df_ecocyc_prom$Rel_minus_10_right_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-10-LEFT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+    df_ecocyc_prom$Rel_minus_35_left_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-35-RIGHT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+    df_ecocyc_prom$Rel_minus_35_right_pos[i]<-df_ecocyc_prom$Rel_plus_1_pos[i]-abs(df_ecocyc_prom$`MINUS-35-LEFT`[i]-df_ecocyc_prom$`Absolute-Plus-1-Position`[i])
+  }
+}
+
+df_ecocyc_prom$Minus_10_box<-NA
+df_ecocyc_prom$Minus_35_box<-NA
+i<-1
+for(i in 1:nrow(df_ecocyc_prom)){
+  my_chr<-df_ecocyc_prom$`Sequence - DNA sequence`[i]
+  if(!is.na(df_ecocyc_prom$Rel_minus_10_left_pos[i])){
+    my_start<-df_ecocyc_prom$Rel_minus_10_left_pos[i]
+    my_end<-df_ecocyc_prom$Rel_minus_10_right_pos[i]
+    df_ecocyc_prom$Minus_10_box[i]<-substr(x = my_chr,start =my_start,stop = my_end)
+  }
+  if(!is.na(df_ecocyc_prom$Rel_minus_35_left_pos[i])){
+    my_start<-df_ecocyc_prom$Rel_minus_35_left_pos[i]
+    my_end<-df_ecocyc_prom$Rel_minus_35_right_pos[i]
+    df_ecocyc_prom$Minus_35_box[i]<-substr(x = my_chr,start =my_start,stop = my_end)
+  }
+}
+# fimAp is an exception
+# The fimAp promoter is located in a region that is part of a 314-bp invertible region whose inversion is necessary to activate ("on" orientation) or inactivate (" off" orientation) the transcription of the fimAICDFGH operon [Abraham85, Olsen94]. The sequence is shown in the off orientation in the database, and therefore the -10 and -35 boxes are located downstream of the transcriptional start site (TSS), and their sequences are shown in the inverted direction [Abraham85, Olsen94]. When the region is inverted, the boxes are located in the correct position (upstream of the TSS) and correct orientation (-10 box TATGAT, -35 box TTGAGA) to be functional and activate the fim operon [Abraham85, Olsen94].
+
+
+df_ecocyc_prom$Concat_35_10_box<-NA
+for(i in 1:nrow(df_ecocyc_prom)){
+  my_35<-df_ecocyc_prom$Minus_10_box[i]
+  my_10<-df_ecocyc_prom$Minus_35_box[i]
+  if((!is.na(my_35))&(!is.na(my_10))){
+    df_ecocyc_prom$Concat_35_10_box[i]<-paste(my_35,my_10,sep = "")
+  }
+}
+
+
+df_gene<-paste(getwd(),"All-genes-of-E.-coli-K-12-substr.-MG1655.txt",sep="/") %>%
+  read_delim(delim = "\t")
+my_tmp<-df_gene[!is.na(df_gene$`Accession-1...2`),]
+i<-1
+df_ecocyc_prom$Dwnstrm_Bnb<-NA
+for(i in 1:nrow(df_ecocyc_prom)){
+  if(!is.na(df_ecocyc_prom$`Promoters - genes downstream of promoter`[i])){
+    my_gene<-str_split(string =df_ecocyc_prom$`Promoters - genes downstream of promoter`[i],pattern = " // " )[[1]]
+    my_bnb<-my_tmp[my_tmp$`Gene Name` %in% my_gene,]$`Accession-1...2` %>% unique()
+    my_bnb<-my_bnb[my_bnb %nin% "NA"]
+    df_ecocyc_prom$Dwnstrm_Bnb[i]<-paste(my_bnb,collapse = ";")
+  }
+}
+
+Sys.time()
+```
+# Sigma70 promoters
+```{r Load_raw,warning=FALSE, message=FALSE}
+df_sigma70<-df_ecocyc_prom[!is.na(df_ecocyc_prom$`Binds-Sigma-Factor`),]
+df_sigma70<-df_sigma70[grepl(pattern = "RpoD",x = df_sigma70$`Binds-Sigma-Factor`),]
+
+df_sigma70$Lv_dist_from_cons<-NA
+# sigma70 consensus -35 box element: TTGACA
+# sigma70 consensus -10 box element: TATAAT
+i<-1
+for(i in 1:nrow(df_sigma70)){
+  if((!is.na(df_sigma70$Concat_35_10_box[i]))&(df_sigma70$Concat_35_10_box[i]!="")){
+    df_sigma70$Lv_dist_from_cons[i]<-stringdist(a =df_sigma70$Minus_35_box[i],b= "ttgaca",method = "lv")+
+      stringdist(a = df_sigma70$Minus_10_box[i],b= "tataat",method = "lv")
+  }
+}
+Sys.time()
+```
+
+# Output
+```{r Load_raw,warning=FALSE, message=FALSE}
+# TODO
+# All promoters
+# write_csv(x = df_ecocyc_prom,paste(getwd(),"Output","All_Promoters.csv",sep="/"))
+# Sigma70 promoters
+# write_csv(x = df_sigma70,paste(getwd(),"Output","Sigma70_Promoters.csv",sep="/"))
+```
+
+# Consensus sequences
+https://bionumbers.hms.harvard.edu/bionumber.aspx?s=n&v=2&id=106933
