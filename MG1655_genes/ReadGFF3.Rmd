@@ -1,0 +1,142 @@
+---
+title: "Transcriptome Analysis of Mutation accumulation experiments"
+author: "Tsuru"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+# General Settings
+## Workspace
+### Load workspace
+```{r workspace_load,warning=FALSE, message=FALSE}
+# load("./MicroarrayProbe.RData")
+```
+### Save workspace
+```{r workspace_save,warning=FALSE, message=FALSE}
+# save.image("./MicroarrayProbe.RData")
+```
+### Library loading
+```{r library,warning=FALSE, message=FALSE}
+library(viridis)
+library(ggplot2)
+library(GGally)
+library(scales)
+library(ggpubr)
+library(grid)
+library(gtable)
+library(gridExtra)
+library(dplyr)
+library(matrixStats)
+library(preprocessCore)
+library(RColorBrewer)
+library(openxlsx)
+library(ggsci)
+library(cowplot)
+library(corrplot)
+library(Hmisc)
+# https://stackoverflow.com/questions/59419647/hmisc-package-or-namespace-failed-to-load-no-package-called-latticeextra
+library(corrplot)
+library(tidyverse)
+library(magrittr)
+library(dendextend)
+library(FactoMineR)
+library(factoextra)
+library(proxy)
+library(rstatix)
+# library(plot3D)
+library(clusterProfiler)
+library(pathview)
+library(org.EcK12.eg.db)
+library(rvest)
+library(corrr)
+library(GOSemSim)
+library(rrvgo)
+library(qdapTools)
+library(AnnotationDbi)
+library(ggVennDiagram)
+library(rJava)
+library(venneuler)
+library(igraph)
+library(tidygraph)
+library(recoRdseq) # for Record-seq
+library(patchwork) # for Record-seq
+library(Biostrings)
+# library(BSgenome)
+# library(BSgenome.Ecoli.NCBI.20080805)
+# library(biomaRt)
+# library(biomartr)
+```
+### versatile user functions
+The [qw](https://ja.coder.work/so/r/240447) function in Perl.  
+The [createEmptyDf](https://htsuda.net/archives/2560) function.
+The [g_legend](https://github.com/hadley/ggplot2/wiki/Share-a-legend-between-two-ggplot2-graphs) function to extract legend.
+```{r functions}
+qw <- function(...) {
+  sapply(match.call()[-1], deparse)
+}
+
+createEmptyDf = function( nrow, ncol, colnames = c() ){
+  data.frame( matrix( vector(), nrow, ncol, dimnames = list( c(), colnames ) ) )
+}
+
+g_legend<-function(a.gplot){
+  tmp <- ggplot_gtable(ggplot_build(a.gplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)}
+
+pValue_sp_text=function(dtf){
+  pcor_sp<-cor.test(x=dtf[,1],y=dtf[,2],method="spearman")
+  rho_sp<-round(pcor_sp$estimate,digits = 2)
+  pv_sp<-ifelse(pcor_sp$p.value<0.05," P<0.05",paste(" P==",round(pcor_sp$p.value,digits = 1),sep = ""))
+  rhopvtxt_sp<-paste("list(italic(rho)==", rho_sp,", ",pv_sp,")")
+  return(rhopvtxt_sp)
+}
+
+pValue_pr_text=function(dtf){
+  pcor_pr<-cor.test(x=dtf[,1],y=dtf[,2],method="pearson")
+  r_pr<-round(pcor_pr$estimate,digits = 2)
+  pv_pr<-ifelse(pcor_pr$p.value<0.05," P<0.05",paste(" P==",round(pcor_pr$p.value,digits = 1),sep = ""))
+  rpvtxt_pr<-paste("list(italic(r)==", r_pr,", ",pv_pr,")")
+  return(rpvtxt_pr)
+}
+```
+
+#### Color
+```{r color}
+mycolpal<-get_palette("lancet",9)
+mycolpal.BuRd<-c(get_palette(palette = "Blues", 4)[2:4],get_palette(palette = "Reds", 4)[2:4])
+```
+
+
+```{r Load_genome_seq,warning=FALSE, message=FALSE}
+mg1655_ftr<-read_delim("NC_000913.gff3",skip=2)
+colnames(mg1655_ftr)<-qw(ACCID,DB,Feature,Start,End,misc1,Strand,misc2,Notes)
+mg1655_ftr$gene_synonym<-str_remove(str_extract(mg1655_ftr$Notes,"gene_synonym=(.*?)(;|$)"),"gene_synonym=")
+mg1655_ftr$gene_synonym<-str_remove(mg1655_ftr$gene_synonym,";")
+mg1655_ftr$locus_tag<-str_remove(str_extract(mg1655_ftr$Notes,"locus_tag=(.*?)(;|$)"),"locus_tag=")
+mg1655_ftr$locus_tag<-str_remove(mg1655_ftr$locus_tag,";")
+mg1655_ftr$GeneID<-str_remove(str_extract(mg1655_ftr$Notes,"GeneID\\:(.*?)(;|$)"),"GeneID\\:")
+mg1655_ftr$GeneID<-str_remove(mg1655_ftr$GeneID,";")
+mg1655_ftr$Parent<-str_remove(str_extract(mg1655_ftr$Notes,"Parent=(.*?)(;|$)"),"Parent=")
+mg1655_ftr$Parent<-str_remove(mg1655_ftr$Parent,";")
+mg1655_ftr$ID<-str_remove(str_extract(mg1655_ftr$Notes,"ID=(.*?)(;|$)"),"ID=")
+mg1655_ftr$ID<-str_remove(mg1655_ftr$ID,";")
+mg1655_ftr$gbkey<-str_remove(str_extract(mg1655_ftr$Notes,"gbkey=(.*?)(;|$)"),"gbkey=")
+mg1655_ftr$gbkey<-str_remove(mg1655_ftr$gbkey,";")
+mg1655_ftr$gene_biotype<-str_remove(str_extract(mg1655_ftr$Notes,"gene_biotype=(.*?)(;|$)"),"gene_biotype=")
+mg1655_ftr$gene_biotype<-str_remove(mg1655_ftr$gene_biotype,";")
+mg1655_ftr$gene<-str_remove(str_extract(mg1655_ftr$Notes,"gene=(.*?)(;|$)"),"gene=")
+mg1655_ftr$gene<-str_remove(mg1655_ftr$gene,";")
+mg1655_ftr$product<-str_remove(str_extract(mg1655_ftr$Notes,"product=(.*?)(;|$)"),"product=")
+mg1655_ftr$product<-str_remove(mg1655_ftr$product,";")
+
+mg1655_ftr2<-mg1655_ftr[mg1655_ftr$Feature=="gene",]
+temp<-mg1655_ftr[(!is.na(mg1655_ftr$product))&(!is.na(mg1655_ftr$Parent)),]
+temp<-temp %>% distinct(Parent,.keep_all = T)
+for(i in 1:nrow(mg1655_ftr2)){
+  mg1655_ftr2$product[i]<-temp[temp$Parent==mg1655_ftr2$ID[i],]$product
+}
+mg1655_ftr2$ECKnb<-str_remove(str_extract(mg1655_ftr2$gene_synonym,"ECK([0-9]*)(,|$)"),",")
+
+write.csv(mg1655_ftr2,"MG1655_gnftr.csv") #<--------------------------------------------------------------------- OUTPUT
+```
