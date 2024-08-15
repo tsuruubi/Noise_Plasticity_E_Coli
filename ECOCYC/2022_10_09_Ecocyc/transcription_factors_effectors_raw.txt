@@ -1,0 +1,266 @@
+Proteins	Substrate-level activators, inhibitors, cofactors, and ligands of polypeptide or complex	Genes of polypeptide, complex, or RNA	Gene Accession
+DNA-binding transcriptional dual regulator YeiE		yeiE	b2157
+DNA-binding transcriptional activator RclR		rclR	b0305
+antitoxin of the HicA-HicB toxin-antitoxin system /  DNA-binding transcriptional repressor HicB		hicB	b1438
+DNA-binding transcriptional activator YiaU		yiaU	b3585
+DNA-binding transcriptional repressor DeoR		deoR	b0840
+DNA-binding transcriptional activator TdcR		tdcR	b3119
+DNA-binding transcriptional dual regulator LldR	(<i>S</i>)-lactate	lldR	b3604
+DNA-binding transcriptional dual regulator NorR		norR	b2709
+DNA-binding transcriptional repressor RcnR	Ni<sup>2+</sup> // Co<SUP>2+</SUP>	rcnR	b2105
+DNA-binding transcriptional dual regulator PspF		pspF	b1303
+DNA-binding transcriptional dual regulator IlvY	(<i>S</i>)-2-acetolactate	ilvY	b3773
+DNA-binding transcriptional dual regulator NagC	<i>N</i>-acetyl-D-glucosamine 6-phosphate	nagC	b0676
+DNA-binding transcriptional dual regulator SoxS		soxS	b4062
+DNA-binding transcriptional dual regulator Nac		nac	b1988
+LuxR family transcriptional regulator FimZ		fimZ	b0535
+DNA-binding transcriptional dual regulator OxyR		oxyR	b3961
+DNA-binding transcriptional repressor YgbI		ygbI	b2735
+DNA-binding transcriptional dual regulator H-NS		hns	b1237
+DNA-binding transcriptional activator CadC		cadC	b4133
+DNA-binding transcriptional dual regulator CsgD		csgD	b1040
+DNA-binding transcriptional repressor AcrR	3,6-diaminoacridine // rhodamine 6G // putrescine // cadaverine // spermidine // ethidium bromide // ethidium	acrR	b0464
+DNA-binding transcriptional activator PunR		punR	b1659
+DNA-binding transcriptional repressor YcjW		ycjW	b1320
+DNA-binding transcriptional dual regulator YdeO		ydeO	b1499
+DNA-binding transcriptional repressor PtrR	4-aminobutanoate	ptrR	b1526
+DNA-binding transcriptional repressor AlsR	D-allose	alsR	b4089
+DNA-binding transcriptional dual regulator PdhR	pyruvate	pdhR	b0113
+DNA-binding transcriptional repressor CitR		citR	b0603
+DNA-binding transcriptional dual regulator IscR	a [2Fe-2S] iron-sulfur cluster	iscR	b2531
+Phosphorylated DNA-binding transcriptional activator QseB	phosphate	qseB	b3025
+DNA-binding transcriptional repressor YebK	2-dehydro-3-deoxy-D-gluconate 6-phosphate	yebK	b1853
+DNA-binding transcriptional dual regulator GcvA	glycine	gcvA	b2808
+DNA-binding transcriptional dual regulator SdiA		sdiA	b1916
+DNA-binding transcriptional dual regulator SoxR		soxR	b4063
+DNA-binding transcriptional activator GlrR-phosphorylated	phosphate	glrR	b2554
+DNA-binding transcriptional activator YeiL		yeiL	b2163
+DNA-binding transcriptional dual regulator HdfR		hdfR	b4480
+Rac prophage; DNA-binding transcriptional repressor RacR		racR	b1356
+DNA-binding transcriptional activator AaeR		aaeR	b3243
+DNA-binding transcriptional activator CdaR		cdaR	b0162
+DNA-binding transcriptional repressor LacI	allolactose	lacI	b0345
+DNA-binding transcriptional activator MlrA		mlrA	b2127
+antitoxin of the MqsRA toxin-antitoxin system / DNA-binding transcriptional repressor MqsA		mqsA	b3021
+DNA-binding transcriptional repressor NfeR	Ni<sup>2+</sup>	nfeR	b3071
+DNA-binding transcriptional dual regulator LrhA		lrhA	b2289
+fused DNA-binding transcriptional repressor / proline dehydrogenase / 1-pyrroline-5-carboxylate dehydrogenase PutA		putA	b1014
+DNA-binding transcriptional repressor PgrR		pgrR	b1328
+DNA-binding transcriptional dual regulator GadX		gadX	b3516
+DNA-binding transcriptional repressor PuuR	putrescine	puuR	b1299
+DNA-binding transcriptional repressor BetI	choline	betI	b0313
+antitoxin/DNA-binding transcriptional repressor HipB		hipB	b1508
+DNA-binding transcriptional repressor MalI		malI	b1620
+DNA-binding transcriptional repressor ExuR	&alpha;-D-galacturonate // &alpha;-D-glucuronate	exuR	b3094
+DNA-binding transcriptional repressor ComR	Cu<SUP>+</SUP>	comR	b1111
+DNA-binding transcriptional dual regulator HprR-phosphorylated	phosphate	hprR	b1969
+DNA-binding transcriptional dual regulator YfeC		yfeC	b2398
+DNA-binding transcriptional dual regulator DhaR		dhaR	b1201
+DNA-binding transcriptional dual regulator YidZ		yidZ	b3711
+DNA-binding transcriptional dual regulator GalS	D-galactose	galS	b2151
+cold shock protein CspA		cspA	b3556
+DNA-binding transcriptional activator AdiY		adiY	b4116
+DNA-binding transcriptional activator Cbl	thiosulfate // adenosine 5'-phosphosulfate	cbl	b1987
+DNA-binding transcriptional repressor StpA with RNA chaperone activity		stpA	b2669
+DNA-binding transcriptional repressor MraZ		mraZ	b0081
+DNA-binding transcriptional dual regulator DicA		dicA	b1570
+DNA-binding transcriptional dual regulator MelR	melibiose	melR	b4118
+DNA-binding transcriptional repressor SrlR	D-sorbitol	srlR	b2707
+DNA-binding transcriptional dual regulator RutR	thymine // uracil	rutR	b1013
+RNA polymerase sigma factor RpoN		rpoN	b3202
+DNA-binding transcriptional dual regulator YdcI		ydcI	b1422
+DNA-binding transcriptional dual regulator McbR		mcbR	b1450
+DNA-binding transcriptional activator RtcR		rtcR	b3422
+DNA-binding transcriptional dual regulator CecR		cecR	b0796
+DNA-binding transcriptional activator RhaS		rhaS	b3905
+DNA-binding transcriptional repressor UxuR	&alpha;-D-glucuronate // &alpha;-D-galacturonate // D-fructuronate	uxuR	b4324
+DNA-binding transcriptional repressor Mlc		mlc	b1594
+Phosphorylated DNA-binding transcriptional dual regulator BtsR	phosphate	btsR	b2125
+DNA-binding transcriptional dual regulator YciT		yciT	b1284
+DNA-binding transcriptional activator DecR		decR	b0447
+DNA-binding transcriptional repressor RspR		rspR	b1540
+DNA-binding transcriptional repressor NimR		nimR	b1790
+CP4-57 prophage; DNA-binding transcriptional activator AlpA		alpA	b2624
+DNA-binding transcriptional dual regulator Rob		rob	b4396
+DNA-binding transcriptional repressor FabR		fabR	b3963
+DNA-binding transcriptional activator GadE		gadE	b3512
+DNA-binding transcriptional dual regulator GadW		gadW	b3515
+DNA binding transcriptional dual regulator BolA-phosphorylated	phosphate	bolA	b0435
+DNA-binding transcriptional dual regulator LysR		lysR	b2839
+DNA-binding transcriptional activator EnvY		envY	b0566
+DNA-binding transcriptional repressor EbgR		ebgR	b3075
+DNA-binding transcriptional repressor YgiV		ygiV	b3023
+DNA-binding transcriptional activator FeaR		feaR	b1384
+DNA-binding transcriptional dual regulator MarA		marA	b1531
+DNA-binding transcriptional repressor GntR	D-gluconate	gntR	b3438
+DNA-binding transcriptional dual regulator DpiA-phosphorylated	phosphate	dpiA	b0620
+DNA-binding transcriptional repressor AscG		ascG	b2714
+DNA-binding transcriptional repressor EnvR		envR	b3264
+DNA-binding transcriptional repressor UlaR	L-ascorbate 6-phosphate	ulaR	b4191
+DNA-binding transcriptional repressor UidR		uidR	b1618
+DNA-binding transcriptional dual regulator IdnR	5-dehydro-D-gluconate	idnR	b4264
+DNA-binding transcriptional dual regulator CsqR	6-sulfo-D-quinovose	csqR	b3884
+DNA-binding transcriptional activator TdcA		tdcA	b3118
+DNA-binding transcriptional dual regulator TyrR	L-phenylalanine // L-tyrosine	tyrR	b1323
+DNA-binding transcriptional dual regulator RbsR	D-ribose	rbsR	b3753
+DNA-binding transcriptional repressor KdgR		kdgR	b1827
+HypT-[Met-oxidized] DNA-binding transcriptional dual regulator		hypT	
+DNA-binding transcriptional regulator CreB-phosphorylated	phosphate	creB	b4398
+DNA-binding transcriptional activator UvrY-phosphorylated	phosphate	uvrY	b1914
+DNA-binding transcriptional dual regulator PhoB-phosphorylated	phosphate	phoB	b0399
+DNA-binding transcriptional activator ZraR-phosphorylated	phosphate	zraR	b4004
+DNA-binding transcriptional regulator RstA-phosphorylated	phosphate	rstA	b1608
+NtrC phosphorylated dimer	phosphate	glnG	
+DNA-binding transcriptional dual regulator NtrC-phosphorylated	phosphate	glnG	b3868
+DNA-binding transcriptional activator AtoC-phosphorylated	phosphate	atoC	b2220
+DNA-binding transcriptional dual regulator TorR-phosphorylated	phosphate	torR	
+DNA-binding transcriptional dual regulator NarP-phosphorylated	phosphate	narP	b2193
+DNA-binding transcriptional dual regulator OmpR-phosphorylated	phosphate	ompR	b3405
+DNA-binding transcriptional dual regulator ArcA-phosphorylated	phosphate	arcA	b4401
+DNA-binding transcriptional dual regulator PhoP-phosphorylated	phosphate	phoP	b1130
+DNA-binding transcriptional activator BaeR-phosphorylated	phosphate	baeR	b2079
+DNA-binding transcriptional activator EvgA-phosphorylated	phosphate	evgA	b2369
+DNA-binding transcriptional dual regulator BasR-phosphorylated	phosphate	basR	b4113
+DNA-binding transcriptional dual regulator NarL-phosphorylated	phosphate	narL	b1221
+RhaS-L-rhamnose DNA-binding transcriptional activator	L-rhamnose	rhaS	
+FucR-L-fuculose-1-phosphate DNA-binding transcriptional activator	L-fuculose 1-phosphate	fucR	
+XynR-D-xylonate	D-xylonate	xynR	
+IdnR-5-dehydro-D-gluconate DNA-binding transcriptional dual regulator	5-dehydro-D-gluconate	idnR	
+AraC-&alpha;-L-arabinopyranose DNA-binding transcriptional activator	&alpha;-L-arabinopyranose	araC	
+DNA-binding transcriptional dual regulator CpxR	phosphate	cpxR	b3912
+ArgP-L-arginine  DNA-binding transcriptional dual regulator	L-arginine	argP	
+CaiF-L-carnitine DNA-binding Transcriptional Activator	L-carnitine	caiF	
+CRP-cyclic-AMP DNA-binding transcriptional dual regulator	cyclic-AMP	crp	
+XapR-xanthosine DNA-binding transcriptional activator	xanthosine	xapR	
+AllR-allantoin	allantoin	allR	
+BirA-biotinyl-5'-adenylate DNA-binding transcriptional repressor / biotin-[acetyl-CoA-carboxylase] ligase	biotinyl-5'-adenylate	birA	
+DnaA-ATP	ATP	dnaA	
+DNA-binding transcriptional dual regulator ModE-molybdate	molybdate	modE	
+GalS-D-galactose	D-galactose	galS	
+DNA-binding transcriptional repressor TyrR-L-phenylalanine	L-phenylalanine	tyrR	
+DNA-binding transcriptional repressor PurR-hypoxanthine	hypoxanthine	purR	
+Fur-a [2Fe-2S] iron-sulfur cluster DNA-binding transcriptional dual regulator	Fe<sup>2+</sup>	fur	
+RbsR-D-ribose	D-ribose	rbsR	
+NrdR-Zn<sup>2+</sup> DNA-binding transcriptional repressor	Zn<SUP>2+</SUP>	nrdR	
+DNA-binding transcriptional dual regulator Lrp-L-leucine	L-leucine	lrp	
+AllS-allantoin DNA-binding transcriptional activator	allantoin	allS	
+ZntR-Zn<SUP>2+</SUP>	Zn<SUP>2+</SUP>	zntR	
+Zur-Zn<sup>2+</sup> DNA-binding transcriptional repressor	Zn<SUP>2+</SUP>	zur	
+PyrR-pyruvate	pyruvate	pyrR	
+RhaR-L-rhamnose DNA-binding transcriptional activator	L-rhamnose	rhaR	
+DNA-binding transcriptional dual regulator PrpR-(2<i>S</i>,3<i>S</i>)-2-methylcitrate	(2<i>S</i>,3<i>S</i>)-2-methylcitrate	prpR	
+CysB-<i>O</i>-acetyl-L-serine DNA-binding transcriptional dual regulator	<i>O</i>-acetyl-L-serine	cysB	
+DNA-binding transcriptional repressor IscR-a [2Fe-2S] iron-sulfur cluster	a [2Fe-2S] iron-sulfur cluster	iscR	
+GalR-D-galactose	D-galactose	galR	
+DNA-binding transcriptional repressor TyrR-L-tyrosine	L-tyrosine	tyrR	
+NhaR-Na<SUP>+</SUP> DNA-binding transcriptional activator	Na<SUP>+</SUP>	nhaR	
+IclR-pyruvate DNA-binding transcriptional repressor	pyruvate	iclR	
+IlvY-(<i>S</i>)-2-acetolactate DNA-binding transcriptional dual regulator	(<i>S</i>)-2-acetolactate	ilvY	
+Dan-L-tartrate DNA-binding transcriptional activator	L-tartrate	ttdR	
+DNA-binding transcriptional dual regulator XylR-&alpha;-D-xylopyranose	&alpha;-D-xylopyranose	xylR	
+DNA-binding transcriptional dual regulator HcaR-3-phenylpropanoate	3-phenylpropanoate	hcaR	
+DNA-binding transcriptional repressor TrpR-L-tryptophan	L-tryptophan	trpR	
+ChbR-6-phospho-&beta;-D-glucosaminyl-(1->4)-<i>N</i>-acetyl-D-glucosamine	6-phospho-&beta;-D-glucosaminyl-(1->4)-<i>N</i>-acetyl-D-glucosamine	chbR	
+DNA-binding transcriptional activator MhpR-3-(3-hydroxyphenyl)propanoate	3-(3-hydroxyphenyl)propanoate	mhpR	
+CueR-Cu<SUP>+</SUP>	Cu<SUP>+</SUP>	cueR	
+DNA-binding transcriptional activator MalT-maltotriose-ATP	maltotriose	malT	
+ArgR-L-arginine DNA-binding transcriptional dual regulator	L-arginine	argR	
+DNA-binding transcriptional dual regulator LldR-<i>S</i>-lactate	(<i>S</i>)-lactate	lldR	
+MetR-L-homocysteine	L-homocysteine	metR	
+FadR-an acyl-CoA	an acyl-CoA	fadR	
+DNA-binding transcriptional activator MelR-melibiose	melibiose	melR	
+AlaS-L-alanine DNA-binding transcriptional repressor	L-alanine	alaS	
+DsdC-D-serine DNA-binding transcriptional dual regulator	D-serine	dsdC	
+AcrR-3,6-diaminoacridine	3,6-diaminoacridine	acrR	
+CynR-cyanate DNA-binding transcriptional dual regulator	cyanate	cynR	
+GlcC-glycolate DNA-binding transcriptional dual regulator	glycolate	glcC	
+ExuR-&alpha;-D-galacturonate, &alpha;-D-glucuronate-DNA-binding transcriptional repressor	&alpha;-D-galacturonate	exuR	
+FhlA-formate DNA-binding transcriptional activator	formate	fhlA	
+RelB-RelE antitoxin/toxin complex / DNA-binding transcriptional repressor		relB // relE	
+DNA-binding transcriptional dual regulator/c-di-GMP phosphodiesterase PdeL	Mn<SUP>2+</SUP> // Mg<SUP>2+</SUP> // Ca<SUP>2+</SUP>	pdeL	b0315
+HipAB toxin/antitoxin complex / DNA-binding transcriptional repressor		hipB // hipA	
+DNA-binding transcriptional dual regulator ArgP	L-arginine // L-lysine	argP	b2916
+DNA-binding transcriptional repressor MetJ-<i>S</i>-adenosyl-L-methionine	<i>S</i>-adenosyl-L-methionine	metJ	
+DNA-binding transcriptional dual regulator CpxR-phosphorylated	phosphate	cpxR	b3912
+DNA-binding transcriptional dual regulator NsrR		nsrR	b4178
+RcsB-BglJ DNA-binding transcriptional activator		bglJ // rcsB	
+DNA-binding transcriptional repressor LexA		lexA	b4043
+DNA-binding transcriptional  repressor CRP-Sxy		sxy // crp	
+DNA-binding transcriptional dual regulator Fis		fis	b3261
+DNA-binding transcriptional dual regulator MetR	L-homocysteine	metR	b3828
+DNA-binding transcriptional dual regulator CysB	<i>O</i>-acetyl-L-serine	cysB	b1275
+DNA-binding transcriptional repressor FrmR	formaldehyde	frmR	b0357
+MazE antitoxin of the MazF-MazE toxin-antitoxin system / DNA-binding transcriptional repressor		mazE	b2783
+DNA-binding transcriptional repressor DgoR	D-galactonate	dgoR	b4479
+Qin prophage; antitoxin/DNA-binding transcriptional repressor RelB		relB	b1564
+DNA-binding transcriptional dual regulator HU		hupA // hupB	
+DNA-binding transcriptional dual regulator AsnC	L-asparagine	asnC	b3743
+MazE-MazF antitoxin/toxin complex / DNA-binding transcriptional repressor		mazF // mazE	
+DNA-binding transcriptional activator KdpE-phosphorylated	phosphate	kdpE	b0694
+GadE-RcsB DNA-binding transcriptional activator		rcsB // gadE	
+DNA-binding transcriptional dual regulator AraC	D-fucose // &alpha;-L-arabinopyranose	araC	b0064
+DNA-binding transcriptional activator DcuR-phosphorylated	phosphate	dcuR	b4124
+aminopeptidase A/I and DNA-binding transcriptional repressor PepA	Zn<SUP>2+</SUP> // hydrogen carbonate	pepA	b4260
+HigB-HigA toxin/antitoxin complex and DNA-binding transcriptional repressor		higA // higB	
+DNA binding transcriptional dual regulator ChbR	6-phospho-&beta;-D-glucosaminyl-(1->4)-<i>N</i>-acetyl-D-glucosamine	chbR	b1735
+DNA-binding transcriptional repressor FrlR	<i>N</i><sup>6</sup>-(1-deoxy-6-<i>O</i>-phospho-D-fructos-1-yl)-L-lysine	frlR	b3375
+biotin carboxyl carrier protein (dimer)		accB	
+DNA-binding transcriptional dual regulator CueR-Cu<sup>+</sup>	Cu<SUP>+</SUP>	cueR	
+DNA-binding transcriptional repressor/NMN adenylyltransferase NadR	Mg<SUP>2+</SUP>	nadR	b4390
+RcsAB DNA-binding transcriptional dual regulator		rcsB // rcsA	
+DNA-binding transcriptional repressor MprA	2,4-dinitrophenol // carbonylcyanide <i>m</i>-chlorophenylhydrazone // salicylate	mprA	b2684
+DNA-binding transcriptional repressor CytR	cytidine	cytR	b3934
+DNA-binding transcriptional dual regulator SlyA		slyA	b1642
+MntR-Mn<sup>2+</sup> DNA-binding transcriptional dual regulator	Mn<SUP>2+</SUP>	mntR	
+DNA-binding transcriptional dual regulator MurR		murR	b2427
+DNA-binding transcriptional dual regulator FNR		fnr	b1334
+DNA-binding transcriptional repressor TreR	D-trehalose 6-phosphate	treR	b4241
+DNA-binding transcriptional dual regulator ArgR	L-arginine	argR	b3237
+antitoxin/DNA-binding transcriptional repressor HigA		higA	b3082
+DNA-binding transcriptional dual regulator NanR	<i>N</i>-acetylneuraminate	nanR	b3226
+ZntR-Zn<sup>2+</sup> DNA-binding transcriptional activator	Zn<SUP>2+</SUP>	zntR	
+DNA-binding transcriptional activator UhpA-phosphorylated	phosphate	uhpA	b3669
+DNA-binding transcriptional dual regulator IHF		ihfA // ihfB	
+OmpR dimer	phosphate	ompR	b3405
+DNA binding transcriptional dual regulator RcdA	trimethylamine <i>N</i>-oxide // tris	rcdA	b0846
+DNA-binding transcriptional repressor NikR-Ni<SUP>2+</SUP>	Ni<sup>2+</sup>	nikR	
+DNA-binding transcriptional dual regulator Cra	&beta;-D-fructofuranose 1-phosphate	cra	b0080
+YefM-YoeB antitoxin/toxin complex / DNA-binding transcriptional repressor		yoeB // yefM	
+FlhDC DNA-binding transcriptional dual regulator		flhD // flhC	
+DNA-binding transcriptional dual regulator PspF		pspF	b1303
+DNA-binding transcriptional repressor MarR		marR	b1530
+DNA-binding transcriptional repressor PaaX		paaX	b1399
+DinJ-YafQ antitoxin/toxin complex / DNA-binding transcriptional repressor	phosphate	yafQ // dinJ	
+antitoxin/DNA-binding transcriptional repressor YefM		yefM	b2017
+DNA-binding transcriptional repressor LsrR		lsrR	b1512
+DNA-binding transcriptional repressor MngR		mngR	b0730
+isovaleryl-CoA dehydrogenase and DNA-binding transcriptional repressor		aidB	b4187
+DNA-binding transcriptional repressor ArsR		arsR	b3501
+DNA-binding transcriptional dual regulator TorR	phosphate	torR	b0995
+DNA-binding transcriptional activator YgfI		srsR	b2921
+DNA-binding transcriptional regulator FliZ		fliZ	b1921
+DNA-binding transcriptional dual regulator RcsB-phosphorylated	phosphate	rcsB	b2217
+DNA-binding transcriptional activator YhaJ		yhaJ	b3105
+DNA-binding transcriptional repressor PlaR		plaR	b3574
+DNA-binding transcriptional repressor NemR	methylglyoxal	nemR	b1649
+DNA-binding transcriptional dual regulator CynR	cyanate	cynR	b0338
+DNA-binding transcriptional dual regulator FadR	an acyl-CoA	fadR	b1187
+DNA-binding transcriptional activator YqhC		yqhC	b3010
+DNA-binding transcriptional dual regulator SgrR		sgrR	b0069
+DNA-binding transcriptional dual regulator MatA		matA	b0294
+DNA-binding transcriptional regulator YafC		yafC	b0208
+DNA-binding transcriptional activator HyfR		hyfR	b2491
+DNA-binding transcriptional repressor GlaR	glutarate	glaR	b2664
+DNA-binding transcriptional dual regulator / DNA repair protein Ada		ada	b2213
+DNA-binding transcriptional repressor YjjQ		yjjQ	b4365
+DNA-binding transcriptional activator GutM		gutM	b2706
+DNA-binding transcriptional dual regulator LeuO		leuO	b0076
+DNA-binding transcriptional repressor BluR		bluR	b1162
+DNA-binding transcriptional repressor AgaR		agaR	b3131
+DNA-binding transcriptional dual regulator SutR		sutR	b1434
+DNA-binding transcriptional dual regulator YieP		yieP	b3755
+DNA-binding transcriptional dual regulator HcaR	3-phenylpropanoate	hcaR	b2537
+DNA-binding transcriptional dual regulator Lrp	L-leucine	lrp	b0889
+DLP12 prophage; DNA-binding transcriptional activator AppY		appY	b0564
+DNA-binding transcriptional dual regulator GalR	D-galactose	galR	b2837
+DNA-binding transcriptional activator CusR-phosphorylated	phosphate	cusR	b0571
