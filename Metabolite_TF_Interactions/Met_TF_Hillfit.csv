@@ -1,0 +1,307 @@
+KEGG,Compound,BIGG,Metabolic_Subsystems,TFA_Name,Met,TFA,Corr,Coeff_h,Coeff_k,Coeff_v
+C00062,Arginine,arg__L_c,Arginine and Proline Metabolism,ArgP,74,31,0.773966798,1.601127923,0.002246053,11800.992
+C00666,Diaminopimelic acid,26dap_LL_c,Threonine and Lysine Metabolism,ArgP,59,31,0.88425473,4.329670026,42.05733794,25164625.44
+C00049,Aspartic acid,asp__L_c,Alanine and Aspartate Metabolism,ArgR,71,30,0.793394192,10,0.400106477,3.599131115
+C00077,Ornithine,orn_c,Arginine and Proline Metabolism,ArgR,24,30,0.820910719,3.390174452,0.146544098,24.64465213
+C00064,Glutamine,gln__L_c,Glutamate Metabolism,ArgR,47,30,0.927037152,1.351941295,0.077526704,4.162977736
+C00047,Lysine,lys__L_c,Threonine and Lysine Metabolism,ArgR,34,30,0.952465748,3.557365322,2.004601408,3.632904586
+C00025,Glutamic acid,glu__L_c,Glutamate Metabolism,ArgR,48,30,0.894815834,3.078103203,0.324163823,2.920678251
+C00135,Histidine,his__L_c,Histidine Metabolism,ArgR,42,30,0.888167843,0.631526457,37997.57581,249.8680378
+C00062,Arginine,arg__L_c,Arginine and Proline Metabolism,ArgR,74,30,0.86432856,9.014636302,1.520682846,3.163326239
+C00666,Diaminopimelic acid,26dap_LL_c,Threonine and Lysine Metabolism,ArgR,59,30,0.946758605,1.323896982,0.000486598,598.1651942
+C00624,N-Acetyl-Glutamic acid,acglu_c,Arginine and Proline Metabolism,ArgR,30,30,0.912287443,0.976023727,3.81075E-05,762.5540534
+C00170,5-Methylthioadenosine,5mta_c,Arginine and Proline Metabolism,ArgR,82,30,0.918442089,2.907806215,3.492142232,3.276699033
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,ArgR,27,30,0.754641867,4.912686393,0.350157501,3.189524374
+C00024,Acetyl-CoA,accoa_c,Citric Acid Cycle,ArgR,81,30,0.90333204,0.800362218,3.12753E-05,385.7828014
+C00091,Succinyl-CoA,succoa_c,Citric Acid Cycle,ArgR,9,30,0.873210166,3.602440028,0.100787645,3.615816051
+C00327,Citrulline,citr__L_c,Arginine and Proline Metabolism,ArgR,67,30,0.78424387,6.955438738,0.131742706,2.917002258
+C03406,Argininosuccinic acid,argsuc_c,Arginine and Proline Metabolism,ArgR,73,30,0.779596225,4.298611066,0.033219335,2.596891555
+C00020,AMP,amp_c,Purine and Pyrimidine Biosynthesis,ArgR,75,30,0.825446519,10,4.791222425,2.742049214
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,ArgR,70,30,0.909910777,4.940492683,0.323824393,3.831653981
+C00010,Coenzyme A,coa_c,Cofactor and Prosthetic Group Biosynthesis,ArgR,65,30,0.785964823,4.654104116,2.823960003,3.401017758
+C00437,N-Acetyl-Ornithine,acorn_c,Arginine and Proline Metabolism,ArgR,29,30,0.852710636,0.956766247,0.012949825,3.651402176
+C00041,Alanine,ala__L_c,Alanine and Aspartate Metabolism,AsnC,76,29,0.780739981,4.932404561,0.141171256,122.7954173
+C04874,Dihydroneopterin,dhnpt_c,Cofactor and Prosthetic Group Biosynthesis,Cra,58,28,0.784670149,0.45139742,1.80351E-05,216.5932568
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,CRP,45,27,0.821417257,2.852591905,0.13299665,46.74027825
+C00149,Malate,mal__L_c,Citric Acid Cycle,CRP,33,27,0.865539353,6.268116008,0.193295361,44.95337221
+C00026,a-Ketoglutaric acid,akg_c,Citric Acid Cycle,CRP,77,27,0.84274922,7.127839863,0.307168895,54.56655405
+C06007,"(2R,3R)-2,3-Dihydroxy-3-methylpentanoate",23dhmp_c,"Valine, Leucine, and Isoleucine Metabolism",CRP,90,27,0.913967778,4.165785017,0.210397258,56.72375569
+C00438,N-Carbamoyl-aspartate,cbasp_c,Purine and Pyrimidine Biosynthesis,CRP,26,27,0.852018672,10,0.006713815,46.55907935
+-,Pentose-P,-,-,CRP,20,27,0.870397861,10,0.104870852,46.24726956
+C05382,Seduheptulose 7-P,s7p_c,Pentose Phosphate Pathway,CRP,10,27,0.819323493,10,0.463317705,44.94515615
+C00043,UDP-N-acetyl-D-Glucosamine,uacgam_c,Cell Envelope Biosynthesis,CRP,6,27,0.857493314,10,0.585166983,45.21255814
+C00152,Asparagine,asn__L_c,Alanine and Aspartate Metabolism,CRP,72,27,0.883754426,6.453885748,1.653161036,62.02760614
+C00242,Guanine,gua_c,Nucleotide Salvage Pathway,CRP,43,27,0.901522296,3.42204758,10.43889869,49.03206696
+C00534,Pyridoxamine,pydam_c,Cofactor and Prosthetic Group Biosynthesis,CRP,15,27,0.797621495,7.773229607,4.370032816,51.08708584
+C00624,N-Acetyl-Glutamic acid,acglu_c,Arginine and Proline Metabolism,CRP,30,27,0.845062258,8.547072377,0.092084649,45.31941448
+C00864,D-Pantothenic acid,pnto__R_c,Cofactor and Prosthetic Group Biosynthesis,CRP,54,27,0.778121694,10,1.564586535,43.79483763
+C05931,N2-Succinyl-glutamate,sucglu_c,Arginine and Proline Metabolism,CRP,31,27,0.872215271,6.833060061,0.818132567,65.84053066
+C03373,5-Amino-1-(5-phospho-D-ribosyl)imidazole,air_c,Purine and Pyrimidine Biosynthesis,CRP,84,27,0.874233627,5.467992503,0.042271069,47.26922792
+C00655,Xanthosine 5-P,xmp_c,Purine and Pyrimidine Biosynthesis,CRP,1,27,0.816165601,9.986612677,0.445118863,40.85740872
+C00255,Riboflavin,ribflv_c,Cofactor and Prosthetic Group Biosynthesis,CRP,13,27,0.825879514,10,0.747240724,45.85946947
+C00122,Fumarate,fum_c,Citric Acid Cycle,CRP,50,27,0.875433282,10,0.188595903,48.97842555
+C00074,Phosphoenolpyruvate,pep_c,Glycolysis/Gluconeogenesis,CRP,18,27,0.828317032,1.097975682,9617.94589,36553.41961
+C00111,Dihydroxyacetone-P,dhap_c,Glycolysis/Gluconeogenesis,CRP,55,27,0.820135289,9.999999997,0.227601999,45.01200673
+C02504,2-Isopropylmalic acid,2ippm_c,"Valine, Leucine, and Isoleucine Metabolism",CRP,88,27,0.76818779,10,0.037431299,45.55859889
+C01179,4-Hydroxyphenylpyruvate,34hpp_c,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",CRP,85,27,0.845387677,10,0.911842236,49.63994454
+C00158,Citrate,cit_c,Citric Acid Cycle,CRP,68,27,0.809062954,10,0.677856221,43.58980074
+C00354,"Fructose-1,6-Bisphosphate",fdp_c,Glycolysis/Gluconeogenesis,CRP,51,27,0.867888678,8.40729651,0.111528749,44.96776848
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,CRP,8,27,0.78572747,9.998718735,1.117636561,40.75764684
+C00004,NADH,nadh_c,Cofactor and Prosthetic Group Biosynthesis,CRP,28,27,0.819723892,9.430038925,0.353599707,46.45198824
+C00024,Acetyl-CoA,accoa_c,Citric Acid Cycle,CRP,81,27,0.815123162,9.999430136,0.408289754,40.83023518
+C00091,Succinyl-CoA,succoa_c,Citric Acid Cycle,CRP,9,27,0.782149,10,0.350587204,43.19075677
+C00327,Citrulline,citr__L_c,Arginine and Proline Metabolism,CRP,67,27,0.866870265,10,0.257348256,44.95543206
+C03406,Argininosuccinic acid,argsuc_c,Arginine and Proline Metabolism,CRP,73,27,0.8670543,10,0.059057588,44.96868662
+C00575,cAMP,camp_c,Nucleotide Salvage Pathway,CRP,69,27,0.818287932,10,12.3969408,54.73429761
+C00044,GTP,gtp_c,Purine and Pyrimidine Biosynthesis,CRP,44,27,0.835330793,6.119134588,0.386265319,46.25057475
+C00127,Oxidized glutathione,gthox_c,Cofactor and Prosthetic Group Biosynthesis,CRP,21,27,0.789905065,10,1.477433769,51.78196002
+C00979,O-Acetyl-Serine,acser_c,Cysteine Metabolism,CRP,25,27,0.808873208,9.999882369,0.233516539,40.96821837
+C00437,N-Acetyl-Ornithine,acorn_c,Arginine and Proline Metabolism,CRP,29,27,0.867888082,9.734130371,0.278483905,44.9864101
+C04236,3-Carboxy-4-methyl-2-oxopentanoate,3c4mop_c,"Valine, Leucine, and Isoleucine Metabolism",CRP,87,27,0.863168038,3.657067543,0.23148939,45.15744866
+C01005,3-Phosphoserine,pser__L_c,Glycine and Serine Metabolism,CRP,86,27,0.859648152,9.112997941,0.057446702,45.67018018
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,CRP,14,27,0.80324024,10,1.177305036,45.38873254
+C04874,Dihydroneopterin,dhnpt_c,Cofactor and Prosthetic Group Biosynthesis,CRP,58,27,0.871997775,7.643778227,0.876448825,51.76695194
+C00104,Inosine diphosphate,idp_c,Nucleotide Salvage Pathway,CRP,37,27,0.760346057,9.989449129,1.147876301,40.030061
+C03794,Adenylosuccinic acid,dcamp_c,Purine and Pyrimidine Biosynthesis,CRP,79,27,0.838659691,2.421875578,0.251160973,70.92682922
+C00026,a-Ketoglutaric acid,akg_c,Citric Acid Cycle,CsiR,77,26,0.982063087,3.696936532,46.7195759,87574.26282
+C00025,Glutamic acid,glu__L_c,Glutamate Metabolism,CsiR,48,26,0.896453095,9.999999995,1.299233971,186.6477907
+C05931,N2-Succinyl-glutamate,sucglu_c,Arginine and Proline Metabolism,CsiR,31,26,0.869508387,10,2.074538629,85.88041438
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,CsiR,27,26,0.914203507,9.638610526,1.500887651,64.83799132
+C00979,O-Acetyl-Serine,acser_c,Cysteine Metabolism,CsiR,25,26,0.908821147,9.999999555,1.290257991,70.93347519
+C00363,dTDP,dtdp_c,Nucleotide Salvage Pathway,CytR,53,25,0.771489047,1.324930597,284.8071275,4174.53762
+C00363,dTDP,dtdp_c,Nucleotide Salvage Pathway,DeoR,53,24,0.791733282,9.999999955,0.103825902,11290.0007
+C01762,Xanthosine,xtsn_c,Nucleotide Salvage Pathway,DeoR,2,24,0.891958343,7.447580384,0.009491672,1.635521202
+C00239,dCMP,dcmp_c,Nucleotide Salvage Pathway,DeoR,61,24,0.991025854,5.304692754,0.095832457,7287.894213
+C00100,Propionyl-CoA ,ppcoa_c,Alternate Carbon Metabolism,DeoR,16,24,0.893539242,10,0.059609311,2.552738159
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,DnaA,45,23,0.842703494,1.474354617,0.098414208,6.769438613
+C00295,Orotate,orot_c,Purine and Pyrimidine Biosynthesis,DnaA,23,23,0.887874191,2.126433646,0.182615233,9.70574557
+C00337,Dihydroorotate,dhor__S_c,Purine and Pyrimidine Biosynthesis,DnaA,57,23,0.901971743,0.694941285,0.361061181,13.658039
+C00438,N-Carbamoyl-aspartate,cbasp_c,Purine and Pyrimidine Biosynthesis,DnaA,26,23,0.923683663,0.827256897,0.028651805,8.730872828
+C00672,Deoxyribose-P,2dr5p_c,Nucleotide Salvage Pathway,DnaA,60,23,0.933149393,0.668797803,30193.28267,8529.499696
+C00262,Hypoxanthine,hxan_c,Nucleotide Salvage Pathway,DnaA,40,23,0.761283485,3.082317222,43.38891869,6.66922194
+C03373,5-Amino-1-(5-phospho-D-ribosyl)imidazole,air_c,Purine and Pyrimidine Biosynthesis,DnaA,84,23,0.919420087,0.409144147,118798.4724,895.8485128
+C00655,Xanthosine 5-P,xmp_c,Purine and Pyrimidine Biosynthesis,DnaA,1,23,0.844394873,1.036963407,6.620317983,62.18853942
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,DnaA,8,23,0.90466968,1.504944075,0.111985278,128.4928135
+C00004,NADH,nadh_c,Cofactor and Prosthetic Group Biosynthesis,DnaA,28,23,0.841468275,1.450148295,0.742161229,9.085069379
+C00105,UMP,ump_c,Purine and Pyrimidine Biosynthesis,DnaA,5,23,0.898685745,2.043637817,1.239426029,12.47092596
+C00575,cAMP,camp_c,Nucleotide Salvage Pathway,DnaA,69,23,0.838580302,6.377335146,9.090685654,9.638325617
+C00020,AMP,amp_c,Purine and Pyrimidine Biosynthesis,DnaA,75,23,0.754708211,0.753814164,0.001415591,914.3882477
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,DnaA,78,23,0.875271903,1.669863964,0.024516142,2468.714105
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,DnaA,70,23,0.888448478,1.518482195,72.69565248,4741.288285
+C00044,GTP,gtp_c,Purine and Pyrimidine Biosynthesis,DnaA,44,23,0.924838738,0.770572115,19487.95557,12870.59686
+C00104,Inosine diphosphate,idp_c,Nucleotide Salvage Pathway,DnaA,37,23,0.813758631,1.44582185,0.040975282,514.2568773
+C00440,5-Methyltetrahydrofolic acid,5mthf_c,Folate Metabolism,DnaA,83,23,0.868002092,0.78766719,12.74432207,48.1687944
+C03794,Adenylosuccinic acid,dcamp_c,Purine and Pyrimidine Biosynthesis,DnaA,79,23,0.909063108,1.326317338,1.097229962,11.21148303
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,FadR,45,22,0.953136253,1.716782632,100.7068702,902354.4396
+-,Pentose-P,-,-,FadR,20,22,0.77569809,9.999998024,0.155639263,442.7746916
+C00029,UDP-Glucose,udpg_c,Cell Envelope Biosynthesis,FadR,7,22,0.863442884,5.190786094,0.720091643,750.1372883
+C00043,UDP-N-acetyl-D-Glucosamine,uacgam_c,Cell Envelope Biosynthesis,FadR,6,22,0.96946961,4.248720257,1.479519053,1513.829304
+C00534,Pyridoxamine,pydam_c,Cofactor and Prosthetic Group Biosynthesis,FadR,15,22,0.783559798,8.507113085,7.188783049,808.1571121
+C00864,D-Pantothenic acid,pnto__R_c,Cofactor and Prosthetic Group Biosynthesis,FadR,54,22,0.772026797,9.107287064,1.552021225,308.9454634
+C00004,NADH,nadh_c,Cofactor and Prosthetic Group Biosynthesis,FadR,28,22,0.76908451,9.990106043,0.401461856,442.4163726
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,FadR,27,22,0.882914418,4.541690823,1.198804201,807.048148
+C00024,Acetyl-CoA,accoa_c,Citric Acid Cycle,FadR,81,22,0.768827095,9.978687382,0.338882784,371.245202
+C00020,AMP,amp_c,Purine and Pyrimidine Biosynthesis,FadR,75,22,0.820900264,9.999999997,1.439550912,502.3145944
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,FadR,14,22,0.848517682,7.453879115,0.869524969,608.4408722
+C04874,Dihydroneopterin,dhnpt_c,Cofactor and Prosthetic Group Biosynthesis,FadR,58,22,0.881373118,10,0.309581005,764.2606897
+C00149,Malate,mal__L_c,Citric Acid Cycle,Fis,33,21,0.776033428,2.31818703,0.102691174,0.036037602
+C00624,N-Acetyl-Glutamic acid,acglu_c,Arginine and Proline Metabolism,Fis,30,21,0.758865792,2.30764076,0.045538983,0.035929993
+C00669,gamma-Glutamyl-cysteine,glucys_c,Cofactor and Prosthetic Group Biosynthesis,Fis,49,21,0.845495515,1.926055009,1.360576722,0.05132126
+C03373,5-Amino-1-(5-phospho-D-ribosyl)imidazole,air_c,Purine and Pyrimidine Biosynthesis,Fis,84,21,0.769686277,10,0.03060552,0.035919288
+C00354,"Fructose-1,6-Bisphosphate",fdp_c,Glycolysis/Gluconeogenesis,Fis,51,21,0.788247344,5.762596407,0.027071953,0.035919179
+C00091,Succinyl-CoA,succoa_c,Citric Acid Cycle,Fis,9,21,0.758417623,0.90195238,14.33281533,0.406726228
+C00327,Citrulline,citr__L_c,Arginine and Proline Metabolism,Fis,67,21,0.758587322,4.173054657,0.16223231,0.035920325
+C00075,UTP,utp_c,Purine and Pyrimidine Biosynthesis,Fis,4,21,0.795273027,10,0.70334431,0.035025906
+C00044,GTP,gtp_c,Purine and Pyrimidine Biosynthesis,Fis,44,21,0.767953376,6.790598876,0.237003112,0.035002867
+C00437,N-Acetyl-Ornithine,acorn_c,Arginine and Proline Metabolism,Fis,29,21,0.777049441,1.6090139,0.0927936,0.036541708
+C00049,Aspartic acid,asp__L_c,Alanine and Aspartate Metabolism,Fur,71,20,0.752323404,4.883350536,0.773092601,10.98418942
+C00295,Orotate,orot_c,Purine and Pyrimidine Biosynthesis,Fur,23,20,0.761256223,5.268260743,0.009760124,99202.02518
+C00279,Erythrose 4-P,e4p_c,Pentose Phosphate Pathway,Fur,52,20,0.801961051,5.149645067,0.229565194,5978.670977
+C00152,Asparagine,asn__L_c,Alanine and Aspartate Metabolism,Fur,72,20,0.767858769,8.906186356,2.041381407,11.45519352
+C00534,Pyridoxamine,pydam_c,Cofactor and Prosthetic Group Biosynthesis,Fur,15,20,0.799493893,4.151822263,2.564314058,11.23058791
+C00130,IMP,imp_c,Purine and Pyrimidine Biosynthesis,Fur,39,20,0.788827068,1.635105164,0.121100995,35.73899656
+C03794,Adenylosuccinic acid,dcamp_c,Purine and Pyrimidine Biosynthesis,Fur,79,20,0.858972557,1.984622711,0.003910846,11996.74976
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,GadE,45,19,0.871244125,9.997410081,4.835385872,17750730.93
+C00026,a-Ketoglutaric acid,akg_c,Citric Acid Cycle,GadE,77,19,0.846606814,10,5.649369402,498.6170443
+C00043,UDP-N-acetyl-D-Glucosamine,uacgam_c,Cell Envelope Biosynthesis,GadE,6,19,0.986086266,9.99999901,1.521184069,628.3845575
+C00064,Glutamine,gln__L_c,Glutamate Metabolism,GadE,47,19,0.839940823,9.999999977,1.113475574,309.2314719
+C00993,D-Alanyl-Alanine,alaala_c,Cell Envelope Biosynthesis,GadE,62,19,0.856898531,2.445709938,0.002834896,523400.1689
+C00534,Pyridoxamine,pydam_c,Cofactor and Prosthetic Group Biosynthesis,GadE,15,19,0.823377403,10,8.26056398,297.4475771
+C00655,Xanthosine 5-P,xmp_c,Purine and Pyrimidine Biosynthesis,GadE,1,19,0.811401065,9.999054493,3.720582214,1618544.589
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,GadE,27,19,0.898715421,4.639870754,2.180222497,534.5306579
+C00075,UTP,utp_c,Purine and Pyrimidine Biosynthesis,GadE,4,19,0.970448873,6.98454112,5.68439802,440943.3825
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,GadE,14,19,0.776960616,9.999999841,0.214190928,1902848.635
+C04874,Dihydroneopterin,dhnpt_c,Cofactor and Prosthetic Group Biosynthesis,GadE,58,19,0.859504279,7.347627995,0.26087644,349.7717883
+C00295,Orotate,orot_c,Purine and Pyrimidine Biosynthesis,GadW,23,18,0.767493545,8.856207579,0.046671157,242.0202994
+C00130,IMP,imp_c,Purine and Pyrimidine Biosynthesis,GadW,39,18,0.876271732,3.585414944,0.257566491,96.00943321
+C03794,Adenylosuccinic acid,dcamp_c,Purine and Pyrimidine Biosynthesis,GadW,79,18,0.887752905,10,0.161920312,82.56067091
+-,Pentose-P,-,-,GadX,20,17,0.758773016,1.269286816,0.018405396,131.6235267
+C00152,Asparagine,asn__L_c,Alanine and Aspartate Metabolism,GadX,72,17,0.751902887,10,1.628991149,44.77508895
+C00100,Propionyl-CoA ,ppcoa_c,Alternate Carbon Metabolism,GatR,16,16,0.963800121,7.399607586,0.008452079,78106.21748
+-,Pentose-P,-,-,HU,20,15,0.900251785,3.796362963,0.074785353,1.2666384
+C00029,UDP-Glucose,udpg_c,Cell Envelope Biosynthesis,HU,7,15,0.887328247,3.338160632,0.312386784,1.226054808
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,HU,78,15,0.849035477,1.821239417,42.33247665,193.8435092
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,HU,70,15,0.87736218,7.087334633,0.574442539,1.082494317
+C00049,Aspartic acid,asp__L_c,Alanine and Aspartate Metabolism,HypT,71,14,0.903304957,10,0.369041181,86.75447763
+C00047,Lysine,lys__L_c,Threonine and Lysine Metabolism,HypT,34,14,0.963810739,4.674163218,3.362167898,118.9106218
+C00073,Methionine,met__L_c,Methionine Metabolism,HypT,32,14,0.772630932,7.872499282,1.956723355,85.36415482
+C00666,Diaminopimelic acid,26dap_LL_c,Threonine and Lysine Metabolism,HypT,59,14,0.878299174,9.999999744,0.028745045,89.93299234
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,HypT,70,14,0.783907003,10,0.291769033,73.06977498
+C01118,O-Succinyl-homoserine,suchms_c,Methionine Metabolism,HypT,22,14,0.795303721,10,0.00601571,79.15259992
+C00021,S-Adenosyl-homocysteine,ahcys_c,Methionine Metabolism,HypT,12,14,0.756761437,2.508060832,0.002136172,132118.3616
+C00019,S-Adenosylmethionine,amet_c,Methionine Metabolism,HypT,11,14,0.923484038,8.286540647,5.428471967,86.45210397
+C00025,Glutamic acid,glu__L_c,Glutamate Metabolism,IHF,48,13,0.758465646,0.627865625,144.1994383,9.574384925
+C00669,gamma-Glutamyl-cysteine,glucys_c,Cofactor and Prosthetic Group Biosynthesis,IHF,49,13,0.752351914,1.846257792,6.580820656,0.370238477
+C00158,Citrate,cit_c,Citric Acid Cycle,IHF,68,13,0.7645314,0.673536684,144191.8584,880.3299703
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,IHF,27,13,0.828273498,0.698215306,16.78068968,3.01680387
+C00091,Succinyl-CoA,succoa_c,Citric Acid Cycle,IHF,9,13,0.778061989,0.436673532,302448.7467,113.2437448
+C00100,Propionyl-CoA ,ppcoa_c,Alternate Carbon Metabolism,IHF,16,13,0.793157997,0.396935486,7.99379E-07,47.77738953
+C06007,"(2R,3R)-2,3-Dihydroxy-3-methylpentanoate",23dhmp_c,"Valine, Leucine, and Isoleucine Metabolism",IscR,90,12,0.76059388,0.637789469,72208.19019,983.3540552
+C00672,Deoxyribose-P,2dr5p_c,Nucleotide Salvage Pathway,IscR,60,12,0.892250539,0.99843561,0.244894725,1.262790623
+C00129,Isopentenyl diphosphate / Dimethylallyl diphosphate,ipdp_c,Cofactor and Prosthetic Group Biosynthesis,IscR,36,12,0.797489987,1.765061178,0.259075461,0.939704978
+C00041,Alanine,ala__L_c,Alanine and Aspartate Metabolism,IscR,76,12,0.756528537,1.658249482,0.678442281,1.60395656
+-,Leucine/Isoleucine,leu__L_c / ile__L_c,"Valine, Leucine, and Isoleucine Metabolism",IscR,35,12,0.751153425,2.196834575,1.695955526,0.851293769
+C00262,Hypoxanthine,hxan_c,Nucleotide Salvage Pathway,IscR,40,12,0.800785297,0.872684804,45.72743891,0.879023513
+C00921,Dihydropteroate,dhpt_c,Cofactor and Prosthetic Group Biosynthesis,IscR,56,12,0.784233506,2.332706538,0.411312845,0.999471193
+C00255,Riboflavin,ribflv_c,Cofactor and Prosthetic Group Biosynthesis,IscR,13,12,0.854918938,1.555572046,1.953924248,2.17591405
+C02504,2-Isopropylmalic acid,2ippm_c,"Valine, Leucine, and Isoleucine Metabolism",IscR,88,12,0.864889029,1.470246792,0.058734083,1.129442159
+C04204,"2,3-dihydroxybenzoylserine",23dhbzs_c,Cofactor and Prosthetic Group Biosynthesis,IscR,89,12,0.856505197,1.545538262,0.071907205,1.262999661
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,IscR,8,12,0.827090155,1.236272865,0.003823348,647.8165916
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,IscR,78,12,0.80713926,1.390551436,0.008574295,543.6385948
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,IscR,70,12,0.840848252,1.155931913,527.3864396,1341.369796
+C00010,Coenzyme A,coa_c,Cofactor and Prosthetic Group Biosynthesis,IscR,65,12,0.855953529,2.221156598,1.374605378,1.766291597
+C04236,3-Carboxy-4-methyl-2-oxopentanoate,3c4mop_c,"Valine, Leucine, and Isoleucine Metabolism",IscR,87,12,0.804790075,1.909500046,0.098879437,0.834978627
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,IscR,14,12,0.785473602,4.944601846,1.369021143,0.890713473
+C00104,Inosine diphosphate,idp_c,Nucleotide Salvage Pathway,IscR,37,12,0.804457505,1.299290085,0.003877041,996.2337776
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,Lrp,45,11,0.895417053,10,1.278915126,1060.786661
+C00026,a-Ketoglutaric acid,akg_c,Citric Acid Cycle,Lrp,77,11,0.961299444,3.047415263,20.07018963,34609.9581
+-,Leucine/Isoleucine,leu__L_c / ile__L_c,"Valine, Leucine, and Isoleucine Metabolism",Lrp,35,11,0.9157741,9.58999776,5.598433672,1364.932306
+C00064,Glutamine,gln__L_c,Glutamate Metabolism,Lrp,47,11,0.939278311,10,1.193657433,1351.752438
+C00025,Glutamic acid,glu__L_c,Glutamate Metabolism,Lrp,48,11,0.802756067,10,1.260323598,2432.976721
+C00079,Phenylalanine,phe__L_c,"Tyrosine, Tryptophan, and Phenylalanine Metabolism",Lrp,19,11,0.904980861,9.999998143,28.79742871,5299944.033
+C05931,N2-Succinyl-glutamate,sucglu_c,Arginine and Proline Metabolism,Lrp,31,11,0.789484613,10,1.954853494,1126.722856
+C00669,gamma-Glutamyl-cysteine,glucys_c,Cofactor and Prosthetic Group Biosynthesis,Lrp,49,11,0.789645725,10,0.609485592,1305.120391
+C01762,Xanthosine,xtsn_c,Nucleotide Salvage Pathway,Lrp,2,11,0.946148809,9.999999798,0.008395544,1307.292426
+C00239,dCMP,dcmp_c,Nucleotide Salvage Pathway,Lrp,61,11,0.925642628,9.999999999,0.783564484,1032.533928
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,Lrp,27,11,0.945332998,9.999999985,1.422465642,1448.513749
+C00183,Valine,val__L_c,"Valine, Leucine, and Isoleucine Metabolism",Lrp,3,11,0.946593425,10,5.027455853,1386.236437
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,Lrp,14,11,0.85452051,6.73498089,0.233444036,274785.5975
+C04874,Dihydroneopterin,dhnpt_c,Cofactor and Prosthetic Group Biosynthesis,Lrp,58,11,0.923388756,7.416976211,0.252679656,1312.10662
+C00242,Guanine,gua_c,Nucleotide Salvage Pathway,ModE,43,10,0.880665798,1.559520617,35.34338562,9.550470956
+C00294,Inosine,ins_c,Nucleotide Salvage Pathway,ModE,38,10,0.81769091,1.295905486,0.127351549,28.57607931
+C00534,Pyridoxamine,pydam_c,Cofactor and Prosthetic Group Biosynthesis,ModE,15,10,0.842567621,5.274477218,3.602154979,6.437708684
+C00127,Oxidized glutathione,gthox_c,Cofactor and Prosthetic Group Biosynthesis,ModE,21,10,0.765833458,10,1.559538994,6.247952301
+C04874,Dihydroneopterin,dhnpt_c,Cofactor and Prosthetic Group Biosynthesis,ModE,58,10,0.822860142,4.728669402,1.123470416,7.817934792
+C00029,UDP-Glucose,udpg_c,Cell Envelope Biosynthesis,MraZ,7,9,0.892948103,0.408491402,0.002818169,1.210062349
+C00242,Guanine,gua_c,Nucleotide Salvage Pathway,Nac,43,8,0.76941326,1.905900237,16.78908743,7.210013066
+C05931,N2-Succinyl-glutamate,sucglu_c,Arginine and Proline Metabolism,Nac,31,8,0.855964471,6.930827032,0.756346115,9.279245089
+C00575,cAMP,camp_c,Nucleotide Salvage Pathway,Nac,69,8,0.800886473,4.907860692,15.20529129,8.814039043
+-,Pentose-P,-,-,NagC,20,7,0.851692754,1.321940559,718.9170376,98782.66103
+C00672,Deoxyribose-P,2dr5p_c,Nucleotide Salvage Pathway,NrdR,60,6,0.87483153,5.392546913,0.519455973,3.550855321
+C00242,Guanine,gua_c,Nucleotide Salvage Pathway,NrdR,43,6,0.864948553,1.883715669,2.143083666,6.54166181
+C00262,Hypoxanthine,hxan_c,Nucleotide Salvage Pathway,NrdR,40,6,0.799987365,10,34.33783595,2.65578522
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,NrdR,8,6,0.87500047,9.237953736,1.01364035,3.425160964
+C00475,Cytidine,cytd_c,Nucleotide Salvage Pathway,NrdR,63,6,0.78427125,10,1.317085128,3.651763554
+C00575,cAMP,camp_c,Nucleotide Salvage Pathway,NrdR,69,6,0.897892097,10,9.319644252,3.970827204
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,NrdR,78,6,0.850429304,10,1.062529847,3.617317959
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,NrdR,70,6,0.880362242,9.999999925,0.772867394,3.837782621
+C00044,GTP,gtp_c,Purine and Pyrimidine Biosynthesis,NrdR,44,6,0.886040854,3.059984922,0.581591789,3.525574164
+C00104,Inosine diphosphate,idp_c,Nucleotide Salvage Pathway,NrdR,37,6,0.850324097,10,1.18996041,3.014131472
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,45,5,0.78040211,5.975707656,0.198594215,7.486328159
+C00672,Deoxyribose-P,2dr5p_c,Nucleotide Salvage Pathway,OxyR,60,5,0.941966324,3.21895766,0.107206425,9.271050933
+C00129,Isopentenyl diphosphate / Dimethylallyl diphosphate,ipdp_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,36,5,0.926165601,10,0.197081107,8.61668624
+C00263,Homoserine,hom__L_c,Methionine Metabolism,OxyR,41,5,0.927956902,10,0.499123634,8.428932199
+C00212,Adenosine,adn_c,Nucleotide Salvage Pathway,OxyR,80,5,0.790279806,7.751805451,3.850695794,8.603671996
+C00262,Hypoxanthine,hxan_c,Nucleotide Salvage Pathway,OxyR,40,5,0.818734028,5.558604449,54.60558338,8.640055152
+C00864,D-Pantothenic acid,pnto__R_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,54,5,0.818590016,10,1.769514989,8.546748212
+C00669,gamma-Glutamyl-cysteine,glucys_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,49,5,0.952739936,2.962887348,4.178455562,9.329730518
+C00921,Dihydropteroate,dhpt_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,56,5,0.902621488,7.07890812,0.352000118,9.583704805
+C00255,Riboflavin,ribflv_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,13,5,0.836216686,10,0.67715272,8.084512653
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,OxyR,8,5,0.810806684,10,1.400568605,8.581897169
+C00004,NADH,nadh_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,28,5,0.802177355,6.088879124,0.347056668,8.467748385
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,27,5,0.844777168,9.003042577,0.440119002,7.963099404
+C00055,CMP,cmp_c,Nucleotide Salvage Pathway,OxyR,66,5,0.787732421,10,0.327108297,8.966375178
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,OxyR,78,5,0.801935414,10,1.57463157,8.56126645
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,OxyR,70,5,0.951747156,6.684257807,0.451570217,8.723870607
+C00010,Coenzyme A,coa_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,65,5,0.819320017,6.633184518,2.433065661,9.20708889
+C00979,O-Acetyl-Serine,acser_c,Cysteine Metabolism,OxyR,25,5,0.811114794,6.427351049,0.177713908,8.785235382
+C01118,O-Succinyl-homoserine,suchms_c,Methionine Metabolism,OxyR,22,5,0.955289417,2.390287981,0.015386149,9.147108511
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,OxyR,14,5,0.900158576,10,1.453512888,9.113265478
+C00021,S-Adenosyl-homocysteine,ahcys_c,Methionine Metabolism,OxyR,12,5,0.955066535,9.558393212,0.111876785,8.586225037
+C00019,S-Adenosylmethionine,amet_c,Methionine Metabolism,OxyR,11,5,0.875376208,10,1.598405637,8.992022386
+C00104,Inosine diphosphate,idp_c,Nucleotide Salvage Pathway,OxyR,37,5,0.827180233,10,1.416646389,8.451479816
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,45,4,0.766408871,1.455308542,0.116629715,2.505498301
+C00149,Malate,mal__L_c,Citric Acid Cycle,PdhR,33,4,0.930933366,2.819798745,0.093721479,2.352527951
+C00026,a-Ketoglutaric acid,akg_c,Citric Acid Cycle,PdhR,77,4,0.771821707,4.182241492,0.401372603,2.36629987
+-,Pentose-P,-,-,PdhR,20,4,0.904846428,4.005922983,0.062968248,2.349860624
+C00129,Isopentenyl diphosphate / Dimethylallyl diphosphate,ipdp_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,36,4,0.93877982,9.61707077,0.185471844,2.265426482
+C00029,UDP-Glucose,udpg_c,Cell Envelope Biosynthesis,PdhR,7,4,0.969783801,1.71525776,0.231873347,2.657182159
+C00043,UDP-N-acetyl-D-Glucosamine,uacgam_c,Cell Envelope Biosynthesis,PdhR,6,4,0.96736231,3.877141805,0.296359501,2.337728416
+C00864,D-Pantothenic acid,pnto__R_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,54,4,0.802437654,6.041506405,2.240687139,2.364382156
+C00669,gamma-Glutamyl-cysteine,glucys_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,49,4,0.957579455,2.903574114,4.297108602,2.30750579
+C00921,Dihydropteroate,dhpt_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,56,4,0.927405318,10,0.327373767,2.285032406
+C00255,Riboflavin,ribflv_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,13,4,0.825268153,6.439041635,0.697226627,2.373462687
+C00122,Fumarate,fum_c,Citric Acid Cycle,PdhR,50,4,0.832450763,7.687381567,0.179582439,2.348909801
+C00074,Phosphoenolpyruvate,pep_c,Glycolysis/Gluconeogenesis,PdhR,18,4,0.798249587,2.564613519,9.144131356,2.375752976
+C00111,Dihydroxyacetone-P,dhap_c,Glycolysis/Gluconeogenesis,PdhR,55,4,0.833154317,8.53259844,0.161853919,2.304092012
+C00093,Glycerol 3-Phosphate,glyc3p_c,Glycolysis/Gluconeogenesis,PdhR,46,4,0.901123082,6.303899374,0.635451789,2.29335582
+C00158,Citrate,cit_c,Citric Acid Cycle,PdhR,68,4,0.843301067,4.66623162,0.456386711,2.367163408
+C00354,"Fructose-1,6-Bisphosphate",fdp_c,Glycolysis/Gluconeogenesis,PdhR,51,4,0.926337733,5.932988869,0.024269424,2.349848224
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,PdhR,8,4,0.758165367,7.165150337,1.557855469,2.361543388
+C00004,NADH,nadh_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,28,4,0.751543895,2.755230847,0.326429274,2.378569447
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,27,4,0.832084051,5.810588185,0.408437062,2.358499012
+C00024,Acetyl-CoA,accoa_c,Citric Acid Cycle,PdhR,81,4,0.950066652,2.847516939,0.038794591,2.305234185
+C00091,Succinyl-CoA,succoa_c,Citric Acid Cycle,PdhR,9,4,0.917370659,2.616105346,0.160989578,2.414171756
+C00105,UMP,ump_c,Purine and Pyrimidine Biosynthesis,PdhR,5,4,0.791850834,7.761645316,2.229424078,2.546503077
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,PdhR,78,4,0.798229504,6.098491434,1.685717852,2.368668614
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,PdhR,70,4,0.92666712,5.472213858,0.437009921,2.375410202
+C00010,Coenzyme A,coa_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,65,4,0.841783228,7.356160517,2.573927359,2.351066766
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,PdhR,14,4,0.898876313,10,1.379719939,2.363695444
+C00440,5-Methyltetrahydrofolic acid,5mthf_c,Folate Metabolism,PdhR,83,4,0.910874822,7.210838473,0.190293348,2.228704042
+C00266,Glycolaldehyde,gcald_c,Cofactor and Prosthetic Group Biosynthesis,PurR,45,3,0.836232751,6.195429091,0.261114676,43.70654421
+C00337,Dihydroorotate,dhor__S_c,Purine and Pyrimidine Biosynthesis,PurR,57,3,0.792137132,4.93865781,0.02628511,49.88112751
+C00438,N-Carbamoyl-aspartate,cbasp_c,Purine and Pyrimidine Biosynthesis,PurR,26,3,0.95679383,10,0.008005716,47.15494684
+C00672,Deoxyribose-P,2dr5p_c,Nucleotide Salvage Pathway,PurR,60,3,0.873485244,3.902756782,0.14751503,51.02503283
+C00129,Isopentenyl diphosphate / Dimethylallyl diphosphate,ipdp_c,Cofactor and Prosthetic Group Biosynthesis,PurR,36,3,0.84982738,10,0.211679996,50.34128383
+C00148,Proline,pro__L_c,Arginine and Proline Metabolism,PurR,17,3,0.758730925,10,0.569577465,43.97884642
+C00064,Glutamine,gln__L_c,Glutamate Metabolism,PurR,47,3,0.788008457,6.652949865,0.42491958,47.35101225
+C00047,Lysine,lys__L_c,Threonine and Lysine Metabolism,PurR,34,3,0.88811201,10,1.341092154,46.78678456
+C00025,Glutamic acid,glu__L_c,Glutamate Metabolism,PurR,48,3,0.85970647,10,0.540631239,49.7412972
+C00666,Diaminopimelic acid,26dap_LL_c,Threonine and Lysine Metabolism,PurR,59,3,0.973628882,5.64241757,0.108710949,47.50921053
+C00212,Adenosine,adn_c,Nucleotide Salvage Pathway,PurR,80,3,0.752199261,10,3.241336352,44.55572232
+C00262,Hypoxanthine,hxan_c,Nucleotide Salvage Pathway,PurR,40,3,0.824911951,10,34.56425784,43.72280845
+C00624,N-Acetyl-Glutamic acid,acglu_c,Arginine and Proline Metabolism,PurR,30,3,0.960415695,7.523916831,0.070265133,47.14818639
+C00864,D-Pantothenic acid,pnto__R_c,Cofactor and Prosthetic Group Biosynthesis,PurR,54,3,0.828977954,10,1.582568192,47.26185766
+C05931,N2-Succinyl-glutamate,sucglu_c,Arginine and Proline Metabolism,PurR,31,3,0.768932635,10,1.140465386,44.21871711
+C00669,gamma-Glutamyl-cysteine,glucys_c,Cofactor and Prosthetic Group Biosynthesis,PurR,49,3,0.875998565,6.462759802,3.06787116,48.05717698
+C03373,5-Amino-1-(5-phospho-D-ribosyl)imidazole,air_c,Purine and Pyrimidine Biosynthesis,PurR,84,3,0.9483301,10,0.033609973,48.0570389
+C00921,Dihydropteroate,dhpt_c,Cofactor and Prosthetic Group Biosynthesis,PurR,56,3,0.833484827,9.999999958,0.4139839,49.66402082
+C00655,Xanthosine 5-P,xmp_c,Purine and Pyrimidine Biosynthesis,PurR,1,3,0.855291761,4.483510181,0.319850336,47.48790568
+C00255,Riboflavin,ribflv_c,Cofactor and Prosthetic Group Biosynthesis,PurR,13,3,0.89404759,9.32763829,0.657665205,49.3635344
+C00122,Fumarate,fum_c,Citric Acid Cycle,PurR,50,3,0.896123708,10,0.174589943,50.03690983
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,PurR,8,3,0.815983896,10,1.252805813,47.16497459
+C00004,NADH,nadh_c,Cofactor and Prosthetic Group Biosynthesis,PurR,28,3,0.83790566,10,0.38747554,47.51311092
+C00005,NADPH,nadph_c,Cofactor and Prosthetic Group Biosynthesis,PurR,27,3,0.833870894,10,0.478400962,47.22173157
+C00327,Citrulline,citr__L_c,Arginine and Proline Metabolism,PurR,67,3,0.923286084,6.190645462,0.166497882,46.56800968
+C03406,Argininosuccinic acid,argsuc_c,Arginine and Proline Metabolism,PurR,73,3,0.923124336,5.007824337,0.038320738,47.14800688
+C00055,CMP,cmp_c,Nucleotide Salvage Pathway,PurR,66,3,0.792135641,10,0.344059334,49.38438219
+C00105,UMP,ump_c,Purine and Pyrimidine Biosynthesis,PurR,5,3,0.806501848,10,1.998259148,47.58645131
+C00020,AMP,amp_c,Purine and Pyrimidine Biosynthesis,PurR,75,3,0.822572596,5.418946652,3.889827769,48.40578071
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,PurR,78,3,0.808146349,9.999999915,1.275406877,43.96498166
+C00063,CTP,ctp_c,Purine and Pyrimidine Biosynthesis,PurR,64,3,0.876825997,10,0.562911194,55.34315107
+C00075,UTP,utp_c,Purine and Pyrimidine Biosynthesis,PurR,4,3,0.80864324,10,0.687482798,50.35285689
+C00002,ATP,atp_c,Purine and Pyrimidine Biosynthesis,PurR,70,3,0.924224563,9.629412225,0.499117374,47.95890142
+C00044,GTP,gtp_c,Purine and Pyrimidine Biosynthesis,PurR,44,3,0.971391677,9.021821251,0.241012455,47.34470723
+C00010,Coenzyme A,coa_c,Cofactor and Prosthetic Group Biosynthesis,PurR,65,3,0.799580833,10,2.001579931,44.74190662
+C00437,N-Acetyl-Ornithine,acorn_c,Arginine and Proline Metabolism,PurR,29,3,0.964292862,3.7810378,0.090610047,47.14920844
+C01005,3-Phosphoserine,pser__L_c,Glycine and Serine Metabolism,PurR,86,3,0.96432009,10,0.04679263,47.5196418
+C00647,Pyridoxamine 5-Phosphate,pyam5p_c,Cofactor and Prosthetic Group Biosynthesis,PurR,14,3,0.935058291,10,1.37848048,52.61213866
+C00104,Inosine diphosphate,idp_c,Nucleotide Salvage Pathway,PurR,37,3,0.82585713,10,1.301825627,47.25410367
+C00440,5-Methyltetrahydrofolic acid,5mthf_c,Folate Metabolism,PurR,83,3,0.810346797,10,0.185875155,51.97863445
+C03794,Adenylosuccinic acid,dcamp_c,Purine and Pyrimidine Biosynthesis,PurR,79,3,0.801464095,10,0.343229544,47.14758541
+C00242,Guanine,gua_c,Nucleotide Salvage Pathway,RutR,43,2,0.805334076,1.715721455,9.061651986,37.21449023
+C05931,N2-Succinyl-glutamate,sucglu_c,Arginine and Proline Metabolism,RutR,31,2,0.761245346,6.155966635,0.948269491,34.04979587
+C00015,UDP,udp_c,Nucleotide Salvage Pathway,RutR,8,2,0.78076273,1.278286016,0.011913853,6631.703084
+C00575,cAMP,camp_c,Nucleotide Salvage Pathway,RutR,69,2,0.79003054,6.950872581,12.08881228,33.87882189
+C00008,ADP,adp_c,Purine and Pyrimidine Biosynthesis,RutR,78,2,0.755439372,1.613804812,0.013744991,24951.1272
+C00672,Deoxyribose-P,2dr5p_c,Nucleotide Salvage Pathway,YdeO,60,1,0.797894117,8.439303853,0.120015703,5.243972956

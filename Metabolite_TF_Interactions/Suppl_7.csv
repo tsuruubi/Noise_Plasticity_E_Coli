@@ -1,0 +1,514 @@
+Transcription_Factor,Metabolite,correlation_coefficient_R2
+AgaR,Dihydroxyacetone-P,0.7905
+ArsR,ADP,0.75661
+AsnC,Alanine,0.78074
+BetI,NADPH,0.96947
+CdaR,3-Phosphoserine,0.75863
+CecR,Propionyl-CoA ,0.91347
+Cra,Dihydroneopterin,0.7844
+CytR,dTDP,0.7714
+ExuR,NADH,0.8348
+GatR,Propionyl-CoA ,0.96378
+HipAB,Dihydropteroate,0.78511
+LysR,"1,5-Diaminopentane",0.81415
+MlrA,Propionyl-CoA ,0.79162
+MngR,Phosphoenolpyruvate,0.81051
+MraZ,Udp-Glucose,0.89295
+NagC,Pentose-P,0.83748
+NanR,N-Acetyl-D-Glucosamine-P,0.77991
+SgrR,Glutamic acid,0.77232
+SoxR,Tryptophan,0.84276
+XylR,gamma-Glutamyl-cysteine,0.76278
+YdeO,Deoxyribose-P,0.79789
+AllR,NADH,0.78923
+AllR,ADP,0.86364
+AppY,Xanthosine,0.81877
+AppY,dCMP,0.84045
+ArgP,Arginine,0.77484
+ArgP,Diaminopimelic acid,0.88401
+BluR,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.84199
+BluR,Pyridoxamine,0.97823
+CynR,NADH,0.79122
+CynR,Dihydroneopterin,0.79358
+DhaR,Phosphoenolpyruvate,0.9042
+DhaR,Dihydroxyacetone-P,0.83335
+GadX,Pentose-P,0.75808
+GadX,Asparagine,0.7519
+LeuO,Leucine/Isoleucine,0.92557
+LeuO,Valine,0.9146
+LsrR,S-Adenosyl-homocysteine,0.88117
+LsrR,S-Adenosylmethionine,0.94146
+BirA,Pyridoxamine,0.88133
+BirA,Oxidized glutathione,0.81281
+BirA,Dihydroneopterin,0.81932
+GadW,Orotate,0.76908
+GadW,IMP,0.87627
+GadW,Adenylosuccinic acid,0.88775
+GalR,Pentose-P,0.90458
+GalR,Udp-Glucose,0.79097
+GalR,ADP,0.81027
+MalI,Lysine,0.80745
+MalI,O-Succinyl-homoserine,0.79634
+MalI,S-Adenosylmethionine,0.85975
+Nac,Guanine,0.76941
+Nac,N2-Succinyl-glutamate,0.85599
+Nac,cAMP,0.80089
+PaaX,NADPH,0.95177
+PaaX,Succinyl-CoA,0.94582
+PaaX,Propionyl-CoA ,0.89324
+DeoR,dTDP,0.79173
+DeoR,Xanthosine,0.89196
+DeoR,dCMP,0.9911
+DeoR,Propionyl-CoA ,0.89354
+HU,Pentose-P,0.90025
+HU,Udp-Glucose,0.88751
+HU,ADP,0.84903
+HU,ATP,0.87736
+RbsR,Xanthosine,0.90727
+RbsR,dCMP,0.88539
+RbsR,CMP,0.75168
+RbsR,CTP,0.88319
+CsiR,a-Ketoglutaric acid,0.98204
+CsiR,Glutamic acid,0.89645
+CsiR,N2-Succinyl-glutamate,0.86951
+CsiR,NADPH,0.9142
+CsiR,O-Acetyl-Serine,0.90882
+ModE,Guanine,0.88067
+ModE,Inosine,0.81769
+ModE,Pyridoxamine,0.84256
+ModE,Oxidized glutathione,0.76583
+ModE,Dihydroneopterin,0.82286
+RutR,Guanine,0.80533
+RutR,N2-Succinyl-glutamate,0.76125
+RutR,UDP,0.78076
+RutR,cAMP,0.79003
+RutR,ADP,0.75484
+TrpR,Glutamine,0.82183
+TrpR,Glutamic acid,0.78008
+TrpR,Tryptophan,0.9353
+TrpR,Tyrosine,0.85498
+TrpR,ATP,0.79873
+Cbl,Succinate,0.8783
+Cbl,Riboflavin,0.90891
+Cbl,"2,3-dihydroxybenzoylserine",0.79024
+Cbl,ADP,0.79486
+Cbl,ATP,0.78399
+Cbl,Protoheme,0.80175
+IHF,Glutamic acid,0.75841
+IHF,gamma-Glutamyl-cysteine,0.75236
+IHF,Citrate,0.76451
+IHF,NADPH,0.82828
+IHF,Succinyl-CoA,0.77805
+IHF,Propionyl-CoA ,0.79326
+Fur,Aspartic acid,0.75233
+Fur,Orotate,0.76125
+Fur,Erythrose 4-P,0.80194
+Fur,Asparagine,0.76786
+Fur,Pyridoxamine,0.79951
+Fur,IMP,0.78858
+Fur,Adenylosuccinic acid,0.85896
+HipB,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.88514
+HipB,gamma-Glutamyl-cysteine,0.93903
+HipB,Dihydropteroate,0.84831
+HipB,NAD,0.77841
+HipB,AMP,0.82564
+HipB,ATP,0.88867
+HipB,Coenzyme A,0.88628
+PuuR,Glutamine,0.88563
+PuuR,Glutamic acid,0.93196
+PuuR,Arginine,0.79851
+PuuR,N-Acetyl-Glutamic acid,0.81689
+PuuR,5-Methylthioadenosine,0.86704
+PuuR,GABA,0.7678
+PuuR,N-Acetyl-Ornithine,0.78305
+CysB,Glycolaldehyde,0.89222
+CysB,a-Ketoglutaric acid,0.92178
+CysB,gamma-Glutamyl-cysteine,0.92787
+CysB,Reduced glutathione,0.77804
+CysB,NADPH,0.88078
+CysB,O-Acetyl-Serine,0.96304
+CysB,Pyridoxamine 5-Phosphate,0.85924
+CysB,Dihydroneopterin,0.92266
+HypT,Aspartic acid,0.90331
+HypT,Lysine,0.96381
+HypT,Methionine,0.77263
+HypT,Diaminopimelic acid,0.87584
+HypT,ATP,0.7839
+HypT,O-Succinyl-homoserine,0.79701
+HypT,S-Adenosyl-homocysteine,0.75676
+HypT,S-Adenosylmethionine,0.92348
+McbR,Deoxyribose-P,0.78537
+McbR,Adenine,0.92487
+McbR,Guanine,0.79673
+McbR,Hypoxanthine,0.81329
+McbR,UDP,0.80461
+McbR,Cytidine,0.87739
+McbR,cAMP,0.78783
+McbR,Inosine diphosphate,0.89201
+GadE-RcsB,Orotate,0.77556
+GadE-RcsB,Dihydroorotate,0.81314
+GadE-RcsB,N-Carbamoyl-aspartate,0.84107
+GadE-RcsB,Pentose-P,0.80337
+GadE-RcsB,5-Amino-1-(5-phospho-D-ribosyl)imidazole,0.75183
+GadE-RcsB,Riboflavin,0.77752
+GadE-RcsB,UMP,0.77092
+GadE-RcsB,GTP,0.78125
+GadE-RcsB,Adenylosuccinic acid,0.79842
+IlvY,"(2R,3R)-2,3-Dihydroxy-3-methylpentanoate",0.81731
+IlvY,Reduced glutathione,0.89616
+IlvY,Riboflavin,0.89446
+IlvY,2-Isopropylmalic acid,0.87711
+IlvY,NADP,0.84528
+IlvY,Oxidized glutathione,0.83407
+IlvY,Coenzyme A,0.89758
+IlvY,3-Carboxy-4-methyl-2-oxopentanoate,0.80122
+IlvY,Pyridoxamine 5-Phosphate,0.7764
+CueR,Glycolaldehyde,0.85746
+CueR,D-Pantothenic acid,0.84402
+CueR,Riboflavin,0.7805
+CueR,NADH,0.82936
+CueR,NADP,0.8002
+CueR,ADP,0.84928
+CueR,GTP,0.80153
+CueR,Coenzyme A,0.7626
+CueR,Pyridoxamine 5-Phosphate,0.81462
+CueR,Dihydroneopterin,0.75994
+Fis,Malate,0.77603
+Fis,N-Acetyl-Glutamic acid,0.75884
+Fis,gamma-Glutamyl-cysteine,0.8455
+Fis,5-Amino-1-(5-phospho-D-ribosyl)imidazole,0.76967
+Fis,"Fructose-1,6-Bisphosphate",0.78869
+Fis,Succinyl-CoA,0.75822
+Fis,Citrulline,0.75876
+Fis,UTP,0.79527
+Fis,GTP,0.76795
+Fis,N-Acetyl-Ornithine,0.77705
+NrdR,Deoxyribose-P,0.87483
+NrdR,Guanine,0.86491
+NrdR,Hypoxanthine,0.79999
+NrdR,UDP,0.875
+NrdR,Cytidine,0.78433
+NrdR,cAMP,0.89789
+NrdR,ADP,0.85041
+NrdR,ATP,0.88036
+NrdR,GTP,0.88604
+NrdR,Inosine diphosphate,0.8503
+GadE,Glycolaldehyde,0.87124
+GadE,a-Ketoglutaric acid,0.84818
+GadE,UDP-N-acetyl-D-Glucosamine,0.98609
+GadE,Glutamine,0.83205
+GadE,D-Alanyl-Alanine,0.86802
+GadE,Pyridoxamine,0.82338
+GadE,Xanthosine 5-P,0.81141
+GadE,NADPH,0.89871
+GadE,UTP,0.97045
+GadE,Pyridoxamine 5-Phosphate,0.77696
+GadE,Dihydroneopterin,0.8595
+FadR,Glycolaldehyde,0.95314
+FadR,Pentose-P,0.7757
+FadR,Udp-Glucose,0.86344
+FadR,UDP-N-acetyl-D-Glucosamine,0.96947
+FadR,Pyridoxamine,0.78345
+FadR,D-Pantothenic acid,0.77091
+FadR,NADH,0.76166
+FadR,NADPH,0.88291
+FadR,Acetyl-CoA,0.76816
+FadR,AMP,0.82089
+FadR,Pyridoxamine 5-Phosphate,0.84908
+FadR,Dihydroneopterin,0.88135
+MetR,Glycolaldehyde,0.84038
+MetR,Alanine,0.76139
+MetR,Lysine,0.88752
+MetR,Diaminopimelic acid,0.92569
+MetR,D-Pantothenic acid,0.88586
+MetR,Riboflavin,0.93582
+MetR,NADH,0.83679
+MetR,NADP,0.82603
+MetR,Coenzyme A,0.90462
+MetR,3-Phosphoserine,0.89309
+MetR,O-Succinyl-homoserine,0.93464
+MetR,Pyridoxamine 5-Phosphate,0.91628
+MetR,S-Adenosyl-homocysteine,0.80921
+Lrp,Glycolaldehyde,0.89518
+Lrp,a-Ketoglutaric acid,0.96127
+Lrp,Leucine/Isoleucine,0.92163
+Lrp,Glutamine,0.93928
+Lrp,Glutamic acid,0.80225
+Lrp,Phenylalanine,0.90499
+Lrp,N2-Succinyl-glutamate,0.77651
+Lrp,gamma-Glutamyl-cysteine,0.78965
+Lrp,Xanthosine,0.94419
+Lrp,dCMP,0.92564
+Lrp,NADPH,0.94533
+Lrp,Valine,0.94649
+Lrp,Pyridoxamine 5-Phosphate,0.85452
+Lrp,Dihydroneopterin,0.91034
+MetJ,Aspartic acid,0.90505
+MetJ,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.75376
+MetJ,Lysine,0.98329
+MetJ,Methionine,0.81602
+MetJ,Diaminopimelic acid,0.92139
+MetJ,gamma-Glutamyl-cysteine,0.83218
+MetJ,Flavin adenine dinucleotide,0.85209
+MetJ,Succinyl-CoA,0.76521
+MetJ,ATP,0.81293
+MetJ,Coenzyme A,0.82797
+MetJ,O-Succinyl-homoserine,0.85524
+MetJ,S-Adenosyl-homocysteine,0.77282
+MetJ,S-Adenosylmethionine,0.95877
+MetJ,5-Methyltetrahydrofolic acid,0.77997
+NadR,Glycolaldehyde,0.79492
+NadR,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.88025
+NadR,D-Pantothenic acid,0.82451
+NadR,gamma-Glutamyl-cysteine,0.92237
+NadR,Dihydropteroate,0.86605
+NadR,Riboflavin,0.86608
+NadR,Fumarate,0.81613
+NadR,Dihydroxyacetone-P,0.8253
+NadR,NADH,0.78995
+NadR,NADPH,0.77181
+NadR,ADP,0.81946
+NadR,ATP,0.93927
+NadR,Coenzyme A,0.90233
+NadR,Pyridoxamine 5-Phosphate,0.88038
+IscR,"(2R,3R)-2,3-Dihydroxy-3-methylpentanoate",0.76298
+IscR,Deoxyribose-P,0.88905
+IscR,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.79749
+IscR,Alanine,0.75653
+IscR,Leucine/Isoleucine,0.75115
+IscR,Hypoxanthine,0.80073
+IscR,Dihydropteroate,0.78423
+IscR,Riboflavin,0.85495
+IscR,2-Isopropylmalic acid,0.86489
+IscR,"2,3-dihydroxybenzoylserine",0.85651
+IscR,UDP,0.82629
+IscR,ADP,0.80685
+IscR,ATP,0.84085
+IscR,Coenzyme A,0.85595
+IscR,3-Carboxy-4-methyl-2-oxopentanoate,0.80477
+IscR,Pyridoxamine 5-Phosphate,0.78547
+IscR,Inosine diphosphate,0.80355
+ArgR,Aspartic acid,0.79337
+ArgR,Ornithine,0.82067
+ArgR,Glutamine,0.92704
+ArgR,Lysine,0.95247
+ArgR,Glutamic acid,0.89478
+ArgR,Histidine,0.88817
+ArgR,Arginine,0.86433
+ArgR,Diaminopimelic acid,0.94586
+ArgR,N-Acetyl-Glutamic acid,0.91503
+ArgR,5-Methylthioadenosine,0.91863
+ArgR,NADPH,0.75464
+ArgR,Acetyl-CoA,0.90334
+ArgR,Succinyl-CoA,0.87324
+ArgR,Citrulline,0.78421
+ArgR,Argininosuccinic acid,0.7796
+ArgR,AMP,0.82545
+ArgR,ATP,0.90993
+ArgR,Coenzyme A,0.78596
+ArgR,N-Acetyl-Ornithine,0.85271
+DnaA,Glycolaldehyde,0.8427
+DnaA,Orotate,0.88785
+DnaA,Dihydroorotate,0.90156
+DnaA,N-Carbamoyl-aspartate,0.92509
+DnaA,Deoxyribose-P,0.93315
+DnaA,Hypoxanthine,0.76128
+DnaA,5-Amino-1-(5-phospho-D-ribosyl)imidazole,0.91941
+DnaA,Xanthosine 5-P,0.84438
+DnaA,UDP,0.90458
+DnaA,NADH,0.8414
+DnaA,UMP,0.89869
+DnaA,cAMP,0.83858
+DnaA,AMP,0.75469
+DnaA,ADP,0.87527
+DnaA,ATP,0.88845
+DnaA,GTP,0.92484
+DnaA,Inosine diphosphate,0.8138
+DnaA,5-Methyltetrahydrofolic acid,0.86801
+DnaA,Adenylosuccinic acid,0.90906
+H-NS,Glycolaldehyde,0.89325
+H-NS,a-Ketoglutaric acid,0.95009
+H-NS,Udp-Glucose,0.84751
+H-NS,Leucine/Isoleucine,0.91345
+H-NS,Glutamine,0.907
+H-NS,Glutamic acid,0.90956
+H-NS,Pyridoxamine,0.77255
+H-NS,N2-Succinyl-glutamate,0.91739
+H-NS,gamma-Glutamyl-cysteine,0.81565
+H-NS,Xanthosine,0.93239
+H-NS,Reduced glutathione,0.8201
+H-NS,dCMP,0.95871
+H-NS,NADP,0.80384
+H-NS,NADPH,0.92036
+H-NS,Valine,0.93314
+H-NS,CMP,0.78316
+H-NS,CTP,0.90335
+H-NS,UTP,0.8425
+H-NS,O-Acetyl-Serine,0.92864
+H-NS,N-Acetyl-Ornithine,0.75607
+H-NS,Pyridoxamine 5-Phosphate,0.79845
+H-NS,Dihydroneopterin,0.92855
+OxyR,Glycolaldehyde,0.7804
+OxyR,Deoxyribose-P,0.94197
+OxyR,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.92617
+OxyR,Homoserine,0.92796
+OxyR,Adenosine,0.7902
+OxyR,Hypoxanthine,0.81883
+OxyR,D-Pantothenic acid,0.81859
+OxyR,gamma-Glutamyl-cysteine,0.95274
+OxyR,Dihydropteroate,0.90262
+OxyR,Riboflavin,0.83621
+OxyR,UDP,0.81081
+OxyR,NADH,0.80218
+OxyR,NADPH,0.84478
+OxyR,CMP,0.78773
+OxyR,ADP,0.80192
+OxyR,ATP,0.95179
+OxyR,Coenzyme A,0.81931
+OxyR,O-Acetyl-Serine,0.81235
+OxyR,O-Succinyl-homoserine,0.95529
+OxyR,Pyridoxamine 5-Phosphate,0.90009
+OxyR,S-Adenosyl-homocysteine,0.94705
+OxyR,S-Adenosylmethionine,0.87538
+OxyR,Inosine diphosphate,0.82718
+PdhR,Glycolaldehyde,0.76639
+PdhR,Malate,0.93093
+PdhR,a-Ketoglutaric acid,0.77222
+PdhR,Pentose-P,0.90485
+PdhR,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.93878
+PdhR,Udp-Glucose,0.96978
+PdhR,UDP-N-acetyl-D-Glucosamine,0.96736
+PdhR,D-Pantothenic acid,0.80242
+PdhR,gamma-Glutamyl-cysteine,0.9576
+PdhR,Dihydropteroate,0.9274
+PdhR,Riboflavin,0.82526
+PdhR,Fumarate,0.83245
+PdhR,Phosphoenolpyruvate,0.79818
+PdhR,Dihydroxyacetone-P,0.83315
+PdhR,Glycerol 3-Phosphate,0.90111
+PdhR,Citrate,0.8433
+PdhR,"Fructose-1,6-Bisphosphate",0.92635
+PdhR,UDP,0.75811
+PdhR,NADH,0.75154
+PdhR,NADPH,0.83208
+PdhR,Acetyl-CoA,0.95007
+PdhR,Succinyl-CoA,0.91733
+PdhR,UMP,0.79185
+PdhR,ADP,0.79827
+PdhR,ATP,0.92666
+PdhR,Coenzyme A,0.84178
+PdhR,Pyridoxamine 5-Phosphate,0.89887
+PdhR,5-Methyltetrahydrofolic acid,0.91087
+NsrR,Glycolaldehyde,0.80691
+NsrR,a-Ketoglutaric acid,0.812
+NsrR,Deoxyribose-P,0.89314
+NsrR,Pentose-P,0.97196
+NsrR,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.86366
+NsrR,Udp-Glucose,0.91446
+NsrR,UDP-N-acetyl-D-Glucosamine,0.94091
+NsrR,Glutamic acid,0.87886
+NsrR,Adenosine,0.75944
+NsrR,Hypoxanthine,0.80747
+NsrR,D-Pantothenic acid,0.84664
+NsrR,gamma-Glutamyl-cysteine,0.89391
+NsrR,Dihydropteroate,0.8515
+NsrR,Riboflavin,0.86809
+NsrR,Phosphoenolpyruvate,0.82584
+NsrR,Dihydroxyacetone-P,0.88241
+NsrR,Glycerol 3-Phosphate,0.90853
+NsrR,"Fructose-1,6-Bisphosphate",0.92314
+NsrR,UDP,0.80989
+NsrR,NADH,0.80805
+NsrR,NADPH,0.79112
+NsrR,Acetyl-CoA,0.93814
+NsrR,CMP,0.78244
+NsrR,UMP,0.80106
+NsrR,AMP,0.87898
+NsrR,ADP,0.80921
+NsrR,ATP,0.89628
+NsrR,Coenzyme A,0.81343
+NsrR,O-Acetyl-Serine,0.823
+NsrR,Pyridoxamine 5-Phosphate,0.89657
+NsrR,Inosine diphosphate,0.8203
+CRP,Glycolaldehyde,0.82141
+CRP,Malate,0.86553
+CRP,a-Ketoglutaric acid,0.84275
+CRP,"(2R,3R)-2,3-Dihydroxy-3-methylpentanoate",0.91392
+CRP,N-Carbamoyl-aspartate,0.85202
+CRP,Pentose-P,0.8704
+CRP,Seduheptulose 7-P,0.81932
+CRP,UDP-N-acetyl-D-Glucosamine,0.85748
+CRP,Asparagine,0.88375
+CRP,Guanine,0.90152
+CRP,Pyridoxamine,0.79762
+CRP,N-Acetyl-Glutamic acid,0.84493
+CRP,D-Pantothenic acid,0.77808
+CRP,N2-Succinyl-glutamate,0.87217
+CRP,5-Amino-1-(5-phospho-D-ribosyl)imidazole,0.87423
+CRP,Xanthosine 5-P,0.81618
+CRP,Riboflavin,0.82588
+CRP,Fumarate,0.87542
+CRP,Phosphoenolpyruvate,0.82832
+CRP,Dihydroxyacetone-P,0.82014
+CRP,2-Isopropylmalic acid,0.76631
+CRP,4-Hydroxyphenylpyruvate,0.84539
+CRP,Citrate,0.80776
+CRP,"Fructose-1,6-Bisphosphate",0.86789
+CRP,UDP,0.78573
+CRP,NADH,0.81978
+CRP,Acetyl-CoA,0.8151
+CRP,Succinyl-CoA,0.78172
+CRP,Citrulline,0.86687
+CRP,Argininosuccinic acid,0.86705
+CRP,cAMP,0.81829
+CRP,GTP,0.83533
+CRP,Oxidized glutathione,0.78991
+CRP,O-Acetyl-Serine,0.80861
+CRP,N-Acetyl-Ornithine,0.86789
+CRP,3-Carboxy-4-methyl-2-oxopentanoate,0.86206
+CRP,3-Phosphoserine,0.86002
+CRP,Pyridoxamine 5-Phosphate,0.80301
+CRP,Dihydroneopterin,0.872
+CRP,Inosine diphosphate,0.76087
+CRP,Adenylosuccinic acid,0.83941
+PurR,Glycolaldehyde,0.83623
+PurR,Dihydroorotate,0.79214
+PurR,N-Carbamoyl-aspartate,0.95679
+PurR,Deoxyribose-P,0.87349
+PurR,Isopentenyl diphosphate / Dimethylallyl diphosphate,0.84983
+PurR,Proline,0.75873
+PurR,Glutamine,0.78731
+PurR,Lysine,0.88811
+PurR,Glutamic acid,0.8597
+PurR,Diaminopimelic acid,0.97363
+PurR,Adenosine,0.7522
+PurR,Hypoxanthine,0.82491
+PurR,N-Acetyl-Glutamic acid,0.96042
+PurR,D-Pantothenic acid,0.82897
+PurR,N2-Succinyl-glutamate,0.76893
+PurR,gamma-Glutamyl-cysteine,0.876
+PurR,5-Amino-1-(5-phospho-D-ribosyl)imidazole,0.94833
+PurR,Dihydropteroate,0.83348
+PurR,Xanthosine 5-P,0.85524
+PurR,Riboflavin,0.89405
+PurR,Fumarate,0.89612
+PurR,UDP,0.81645
+PurR,NADH,0.83791
+PurR,NADPH,0.83387
+PurR,Citrulline,0.91743
+PurR,Argininosuccinic acid,0.92312
+PurR,CMP,0.79214
+PurR,UMP,0.8065
+PurR,AMP,0.82247
+PurR,ADP,0.80815
+PurR,CTP,0.87683
+PurR,UTP,0.80864
+PurR,ATP,0.92422
+PurR,GTP,0.97139
+PurR,Coenzyme A,0.79958
+PurR,N-Acetyl-Ornithine,0.96429
+PurR,3-Phosphoserine,0.96382
+PurR,Pyridoxamine 5-Phosphate,0.93494
+PurR,Inosine diphosphate,0.82586
+PurR,5-Methyltetrahydrofolic acid,0.79275
+PurR,Adenylosuccinic acid,0.80146
