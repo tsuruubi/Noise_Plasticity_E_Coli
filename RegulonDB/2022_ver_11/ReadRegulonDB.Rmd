@@ -1,0 +1,341 @@
+---
+title: "MDS42"
+author: "Tsuru"
+date: "`r format(Sys.time(), '%Y/%m/%d')`"
+output: html_document
+---
+# General Settings
+## Workspace
+### Load workspace
+```{r workspace_load,warning=FALSE, message=FALSE}
+# load("./MicroarrayProbe.RData")
+```
+### Save workspace
+```{r workspace_save,warning=FALSE, message=FALSE}
+# save.image("./MicroarrayProbe.RData")
+```
+### Library loading
+```{r library,warning=FALSE, message=FALSE}
+library(viridis)
+library(ggplot2)
+library(GGally)
+library(scales)
+library(ggpubr)
+library(grid)
+library(gtable)
+library(gridExtra)
+library(dplyr)
+library(matrixStats)
+library(preprocessCore)
+library(RColorBrewer)
+library(openxlsx)
+# library(ggsci)
+# library(cowplot)
+# library(corrplot)
+library(Hmisc)
+# https://stackoverflow.com/questions/59419647/hmisc-package-or-namespace-failed-to-load-no-package-called-latticeextra
+library(corrplot)
+library(tidyverse)
+library(magrittr)
+# library(dendextend)
+# library(FactoMineR)
+# library(factoextra)
+library(proxy)
+library(rstatix)
+# library(plot3D)
+# library(clusterProfiler)
+# library(pathview)
+# library(org.EcK12.eg.db)
+# library(rvest)
+# library(corrr)
+# library(GOSemSim)
+# library(rrvgo)
+# library(qdapTools)
+# library(AnnotationDbi)
+# library(ggVennDiagram)
+# library(rJava)
+# library(venneuler)
+# library(igraph)
+# library(tidygraph)
+# library(recoRdseq) # for Record-seq
+library(patchwork) # for Record-seq
+library(Biostrings)
+# library(BSgenome)
+# library(BSgenome.Ecoli.NCBI.20080805)
+# library(biomaRt)
+# library(biomartr)
+```
+### versatile user functions
+The [qw](https://ja.coder.work/so/r/240447) function in Perl.  
+The [createEmptyDf](https://htsuda.net/archives/2560) function.
+The [g_legend](https://github.com/hadley/ggplot2/wiki/Share-a-legend-between-two-ggplot2-graphs) function to extract legend.
+```{r functions}
+qw <- function(...) {
+  sapply(match.call()[-1], deparse)
+}
+
+createEmptyDf = function( nrow, ncol, colnames = c() ){
+  data.frame( matrix( vector(), nrow, ncol, dimnames = list( c(), colnames ) ) )
+}
+
+g_legend<-function(a.gplot){
+  tmp <- ggplot_gtable(ggplot_build(a.gplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)}
+
+pValue_sp_text=function(dtf){
+  pcor_sp<-cor.test(x=dtf[,1],y=dtf[,2],method="spearman")
+  rho_sp<-round(pcor_sp$estimate,digits = 2)
+  pv_sp<-ifelse(pcor_sp$p.value<0.05," P<0.05",paste(" P==",round(pcor_sp$p.value,digits = 1),sep = ""))
+  rhopvtxt_sp<-paste("list(italic(rho)==", rho_sp,", ",pv_sp,")")
+  return(rhopvtxt_sp)
+}
+
+pValue_pr_text=function(dtf){
+  pcor_pr<-cor.test(x=dtf[,1],y=dtf[,2],method="pearson")
+  r_pr<-round(pcor_pr$estimate,digits = 2)
+  pv_pr<-ifelse(pcor_pr$p.value<0.05," P<0.05",paste(" P==",round(pcor_pr$p.value,digits = 1),sep = ""))
+  rpvtxt_pr<-paste("list(italic(r)==", r_pr,", ",pv_pr,")")
+  return(rpvtxt_pr)
+}
+
+
+
+
+```
+
+#### Color
+```{r color}
+mycolpal<-get_palette("lancet",9)
+mycolpal.BuRd<-c(get_palette(palette = "Blues", 4)[2:4],get_palette(palette = "Reds", 4)[2:4])
+```
+
+# Load raw data set
+```{r Load_raw,warning=FALSE, message=FALSE}
+# Gene Product
+gene.prod.set<-data.frame(read.delim("GeneProductSet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(gene.prod.set)<-qw(Gene_ID_RegulonDB,Gene,Bnb,Left_End,Right_End,Strand,Product,Evidence,PMID,Evidence_Level,Bnb_Related,Other_IDs)
+gene.prod.set<-gene.prod.set[,which(!is.na(colnames(gene.prod.set)))]
+
+gene.prod.allID<-data.frame(read.delim("GeneProductAllIdentifiersSet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(gene.prod.allID)<-qw(Gene_ID_RegulonDB,Gene,Left_End,Right_End,Strand,Synonyms,Gnen_DB_IDs,Product_ID,Product,Product_Synonyms,Product_DB_IDs)
+gene.prod.allID<-gene.prod.allID[,which(!is.na(colnames(gene.prod.allID)))]
+
+sRNA.set<-data.frame(read.delim("sRNASet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(sRNA.set)<-qw(Gene_ID_RegulonDB,Gene,Bnb,Left_End,Right_End,Strand,Product,Evidence,PMID,Evidence_Level,Bnb_Related,Other_IDs)
+sRNA.set<-sRNA.set[,which(!is.na(colnames(sRNA.set)))]
+
+# TF
+tf.set<-data.frame(read.delim("TFSet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(tf.set)<-qw(TF_ID_RegulonDB,TF,TF_Synonyms,Gene,TF_Actform,TF_Inactform,TF_Actform_Synonyms,TF_Inactform_Synonyms,Effector_Actform,Effector_Inactform,Effector_Actform_Synonyms,Effector_Inactform_Synonyms,TF_Symmetry,TF_Family,TF_Connectivity,TF_Sensing,Evidence,Evidence_Level,TF_Comform_IDs_PMID)
+tf.set<-tf.set[,which(!is.na(colnames(tf.set)))]
+
+tf.conform.set<-data.frame(read.delim("Conformation_active_inactive_Set.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(tf.conform.set)<-qw(TF_ID_RegulonDB,TF,Gene,Effector,Effector_Type,TF_Conform,TF_Conform_Type,Interact_Type,Functional_Conform,Evidence,PMID,Evidence_Level)
+tf.conform.set<-tf.conform.set[,which(!is.na(colnames(tf.conform.set)))]
+
+#Sigma
+sigma.set<-as.data.frame(read_csv("SigmaTable.csv"))
+colnames(sigma.set)[colnames(sigma.set)=="Bnb"]<-"regulator_id"
+
+#Promoter
+promoter.set<-data.frame(read.delim("PromoterSet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(promoter.set)<-qw(Promoter_ID_RegulonDB,Promoter,Strand,TSS_Position,Sigma,Promoter_Seq,Evidence,Evidence_Level)
+promoter.set<-promoter.set[,which(!is.na(colnames(promoter.set)))]
+
+#TU
+tu.set<-data.frame(read.delim("TUSet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(tu.set)<-qw(TU_ID_RegulonDB,TU,Operon,Gene,Promoter,Evidence,Evidence_Level)
+tu.set<-tu.set[,which(!is.na(colnames(tu.set)))]
+
+#Operon
+operon.set<-data.frame(read.delim("OperonSet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(operon.set)<-qw(Operon,Left_End,Right_End,Strand,Nb_Gene,Gene,Evidence,Evidence_Level)
+operon.set<-operon.set[,which(!is.na(colnames(operon.set)))]
+
+# Regulatory Network Interactions
+trn.tf_gene<-data.frame(read.delim("network_tf_gene.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(trn.tf_gene)<-qw(TF_ID_RegulonDB,TF,Gene_ID_RegulonDB,Gene,Effect,Evidence,Evidence_Level)
+trn.tf_gene<-trn.tf_gene[,which(!is.na(colnames(trn.tf_gene)))]
+
+trn.tf_operon<-data.frame(read.delim("network_tf_operon.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(trn.tf_operon)<-qw(TF,Operon,Effect,Evidence,Evidence_Level)
+trn.tf_operon<-trn.tf_operon[,which(!is.na(colnames(trn.tf_operon)))]
+
+trn.tf_tu<-data.frame(read.delim("network_tf_tu.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(trn.tf_tu)<-qw(TF,TU_prom,Effect,Evidence,Evidence_Level)
+trn.tf_tu<-trn.tf_tu[,which(!is.na(colnames(trn.tf_tu)))]
+
+trn.tf_tf<-data.frame(read.delim("network_tf_tf.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(trn.tf_tf)<-qw(TF,Gene,Effect,Evidence,Evidence_Level)
+trn.tf_tf<-trn.tf_tf[,which(!is.na(colnames(trn.tf_tf)))]
+
+trn.sigma_gene<-data.frame(read.delim("network_sigma_gene.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(trn.sigma_gene)<-qw(Sigma,Gene,Effect,Evidence,Evidence_Level)
+trn.sigma_gene<-trn.sigma_gene[,which(!is.na(colnames(trn.sigma_gene)))]
+
+trn.sigma_tu<-data.frame(read.delim("network_sigma_tu.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(trn.sigma_tu)<-qw(Sigma,TU_prom,Effect,Evidence,Evidence_Level)
+trn.sigma_tu<-trn.sigma_tu[,which(!is.na(colnames(trn.sigma_tu)))]
+
+trn.sRNA_gene<-data.frame(read.delim("sRNABindingSiteSet.txt",stringsAsFactors=F, comment.char="#",header = F))
+colnames(trn.sRNA_gene)<-qw(sRNA_ID_RegulonDB,sRNA,Target,Target_Type,Left_End,Right_End,Strand,Effect,Bindingsite_Seq,Evidence,Evidence_Level)
+trn.sRNA_gene<-trn.sRNA_gene[,which(!is.na(colnames(trn.sRNA_gene)))]
+```
+
+# Subset and update
+```{r Load_genome_seq,warning=FALSE, message=FALSE}
+gene.prod.set<-gene.prod.set[order(gene.prod.set$Evidence_Level,decreasing = T),]
+gene.prod.set.onlyBnb<-gene.prod.set[grepl("b",gene.prod.set$Bnb),]
+gene.prod.set.onlyBnb<- gene.prod.set.onlyBnb %>%
+  distinct(Bnb,.keep_all = T)
+nrow(gene.prod.set.onlyBnb[grepl(",",gene.prod.set.onlyBnb$Bnb),])
+
+sRNA.set<-sRNA.set[order(sRNA.set$Evidence_Level,decreasing = T),]
+sRNA.set.onlyBnb<-sRNA.set[grepl("b",sRNA.set$Bnb),]
+sRNA.set.set.onlyBnb<- sRNA.set.onlyBnb %>%
+  distinct(Bnb,.keep_all = T)
+nrow(sRNA.set.onlyBnb[grepl(",",sRNA.set.onlyBnb$Bnb),])
+  
+tu.set.onlyBnb<-tu.set
+tu.set.onlyBnb$Count_genes<-str_count(tu.set.onlyBnb$Gene,",")+1
+tu.set.onlyBnb$gene_id<-NA
+tu.set.onlyBnb$Count_Bnb<-NA
+i<-3
+for(i in 1:nrow(tu.set.onlyBnb)){
+  temp<-gene.prod.set.onlyBnb[gene.prod.set.onlyBnb$Gene %in% str_split(tu.set.onlyBnb$Gene[i],",")[[1]],]$Bnb
+  if(length(temp)>0){
+    tu.set.onlyBnb$gene_id[i]<-paste(temp,collapse = ",")
+    tu.set.onlyBnb$Count_Bnb[i]<-length(temp)
+  }
+}
+tu.set.onlyBnb<-tu.set.onlyBnb[!is.na(tu.set.onlyBnb$Count_Bnb),]
+
+#
+tf.set$Count_gene<-str_count(tf.set$Gene,",")+1
+tf.set$regulator_id<-NA
+tf.set$Count_Bnb<-NA
+for(i in 1:nrow(tf.set)){
+  temp<-gene.prod.set.onlyBnb[gene.prod.set.onlyBnb$Gene %in% str_split(tf.set$Gene[i],", ")[[1]],]$Bnb
+  if(length(temp)>0){
+    tf.set$regulator_id[i]<-paste(temp,collapse = ",")
+    tf.set$Count_Bnb[i]<-length(temp)
+  }
+}
+
+#
+trn.tf_tu.onlyBnb<-trn.tf_tu
+trn.tf_tu.onlyBnb<-left_join(trn.tf_tu.onlyBnb,tf.set[,which(colnames(tf.set) %in% qw(TF,regulator_id))],by="TF")
+trn.tf_tu.onlyBnb$TU<-str_remove(str_extract(trn.tf_tu.onlyBnb$TU_prom,"^(.+?)\\["),"\\[")
+trn.tf_tu.onlyBnb$Promoter<-str_remove(str_extract(trn.tf_tu.onlyBnb$TU_prom,"(\\[)(.*)(\\])"),"\\[")
+trn.tf_tu.onlyBnb$Promoter<-str_remove(trn.tf_tu.onlyBnb$Promoter,"\\]")
+temp<-tu.set.onlyBnb[,which(colnames(tu.set.onlyBnb) %in% qw(TU,gene_id,))]
+temp<-temp %>% distinct(TU,.keep_all = T)
+trn.tf_tu.onlyBnb<-left_join(trn.tf_tu.onlyBnb,temp,by="TU")
+trn.tf_tu.onlyBnb$Category<-"TF"
+
+#
+trn.sigma_tu.onlyBnb<-trn.sigma_tu
+trn.sigma_tu.onlyBnb<-left_join(trn.sigma_tu.onlyBnb,sigma.set[,which(colnames(sigma.set) %in% qw(Sigma,regulator_id))],by="Sigma")
+trn.sigma_tu.onlyBnb$TU<-str_remove(str_extract(trn.sigma_tu.onlyBnb$TU_prom,"^(.+?)\\["),"\\[")
+trn.sigma_tu.onlyBnb$Promoter<-str_remove(str_extract(trn.sigma_tu.onlyBnb$TU_prom,"(\\[)(.*)(\\])"),"\\[")
+trn.sigma_tu.onlyBnb$Promoter<-str_remove(trn.sigma_tu.onlyBnb$Promoter,"\\]")
+temp<-tu.set.onlyBnb[,which(colnames(tu.set.onlyBnb) %in% qw(TU,gene_id,))]
+temp<-temp %>% distinct(TU,.keep_all = T)
+trn.sigma_tu.onlyBnb<-left_join(trn.sigma_tu.onlyBnb,temp,by="TU")
+trn.sigma_tu.onlyBnb<-trn.sigma_tu.onlyBnb[!is.na(trn.sigma_tu.onlyBnb$gene_id),]
+trn.sigma_tu.onlyBnb$Category<-"sigma"
+
+#
+temp1<-trn.tf_tu.onlyBnb
+colnames(temp1)[colnames(temp1)=="TF"]<-"regulator"
+temp2<-trn.sigma_tu.onlyBnb
+colnames(temp2)[colnames(temp2)=="Sigma"]<-"regulator"
+trn.regulator_tu<-bind_rows(temp1,temp2)
+
+temp<-trn.regulator_tu[grepl(",",trn.regulator_tu$gene_id),]
+
+# write.csv(trn.regulator_tu,paste("Output","trn.regulator_tu.csv",sep="/"), row.names=FALSE)#<--------------------------------------------------------------------- OUTPUT
+```
+
+# create TRN including tf and sigma with B number 
+```{r Load_genome_seq,warning=FALSE, message=FALSE}
+mycolname<-qw(regulator,gene_name,gene_id,effect,evidence,source,category,regulator_label,Use,regulator_id)
+# Action for TF
+temp1.1<-createEmptyDf(nrow=nrow(trn.tf_gene),ncol=length(mycolname),colnames=mycolname)
+temp1.1$regulator<-trn.tf_gene$TF
+temp1.1$gene_name<-trn.tf_gene$Gene_ID_RegulonDB
+temp1.1$effect<-trn.tf_gene$Effect
+temp1.1$evidence<-trn.tf_gene$Evidence_Level
+temp1.1$source<-"RegulonDB_TF"
+temp1.1$category<-"TF"
+for(i in 1:nrow(temp1.1)){
+  temp1.1$regulator_id[i]<-tf.set[tf.set$TF==temp1.1$regulator[i],]$regulator_id
+  temp1.1$gene_id[i]<-gene.prod.set[gene.prod.set$Gene_ID_RegulonDB==temp1.1$gene_name[i],]$Bnb
+  temp1.1$gene_name[i]<-gene.prod.set[gene.prod.set$Gene_ID_RegulonDB==temp1.1$gene_name[i],]$Gene
+}
+# Action for sigma
+temp1.2<-createEmptyDf(nrow=nrow(trn.sigma_gene),ncol=length(mycolname),colnames=mycolname)
+temp1.2$regulator<-trn.sigma_gene$Sigma
+temp1.2$gene_name<-trn.sigma_gene$Gene
+temp1.2$effect<-trn.sigma_gene$Effect
+temp1.2$evidence<-trn.sigma_gene$Evidence_Level
+temp1.2$source<-"RegulonDB_sigma"
+temp1.2$category<-"sigma"
+
+temp<-str_to_title(sigma.set$Gene)
+i<-1
+for(i in 1:length(temp)){
+  temp[i]<-paste(str_sub(temp[i],1,-2),str_to_upper(str_sub(temp[i],-1,-1)),sep="")
+}
+temp<-transform(sigma.set,regulator=temp)
+
+for(i in 1:nrow(temp1.2)){
+  temp1.2$regulator_id[i]<-temp[temp$Sigma==temp1.2$regulator[i],]$regulator_id
+  temp1.2$regulator[i]<-temp[temp$Sigma==temp1.2$regulator[i],]$regulator
+  temp1.2$gene_id[i]<-gene.prod.set[gene.prod.set$Gene==temp1.2$gene_name[i],]$Bnb
+}
+  
+
+temp<-bind_rows(temp1.1,temp1.2)
+
+temp2<- temp %>% distinct(regulator,gene_id,.keep_all = T)
+j<-1
+k<-1
+for(i in 1:nrow(temp2)){
+  temp3<-temp[(temp$regulator==temp2$regulator[i])&(temp$gene_id==temp2$gene_id[i]),]
+  if(nrow(temp3)>1){
+    if(j==1){
+      temp4<-temp3
+      j<-j+1
+    }else{
+      temp4<-rbind(temp3,temp4)
+    }
+  }else{
+    if(k==1){
+      temp5<-temp3
+      k<-k+1
+    }else{
+      temp5<-rbind(temp5,temp3)
+    }
+  }
+}
+
+temp4.1<-temp4 %>% distinct(regulator,gene_id,.keep_all = T)
+i<-4
+for(i in 1:nrow(temp4.1)){
+  temp4.2<-paste(temp4[(temp4$regulator==temp4.1$regulator[i])&(temp4$gene_id==temp4.1$gene_id[i]),]$effect,collapse="")
+  if(temp4.2=="+-"|temp4.2=="-+"){
+    temp4.1$effect[i]<-"+,-"
+  }else if(temp4.2=="+?"|temp4.2=="?+"){
+    temp4.1$effect[i]<-"+"
+  }else if(temp4.2=="-?"|temp4.2=="?-"){
+    temp4.1$effect[i]<-"-"
+  }
+}
+
+trn.regulator_gene<-bind_rows(temp5,temp4.1)
+
+# write.csv(trn.regulator_gene,paste("Output","trn.regulator_gene.csv",sep="/"), row.names=FALSE)#<--------------------------------------------------------------------- OUTPUT
+```

@@ -1,0 +1,23 @@
+﻿Description_1,Description_2,File
+Sequences,Gene Sequence,Gene_sequence.txt
+Sequences,5' and 3' UTR sequence of TUs,UTR_5_3_sequence.txt
+Gene - Product,All gene products,GeneProductSet.txt
+Gene - Product,Gene Product Identifiers,GeneProductAllIdentifiersSet.txt
+Gene - Product,sRNA genes,sRNASet.txt
+Transcriptional Factors - Functional conformation,,TFSet.txt
+TF binding sites,,BindingSiteSet.txt
+Regulatory Network Interactions,TF - gene interactions,network_tf_gene.txt
+Regulatory Network Interactions,TF - operon interactions,network_tf_operon.txt
+Regulatory Network Interactions,TF - TU interactions,network_tf_tu.txt
+Regulatory Network Interactions,TF - TF interactions,network_tf_tf.txt
+Regulatory Network Interactions,Sigma - gene interactions,network_sigma_gene.txt
+Regulatory Network Interactions,Sigma - TU interactions,network_sigma_tu.txt
+Regulatory Network Interactions,Alon and MA interactions,bmc_report.jsp.html
+Regulatory Network Interactions,sRNA - gene interactions,sRNABindingSiteSet.txt
+Promoters,,PromoterSet.txt
+Active and Inactive Transcription Factor Conformations,,Conformation_active_inactive_Set.txt
+Transcription Units,,TUSet.txt
+Operons,,OperonSet.txt
+Growth Conditions,,GCSet.txt
+RBSs,,RBSSet.txt
+Terminators,,TerminatorSet.txt

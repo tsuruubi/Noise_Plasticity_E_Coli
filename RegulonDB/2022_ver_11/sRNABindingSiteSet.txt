@@ -1,0 +1,277 @@
+# Copies and Copyright-Notice
+#
+#      RegulonDB is free for academic/noncommercial use
+#
+#      User is not entitled to change or erase data sets of the RegulonDB
+#      database or to eliminate copyright notices from RegulonDB. Furthermore,
+#      User is not entitled to expand RegulonDB or to integrate RegulonDB partly
+#      or as a whole into other databank systems, without prior written consent
+#      from CCG-UNAM.
+#
+#      Please check the license at http://regulondb.ccg.unam.mx/menu/download/full_version/terms_and_conditions.jsp
+#
+# Citation
+#
+#      Tierrafría, V. H. et al. (2022). RegulonDB 11.0: Comprehensive high-throughput datasets on transcriptional regulation in Escherichia coli K-12,
+#      Microb Genom. 2022 May;8(5). doi: 10.1099/mgen.0.000833. PMID: 35584008. https://doi.org/10.1099/mgen.0.000833
+#
+#
+# Contact
+#
+#      Person: RegulonDB Team
+#      Web Page: http://regulondb.ccg.unam.mx/menu/about_regulondb/contact_us/index.jsp
+#          (regulondb@ccg.unam.mx)
+#
+#
+# Release: 11.0 Date:  08/22/2022
+# Genome version: U00096.3, Refseq version: NC_000913.3; GI:556503834
+# ___________________________________________________________________________
+# Columns:
+# (1) Identifier assigned by RegulonDB to the small RNA interaction (temporal identifier)
+# (2) Gene regulator related to small RNA
+# (3) Gene regulated by the small RNA
+# (4) Object regulated (Gene or Transcription Unit regulated by the small RNA)
+# (5) sRNA binding site left end position in the genome
+# (6) sRNA binding site right end position in the genome
+# (7) DNA strand of the regulated gene
+# (8) Function (+ activation, - repression, +- dual, ? unknown)
+# (9) sRNA binding site sequence
+# (10) Regulation Mechanism
+# (11) EEvidence that supports the existence of the small RNA regulation
+# (12) Evidence confidence level (Confirmed, Strong, Weak)
+sRNA00000321	C0293	fadR	gene	1234958	1234981	forward	-	CCCGGCGGGUUUCGCGGAAGAGUA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000231	chiX	chbC	gene	1821263	1821283	reverse	-	AUGAAAUAACUCUUUGACGGG		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000103	cpxQ	cpxP	gene			forward	-		TRANSLATION-BLOCKING	[GEA|W|Gene expression analysis],[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000174	cpxQ	skp	gene			forward	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000081	cyaR	yobF	gene	1907574	1907616	reverse	-	ACUGAAAAUGCCACACAUAAACAGAACUGUACCUCGUUUAACC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000189	dicF	ftsZ	gene	105277	105304	forward	-	GGCGACAGGCACAAAUCGGAGAGAAACU	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000144	dicF	manX	gene	1902082	1902099	forward	-	GGGCUGCAGAGCAGUUGC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000294	dicF	pykA	gene	1937631	1937648	forward	-	CAGUCAACGGAGUAUUAC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000212	dicF	xylR	gene	3734988	3734997	forward	-	AAACGUCACC	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000104	fnrS	iscR	gene	2662068	2662141	reverse	-	CAGAGUUGAGCGCAACGUCAAGCAUUGCGGUCACGGCAUAGCGCCCUUUAGAUGUCAGUCUCAUGUCUUACUUC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000175	fnrS	marA	gene	1619556	1619612	forward	-	CAAAAAAGAGGUAUGACGAUGUCCAGACGCAAUACUGACGCUAUUACCAUUCAUAGC		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000219	gcvB	panD	gene	146707	146717	reverse	-	UCUACCCUGUC	MRNA-DEGRADATION	[NABE||Nucleic acid binding evidence],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000323	malH	ompC	gene	2312775	2312799	reverse	-	UUAUUUGCUUUUUUAUGCCACUGCA		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000209	micA	cpoB	gene	779534	779572	forward	-	GGGUCAUGACGAAGCGGCAUACUCCAAAAACCGUCGUGC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000134	micA	cpoB	gene	779534	779572	forward	-	GGGUCAUGACGAAGCGGCAUACUCCAAAAACCGUCGUGC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000074	micA	gloA	gene	1727824	1727849	forward	-	UGAGGAUAAAAAGAUGCGUCUUCUUC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000078	micA	lamB	gene	4247961	4247988	forward	-	AGGAGAUAGAAUGAUGAUUACUCUGCGC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000123	micA	lpxT	gene	2268763	2268784	forward	-	GGAAUGCCUUGCAGAGCGCGCU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000067	micA	pal	gene	779090	779109	forward	-	AGGGCUGAUGAUUGCUCUGC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000112	micA	yfeK	gene	2537327	2537361	forward	-	GGAUAAGGUAAUUCAAUGAAGAAAAUCAUUUGUCU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000089	micA	ygiM	gene	3201118	3201150	forward	-	AGAGGAUUCCGAUUGAUGUCGAAUGCUUUGCGU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000167	micL	lpp	gene	1757436	1757448	forward	-	CUGGUACUGGGCG	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000095	omrA	fepA	gene	612451	612472	reverse	-	CCCAGAUUGACCAACAAGGCCA	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000298	omrA	flgM	gene	1130102	1130120	reverse	-	CAGAGGCGAAGUGCGAUCA	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IPI|W|Inferred from physical interaction]	Strong
+sRNA00000226	omrA	ompR	gene	3536595	3536613	reverse	-	CCCAAAGGUUCGCAACAAU		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000166	omrB	fepA	gene	612451	612472	reverse	-	CCCAGAUUGACCAACAAGGCCA	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000080	omrB	flgM	gene	1130102	1130126	reverse	-	CAGAGGCGAAGUGCGAUCAAUACUC	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IPI|W|Inferred from physical interaction]	Strong
+sRNA00000251	omrB	ompR	gene	3536595	3536613	reverse	-	CCCAAAGGUUCGCAACAAU		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000253	oxyS	fhlA	gene	2854323	2854329	forward	-	UCCUGGA	TRANSLATION-BLOCKING	[SM|S|Site mutation]	Strong
+sRNA00000281	oxyS	fhlA	gene	2854371	2854379	forward	-	CAAGGGUUG	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000099	oxyS	nusG	gene	4177722	4177755	forward	-	UCACUGGCCUGAGGUUCUGAGAUGUCUGAAGCUC		[GEA|W|Gene expression analysis],[NABE||Nucleic acid binding evidence]	Weak
+sRNA00000073	ralA	ralR	gene	1413790	1413805	reverse	-	UGCUUCUUUUUCACUU		[SM|S|Site mutation]	Strong
+sRNA00000341	rseX	fimB	gene	4540942	4541009	forward	-	UAUAAGGGAAAAACGAUGAAGAAUAAGGCUGAUAACAAAAAAAGGAACUUCCUGACCCAUAGUGAAAU		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000342	rseX	ihfB	gene	963818	963852	forward	-	CGGAGGAAUCAUGACCAAGUCAGAAUUGAUAGAAA		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000151	rybB	rbsB	gene	3936196	3936213	forward	-	GAUCGUCAAAGCGGUGGU		[SM|S|Site mutation]	Strong
+sRNA00000069	rybB	rluD	gene	2736007	2736026	reverse	-	GCCAUAUAUACUGCUUCUUC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000197	rybB	sdhC	gene	755153	755164	forward	-	AAGAACAGCAUG	MRNA-DEGRADATION	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000242	rydC	pheA	gene	2737748	2737755	forward	-	ACAUCGGA		[ICA|W|Inferred by computational analysis],[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000270	rydC	trpE	gene	1322925	1322935	reverse	+	GAGUCGGUUUU		[ICA|W|Inferred by computational analysis],[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000261	ryhB	bfr	gene			reverse	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000239	ryhB	cirA	gene	2246810	2246827	reverse	+	AUCGCUCACAUCUUCUUC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000228	ryhB	erpA	gene	176598	176623	forward	-	UUGGAGCAAAAUAUGAGUGAUGACGU	MRNA-DEGRADATION	[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000070	ryhB	marA	gene	1619563	1619578	forward	-	GAGGUAUGACGAUGUC		[ICA|W|Inferred by computational analysis],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000205	ryhB	nirB	gene	3494002	3494022	forward	-	GAGGCAAAAAUGAGCAAAGUC		[ICA|W|Inferred by computational analysis],[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000280	sdhX	ackA	gene	2413468	2413477	forward	-	CCAUGUCGAG		[IHBCE|W|Inferred by a human based on computational evidence],[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000257	sdsN	nfsA	gene	891186	891192	forward	-	GACGCCA		[SM|S|Site mutation]	Strong
+sRNA00000230	sdsR	tolC	gene	3178082	3178089	forward	-	GCGCUAAA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000075	sgrS	manX	gene	1902071	1902084	forward	-	CACACAUGGUUGGG	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000130	sgrS	yigL	gene	4010104	4010124	forward	+	ACGCAAUGCGCUCAGUCGCGC	MRNA-DEGRADATION	[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000065	spf	araF	gene	1986158	1986165	reverse	-	GUAGGGCA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000243	spf	ascF	gene	2839496	2839503	forward	-	UACCCUAC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000267	spf	atoD	gene	2323411	2323418	forward	-	CUGUACCC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000295	spf	caiA	gene	40382	40396	reverse	-	UCCAUCUUUCAACCU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000077	spf	dppB	gene			reverse	+			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000141	spf	ebgC	gene			forward	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000272	spf	fucI	gene	2934212	2934268	forward	-	GCUUCUGAACCUAAGAGGAUGCUAUGGGAAACACAUCAAUACAAACGCAGAGUUACC		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000300	spf	fucK	gene			forward	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000271	spf	fucP	gene	2934196	2934206	forward	-	CCGAUUACGUG		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000142	spf	galK	gene	789924	789999	reverse	-	GCAGGGUAGCCAAAUGCGUUGGCAAACAGAGAUUGUGUUUUUUCUUUCAGACUCAUUUCUUACACUCCGGAUUCGC	MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000220	spf	gdhA	gene	1842450	1842464	forward	-	CCGUUCGUGAAGUAA		[SM|S|Site mutation]	Strong
+sRNA00000111	spf	glpF	gene	4118088	4118098	reverse	-	CAUAAUCGGAU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000248	spf	gltA	gene	754590	754599	reverse	-	GGGUACAGAG		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000100	spf	gss	gene			reverse	+			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000066	spf	lldP	gene			forward	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000276	spf	maeA	gene			reverse	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000201	spf	nanC	gene	4539517	4539534	reverse	-	GUAGGAUACAGAAAGCAA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000224	spf	nanT	gene	3372624	3372634	reverse	-	GUAGGGUACAG		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000182	spf	paaK	gene	1462115	1462123	forward	-	GUACCCUAC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000171	spf	puuE	gene	1365515	1365548	forward	-	UCCGAUUAACCGUGAAGAGUCAAAAGGUGUGAAA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000122	spf	sdhC	gene	755122	755133	forward	-	ACCUCUGUGCCC	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000186	spf	srlA	gene	2825817	2825831	forward	-	CUGAAGGAGAGAACA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000115	spf	sthA	gene	4160769	4160776	reverse	-	CGUAAUCG		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000062	spf	sucC	gene	762994	763005	forward	-	CUGAAGGAUGGA		[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000126	spf	xylF	gene	3731132	3731170	forward	-	UGAAAAUAAAGAACAUUCUACUCACCCUUUGCACCUCAC		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000164	spf	yjiA	gene			reverse	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000235	spf	ytfJ	gene			reverse	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000152	sraG	pnp	gene	3311183	3311326	reverse	-	UCUUUCUUAGACAGUACCUUACGGCACUGGUGUUAAUACCCGAUCUUCUGCGCAUCCUCGCGACUAAUGACAACCCUAACCCAGCUCUAUGUGGGUAAAGCCUCUCAUUAGCCGCGCGAACCUCUGCAACGGAAGAUCAUUCAU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000322	C0293	hcaR	tu	2668895	2668902	reverse	-	AUCACCUU		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000284	agrB	dinQ	tu	3647864	3647895	reverse	-	UUAGAUAAGAACUCUCUCACUCCGGCCAGAGC		[IHBCE|W|Inferred by a human based on computational evidence],[NABE||Nucleic acid binding evidence]	Weak
+sRNA00000147	arcZ	eptB	tu	3710482	3710498	reverse	-	AAACCCUGGACAAACAG		[SM|S|Site mutation]	Strong
+sRNA00000137	arcZ	eptB	tu	3710482	3710498	reverse	-	AAACCCUGGACAAACAG		[SM|S|Site mutation]	Strong
+sRNA00000190	arcZ	flhDC	tu	1978244	1978261	reverse	-	CACCCCGUGAUGUCGCCG		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000121	arcZ	mutS	tu	2857067	2857078	forward	-	AAUAUCAGGGAA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000191	arcZ	rpoS	tu	2867648	2867671	reverse	+	GAUUUCCCCUUGUAACGAAUUUCA	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000117	arrS	cfa	tu	1741309	1741318	forward	+	GUCGGAUUAU		[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000102	arrS	cfa	tu	1741309	1741318	forward	+	GUCGGAUUAU		[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000096	arrS	gadEF	tu	3657986	3658054	forward	+	AAAGAAAGCUGGCAAUCCAAUUGCCAGCUUAAGUCGAAACAAGGAGACUCGAUAUUUAAAUCGGAUUAC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000139	chiX	chiZPQ	tu	708315	708326	forward	-	CGUCAAAGAGGA	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000064	chiX	dpiBA	tu	652198	652209	forward	-	CCGUCAAAGAGG		[IGI|W|Inferred from genetic interaction],[SM|S|Site mutation]	Strong
+sRNA00000177	cpxQ	cfa	tu	1741278	1741285	forward	-	GGCAAGGG	MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000087	cpxQ	cfa	tu	1741278	1741285	forward	-	GGCAAGGG	MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000233	cyaR	hdeD	tu	3656985	3656994	forward	-	GGGUGGUUCU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000088	cyaR	hdeD	tu	3656985	3656994	forward	-	GGGUGGUUCU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000199	cyaR	luxS	tu	2814731	2814745	reverse	-	CAUUUAGCCACCUCC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000105	cyaR	nadE	tu	1822447	1822460	forward	-	GGAGGGGUUCAAUG		[GEA|W|Gene expression analysis],[SM|S|Site mutation]	Strong
+sRNA00000150	cyaR	ompX	tu	850441	850451	forward	-	GAGGUGGUUAU	MRNA-DEGRADATION	[IHBCE|W|Inferred by a human based on computational evidence],[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000215	cyaR	rpoS	tu	2867671	2867685	reverse	-	AAAAUGCAAGCGUGU	MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000159	cyaR	yacL	tu			forward	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000283	cyaR	yliM-ompX	tu	850441	850451	forward	-	GAGGUGGUUAU	MRNA-DEGRADATION	[IHBCE|W|Inferred by a human based on computational evidence],[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000128	cyaR	yqaE	tu	2797013	2797032	reverse	-	UUCUCCAGAAACCCAUAUGU		[GEA|W|Gene expression analysis],[SM|S|Site mutation]	Strong
+sRNA00000129	dsrA	hns	tu	1292904	1292916	reverse	-	UUUUAAGUGCUUC	MRNA-DEGRADATION	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000110	dsrA	lrp	tu	932598	932615	forward	-	GUAGAUAGCAAGAAGCGC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000106	dsrA	rbsDACBKR	tu	3933649	3933663	forward	-	AAAUUCGUUACACCA	MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[NABE||Nucleic acid binding evidence]	Strong
+sRNA00000229	dsrA	rpoS	tu	2867648	2867670	reverse	+	GAUUUCCCCUUGUAACGAAUUUC	TRANSLATION-BLOCKING	[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000273	fnrS	cydDC	tu			reverse	-			[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000146	fnrS	folE-yeiB	tu	2243667	2243679	reverse	-	GCAGGUGUGACGC		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000221	fnrS	folX-yfcH	tu	2421301	2421323	forward	-	AAGUAAAACAACGGAGAACCUGC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000079	fnrS	gpmA	tu	787592	787608	reverse	-	CCAUAUACUUACUCCUC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000196	fnrS	gpmA	tu	787592	787608	reverse	-	CCAUAUACUUACUCCUC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000206	fnrS	metE	tu	4013035	4013065	forward	-	UAAUUAGAGGAAGAAAAAAUGACAAUAUUGA		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000135	fnrS	sodA	tu	4100791	4100825	forward	-	GACAAUACUGGAGAUGAAUAUGAGCUAUACCCUGC		[IDA|S|Inferred from direct assay],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000195	fnrS	sodB	tu	1735340	1735397	forward	-	AUUGUACGUAUGCAAAUUAAUAAUAAAGGAGAGUAGCAAUGUCAUUCGAAUUACCUGC		[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000143	gadY	gadXW	tu	3664864	3664968	reverse	+	ACUGAGAGCACAAAGUUUCCCGUGCCAACAGGGAGUGUUAUAACGGUUUAUUAGUCUGGAGACGGCAGACUAUCCUCUUCCCGGUCCCCUAUGCCGGGUUUUUUU	MRNA-DEGRADATION	[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000148	gcvB	asnA	tu	3927136	3927148	forward	-	GGACGCAGGAGUA	MRNA-DEGRADATION	[NABE||Nucleic acid binding evidence],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000208	gcvB	asnB	tu	699202	699220	reverse	-	UGUUGCUUGUUGUGUUUGC	MRNA-DEGRADATION	[IPI|W|Inferred from physical interaction],[NABE||Nucleic acid binding evidence],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000218	gcvB	csgDEFG	tu	1103272	1103289	reverse	-	GAUGUUGCACUGCUGUGU	MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000157	gcvB	csgDEFG	tu	1103272	1103289	reverse	-	GAUGUUGCACUGCUGUGU	MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000278	gcvB	cycA	tu	4429838	4429870	forward	-	ACAGACAGGUACAGGAAGAAAAAAACAUGGUAG		[GEA|W|Gene expression analysis]	Weak
+sRNA00000072	gcvB	dppABCDF	tu	3707714	3707747	reverse	-	UCCAAUUGUGAUGUUUGUUGUUUUAACCCUUUGC	TRANSLATION-BLOCKING	[IGI|W|Inferred from genetic interaction]	Weak
+sRNA00000084	gcvB	inaA	tu	2349421	2349444	reverse	-	CCUCUGUUGCCCACCAGUGAUUAA	MRNA-DEGRADATION	[NABE||Nucleic acid binding evidence],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000082	gcvB	lrp	tu	932556	932563	forward	-	CAGACAGG		[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000185	gcvB	lrp	tu	932416	932420	forward	-	GACAG		[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000061	gcvB	nlpA	tu	3839961	3839970	reverse	-	CCCUGUCCGU	MRNA-DEGRADATION	[NABE||Nucleic acid binding evidence],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000288	gcvB	oppABCDF	tu	1301163	1301202	forward	-	UGAGGGAGUCCAAAAAACAAUGACCAACAUCACCAAGAGA	TRANSLATION-BLOCKING	[IGI|W|Inferred from genetic interaction]	Weak
+sRNA00000232	gcvB	phoPQ	tu	1190454	1190475	reverse	-	UUCUCCCUGUCUUAAUUAUUAA	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000094	gcvB	sstT	tu	3239920	3239930	forward	-	ACAACACAAUG		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000125	gcvB	tcyJ	tu	2000397	2000410	reverse	-	AUGUUGUUAUGUCU	MRNA-DEGRADATION	[NABE||Nucleic acid binding evidence],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000289	gcvB	ysgA	tu	4016153	4016166	reverse	-	UGUUGUGUUGUUGC	MRNA-DEGRADATION	[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000207	glmZ	glmUS	tu	3913690	3913708	reverse	+	UCGUUGUCGGUCAACCUGU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IE|W|Inferred from experiment]	Weak
+sRNA00000136	glmZ	glmUS	tu	3913690	3913708	reverse	+	UCGUUGUCGGUCAACCUGU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000214	istR	tisB	tu	3853429	3853450	forward	-	GAGCACACUGUGUUAUGUCAAC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000241	mcaS	csgDEFG	tu	1103277	1103291	reverse	-	UGCACUGCUGUGUGU	MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[GEA|W|Gene expression analysis],[SM|S|Site mutation],[IPI|W|Inferred from physical interaction]	Strong
+sRNA00000217	mcaS	csgDEFG	tu	1103277	1103291	reverse	-	UGCACUGCUGUGUGU	MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[GEA|W|Gene expression analysis],[SM|S|Site mutation],[IPI|W|Inferred from physical interaction]	Strong
+sRNA00000093	mcaS	flhDC	tu	1978249	1978258	reverse	+	CGUGAUGUCG		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000116	mcaS	flhDC	tu	1978274	1978283	reverse	+	AAAAAAUAAU	TRANSLATION-BLOCKING	[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000124	mgrR	eptB	tu	3710468	3710482	reverse	-	UAUCUCAUGCAAACA		[IDA|S|Inferred from direct assay],[IHBCE|W|Inferred by a human based on computational evidence],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000154	mgrR	eptB	tu	3710468	3710482	reverse	-	UAUCUCAUGCAAACA		[IDA|S|Inferred from direct assay],[IHBCE|W|Inferred by a human based on computational evidence],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000155	mgrR	pitA	tu	3637829	3637857	forward	-	UGGGUGUUUUGCUGGGUGGUCUGAGUGUU		[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000223	mgrR	soxS	tu	4277340	4277355	reverse	-	UCAAUCCAUGCGAUAA		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000183	micA	ecnB	tu	4376542	4376572	forward	-	AGGAAGACGUUAUGGUGAAGAAGACAAUUGC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000258	micA	fimB	tu	4540901	4540936	forward	-	GGAUUAUUGCUAACCCAGCACAGCUAGUGCGCGUCU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000286	micA	fimB	tu	4540901	4540936	forward	-	GGAUUAUUGCUAACCCAGCACAGCUAGUGCGCGUCU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000194	micA	ldtC	tu	1170356	1170383	reverse	-	AACGCGUUUUGAUCAUCACCAAAAAUCC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000245	micA	ompA	tu	1020059	1020074	reverse	-	GCGCCUCGUUAUCAUC	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000086	micA	ompA	tu	1020059	1020074	reverse	-	GCGCCUCGUUAUCAUC	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000153	micA	ompW	tu	1314013	1314045	forward	-	AGCGGAUAUGAAAAAGUUAACAGUGGCGGCUUU		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000161	micA	ompX	tu	850450	850472	forward	-	AUGAAAAAAAUUGCAUGUCUUUC		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000259	micA	phoPQ	tu	1190440	1190462	reverse	-	ACGCGCAUUUUUAUUUCUCCCUG	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction]	Strong
+sRNA00000176	micA	tsx	tu	432049	432071	reverse	-	GAAAAAGGCGCAAAUUGCGUUUC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000249	micA	tsx	tu	432049	432071	reverse	-	GAAAAAGGCGCAAAUUGCGUUUC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000184	micA	yliM-ompX	tu	850450	850472	forward	-	AUGAAAAAAAUUGCAUGUCUUUC		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000188	micC	ompC	tu	2312764	2312790	reverse	-	GUUAUAUGCCUUUAUUUGCUUUUUUAU	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000264	micC	ompC	tu	2312764	2312790	reverse	-	GUUAUAUGCCUUUAUUUGCUUUUUUAU	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000165	micC	ompC	tu	2312764	2312790	reverse	-	GUUAUAUGCCUUUAUUUGCUUUUUUAU	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000291	micF	cpxRA	tu	4105642	4105653	reverse	-	UCAUCAUCAACU		[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000158	micF	cpxRA	tu	4105642	4105653	reverse	-	UCAUCAUCAACU		[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000263	micF	lrp	tu	932573	932606	forward	-	GGAAUACAGAGAGACAAUAAUAAUGGUAGAUAGC	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000113	micF	ompF	tu	986973	986998	reverse	-	GCUUCAUCAUUAUUUAUUACCCUCAU	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000187	micF	ompF	tu	986973	986998	reverse	-	GCUUCAUCAUUAUUUAUUACCCUCAU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[IPI|W|Inferred from physical interaction],[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000127	micF	phoE	tu	260067	260079	reverse	-	CCAUCACCACUAA		[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000255	ohsC	shoB	tu	2700273	2700291	reverse	-	UUGAGGGUGCAUGCUGCAC		[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000192	omrA	cirA	tu	2246779	2246804	reverse	-	CCAUGAGGUAACUACGAAAAUAAAAU	MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000269	omrA	cirA	tu	2246779	2246804	reverse	-	CCAUGAGGUAACUACGAAAAUAAAAU	MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000097	omrA	csgDEFG	tu	1103257	1103275	reverse	-	CCAGAAGUACUGACAGAUG	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000293	omrA	csgDEFG	tu	1103257	1103275	reverse	-	CCAGAAGUACUGACAGAUG	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000277	omrA	flhDC	tu	1978206	1978251	reverse	-	CCCAGAAUAACCAACUUUAUUUUUAUGCGGUUUCACCGCACCCCGU		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000169	omrA	ompT	tu	585614	585645	reverse	-	CCCAGAAGUUUCGCCCGCAUAAAAGUUCUCCA	MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000132	omrB	cirA	tu	2246779	2246804	reverse	-	CCAUGAGGUAACUACGAAAAUAAAAU	MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000109	omrB	cirA	tu	2246779	2246804	reverse	-	CCAUGAGGUAACUACGAAAAUAAAAU	MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000120	omrB	csgDEFG	tu	1103257	1103275	reverse	-	CCAGAAGUACUGACAGAUG	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000265	omrB	csgDEFG	tu	1103257	1103275	reverse	-	CCAGAAGUACUGACAGAUG	TRANSLATION-BLOCKING	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000063	omrB	flhDC	tu	1978206	1978251	reverse	-	CCCAGAAUAACCAACUUUAUUUUUAUGCGGUUUCACCGCACCCCGU		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000203	omrB	ompT	tu	585614	585645	reverse	-	CCCAGAAGUUUCGCCCGCAUAAAAGUUCUCCA	MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000119	oxyS	flhDC	tu	1978200	1978219	reverse	-	UUCCCACCCAGAAUAACCAA		[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000179	oxyS	rpoS	tu			reverse	-		TRANSLATION-BLOCKING	[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000173	rprA	csgDEFG	tu	1103190	1103210	reverse	-	UAAACAUGAUGAAACCCCGCU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000240	rprA	csgDEFG	tu	1103280	1103315	reverse	-	ACUGCUGUGUGUAGUAAUAAAUCAGCCCUAAAUGGG	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000071	rprA	csgDEFG	tu	1103190	1103210	reverse	-	UAAACAUGAUGAAACCCCGCU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation]	Strong
+sRNA00000098	rprA	csgDEFG	tu	1103280	1103315	reverse	-	ACUGCUGUGUGUAGUAAUAAAUCAGCCCUAAAUGGG	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000222	rprA	hdeD	tu	3656960	3656970	forward	-	AGGGGAUUUUC	TRANSLATION-BLOCKING	[GEA|W|Gene expression analysis],[SM|S|Site mutation]	Strong
+sRNA00000246	rprA	hdeD	tu	3656985	3656997	forward	-	GGGUGGUUCUAUG	TRANSLATION-BLOCKING	[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000211	rprA	hdeD	tu	3656960	3656970	forward	-	AGGGGAUUUUC	TRANSLATION-BLOCKING	[GEA|W|Gene expression analysis],[SM|S|Site mutation]	Strong
+sRNA00000237	rprA	hdeD	tu	3656985	3656997	forward	-	GGGUGGUUCUAUG	TRANSLATION-BLOCKING	[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000068	rprA	rpoS	tu	2867645	2867668	reverse	+	ACGGAUUUCCCCUUGUAACGAAUU	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000118	rseX	ompA	tu	1020061	1020075	reverse	-	GCCUCGUUAUCAUCC	MRNA-DEGRADATION	[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000262	rseX	ompA	tu	1020061	1020075	reverse	-	GCCUCGUUAUCAUCC	MRNA-DEGRADATION	[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000216	rseX	ompC	tu	2312750	2312780	reverse	-	GUUAUUAACCCUCUGUUAUAUGCCUUUAUUU	MRNA-DEGRADATION	[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000290	rseX	ompC	tu	2312750	2312780	reverse	-	GUUAUUAACCCUCUGUUAUAUGCCUUUAUUU	MRNA-DEGRADATION	[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000193	rseX	ompC	tu	2312750	2312780	reverse	-	GUUAUUAACCCUCUGUUAUAUGCCUUUAUUU	MRNA-DEGRADATION	[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000274	rybB	csgDEFG	tu	1103278	1103285	reverse	-	GCACUGCU		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000091	rybB	csgDEFG	tu	1103278	1103285	reverse	-	GCACUGCU		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000092	rybB	fadL	tu	2461288	2461304	forward	-	AUCAUUGAGGUUAUGGU		[IMP|W|Inferred from mutant phenotype],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000227	rybB	fiu	tu	841601	841615	reverse	-	GCCACUGUUAAUCCC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000156	rybB	nmpC	tu	576806	576834	reverse	-	GCCACUGUUAAUUUUUUCAUCGUGAGCCC		[SM|S|Site mutation]	Strong
+sRNA00000131	rybB	ompC	tu	2312750	2312782	reverse	-	GUUAUUAACCCUCUGUUAUAUGCCUUUAUUUGC		[AH|W|Author hypothesis],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000268	rybB	ompC	tu	2312750	2312782	reverse	-	GUUAUUAACCCUCUGUUAUAUGCCUUUAUUUGC		[AH|W|Author hypothesis],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000296	rybB	ompC	tu	2312750	2312782	reverse	-	GUUAUUAACCCUCUGUUAUAUGCCUUUAUUUGC		[AH|W|Author hypothesis],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000076	rybB	ompF	tu	987018	987042	reverse	-	GCCACUGCCGUCAAUAAGUUCUGUC		[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000133	rybB	ompF	tu	987018	987042	reverse	-	GCCACUGCCGUCAAUAAGUUCUGUC		[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000202	rybB	ompW	tu	1314007	1314039	forward	-	CGACGGAGCGGAUAUGAAAAAGUUAACAGUGGC		[AH|W|Author hypothesis],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000172	rybB	tsx	tu	432020	432038	reverse	-	GCCACUGUUUGAAAAUCCC		[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000149	rybB	tsx	tu	432020	432038	reverse	-	GCCACUGUUUGAAAAUCCC		[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000162	rydC	cfa	tu	1741304	1741314	forward	+	UCUACGUCGGA	MRNA-DEGRADATION	[ICA|W|Inferred by computational analysis],[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000140	rydC	cfa	tu	1741304	1741314	forward	+	UCUACGUCGGA	MRNA-DEGRADATION	[ICA|W|Inferred by computational analysis],[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000260	rydC	csgDEFG	tu	1103194	1103215	reverse	-	CAUGAUGAAACCCCGCUUUUUU	TRANSLATION-BLOCKING	[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000160	rydC	csgDEFG	tu	1103194	1103215	reverse	-	CAUGAUGAAACCCCGCUUUUUU	TRANSLATION-BLOCKING	[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000163	ryhB	acnB	tu	131596	131624	forward	-	GAGAGCGAGGAGAACCGUCGUGCUAGAAG	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000292	ryhB	cysE	tu	3782554	3782566	reverse	-	ACACGACAUUGCU		[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000254	ryhB	fumA	tu	1688373	1688388	reverse	-	GACAUUGUUCUCUCAC	MRNA-DEGRADATION	[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000234	ryhB	grxD	tu			reverse	-			[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000145	ryhB	hemB	tu	388829	388854	reverse	-	GAACCUAAGCUUUCGAGCACGACUUU		[ICA|W|Inferred by computational analysis],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000168	ryhB	hemH	tu	498841	498876	forward	-	CAGGUGAUGUGCCCGGGCUUUGCUGCGGAUUGUCUG		[ICA|W|Inferred by computational analysis],[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000090	ryhB	iscRSUA	tu	2661532	2661557	reverse	-	UGCUCUAUAAACUCCGUACAUCACUC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000244	ryhB	msrB	tu	1862453	1862464	reverse	-	UGCUCACAUUAC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000085	ryhB	msrB	tu	1862427	1862439	reverse	-	CAUUUGCUCACAU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000181	ryhB	nuoABCEFGHIJKLMN	tu	2405062	2405085	reverse	-	GACAUACUCAUUGCUUACUCAUCA		[SM|S|Site mutation]	Strong
+sRNA00000204	ryhB	nuoABCEFGHIJKLMN	tu	2405062	2405085	reverse	-	GACAUACUCAUUGCUUACUCAUCA		[SM|S|Site mutation]	Strong
+sRNA00000225	ryhB	sdhCDAB-sucABCD-sdhX	tu	755518	755557	forward	-	UGUUAUUACUGUCGUGCUUUCACUUCUCGCAGGAGUCCUC	MRNA-DEGRADATION	[IPI|W|Inferred from physical interaction],[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000108	ryhB	sdhCDAB-sucABCD-sdhX	tu	755162	755170	forward	-	AUGUGGGCG	MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000180	ryhB	shiA	tu	2053566	2053616	forward	+	GUUCGUUUAUAGAUCGACGGCAAUGUGAGUUACCUUUUCCAUACUAAUUAU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000213	ryhB	sodA	tu	4100794	4100815	forward	-	AAUACUGGAGAUGAAUAUGAGC		[IEP|W|Inferred from expression pattern]	Weak
+sRNA00000210	ryhB	sodB	tu	1735365	1735382	forward	-	AAGGAGAGUAGCAAUGUC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IPI|W|Inferred from physical interaction],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000250	ryhB	uof-fur	tu	710693	710742	reverse	-	GACAGAAUUUGCUCUUGAGAUAAUGCGUAUCAUUAUAGAAUUGCCACGCC	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000252	sdhX	katG	tu	4133815	4133828	forward	-	CUGUAGAGGGGAGC		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000285	sdsN	hmp	tu	2685841	2685846	forward	-	GACGCU		[SM|S|Site mutation]	Strong
+sRNA00000114	sdsN	narP	tu	2290501	2290508	forward	-	UGCCUGAA		[SM|S|Site mutation]	Strong
+sRNA00000236	sdsR	mutS	tu	2858477	2858501	forward	-	CGCUGAAAGUUGGCUUUAAUGCGGU		[IPI|W|Inferred from physical interaction]	Weak
+sRNA00000256	sdsR	yhcB	tu	3380205	3380212	forward	-	UGCGCUAA		[SM|S|Site mutation],[IEP|W|Inferred from expression pattern]	Strong
+sRNA00000266	sgrS	adiY	tu	4337931	4337945	reverse	-	CAUGUACUCCUGAGU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000107	sgrS	folE-yeiB	tu	2243664	2243677	reverse	-	CCUGCAGGUGUGAC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000138	sgrS	manXYZ	tu	1903038	1903052	forward	-	ACUCAGUUUUCACAC	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[GEA|W|Gene expression analysis],[SM|S|Site mutation],[IPI|W|Inferred from physical interaction]	Strong
+sRNA00000083	sgrS	ptsG	tu	1157841	1157872	forward	-	GCACCCAUACUCAGGAGCACUCUCAAUUAUGU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000302	sgrS	ptsG	tu	1157841	1157872	forward	-	GCACCCAUACUCAGGAGCACUCUCAAUUAUGU	TRANSLATION-BLOCKING, MRNA-DEGRADATION	[IDA|S|Inferred from direct assay],[SM|S|Site mutation]	Strong
+sRNA00000178	sgrS	purR	tu	1737892	1737910	forward	-	ACUGUGUCACACGUGAUCA	TRANSLATION-BLOCKING	[SM|S|Site mutation],[IMP|W|Inferred from mutant phenotype]	Strong
+sRNA00000279	sibC	ibsC	tu			reverse	-			[IPI|W|Inferred from physical interaction],[IMP|W|Inferred from mutant phenotype]	Weak
+sRNA00000198	symR	symE	tu	4579835	4579911	reverse	-	AGUCAUAACUGCUAUUCUCCAGGAAUAGUGAUUGUGAUUAGCGAUGCGGGUGUGUUGGCGCACAUCCGCACCGCGCU	MRNA-DEGRADATION	[IMP|W|Inferred from mutant phenotype]	Weak

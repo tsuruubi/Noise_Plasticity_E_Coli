@@ -1,0 +1,2587 @@
+# Copies and Copyright-Notice
+#
+#      RegulonDB is free for academic/noncommercial use
+#
+#      User is not entitled to change or erase data sets of the RegulonDB
+#      database or to eliminate copyright notices from RegulonDB. Furthermore,
+#      User is not entitled to expand RegulonDB or to integrate RegulonDB partly
+#      or as a whole into other databank systems, without prior written consent
+#      from CCG-UNAM.
+#
+#      Please check the license at http://regulondb.ccg.unam.mx/menu/download/full_version/terms_and_conditions.jsp
+#
+# Citation
+#
+#      Santos-Zavaleta A et al. (2019). RegulonDB v 10.5: tackling challenges to unify classic and high throughput knowledge of gene regulation in E. coli K-12.,
+#      Nucleic Acids Res. 2019 Jan 8;47(D1):D212-D220. doi: 10.1093/nar/gky1077.
+#
+#
+# Contact
+#
+#      Person: RegulonDB Team
+#      Web Page: http://regulondb.ccg.unam.mx/menu/about_regulondb/contact_us/index.jsp
+#          (regulondb@ccg.unam.mx)
+#
+#
+# Release: 10.9 Date: 06/29/2021
+# ___________________________________________________________________________
+#
+# Columns:
+#  (1) Sigma Factor name
+#  (2) Gene regulated by the Sigma Factor (regulated gene)
+#  (3) Regulatory effect of the TF on the regulated gene (+ activator, - repressor, +- dual, ? unknown)
+#  (4) Evidence that supports the existence of the regulatory interaction
+#  (5) Evidence Type [Weak, Strong, Confirmed] For details see: http://regulondb.ccg.unam.mx/evidenceclassification
+#
+Sigma24	ahpF	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	apaG	+	[NTAS, TASES]	Weak	
+Sigma24	apaH	+	[NTAS, TASES]	Weak	
+Sigma24	bacA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	bamA	+	[AIPP, HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	bamB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	bamC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	bamD	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	bamE	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	bepA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	bhsA	+	[HTTIM]	Strong	
+Sigma24	cca	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	clpX	+	[AIPP, ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma24	cyaR	+	[AIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	degP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	der	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	dnaE	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	dsbC	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	ecpR	+	[ICWHO]	Weak	
+Sigma24	eptB	+	[IHBCE, TIM]	Strong	
+Sigma24	essD	+	[AIPP, ICWHO, IDA, IEP, IPI, TIM]	Strong	
+Sigma24	fabZ	+	[AIPP, HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	fadM	+	[ICWHO]	Weak	
+Sigma24	fkpA	+	[AIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma24	ftnB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	fusA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	greA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	gspA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	gspB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	hcp	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	hcr	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	hokE	+	[AIPP, ICWHO]	Weak	
+Sigma24	hpf	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	ibaG	+	[HIPP, ICWHO]	Weak	
+Sigma24	insK	+	[HIPP, ICWHO]	Weak	
+Sigma24	lgoR	+	[ICWHO]	Weak	
+Sigma24	lhr	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	lon	+	[AIPP, ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma24	lptA	+	[HIPP, ICWHO, IDA, IMP, TIM]	Strong	
+Sigma24	lptB	+	[AIPP, HIPP, ICWHO, IDA, IMP, TIM]	Strong	
+Sigma24	lptD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	lpxA	+	[AIPP, HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	lpxB	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	lpxD	+	[AIPP, HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	lpxP	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	lyxK	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	malQ	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	micA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	micL	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma24	mscM	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	mzrA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	narV	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	narW	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	opgG	+	[HIPP, ICWHO, IDA, TIM]	Strong	
+Sigma24	opgH	+	[HIPP, ICWHO, IDA, TIM]	Strong	
+Sigma24	pdxA	+	[HIPP, ICWHO, NTAS, TASES, TIM]	Strong	
+Sigma24	phoQ	+	[ICWHO]	Weak	
+Sigma24	plsB	+	[AIPP, ICWHO, IEP, TIM]	Strong	
+Sigma24	prfB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	psd	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	ptsN	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	rapZ	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	rclA	+	[ICWHO]	Weak	
+Sigma24	rclB	+	[ICWHO]	Weak	
+Sigma24	rclC	+	[ICWHO]	Weak	
+Sigma24	recJ	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	recR	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	rfaD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	rflP	+	[AIPP, ICWHO]	Weak	
+Sigma24	rnhB	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	rnlB	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	rpoD	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	rpoE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	rpoH	+	[AIPP, HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	rpoN	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	rrrD	+	[AIPP, ICWHO, IDA, IEP, IPI, TIM]	Strong	
+Sigma24	rseA	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	rseB	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	rseC	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	rseP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	rsmA	+	[NTAS, TASES]	Weak	
+Sigma24	rutR	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	rybB	+	[HIPP, ICWHO, IDA, RS-EPT-CBR, TIM]	Strong	
+Sigma24	rzpD	+	[AIPP, ICWHO, IDA, IEP, IPI, TIM]	Strong	
+Sigma24	sbmA	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	sgbE	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	sgbH	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	sgbU	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	sixA	+	[AIPP, ICWHO, IDA, TIM]	Strong	
+Sigma24	skp	+	[AIPP, HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma24	surA	+	[HIPP, ICWHO, NTAS, TASES, TIM]	Strong	
+Sigma24	tufA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	uspD	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	waaC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	waaF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	waaL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	wza	+	[AIPP, TIM]	Strong	
+Sigma24	wzb	+	[AIPP, TIM]	Strong	
+Sigma24	wzc	+	[AIPP, TIM]	Strong	
+Sigma24	yaiW	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	ybaB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	ybfG	+	[AIPP, IHBCE, TIM]	Strong	
+Sigma24	ydhI	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	ydhJ	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	ydhK	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yeaY	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	yfeK	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yfeS	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yfeX	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yfeY	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yfgD	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yggN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	yghF	+	[HIPP, TIM]	Strong	
+Sigma24	ygiM	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	yhjJ	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yiaK	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yiaL	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yiaM	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yiaN	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yiaO	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yicI	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yicJ	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yidQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	yieE	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yieF	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yiiS	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma24	yoaC	+	[ICWHO]	Weak	
+Sigma24	yqjA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma24	yraP	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma24	ytfJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	aer	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	cheA	+	[HIPP, ICWHO]	Weak	
+Sigma28	cheB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	cheR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	cheW	+	[HIPP, ICWHO]	Weak	
+Sigma28	cheY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	cheZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	flgK	+	[HIPP, ICWHO]	Weak	
+Sigma28	flgL	+	[HIPP, ICWHO]	Weak	
+Sigma28	flgM	+	[HIPP, ICWHO]	Weak	
+Sigma28	flgN	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliC	+	[HIPP, ICWHO, RPF]	Strong	
+Sigma28	fliD	+	[HIPP, RPF]	Strong	
+Sigma28	fliE	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliF	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliG	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliH	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliI	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliJ	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliK	+	[HIPP, ICWHO]	Weak	
+Sigma28	fliL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliM	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliO	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	fliS	+	[HIPP, RPF]	Strong	
+Sigma28	fliT	+	[HIPP, RPF]	Strong	
+Sigma28	fliZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	flxA	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma28	hemL	+	[HIPP, ICWHO, IEP, TIM]	Strong	
+Sigma28	ispE	+	[HIPP, ICWHO]	Weak	
+Sigma28	lolB	+	[HIPP, ICWHO]	Weak	
+Sigma28	modA	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma28	modB	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma28	modC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma28	motA	+	[HIPP, ICWHO]	Weak	
+Sigma28	motB	+	[HIPP, ICWHO]	Weak	
+Sigma28	oppA	+	[AIPP, ICWHO, NTAS]	Weak	
+Sigma28	oppB	+	[AIPP, ICWHO, NTAS]	Weak	
+Sigma28	oppC	+	[AIPP, ICWHO, NTAS]	Weak	
+Sigma28	oppD	+	[AIPP, ICWHO, NTAS]	Weak	
+Sigma28	oppF	+	[AIPP, ICWHO, NTAS]	Weak	
+Sigma28	pdeH	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma28	ppdA	+	[HIPP, ICWHO]	Weak	
+Sigma28	ppdB	+	[HIPP, ICWHO]	Weak	
+Sigma28	ppdC	+	[HIPP, ICWHO]	Weak	
+Sigma28	prs	+	[HIPP, ICWHO]	Weak	
+Sigma28	rdcA	+	[HIPP, ICWHO]	Weak	
+Sigma28	rdcB	+	[HIPP, ICWHO]	Weak	
+Sigma28	recC	+	[HIPP, ICWHO]	Weak	
+Sigma28	tap	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	tar	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	tcyJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	trg	+	[HIPP, HTTIM]	Strong	
+Sigma28	tsr	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma28	ves	+	[ICWHO, TIM]	Strong	
+Sigma28	yafW	+	[HIPP, ICWHO]	Weak	
+Sigma28	yafX	+	[HIPP, ICWHO]	Weak	
+Sigma28	ycgR	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma28	yecF	+	[HIPP, ICWHO]	Weak	
+Sigma28	ygbK	+	[HIPP, ICWHO]	Weak	
+Sigma28	ygdB	+	[HIPP, ICWHO]	Weak	
+Sigma28	yhiL	+	[HIPP]	Weak	
+Sigma28	yjcS	+	[HIPP]	Weak	
+Sigma28	ykfB	+	[HIPP, ICWHO]	Weak	
+Sigma28	ykfF	+	[HIPP, ICWHO]	Weak	
+Sigma28	ykfG	+	[HIPP, ICWHO]	Weak	
+Sigma28	ykfH	+	[HIPP, ICWHO]	Weak	
+Sigma28	ykfI	+	[HIPP, ICWHO]	Weak	
+Sigma28	ynjH	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma32	ackA	+	[AIPP, ICWHO]	Weak	
+Sigma32	adiC	+	[ICWHO]	Weak	
+Sigma32	alaA	+	[ICWHO]	Weak	
+Sigma32	alaT	+	[HIPP, ICWHO]	Weak	
+Sigma32	alaU	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	alaV	+	[HIPP, HTTIM]	Strong	
+Sigma32	bssS	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	can	+	[AIPP, HTTIM, IDA, RS-EPT-CBR]	Strong	
+Sigma32	cas1	+	[IDA, IEP]	Strong	
+Sigma32	cas2	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	casD	+	[IDA, IEP]	Strong	
+Sigma32	casE	+	[IDA, IEP]	Strong	
+Sigma32	clpB	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	clpP	+	[ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	clpX	+	[ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	cnoX	+	[AIPP, ICWHO, IDA, IEP]	Strong	
+Sigma32	cra	+	[ICWHO]	Weak	
+Sigma32	creA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	creB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	creC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	crr	+	[HIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma32	dnaJ	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	dnaK	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	dsbC	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma32	fkpB	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	ftsH	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	fxsA	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	gapA	+	[AIPP, HIPP, ICWHO, IDA, TIM]	Strong	
+Sigma32	glnS	+	[ICWHO, IDA]	Strong	
+Sigma32	gltT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	gltU	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma32	gltV	+	[HIPP, ICWHO]	Weak	
+Sigma32	gltW	+	[HIPP, ICWHO]	Weak	
+Sigma32	groL	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma32	groS	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma32	grpE	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	hemW	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	hflC	+	[HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	hflK	+	[HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	hflX	+	[HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	hfq	+	[HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	holC	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	hslO	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	hslR	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	hslU	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	hslV	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	hspQ	+	[IDA, IEP]	Strong	
+Sigma32	htpG	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	htpX	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	ibpA	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	ibpB	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	ileS	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	ileT	+	[HIPP, ICWHO]	Weak	
+Sigma32	ileU	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	ileV	+	[HIPP, HTTIM]	Strong	
+Sigma32	ispH	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	lapA	+	[AIPP, ICWHO, IDA, IEP, IHBCE, TIM]	Strong	
+Sigma32	lapB	+	[AIPP, ICWHO, IDA, IEP, IHBCE, TIM]	Strong	
+Sigma32	ldhA	+	[AIPP, ICWHO, IDA, IEP]	Strong	
+Sigma32	lipB	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma32	lnt	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	lon	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma32	lspA	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	mbiA	+	[HIPP, TIM]	Strong	
+Sigma32	metA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	mhpT	+	[AIPP, ICWHO]	Weak	
+Sigma32	miaA	+	[HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	mlc	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	mngA	+	[HIPP, IC, ICWHO]	Weak	
+Sigma32	mngB	+	[HIPP, IC, ICWHO]	Weak	
+Sigma32	mpaA	+	[ICWHO]	Weak	
+Sigma32	mutL	+	[HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	mutM	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	nanX	+	[ICWHO]	Weak	
+Sigma32	nanY	+	[ICWHO]	Weak	
+Sigma32	narP	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	nfuA	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	nusB	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	osmF	+	[IDA, IEP]	Strong	
+Sigma32	pgpA	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	pgpC	+	[AIPP, ICWHO]	Weak	
+Sigma32	phoP	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	phoQ	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	pncC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	pphA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	ppiD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	prlC	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma32	ptsH	+	[HIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma32	ptsI	+	[HIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma32	pyrF	+	[AIPP, ICWHO, IDA, IEP, IHBCE, TIM]	Strong	
+Sigma32	raiA	+	[IDA, IEP]	Strong	
+Sigma32	raiZ	+	[IDA, IEP]	Strong	
+Sigma32	rapA	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	rdgB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	recJ	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma32	rfaD	+	[ICWHO, TIM]	Strong	
+Sigma32	ribE	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	rlmE	+	[AIPP, HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	rnlA	+	[AIPP, ICWHO, IDA]	Strong	
+Sigma32	rpmE	+	[HTTIM, IDA, IEP]	Strong	
+Sigma32	rpoD	+	[HIPP, ICWHO, IDA, IEP, IMP, TIM]	Strong	
+Sigma32	rrfA	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrfB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	rrfC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma32	rrfD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	rrfE	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrfF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	rrfG	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrfH	+	[HIPP, HTTIM]	Strong	
+Sigma32	rrlA	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrlB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	rrlC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma32	rrlD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	rrlE	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrlG	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrlH	+	[HIPP, HTTIM]	Strong	
+Sigma32	rrsA	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrsB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	rrsC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma32	rrsD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	rrsE	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrsG	+	[HIPP, ICWHO]	Weak	
+Sigma32	rrsH	+	[HIPP, HTTIM]	Strong	
+Sigma32	rsmJ	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma32	sdaA	+	[HIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	sdsR	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	slt	+	[ICWHO]	Weak	
+Sigma32	tadA	+	[AIPP, ICWHO]	Weak	
+Sigma32	thiL	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma32	thrV	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	topA	+	[AIPP, HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma32	tpke11	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	trmA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	tyrR	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	valS	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	waaC	+	[ICWHO, TIM]	Strong	
+Sigma32	waaF	+	[ICWHO, TIM]	Strong	
+Sigma32	waaL	+	[ICWHO, TIM]	Strong	
+Sigma32	xerD	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma32	yafD	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	yafE	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	yafU	+	[IDA, IEP]	Strong	
+Sigma32	ybeD	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma32	ybeX	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	ybeY	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	ybeZ	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma32	ybfE	+	[AIPP, ICWHO]	Weak	
+Sigma32	yccE	+	[IDA, IEP]	Strong	
+Sigma32	yceI	+	[AIPP, ICWHO, IDA]	Strong	
+Sigma32	yceJ	+	[AIPP, ICWHO, IDA]	Strong	
+Sigma32	yciH	+	[AIPP, ICWHO, IDA, IEP, IHBCE, TIM]	Strong	
+Sigma32	ycjF	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	ycjX	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	ycjY	+	[ICWHO]	Weak	
+Sigma32	ydeO	+	[IDA, IEP]	Strong	
+Sigma32	ydhQ	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	yeaD	+	[AIPP, HIPP, ICWHO, IDA, TIM]	Strong	
+Sigma32	yehR	+	[IDA, IEP]	Strong	
+Sigma32	yehW	+	[IDA, IEP]	Strong	
+Sigma32	yehX	+	[IDA, IEP]	Strong	
+Sigma32	yehY	+	[IDA, IEP]	Strong	
+Sigma32	yfbR	+	[ICWHO]	Weak	
+Sigma32	yfjV	+	[IDA, IEP]	Strong	
+Sigma32	yhdN	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma32	yiaA	+	[IDA, IEP]	Strong	
+Sigma32	yibA	+	[IDA, IEP]	Strong	
+Sigma32	yjaZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma32	yjhG	+	[AIBSPD, IDA, IEP, IMP]	Strong	
+Sigma32	yjhH	+	[AIBSPD, IDA, IEP, IMP]	Strong	
+Sigma32	yjhI	+	[AIBSPD, IDA, IEP, IMP]	Strong	
+Sigma32	yjiT	+	[IDA, IEP]	Strong	
+Sigma32	ymjC	+	[ICWHO]	Weak	
+Sigma32	ymjD	+	[ICWHO]	Weak	
+Sigma32	ynfK	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma32	yrdA	+	[IDA, IEP]	Strong	
+Sigma32	yrfG	+	[IDA, IEP]	Strong	
+Sigma32	zntR	+	[AIPP, ICWHO, IDA, IEP, TIM]	Strong	
+Sigma38	aceE	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	aceF	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	acnA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	acs	+	[AIPP, HTTIM]	Strong	
+Sigma38	actP	+	[AIPP, HTTIM]	Strong	
+Sigma38	ada	+	[ICWHO, TIM]	Strong	
+Sigma38	adhE	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	aidB	+	[ICWHO, TIM]	Strong	
+Sigma38	aldB	+	[ICWHO, TIM]	Strong	
+Sigma38	alkA	+	[CV(RPF/RS-EPT-CBR), ICWHO, RPF, RS-EPT-CBR]	Confirmed	
+Sigma38	alkB	+	[ICWHO, TIM]	Strong	
+Sigma38	ansP	+	[ICWHO, TIM]	Strong	
+Sigma38	appA	+	[HIPP, ICWHO]	Weak	
+Sigma38	appB	+	[HIPP, ICWHO]	Weak	
+Sigma38	appC	+	[HIPP, ICWHO]	Weak	
+Sigma38	appX	+	[HIPP, ICWHO]	Weak	
+Sigma38	appY	+	[HTTIM]	Strong	
+Sigma38	araF	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma38	araG	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma38	araH	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma38	ariR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	arrS	+	[HIPP, ICWHO]	Weak	
+Sigma38	artI	+	[ICWHO, TIM]	Strong	
+Sigma38	artM	+	[ICWHO, TIM]	Strong	
+Sigma38	artP	+	[ICWHO, TIM]	Strong	
+Sigma38	artQ	+	[ICWHO, TIM]	Strong	
+Sigma38	asr	+	[ICWHO, IMP, TIM]	Strong	
+Sigma38	astA	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma38	astB	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma38	astC	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma38	astD	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma38	astE	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma38	baeR	+	[AIPP, ICWHO]	Weak	
+Sigma38	baeS	+	[AIPP, ICWHO]	Weak	
+Sigma38	blc	+	[ICWHO, TIM]	Strong	
+Sigma38	blr	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma38	bolA	+	[AIPP, CV(RPF/RS-EPT-CBR), CV(RPF/TIM), ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma38	bsmA	+	[NTAS]	Weak	
+Sigma38	btsT	+	[TIM]	Strong	
+Sigma38	btuF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	cbpA	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma38	cbpM	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma38	cfa	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	cpxA	+	[HIPP]	Weak	
+Sigma38	cpxR	+	[HIPP]	Weak	
+Sigma38	crr	+	[TIM]	Strong	
+Sigma38	csgA	+	[CV(RPF/TIM), RPF, TIM]	Confirmed	
+Sigma38	csgB	+	[CV(RPF/TIM), RPF, TIM]	Confirmed	
+Sigma38	csgC	+	[CV(RPF/TIM), RPF, TIM]	Confirmed	
+Sigma38	csgD	+	[ICWHO, TIM]	Strong	
+Sigma38	csgE	+	[ICWHO, TIM]	Strong	
+Sigma38	csgF	+	[ICWHO, TIM]	Strong	
+Sigma38	csgG	+	[ICWHO, TIM]	Strong	
+Sigma38	csiE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	csrA	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	cyaR	+	[AIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	ddpA	+	[HIPP]	Weak	
+Sigma38	ddpB	+	[HIPP]	Weak	
+Sigma38	ddpC	+	[HIPP]	Weak	
+Sigma38	ddpD	+	[HIPP]	Weak	
+Sigma38	ddpF	+	[HIPP]	Weak	
+Sigma38	ddpX	+	[HIPP]	Weak	
+Sigma38	dgcC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	dhaK	+	[AIPP, ICWHO]	Weak	
+Sigma38	dhaL	+	[AIPP, ICWHO]	Weak	
+Sigma38	dhaM	+	[AIPP, ICWHO]	Weak	
+Sigma38	dhaR	+	[AIPP, ICWHO]	Weak	
+Sigma38	dinB	+	[AIPP, ICWHO]	Weak	
+Sigma38	dkgA	+	[HTTIM]	Strong	
+Sigma38	dkgB	+	[AIPP, ICWHO]	Weak	
+Sigma38	dmsD	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma38	dnaN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	dps	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	ecnB	+	[ICWHO, TIM]	Strong	
+Sigma38	elaB	+	[ICA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	eno	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	envC	+	[HTTIM]	Strong	
+Sigma38	epd	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	evgA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	evgS	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	fadL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	fau	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	fbaA	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	fbaB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma38	fic	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, IEP, IHBCE, IMP, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma38	folK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	frdA	+	[TIM]	Strong	
+Sigma38	frdB	+	[TIM]	Strong	
+Sigma38	frdC	+	[TIM]	Strong	
+Sigma38	frdD	+	[TIM]	Strong	
+Sigma38	ftsA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	ftsQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	ftsZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	fumC	+	[ICWHO, TIM]	Strong	
+Sigma38	gabD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	gabP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	gabT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	gadA	+	[HIPP, TIM]	Strong	
+Sigma38	gadB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	gadC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	gadE	+	[ICWHO, IEP, TIM]	Strong	
+Sigma38	gadF	+	[ICWHO, IEP, TIM]	Strong	
+Sigma38	gadW	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	gadX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	gadY	+	[AIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	galE	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma38	galK	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma38	galM	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma38	galT	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma38	gapA	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	glaH	+	[ICWHO, TIM]	Strong	
+Sigma38	glgA	+	[ICWHO, TIM]	Strong	
+Sigma38	glgC	+	[ICWHO, TIM]	Strong	
+Sigma38	glgP	+	[ICWHO, TIM]	Strong	
+Sigma38	glgS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	glk	+	[HIPP, HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	glsA	+	[TIM]	Strong	
+Sigma38	gltB	+	[HIPP, TIM]	Strong	
+Sigma38	gltD	+	[HIPP, TIM]	Strong	
+Sigma38	gltF	+	[HIPP, TIM]	Strong	
+Sigma38	gor	+	[AIPP]	Weak	
+Sigma38	gpmA	+	[AIPP, HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	gpmM	+	[HTTIM]	Strong	
+Sigma38	gyrB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	hchA	+	[ICWHO, TIM]	Strong	
+Sigma38	hdeA	+	[HIPP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	hdeB	+	[HIPP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	hdeD	+	[HIPP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	hdfR	+	[ICWHO, IHBCE]	Weak	
+Sigma38	hmp	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma38	hofM	+	[AIPP, ICWHO]	Weak	
+Sigma38	hofN	+	[AIPP, ICWHO]	Weak	
+Sigma38	hofO	+	[AIPP, ICWHO]	Weak	
+Sigma38	hofP	+	[AIPP, ICWHO]	Weak	
+Sigma38	htrE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	hyaA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	hyaB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	hyaC	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	hyaD	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	hyaE	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	hyaF	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	idlP	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	ihfA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	ihfB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	ilvY	+	[HIPP, ICWHO, IEP, IMP, TIM]	Strong	
+Sigma38	insC5	+	[HTTIM]	Strong	
+Sigma38	insCD5	+	[HTTIM]	Strong	
+Sigma38	insD5	+	[HTTIM]	Strong	
+Sigma38	insI1	+	[HTTIM]	Strong	
+Sigma38	insN	+	[HTTIM]	Strong	
+Sigma38	iraD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	katE	+	[ICWHO, IMP, TIM]	Strong	
+Sigma38	kbp	+	[ICWHO]	Weak	
+Sigma38	ldcC	+	[IMP, TAS]	Weak	
+Sigma38	lhgD	+	[ICWHO, TIM]	Strong	
+Sigma38	lpd	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	lsrA	+	[AIPP, ICWHO]	Weak	
+Sigma38	lsrB	+	[AIPP, ICWHO]	Weak	
+Sigma38	lsrC	+	[AIPP, ICWHO]	Weak	
+Sigma38	lsrD	+	[AIPP, ICWHO]	Weak	
+Sigma38	lsrF	+	[AIPP, ICWHO]	Weak	
+Sigma38	lsrG	+	[AIPP, ICWHO]	Weak	
+Sigma38	luxS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	mdtA	+	[AIPP, ICWHO]	Weak	
+Sigma38	mdtB	+	[AIPP, ICWHO]	Weak	
+Sigma38	mdtC	+	[AIPP, ICWHO]	Weak	
+Sigma38	mdtD	+	[AIPP, ICWHO]	Weak	
+Sigma38	mdtE	+	[ICWHO, TIM]	Strong	
+Sigma38	mdtF	+	[ICWHO, TIM]	Strong	
+Sigma38	metK	+	[HIPP, TIM]	Strong	
+Sigma38	mglA	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma38	mglB	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma38	mglC	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma38	micF	+	[HIPP, TIM]	Strong	
+Sigma38	mlrA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	mnmG	+	[TIM]	Strong	
+Sigma38	mpl	+	[HIPP, ICWHO]	Weak	
+Sigma38	msyB	+	[ICWHO, TIM]	Strong	
+Sigma38	mtn	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	murP	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	murQ	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	murR	+	[ICWHO, TIM]	Strong	
+Sigma38	mutS	+	[ICWHO, TIM]	Strong	
+Sigma38	narU	+	[HIPP, ICWHO]	Weak	
+Sigma38	nhaA	+	[ICWHO, TIM]	Strong	
+Sigma38	nhaR	+	[ICWHO, TIM]	Strong	
+Sigma38	ompF	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma38	ompN	+	[ICWHO, IHBCE]	Weak	
+Sigma38	osmB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	osmC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	osmE	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	osmF	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	osmY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	otsA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	otsB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	oxyR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	pabA	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, IEP, IHBCE, IMP, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma38	patA	+	[AIPP, TIM]	Strong	
+Sigma38	patD	+	[HIPP]	Weak	
+Sigma38	pcnB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	pdeC	+	[HTTIM]	Strong	
+Sigma38	pdeR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	pdhR	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	pfkA	+	[HIPP, HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	pfkB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	pgi	+	[HIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma38	pgk	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	phoU	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	phr	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	poxB	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	pphA	+	[HIPP, IHBCE, IMP, TIM]	Strong	
+Sigma38	ppk	+	[HTTIM]	Strong	
+Sigma38	ppx	+	[HTTIM]	Strong	
+Sigma38	pqiA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	pqiB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	pqiC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	proP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	proV	+	[ICWHO, TIM]	Strong	
+Sigma38	proW	+	[ICWHO, TIM]	Strong	
+Sigma38	proX	+	[ICWHO, TIM]	Strong	
+Sigma38	pstA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	pstB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	pstC	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	pstS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	puuA	+	[AIPP, IMP, TIM]	Strong	
+Sigma38	puuB	+	[HTTIM, IMP, TIM]	Strong	
+Sigma38	puuC	+	[HTTIM, IMP, TIM]	Strong	
+Sigma38	puuD	+	[HTTIM, IMP, TIM]	Strong	
+Sigma38	puuE	+	[HTTIM, IMP, TIM]	Strong	
+Sigma38	puuP	+	[AIPP, IMP, TIM]	Strong	
+Sigma38	puuR	+	[HTTIM, IMP, TIM]	Strong	
+Sigma38	pykA	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	pykF	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	ravA	+	[HTTIM]	Strong	
+Sigma38	recF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	rhaR	+	[ICWHO, TIM]	Strong	
+Sigma38	rhaS	+	[ICWHO, TIM]	Strong	
+Sigma38	rpoE	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma38	rpoH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	rraA	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	rsd	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	rseA	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma38	rseB	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma38	rseC	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma38	rseD	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma38	rsmG	+	[TIM]	Strong	
+Sigma38	rssA	+	[ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	rssB	+	[HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	ryjA	+	[TIM]	Strong	
+Sigma38	sdsN	+	[HIPP, IEP, IHBCE, TIM]	Strong	
+Sigma38	sdsR	+	[HIPP, IHBCE, IMP, TIM]	Strong	
+Sigma38	setA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma38	sgrS	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma38	sgrT	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma38	sodC	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma38	sohB	+	[HIPP, ICWHO]	Weak	
+Sigma38	speB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	speC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma38	speG	+	[HTTIM]	Strong	
+Sigma38	sra	+	[ICWHO, TIM]	Strong	
+Sigma38	ssrS	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	sucA	+	[ICWHO, TIM]	Strong	
+Sigma38	sucB	+	[ICWHO, TIM]	Strong	
+Sigma38	sucC	+	[ICWHO, TIM]	Strong	
+Sigma38	sucD	+	[ICWHO, TIM]	Strong	
+Sigma38	talA	+	[ICWHO, TIM]	Strong	
+Sigma38	tam	+	[AIPP, HTTIM, ICWHO, IEP]	Strong	
+Sigma38	tktB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	tolC	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	topA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	tpiA	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	treA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma38	treF	+	[HTTIM]	Strong	
+Sigma38	uspB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	viaA	+	[HTTIM]	Strong	
+Sigma38	wrbA	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	xapA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	xapB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	xthA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	yabI	+	[HTTIM, RS-EPT-CBR, TIM]	Strong	
+Sigma38	yadS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	yadV	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	yafN	+	[AIPP, ICWHO]	Weak	
+Sigma38	yafO	+	[AIPP, ICWHO]	Weak	
+Sigma38	yafP	+	[AIPP, ICWHO]	Weak	
+Sigma38	ybaT	+	[TIM]	Strong	
+Sigma38	ybgA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	ybiI	+	[ICWHO]	Weak	
+Sigma38	ybjP	+	[ICWHO, TIM]	Strong	
+Sigma38	yccJ	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma38	ycgZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	yciE	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma38	yciF	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma38	yciG	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma38	yciT	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma38	yciZ	+	[ICWHO, TIM]	Strong	
+Sigma38	ydbD	+	[AIPP, ICWHO, IEP]	Weak	
+Sigma38	ydbK	+	[ICWHO, IHBCE]	Weak	
+Sigma38	ydcS	+	[HIPP]	Weak	
+Sigma38	ydcT	+	[HIPP]	Weak	
+Sigma38	ydcU	+	[HIPP]	Weak	
+Sigma38	ydcV	+	[HIPP]	Weak	
+Sigma38	yddG	+	[ICWHO, TIM]	Strong	
+Sigma38	ydhT	+	[ICWHO, TIM]	Strong	
+Sigma38	ydhU	+	[ICWHO, TIM]	Strong	
+Sigma38	ydhV	+	[ICWHO, TIM]	Strong	
+Sigma38	ydhW	+	[ICWHO, TIM]	Strong	
+Sigma38	ydhX	+	[ICWHO, TIM]	Strong	
+Sigma38	ydhY	+	[ICWHO, TIM]	Strong	
+Sigma38	yehW	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	yehX	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	yehY	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	yeiL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	yffO	+	[HTTIM]	Strong	
+Sigma38	yffP	+	[HTTIM]	Strong	
+Sigma38	yggE	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	ygiB	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	ygiC	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	yhfG	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, IEP, IHBCE, IMP, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma38	yhiD	+	[HIPP, RS-EPT-CBR, TIM]	Strong	
+Sigma38	yhiM	+	[AIPP, ICWHO]	Weak	
+Sigma38	yhjG	+	[HTTIM, IEP]	Strong	
+Sigma38	yiaG	+	[ICWHO, TIM]	Strong	
+Sigma38	yibQ	+	[HTTIM]	Strong	
+Sigma38	yihG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	yjcH	+	[AIPP, HTTIM]	Strong	
+Sigma38	ymgA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	ymgC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	ymiC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma38	ymjE	+	[AIPP, IMP, TIM]	Strong	
+Sigma38	ynfB	+	[HTTIM]	Strong	
+Sigma38	ynfE	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma38	ynfF	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma38	ynfG	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma38	ynfH	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma38	yqiG	+	[HTTIM]	Strong	
+Sigma38	yqiH	+	[HTTIM]	Strong	
+Sigma38	yqiI	+	[HTTIM]	Strong	
+Sigma38	ytfK	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma38	znuA	+	[AIPP, ICWHO]	Weak	
+Sigma54	acrD	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	actP	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	amtB	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma54	argT	+	[AIPP, ICWHO]	Weak	
+Sigma54	aslB	+	[AIPP, ICWHO, IEP]	Weak	
+Sigma54	astA	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma54	astB	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma54	astC	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma54	astD	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma54	astE	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma54	atoA	+	[AIPP, ICWHO, IMP]	Weak	
+Sigma54	atoB	+	[AIPP, ICWHO, IMP]	Weak	
+Sigma54	atoD	+	[AIPP, ICWHO, IMP]	Weak	
+Sigma54	atoE	+	[AIPP, ICWHO, IMP]	Weak	
+Sigma54	chaC	+	[AIPP, ICWHO, IEP]	Weak	
+Sigma54	dcuD	+	[HIPP, ICWHO]	Weak	
+Sigma54	ddpA	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	ddpB	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	ddpC	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	ddpD	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	ddpF	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	ddpX	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	emrD	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	fdhF	+	[ICWHO, TIM]	Strong	
+Sigma54	fhlA	+	[ICWHO, TIM]	Strong	
+Sigma54	flhC	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	flhD	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	focB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	glmY	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	glnA	+	[ICWHO, TIM]	Strong	
+Sigma54	glnG	+	[ICWHO, TIM]	Strong	
+Sigma54	glnH	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	glnK	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma54	glnL	+	[ICWHO, TIM]	Strong	
+Sigma54	glnP	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	glnQ	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	glpQ	+	[ICWHO, RSE, TIM]	Strong	
+Sigma54	gltI	+	[AIPP]	Weak	
+Sigma54	gltJ	+	[AIPP]	Weak	
+Sigma54	gltK	+	[AIPP]	Weak	
+Sigma54	gltL	+	[AIPP]	Weak	
+Sigma54	gnsA	+	[ICWHO, RSE, TIM]	Strong	
+Sigma54	hisJ	+	[AIPP, ICWHO]	Weak	
+Sigma54	hisM	+	[AIPP, ICWHO]	Weak	
+Sigma54	hisP	+	[AIPP, ICWHO]	Weak	
+Sigma54	hisQ	+	[AIPP, ICWHO]	Weak	
+Sigma54	htpG	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	hycA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycC	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycE	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycF	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycG	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycH	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hycI	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	hydN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hyfR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	hypA	+	[ICWHO, TIM]	Strong	
+Sigma54	hypB	+	[ICWHO, TIM]	Strong	
+Sigma54	hypC	+	[ICWHO, TIM]	Strong	
+Sigma54	hypD	+	[ICWHO, TIM]	Strong	
+Sigma54	hypE	+	[ICWHO, TIM]	Strong	
+Sigma54	hypF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	ibpB	+	[ICWHO, TIM]	Strong	
+Sigma54	nac	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	nikA	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	nikB	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	nikC	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	nikD	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	nikE	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	nikR	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	norV	+	[AIPP, HIPP, ICWHO, IEP, TIM]	Strong	
+Sigma54	norW	+	[AIPP, HIPP, ICWHO, IEP, TIM]	Strong	
+Sigma54	patA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma54	potF	+	[AIPP, ICWHO]	Weak	
+Sigma54	potG	+	[AIPP, ICWHO]	Weak	
+Sigma54	potH	+	[AIPP, ICWHO]	Weak	
+Sigma54	potI	+	[AIPP, ICWHO]	Weak	
+Sigma54	prpB	+	[AIPP, ICWHO]	Weak	
+Sigma54	prpC	+	[AIPP, ICWHO]	Weak	
+Sigma54	prpD	+	[AIPP, ICWHO]	Weak	
+Sigma54	prpE	+	[AIPP, ICWHO]	Weak	
+Sigma54	pspA	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	pspB	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	pspC	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	pspD	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	pspE	+	[AIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma54	pspG	+	[ICA, ICWHO, RPF]	Strong	
+Sigma54	puuP	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	radD	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	rcdB	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	relA	+	[TIM]	Strong	
+Sigma54	rhaD	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	rpoE	+	[IHBCE, TIM]	Strong	
+Sigma54	rpoH	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma54	rseA	+	[IHBCE, TIM]	Strong	
+Sigma54	rseB	+	[IHBCE, TIM]	Strong	
+Sigma54	rseC	+	[IHBCE, TIM]	Strong	
+Sigma54	rseD	+	[IHBCE, TIM]	Strong	
+Sigma54	rtcA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	rtcB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma54	rtcR	+	[HIPP]	Weak	
+Sigma54	rutA	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	rutB	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	rutC	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	rutD	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	rutE	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	rutF	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	rutG	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	sroC	+	[AIPP]	Weak	
+Sigma54	ssnA	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	xapB	+	[ICWHO, RSE, TIM]	Strong	
+Sigma54	xdhA	+	[HIPP, IEP, TIM]	Strong	
+Sigma54	xdhB	+	[HIPP, IEP, TIM]	Strong	
+Sigma54	xdhC	+	[HIPP, IEP, TIM]	Strong	
+Sigma54	yaaU	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	yahE	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	yeaG	+	[AIPP, ICWHO]	Weak	
+Sigma54	yeaH	+	[AIPP, ICWHO]	Weak	
+Sigma54	ygfK	+	[HIPP, ICWHO, IEP]	Weak	
+Sigma54	yhdW	+	[AIPP]	Weak	
+Sigma54	yhdX	+	[AIPP]	Weak	
+Sigma54	yhdY	+	[AIPP]	Weak	
+Sigma54	yhdZ	+	[AIPP]	Weak	
+Sigma54	ymjE	+	[AIPP, HIPP, ICWHO, IEP]	Weak	
+Sigma54	zraP	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma54	zraR	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma54	zraS	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma70	3'ETS-<i>leuZ</i>	+	[HIPP, ICWHO]	Weak	
+Sigma70	accA	+	[ICWHO, TIM]	Strong	
+Sigma70	accB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	accC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	accD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aceA	+	[ICWHO, TIM]	Strong	
+Sigma70	aceB	+	[ICWHO, TIM]	Strong	
+Sigma70	aceE	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aceF	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aceK	+	[ICWHO, TIM]	Strong	
+Sigma70	acnA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	acnB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	acpP	+	[HIPP, TIM]	Strong	
+Sigma70	acpS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	acrA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	acrB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	acrD	+	[AIPP, ICWHO]	Weak	
+Sigma70	acrE	+	[AIPP, ICWHO]	Weak	
+Sigma70	acrF	+	[AIPP, ICWHO]	Weak	
+Sigma70	acrR	+	[AIPP, ICWHO]	Weak	
+Sigma70	acrZ	+	[TIM]	Strong	
+Sigma70	acs	+	[AIPP, HTTIM, ICWHO]	Strong	
+Sigma70	actP	+	[AIPP, HTTIM, ICWHO]	Strong	
+Sigma70	ada	+	[ICWHO, TIM]	Strong	
+Sigma70	add	+	[ICWHO]	Weak	
+Sigma70	adeD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	adhE	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	adiA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	agaA	+	[ICWHO, TIM]	Strong	
+Sigma70	agaB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	agaC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	agaD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	agaI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	agaR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	agaS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	agaV	+	[ICWHO, TIM]	Strong	
+Sigma70	agaW	+	[ICWHO, TIM]	Strong	
+Sigma70	ahpC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ahpF	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aidB	+	[ICWHO, TIM]	Strong	
+Sigma70	alaC	+	[AIPP, ICWHO]	Weak	
+Sigma70	alaE	+	[IHBCE, TIM]	Strong	
+Sigma70	alaT	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	alaU	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	alaV	+	[HIPP, HTTIM]	Strong	
+Sigma70	alaW	+	[HIPP, ICWHO]	Weak	
+Sigma70	alaX	+	[HIPP, ICWHO]	Weak	
+Sigma70	aldA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	alkA	+	[CV(RPF/RS-EPT-CBR), ICWHO, RPF, RS-EPT-CBR]	Confirmed	
+Sigma70	alkB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	allB	+	[AIPP, ICWHO, RSE, TIM]	Strong	
+Sigma70	allC	+	[AIPP, ICWHO]	Weak	
+Sigma70	allD	+	[AIPP, ICWHO]	Weak	
+Sigma70	allE	+	[AIPP, ICWHO]	Weak	
+Sigma70	alsA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	alsB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	alsC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	alsE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	alsR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	amiA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	amiB	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ampC	+	[ICWHO, IMP, RS-EPT-CBR]	Strong	
+Sigma70	ampG	+	[HIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	amyA	+	[HIPP, ICWHO]	Weak	
+Sigma70	ansB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	appA	+	[HIPP, ICWHO]	Weak	
+Sigma70	appB	+	[HIPP, ICWHO]	Weak	
+Sigma70	appC	+	[HIPP, ICWHO]	Weak	
+Sigma70	appX	+	[HIPP, ICWHO]	Weak	
+Sigma70	appY	+	[AIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	apt	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	araA	+	[ICWHO, TIM]	Strong	
+Sigma70	araB	+	[ICWHO, TIM]	Strong	
+Sigma70	araC	+	[HIPP, IHBCE, TIM]	Strong	
+Sigma70	araD	+	[ICWHO, TIM]	Strong	
+Sigma70	araE	+	[ICWHO, TIM]	Strong	
+Sigma70	araF	+	[ICWHO, TIM]	Strong	
+Sigma70	araG	+	[ICWHO, TIM]	Strong	
+Sigma70	araH	+	[ICWHO, TIM]	Strong	
+Sigma70	araJ	+	[ICWHO, TIM]	Strong	
+Sigma70	arcA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	arfA	+	[ICWHO, TIM]	Strong	
+Sigma70	argA	+	[AIPP, ICWHO]	Weak	
+Sigma70	argB	+	[ICWHO, TIM]	Strong	
+Sigma70	argC	+	[ICWHO, TIM]	Strong	
+Sigma70	argD	+	[ICWHO, RS-EPT-CBR, TAS]	Strong	
+Sigma70	argE	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	argF	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	argG	+	[AIPP, ICWHO]	Weak	
+Sigma70	argH	+	[ICWHO, TIM]	Strong	
+Sigma70	argI	+	[ICWHO, TIM]	Strong	
+Sigma70	argO	+	[CV(RPF/TIM), HIPP, HTTIM, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	argQ	+	[HIPP, ICWHO]	Weak	
+Sigma70	argR	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	argS	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	argU	+	[HIPP, ICWHO]	Weak	
+Sigma70	argV	+	[HIPP, ICWHO]	Weak	
+Sigma70	argW	+	[HIPP, ICWHO]	Weak	
+Sigma70	argX	+	[CV(RPF/TIM), HIPP, IMP, RPF, TIM]	Confirmed	
+Sigma70	argY	+	[HIPP, ICWHO]	Weak	
+Sigma70	argZ	+	[HIPP, ICWHO]	Weak	
+Sigma70	ariR	+	[HIPP, TIM]	Strong	
+Sigma70	aroA	+	[ICWHO, TIM]	Strong	
+Sigma70	aroB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aroD	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aroF	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aroG	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	aroH	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aroK	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	aroL	+	[ICWHO, TIM]	Strong	
+Sigma70	aroM	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	aroP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	arrS	+	[HIPP, ICWHO]	Weak	
+Sigma70	arsB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	arsC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	arsR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	artI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	artJ	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, HTTIM, ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	artM	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	artP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	artQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ascB	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	ascF	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	asnA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	asnC	+	[ICWHO, TIM]	Strong	
+Sigma70	asnT	+	[HIPP, ICWHO]	Weak	
+Sigma70	asnU	+	[HIPP, ICWHO]	Weak	
+Sigma70	asnV	+	[HIPP, ICWHO]	Weak	
+Sigma70	aspA	+	[ICWHO, TIM]	Strong	
+Sigma70	aspV	+	[HIPP, ICWHO]	Weak	
+Sigma70	asr	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	astA	+	[HIPP, ICWHO]	Weak	
+Sigma70	astB	+	[HIPP, ICWHO]	Weak	
+Sigma70	astC	+	[HIPP, ICWHO]	Weak	
+Sigma70	astD	+	[HIPP, ICWHO]	Weak	
+Sigma70	astE	+	[HIPP, ICWHO]	Weak	
+Sigma70	atpA	+	[ICWHO, TIM]	Strong	
+Sigma70	atpB	+	[ICWHO, TIM]	Strong	
+Sigma70	atpC	+	[ICWHO, TIM]	Strong	
+Sigma70	atpD	+	[ICWHO, TIM]	Strong	
+Sigma70	atpE	+	[ICWHO, TIM]	Strong	
+Sigma70	atpF	+	[ICWHO, TIM]	Strong	
+Sigma70	atpG	+	[ICWHO, TIM]	Strong	
+Sigma70	atpH	+	[ICWHO, TIM]	Strong	
+Sigma70	atpI	+	[ICWHO, TIM]	Strong	
+Sigma70	azoR	+	[HIPP, TIM]	Strong	
+Sigma70	azuC	+	[ICWHO, TIM]	Strong	
+Sigma70	bamC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	bcp	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	bcsB	+	[AIPP, ICWHO]	Weak	
+Sigma70	bcsE	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	bcsF	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	bcsG	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	bcsZ	+	[AIPP, ICWHO]	Weak	
+Sigma70	bdcA	+	[AIPP, ICWHO]	Weak	
+Sigma70	betA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	betB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	betI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	betT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	bglJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	bglX	+	[HIPP, ICWHO]	Weak	
+Sigma70	bhsA	+	[ICWHO, TIM]	Strong	
+Sigma70	bioA	+	[HIPP, ICWHO]	Weak	
+Sigma70	bioB	+	[HIPP, ICWHO]	Weak	
+Sigma70	bioC	+	[HIPP, ICWHO]	Weak	
+Sigma70	bioD	+	[HIPP, ICWHO]	Weak	
+Sigma70	bioF	+	[HIPP, ICWHO]	Weak	
+Sigma70	bluF	+	[TIM]	Strong	
+Sigma70	bluR	+	[HTTIM, RS-EPT-CBR, TIM]	Strong	
+Sigma70	bolA	+	[AIPP, CV(RPF/RS-EPT-CBR), CV(RPF/TIM), ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	bssS	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	btuB	+	[ICWHO, TIM]	Strong	
+Sigma70	btuD	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	btuE	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	btuF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cadA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	cadB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	cadC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	caiA	+	[ICWHO, TIM]	Strong	
+Sigma70	caiB	+	[ICWHO, TIM]	Strong	
+Sigma70	caiC	+	[ICWHO, TIM]	Strong	
+Sigma70	caiD	+	[ICWHO, TIM]	Strong	
+Sigma70	caiE	+	[ICWHO, TIM]	Strong	
+Sigma70	caiF	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	caiT	+	[ICWHO, TIM]	Strong	
+Sigma70	can	+	[AIPP, HTTIM, IDA, RS-EPT-CBR]	Strong	
+Sigma70	carA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	carB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cas1	+	[ICWHO, TIM]	Strong	
+Sigma70	cas2	+	[ICWHO, TIM]	Strong	
+Sigma70	cas3	+	[IHBCE]	Weak	
+Sigma70	casA	+	[ICWHO, TIM]	Strong	
+Sigma70	casB	+	[ICWHO, TIM]	Strong	
+Sigma70	casC	+	[ICWHO, TIM]	Strong	
+Sigma70	casD	+	[ICWHO, TIM]	Strong	
+Sigma70	casE	+	[ICWHO, TIM]	Strong	
+Sigma70	cbl	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cbpA	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	cbpM	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	ccmA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccmB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccmC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccmD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccmE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccmF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccmG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccmH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ccp	+	[ICWHO, TIM]	Strong	
+Sigma70	cdd	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cecR	+	[HIPP, IHBCE]	Weak	
+Sigma70	cedA	+	[HIPP, ICWHO]	Weak	
+Sigma70	cfa	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	chiA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	chiX	+	[ICWHO, TIM]	Strong	
+Sigma70	cho	+	[AIPP, ICWHO]	Weak	
+Sigma70	chpB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	chpS	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	cirA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	clpA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	clpB	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	clpP	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	clpX	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cmk	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cmoM	+	[HIPP, ICWHO]	Weak	
+Sigma70	coaD	+	[ICWHO, TIM]	Strong	
+Sigma70	cobS	+	[HIPP, ICWHO, RPF, TIM]	Strong	
+Sigma70	cobT	+	[HIPP, ICWHO, RPF, TIM]	Strong	
+Sigma70	cobU	+	[HIPP, ICWHO, RPF, TIM]	Strong	
+Sigma70	codA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	codB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	copA	+	[HIPP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	corA	+	[HIPP, ICWHO]	Weak	
+Sigma70	cpdB	+	[ICWHO, TIM]	Strong	
+Sigma70	cpxA	+	[HIPP, ICWHO]	Weak	
+Sigma70	cpxP	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cpxQ	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cpxR	+	[HIPP, ICWHO]	Weak	
+Sigma70	creA	+	[HIPP, ICWHO]	Weak	
+Sigma70	creB	+	[HIPP, ICWHO]	Weak	
+Sigma70	creC	+	[HIPP, ICWHO]	Weak	
+Sigma70	creD	+	[HIPP, ICWHO]	Weak	
+Sigma70	crp	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	crr	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	csgA	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma70	csgB	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma70	csgC	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma70	csgD	+	[ICWHO, TIM]	Strong	
+Sigma70	csgE	+	[ICWHO, TIM]	Strong	
+Sigma70	csgF	+	[ICWHO, TIM]	Strong	
+Sigma70	csgG	+	[ICWHO, TIM]	Strong	
+Sigma70	csiE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cspA	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cspB	+	[AIPP, HIPP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cspC	+	[ICWHO, TIM]	Strong	
+Sigma70	cspD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cspE	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	csqR	+	[AIPP, ICWHO, IHBCE, RSE, TIM]	Strong	
+Sigma70	csrA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	csrB	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cstA	+	[ICWHO, TIM]	Strong	
+Sigma70	cusA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cusB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cusC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cusF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cusR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cusS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cutA	+	[ICWHO, TIM]	Strong	
+Sigma70	cvpA	+	[HIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma70	cyaA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cyaR	+	[AIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cydA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cydB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cydC	+	[ICWHO, TIM]	Strong	
+Sigma70	cydD	+	[ICWHO, TIM]	Strong	
+Sigma70	cynR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cynS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cynT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cynX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cyoA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cyoB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cyoC	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cyoD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cyoE	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cysA	+	[ICWHO, TIM]	Strong	
+Sigma70	cysB	+	[HIPP, ICWHO]	Weak	
+Sigma70	cysC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cysD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cysG	+	[CV(RPF/TIM), HIPP, ICWHO, IMP, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	cysH	+	[ICWHO, TIM]	Strong	
+Sigma70	cysI	+	[ICWHO, TIM]	Strong	
+Sigma70	cysJ	+	[ICWHO, TIM]	Strong	
+Sigma70	cysK	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	cysM	+	[ICWHO, TIM]	Strong	
+Sigma70	cysN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	cysP	+	[ICWHO, TIM]	Strong	
+Sigma70	cysT	+	[HIPP, ICWHO]	Weak	
+Sigma70	cysU	+	[ICWHO, TIM]	Strong	
+Sigma70	cysW	+	[ICWHO, TIM]	Strong	
+Sigma70	cytR	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dacC	+	[AIPP, ICWHO]	Weak	
+Sigma70	dadA	+	[ICWHO, TIM]	Strong	
+Sigma70	dadX	+	[ICWHO, TIM]	Strong	
+Sigma70	dam	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	damX	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dapA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dapB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dapD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dapE	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma70	dapF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	dctA	+	[ICWHO, TIM]	Strong	
+Sigma70	dctR	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dcuA	+	[ICWHO, TIM]	Strong	
+Sigma70	dcuB	+	[TIM]	Strong	
+Sigma70	dcuD	+	[HIPP, ICWHO]	Weak	
+Sigma70	dcuR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	dcuS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ddlB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	deaD	+	[HIPP, ICWHO, IHBCE, IMP, TIM]	Strong	
+Sigma70	decR	+	[AIPP, ICWHO]	Weak	
+Sigma70	def	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	degQ	+	[IHBCE, TIM]	Strong	
+Sigma70	degS	+	[IHBCE, TIM]	Strong	
+Sigma70	deoA	+	[ICWHO, TIM]	Strong	
+Sigma70	deoB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	deoC	+	[ICWHO, TIM]	Strong	
+Sigma70	deoD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dgcN	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dgcT	+	[ICWHO, TIM]	Strong	
+Sigma70	dgcZ	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dgoA	+	[AIPP, IDA]	Strong	
+Sigma70	dgoD	+	[AIPP, IDA]	Strong	
+Sigma70	dgoK	+	[AIPP, IDA]	Strong	
+Sigma70	dgoR	+	[AIPP, IDA]	Strong	
+Sigma70	dgoT	+	[AIPP, IDA]	Strong	
+Sigma70	dicB	+	[HIPP, ICWHO, TASES]	Weak	
+Sigma70	dicC	+	[HIPP, TIM]	Strong	
+Sigma70	dinB	+	[AIPP, ICWHO]	Weak	
+Sigma70	dinF	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dinG	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma70	dinI	+	[HTTIM, IHBCE]	Strong	
+Sigma70	dinJ	+	[AIPP, ICWHO]	Weak	
+Sigma70	dinQ	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	dkgA	+	[ICWHO, TIM]	Strong	
+Sigma70	dksA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dmsA	+	[ICWHO, NTAS, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dmsB	+	[ICWHO, NTAS, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dmsC	+	[ICWHO, NTAS, RS-EPT-CBR, RSE, TIM]	Strong	
+Sigma70	dmsD	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma70	dnaA	+	[TIM]	Strong	
+Sigma70	dnaG	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dnaN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	dppA	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dppB	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dppC	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dppD	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dppF	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dps	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dsbA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	dsbC	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma70	dsdA	+	[ICWHO, TIM]	Strong	
+Sigma70	dsdC	+	[AIPP, ICWHO]	Weak	
+Sigma70	dsdX	+	[ICWHO, TIM]	Strong	
+Sigma70	dsrA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	dtpA	+	[ICWHO, TIM]	Strong	
+Sigma70	dusB	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	dut	+	[HIPP, ICWHO]	Weak	
+Sigma70	dxs	+	[HIPP, ICWHO]	Weak	
+Sigma70	ebgA	+	[AIPP, ICWHO]	Weak	
+Sigma70	ebgC	+	[AIPP, ICWHO]	Weak	
+Sigma70	ecpA	+	[ICWHO]	Weak	
+Sigma70	eda	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	edd	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	efeU	+	[HIPP, TIM]	Strong	
+Sigma70	efp	+	[HIPP, ICWHO]	Weak	
+Sigma70	emrA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	emrB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	eno	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	entA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	entB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	entC	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	entD	+	[ICWHO, TIM]	Strong	
+Sigma70	entE	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	entF	+	[ICWHO, TIM]	Strong	
+Sigma70	entH	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	entS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	envZ	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	epd	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	eptB	+	[ICWHO, TIM]	Strong	
+Sigma70	era	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	esrE	+	[TIM]	Strong	
+Sigma70	evgA	+	[ICWHO, TIM]	Strong	
+Sigma70	evgS	+	[ICWHO, TIM]	Strong	
+Sigma70	exbB	+	[HIPP, ICWHO]	Weak	
+Sigma70	exbD	+	[HIPP, ICWHO]	Weak	
+Sigma70	exuR	+	[TIM]	Strong	
+Sigma70	fabA	+	[HIPP, ICWHO]	Weak	
+Sigma70	fabB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fabD	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	fabF	+	[HIPP, TIM]	Strong	
+Sigma70	fabG	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	fabH	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	fadA	+	[ICWHO, TIM]	Strong	
+Sigma70	fadB	+	[ICWHO, TIM]	Strong	
+Sigma70	fadD	+	[ICWHO, TIM]	Strong	
+Sigma70	fadI	+	[AIPP, ICWHO]	Weak	
+Sigma70	fadJ	+	[AIPP, ICWHO]	Weak	
+Sigma70	fadR	+	[ICWHO, TIM]	Strong	
+Sigma70	fau	+	[AIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fbaA	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fdnG	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fdnH	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fdnI	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fdx	+	[ICWHO, TIM]	Strong	
+Sigma70	feaB	+	[IHBCE, TIM]	Strong	
+Sigma70	feaR	+	[IHBCE, TIM]	Strong	
+Sigma70	fecI	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	fecR	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	feoA	+	[AIPP, ICWHO]	Weak	
+Sigma70	feoB	+	[AIPP, ICWHO]	Weak	
+Sigma70	feoC	+	[AIPP, ICWHO]	Weak	
+Sigma70	fepA	+	[ICWHO, TIM]	Strong	
+Sigma70	fepB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	fepC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fepD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fepE	+	[ICWHO, TIM]	Strong	
+Sigma70	fepG	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fes	+	[ICWHO, TIM]	Strong	
+Sigma70	fhuA	+	[AIPP, ICWHO]	Weak	
+Sigma70	fhuB	+	[AIPP, ICWHO]	Weak	
+Sigma70	fhuC	+	[AIPP, ICWHO]	Weak	
+Sigma70	fhuD	+	[AIPP, ICWHO]	Weak	
+Sigma70	fhuF	+	[HIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma70	fimA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fimB	+	[ICWHO, TIM]	Strong	
+Sigma70	fimC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fimD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fimE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fimF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fimG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fimH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fimI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fis	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	fiu	+	[HIPP, ICWHO]	Weak	
+Sigma70	fixA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fixB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fixC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fixX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fkpB	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, IDA, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	fldB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	flgA	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgB	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgC	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgD	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgE	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgF	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgG	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgH	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgI	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgJ	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgM	+	[HIPP, ICWHO]	Weak	
+Sigma70	flgN	+	[HIPP, ICWHO]	Weak	
+Sigma70	flhA	+	[HIPP, TAS]	Weak	
+Sigma70	flhB	+	[HIPP, TAS]	Weak	
+Sigma70	flhC	+	[ICWHO, TIM]	Strong	
+Sigma70	flhD	+	[ICWHO, TIM]	Strong	
+Sigma70	flhE	+	[HIPP, TAS]	Weak	
+Sigma70	fliA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fliD	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliE	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliF	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliG	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliH	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliI	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliJ	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliK	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliL	+	[ICWHO, TIM]	Strong	
+Sigma70	fliM	+	[ICWHO, TIM]	Strong	
+Sigma70	fliN	+	[ICWHO, TIM]	Strong	
+Sigma70	fliO	+	[ICWHO, TIM]	Strong	
+Sigma70	fliP	+	[ICWHO, TIM]	Strong	
+Sigma70	fliQ	+	[ICWHO, TIM]	Strong	
+Sigma70	fliR	+	[ICWHO, TIM]	Strong	
+Sigma70	fliS	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliT	+	[HIPP, ICWHO]	Weak	
+Sigma70	fliZ	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	flu	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fmt	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	fnr	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	fnrS	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	focA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	folA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	folE	+	[ICA, ICWHO]	Weak	
+Sigma70	folK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fpr	+	[HIPP, ICWHO]	Weak	
+Sigma70	frc	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	frdA	+	[ICWHO, TIM]	Strong	
+Sigma70	frdB	+	[ICWHO, TIM]	Strong	
+Sigma70	frdC	+	[ICWHO, TIM]	Strong	
+Sigma70	frdD	+	[ICWHO, TIM]	Strong	
+Sigma70	frlR	+	[ICWHO, RS-EPT-CBR, RSE, TIM]	Strong	
+Sigma70	frr	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	frsA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	fruA	+	[AIPP, ICWHO]	Weak	
+Sigma70	fruB	+	[AIPP, ICWHO]	Weak	
+Sigma70	fruK	+	[AIPP, ICWHO]	Weak	
+Sigma70	ftnA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	ftnB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsK	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsW	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ftsZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fucA	+	[AIPP, ICWHO]	Weak	
+Sigma70	fucI	+	[ICWHO, NTAS]	Weak	
+Sigma70	fucK	+	[ICWHO, NTAS]	Weak	
+Sigma70	fucO	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	fucP	+	[ICWHO, NTAS]	Weak	
+Sigma70	fucR	+	[ICWHO, NTAS]	Weak	
+Sigma70	fucU	+	[ICWHO, NTAS, RSE, TIM]	Strong	
+Sigma70	fumA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	fumB	+	[ICA, ICWHO, TIM]	Strong	
+Sigma70	fumC	+	[HIPP, ICWHO, TAS, TIM]	Strong	
+Sigma70	fur	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gabD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gabP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gabT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gadA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gadB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gadC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gadE	+	[HIPP, ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gadF	+	[HIPP, ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gadX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	galE	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma70	galK	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma70	galM	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma70	galP	+	[HIPP, ICWHO, NTAS, RS-EPT-CBR, TIM]	Strong	
+Sigma70	galR	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	galS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	galT	+	[CV(RPF/TIM), ICWHO, RPF, TIM]	Confirmed	
+Sigma70	gapA	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	garK	+	[AIPP, IC, ICWHO]	Weak	
+Sigma70	garL	+	[AIPP, IC, ICWHO]	Weak	
+Sigma70	garP	+	[AIPP, IC, ICWHO]	Weak	
+Sigma70	garR	+	[AIPP, IC, ICWHO]	Weak	
+Sigma70	gatA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gatB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gatC	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gatD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gatY	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gatZ	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gcd	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gcl	+	[AIPP, ICWHO]	Weak	
+Sigma70	gcvA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gcvB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gcvH	+	[ICWHO, TIM]	Strong	
+Sigma70	gcvP	+	[ICWHO, TIM]	Strong	
+Sigma70	gcvR	+	[HIPP, ICWHO, IHBCE, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gcvT	+	[ICWHO, TIM]	Strong	
+Sigma70	gdhA	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gfcA	+	[IHBCE, TIM]	Strong	
+Sigma70	glcA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glcB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glcC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glcD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glcE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glcF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glcG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glgA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glgB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glgC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glgP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glgX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glk	+	[HIPP, HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	glmS	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	glmU	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	glmY	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	glmZ	+	[HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	glnA	+	[ICWHO, TIM]	Strong	
+Sigma70	glnB	+	[ICWHO, TIM]	Strong	
+Sigma70	glnG	+	[ICWHO, TIM]	Strong	
+Sigma70	glnL	+	[ICWHO, TIM]	Strong	
+Sigma70	glnQ	+	[AIPP, ICWHO]	Weak	
+Sigma70	glnS	+	[ICWHO, IDA]	Strong	
+Sigma70	glnU	+	[HIPP, ICWHO]	Weak	
+Sigma70	glnV	+	[HIPP, ICWHO]	Weak	
+Sigma70	glnW	+	[HIPP, ICWHO]	Weak	
+Sigma70	glnX	+	[HIPP, ICWHO]	Weak	
+Sigma70	gloA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glpA	+	[HIPP, ICWHO]	Weak	
+Sigma70	glpB	+	[HIPP, ICWHO]	Weak	
+Sigma70	glpC	+	[HIPP, ICWHO]	Weak	
+Sigma70	glpD	+	[ICWHO, TIM]	Strong	
+Sigma70	glpF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glpK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glpQ	+	[HIPP, ICWHO]	Weak	
+Sigma70	glpT	+	[HIPP, ICWHO]	Weak	
+Sigma70	glpX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	glrK	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gltA	+	[ICWHO, TIM]	Strong	
+Sigma70	gltB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gltD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gltF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gltI	+	[HIPP, IC, ICWHO]	Weak	
+Sigma70	gltJ	+	[HIPP, IC, ICWHO]	Weak	
+Sigma70	gltK	+	[HIPP, IC, ICWHO]	Weak	
+Sigma70	gltL	+	[HIPP, IC, ICWHO]	Weak	
+Sigma70	gltT	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma70	gltU	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma70	gltV	+	[HIPP, ICWHO]	Weak	
+Sigma70	gltW	+	[HIPP, ICWHO]	Weak	
+Sigma70	gltX	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gluQ	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	glxK	+	[AIPP, ICWHO]	Weak	
+Sigma70	glxR	+	[AIPP, ICWHO]	Weak	
+Sigma70	glyA	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	glyQ	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	glyS	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	glyT	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma70	glyU	+	[HIPP, ICWHO]	Weak	
+Sigma70	glyV	+	[HIPP, ICWHO]	Weak	
+Sigma70	glyW	+	[HIPP, ICWHO]	Weak	
+Sigma70	glyX	+	[HIPP, ICWHO]	Weak	
+Sigma70	glyY	+	[HIPP, ICWHO]	Weak	
+Sigma70	gmk	+	[ICWHO, RS-EPT-CBR, TAS]	Strong	
+Sigma70	gnd	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gnsA	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	gntK	+	[ICWHO, TIM]	Strong	
+Sigma70	gntP	+	[ICWHO, TIM]	Strong	
+Sigma70	gntR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gntT	+	[ICWHO, TIM]	Strong	
+Sigma70	gntU	+	[ICWHO, TIM]	Strong	
+Sigma70	gor	+	[AIPP, ICWHO]	Weak	
+Sigma70	gph	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gpmA	+	[AIPP, HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	gpsA	+	[HIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gpt	+	[HIPP, ICWHO]	Weak	
+Sigma70	grcA	+	[CV(RPF/TIM), HIPP, IMP, RPF, TIM]	Confirmed	
+Sigma70	greA	+	[ICWHO, TIM]	Strong	
+Sigma70	groL	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma70	groS	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma70	grxB	+	[AIPP, ICWHO]	Weak	
+Sigma70	grxC	+	[HIPP, IHBCE, TIM]	Strong	
+Sigma70	grxD	+	[AIPP, ICWHO]	Weak	
+Sigma70	gspA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspM	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gspO	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	guaA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	guaB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	gutM	+	[ICWHO, TIM]	Strong	
+Sigma70	gutQ	+	[ICWHO, TIM]	Strong	
+Sigma70	gyrA	+	[ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	gyrB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	hchA	+	[ICWHO, TIM]	Strong	
+Sigma70	hdeA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hdeB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hdeD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hemA	+	[ICWHO, TIM]	Strong	
+Sigma70	hemB	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hemF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	hemH	+	[ICWHO, TIM]	Strong	
+Sigma70	hemN	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hflC	+	[HIPP, HTTIM, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hflD	+	[ICWHO, TIM]	Strong	
+Sigma70	hflK	+	[HIPP, HTTIM, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hflX	+	[HIPP, HTTIM, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hfq	+	[HIPP, HTTIM, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hha	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	hicA	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	hicB	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	higA	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	higB	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	hipA	+	[ICWHO, TIM]	Strong	
+Sigma70	hipB	+	[ICWHO, TIM]	Strong	
+Sigma70	hisA	+	[ICWHO, TIM]	Strong	
+Sigma70	hisB	+	[ICWHO, TIM]	Strong	
+Sigma70	hisF	+	[ICWHO, TIM]	Strong	
+Sigma70	hisH	+	[ICWHO, TIM]	Strong	
+Sigma70	hisI	+	[ICWHO, TIM]	Strong	
+Sigma70	hisJ	+	[ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hisM	+	[ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hisP	+	[ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hisQ	+	[ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hisR	+	[CV(RPF/TIM), HIPP, IMP, RPF, TIM]	Confirmed	
+Sigma70	hisS	+	[ICWHO, TIM]	Strong	
+Sigma70	hiuH	+	[ICWHO]	Weak	
+Sigma70	hns	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hofB	+	[AIPP, ICWHO]	Weak	
+Sigma70	hofC	+	[AIPP, ICWHO]	Weak	
+Sigma70	hokD	+	[ICWHO, TIM]	Strong	
+Sigma70	hpf	+	[HIPP, ICWHO]	Weak	
+Sigma70	hpt	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hscA	+	[ICWHO, TIM]	Strong	
+Sigma70	hscB	+	[ICWHO, TIM]	Strong	
+Sigma70	hslJ	+	[ICWHO, TIM]	Strong	
+Sigma70	htrE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	hupB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hyaA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	hyaB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	hyaC	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	hyaD	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	hyaE	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	hyaF	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	hybA	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hybB	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hybC	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hybD	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hybE	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hybF	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hybG	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hybO	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	hyi	+	[AIPP, ICWHO]	Weak	
+Sigma70	hypF	+	[ICWHO, IDA]	Strong	
+Sigma70	ibsC	+	[HIPP, IEP, IHBCE, TIM]	Strong	
+Sigma70	ibsD	+	[HIPP, IEP, IHBCE, TIM]	Strong	
+Sigma70	icd	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	idlP	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	idnK	+	[ICWHO, TIM]	Strong	
+Sigma70	idnR	+	[AIPP]	Weak	
+Sigma70	ihfB	+	[HIPP, TIM]	Strong	
+Sigma70	ileS	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	ileT	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	ileU	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ileV	+	[HIPP, HTTIM]	Strong	
+Sigma70	ileX	+	[HIPP, ICWHO]	Weak	
+Sigma70	ilvA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ilvB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ilvC	+	[HIPP, ICWHO, IEP, IMP, TIM]	Strong	
+Sigma70	ilvD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ilvE	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ilvG	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ilvH	+	[HIPP, ICWHO, TASES, TIM]	Strong	
+Sigma70	ilvI	+	[HIPP, ICWHO, TASES, TIM]	Strong	
+Sigma70	ilvL	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ilvM	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ilvN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ilvX	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ilvY	+	[HIPP, ICWHO, IEP, IMP, TIM]	Strong	
+Sigma70	inaA	+	[HIPP, ICWHO]	Weak	
+Sigma70	infA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	infB	+	[HIPP, HTTIM, ICWHO, IEP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	infC	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	insD7	+	[HIPP, ICWHO, TASES]	Weak	
+Sigma70	intQ	+	[HIPP, ICWHO, TASES]	Weak	
+Sigma70	intS	+	[ICWHO, TIM]	Strong	
+Sigma70	iraD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	iraM	+	[ICWHO, TIM]	Strong	
+Sigma70	iraP	+	[ICWHO, NTAS, RS-EPT-CBR, TIM]	Strong	
+Sigma70	iscA	+	[ICWHO, TIM]	Strong	
+Sigma70	iscR	+	[ICWHO, TIM]	Strong	
+Sigma70	iscS	+	[ICWHO, TIM]	Strong	
+Sigma70	iscU	+	[ICWHO, TIM]	Strong	
+Sigma70	iscX	+	[ICWHO, TIM]	Strong	
+Sigma70	ispA	+	[HIPP, ICWHO]	Weak	
+Sigma70	ispH	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, IDA, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	isrC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	istR	+	[ICWHO, TIM]	Strong	
+Sigma70	ivbL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	katG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	kbaY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	kbaZ	+	[ICWHO, TIM]	Strong	
+Sigma70	kbl	+	[ICWHO, TIM]	Strong	
+Sigma70	kdpA	+	[ICWHO, TIM]	Strong	
+Sigma70	kdpB	+	[ICWHO, TIM]	Strong	
+Sigma70	kdpC	+	[ICWHO, TIM]	Strong	
+Sigma70	kdpF	+	[ICWHO, TIM]	Strong	
+Sigma70	kdsA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	kdsB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	kdsC	+	[HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	kdsD	+	[ICWHO, TIM]	Strong	
+Sigma70	lacA	+	[ICWHO, TIM]	Strong	
+Sigma70	lacI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	lacY	+	[ICWHO, TIM]	Strong	
+Sigma70	lacZ	+	[ICWHO, TIM]	Strong	
+Sigma70	lamB	+	[ICWHO, IMP, TASES]	Weak	
+Sigma70	lapA	+	[AIPP, ICWHO, IDA, IEP, IHBCE, TIM]	Strong	
+Sigma70	lapB	+	[AIPP, ICWHO, IDA, IEP, IHBCE, TIM]	Strong	
+Sigma70	ldtC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	leuA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	leuB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	leuC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	leuD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	leuL	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	leuO	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	leuP	+	[HIPP, ICWHO]	Weak	
+Sigma70	leuQ	+	[HIPP, ICWHO]	Weak	
+Sigma70	leuT	+	[CV(RPF/TIM), HIPP, IMP, RPF, TIM]	Confirmed	
+Sigma70	leuU	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	leuV	+	[HIPP, ICWHO]	Weak	
+Sigma70	leuW	+	[HIPP, ICWHO]	Weak	
+Sigma70	leuX	+	[HIPP, ICWHO]	Weak	
+Sigma70	leuZ	+	[HIPP, ICWHO]	Weak	
+Sigma70	lexA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	lgt	+	[IHBCE, TIM]	Strong	
+Sigma70	lipB	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma70	livF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	livG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	livH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	livJ	+	[ICWHO, TIM]	Strong	
+Sigma70	livK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	livM	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	lldD	+	[ICWHO, TIM]	Strong	
+Sigma70	lldP	+	[ICWHO, TIM]	Strong	
+Sigma70	lldR	+	[ICWHO, TIM]	Strong	
+Sigma70	loiP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	lolA	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	lon	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma70	lpd	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	lptA	+	[HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	lptB	+	[HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	lptC	+	[HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	lptD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	lpxC	+	[HIPP, ICWHO, NTAS, TIM]	Strong	
+Sigma70	lpxT	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	lrp	+	[ICWHO, TIM]	Strong	
+Sigma70	lspA	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, IDA, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	lsrK	+	[AIPP, ICWHO, IEP]	Weak	
+Sigma70	lsrR	+	[AIPP, ICWHO, IEP]	Weak	
+Sigma70	lysA	+	[AIPP, ICWHO]	Weak	
+Sigma70	lysC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	lysO	+	[HIPP, IHBCE, IMP, TIM]	Strong	
+Sigma70	lysP	+	[ICWHO, TIM]	Strong	
+Sigma70	lysR	+	[AIPP, ICWHO]	Weak	
+Sigma70	lysT	+	[HIPP, ICWHO]	Weak	
+Sigma70	lysU	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	lysV	+	[HIPP, ICWHO]	Weak	
+Sigma70	lysW	+	[HIPP, ICWHO]	Weak	
+Sigma70	lyxK	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	malE	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	malF	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	malG	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	malI	+	[ICWHO, TIM]	Strong	
+Sigma70	malK	+	[ICWHO, IMP, TASES]	Weak	
+Sigma70	malM	+	[ICWHO, IMP, TASES]	Weak	
+Sigma70	malP	+	[AIPP, ICWHO, IMP, RS-EPT-CBR]	Strong	
+Sigma70	malQ	+	[AIPP, ICWHO, IMP, RS-EPT-CBR]	Strong	
+Sigma70	malS	+	[ICWHO, TIM]	Strong	
+Sigma70	malT	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	malX	+	[ICA, ICWHO, TIM]	Strong	
+Sigma70	malY	+	[ICA, ICWHO, RS-EPT-CBR, RSE, TIM]	Strong	
+Sigma70	manA	+	[ICWHO, TIM]	Strong	
+Sigma70	manX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	manY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	manZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	marA	+	[HIPP, ICWHO]	Weak	
+Sigma70	marB	+	[HIPP, ICWHO]	Weak	
+Sigma70	marR	+	[HIPP, ICWHO]	Weak	
+Sigma70	mazE	+	[CV(SM/TIM), HTTIM, ICWHO, SM, TIM]	Confirmed	
+Sigma70	mazF	+	[CV(SM/TIM), HTTIM, ICWHO, SM, TIM]	Confirmed	
+Sigma70	mcbA	+	[ICWHO]	Weak	
+Sigma70	mdh	+	[ICWHO, TIM]	Strong	
+Sigma70	mdtE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mdtF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mdtI	+	[ICWHO, TIM]	Strong	
+Sigma70	mdtJ	+	[ICWHO, TIM]	Strong	
+Sigma70	melA	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	melB	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	melR	+	[ICWHO, TIM]	Strong	
+Sigma70	menA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mepH	+	[AIPP, ICWHO]	Weak	
+Sigma70	metA	+	[ICWHO, TIM]	Strong	
+Sigma70	metB	+	[ICWHO, TIM]	Strong	
+Sigma70	metC	+	[AIPP, ICWHO]	Weak	
+Sigma70	metF	+	[ICWHO, TIM]	Strong	
+Sigma70	metG	+	[HIPP, HTTIM, TIM]	Strong	
+Sigma70	metH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	metI	+	[HIPP, ICA, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	metJ	+	[ICWHO, TIM]	Strong	
+Sigma70	metK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	metL	+	[ICWHO, TIM]	Strong	
+Sigma70	metN	+	[HIPP, ICA, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	metQ	+	[HIPP, ICA, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	metT	+	[HIPP, ICWHO]	Weak	
+Sigma70	metU	+	[HIPP, ICWHO]	Weak	
+Sigma70	metV	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	metW	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	metY	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	metZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mfd	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	mglA	+	[AIPP, HIPP, ICWHO, IMP]	Weak	
+Sigma70	mglB	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma70	mglC	+	[AIPP, HIPP, ICWHO, IMP]	Weak	
+Sigma70	mgrR	+	[ICWHO, TIM]	Strong	
+Sigma70	mgtA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mgtL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mgtS	+	[ICWHO, TIM]	Strong	
+Sigma70	mhpA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mhpB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mhpC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mhpD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mhpE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mhpF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mhpR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	miaA	+	[HIPP, HTTIM, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	micC	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	micF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mioC	+	[ICWHO, TIM]	Strong	
+Sigma70	mlc	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma70	mlrA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mltF	+	[AIPP, ICWHO]	Weak	
+Sigma70	mngB	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	mngR	+	[HIPP, ICWHO]	Weak	
+Sigma70	mnmG	+	[ICWHO, TIM]	Strong	
+Sigma70	mntH	+	[HIPP, TIM]	Strong	
+Sigma70	mntP	+	[TIM]	Strong	
+Sigma70	mntS	+	[TIM]	Strong	
+Sigma70	modA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	modB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	modC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	moeA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	moeB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	mpl	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	mprA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mqsA	+	[HIPP, ICWHO, IEP, TIM]	Strong	
+Sigma70	mqsR	+	[ICWHO, TIM]	Strong	
+Sigma70	mraY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mraZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mreB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mreC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mreD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mrp	+	[TIM]	Strong	
+Sigma70	msrB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	mtlA	+	[HIPP, ICWHO]	Weak	
+Sigma70	mtlD	+	[HIPP, ICWHO]	Weak	
+Sigma70	mtlR	+	[HIPP, ICWHO]	Weak	
+Sigma70	mtn	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	mtr	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	mukB	+	[HIPP, ICWHO]	Weak	
+Sigma70	mukE	+	[HIPP, ICWHO]	Weak	
+Sigma70	mukF	+	[HIPP, ICWHO]	Weak	
+Sigma70	murC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	murD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	murE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	murF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	murG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	murI	+	[ICWHO, TIM]	Strong	
+Sigma70	murP	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	murQ	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	murR	+	[ICWHO, TIM]	Strong	
+Sigma70	mutL	+	[HIPP, HTTIM, ICWHO, IDA, RS-EPT-CBR, TIM]	Strong	
+Sigma70	mzrA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	nadB	+	[AIPP, ICWHO]	Weak	
+Sigma70	nadE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	nagA	+	[ICWHO, TIM]	Strong	
+Sigma70	nagB	+	[ICWHO, TIM]	Strong	
+Sigma70	nagC	+	[HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nagE	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nanA	+	[ICWHO, TIM]	Strong	
+Sigma70	nanE	+	[ICWHO, TIM]	Strong	
+Sigma70	nanK	+	[ICWHO, TIM]	Strong	
+Sigma70	nanT	+	[ICWHO, TIM]	Strong	
+Sigma70	nanY	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	napA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	napB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	napC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	napD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	napF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	napG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	napH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	narG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	narH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	narI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	narJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	narK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	narL	+	[HIPP, ICWHO]	Weak	
+Sigma70	narU	+	[HIPP, ICWHO]	Weak	
+Sigma70	narX	+	[HIPP, ICWHO]	Weak	
+Sigma70	ndh	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	nei	+	[ICWHO, RSE, TIM]	Strong	
+Sigma70	nemA	+	[ICWHO, TIM]	Strong	
+Sigma70	nemR	+	[ICWHO, TIM]	Strong	
+Sigma70	nfeF	+	[HIPP, ICWHO, IHBCE]	Weak	
+Sigma70	nfo	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	nfsA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	nfsB	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	nfuA	+	[AIPP, ICWHO]	Weak	
+Sigma70	nhaA	+	[ICWHO, TIM]	Strong	
+Sigma70	nhaR	+	[ICWHO, TIM]	Strong	
+Sigma70	nirB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nirC	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nirD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nlpD	+	[ICWHO, TIM]	Strong	
+Sigma70	nnr	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nohA	+	[AIPP]	Weak	
+Sigma70	npr	+	[HIPP, ICWHO]	Weak	
+Sigma70	nrdA	+	[ICWHO, TIM]	Strong	
+Sigma70	nrdB	+	[ICWHO, TIM]	Strong	
+Sigma70	nrdD	+	[ICWHO, TIM]	Strong	
+Sigma70	nrdE	+	[HIPP, TIM]	Strong	
+Sigma70	nrdF	+	[HIPP, TIM]	Strong	
+Sigma70	nrdG	+	[ICWHO, TIM]	Strong	
+Sigma70	nrdH	+	[HIPP, TIM]	Strong	
+Sigma70	nrdI	+	[HIPP, TIM]	Strong	
+Sigma70	nrdR	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	nrfA	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	nrfB	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	nrfC	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	nrfD	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	nrfE	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	nrfF	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	nrfG	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	nudB	+	[HIPP, ICWHO]	Weak	
+Sigma70	nuoA	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoB	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoC	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoE	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoF	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoG	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoH	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoI	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoJ	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoK	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoL	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoM	+	[ICWHO, TIM]	Strong	
+Sigma70	nuoN	+	[ICWHO, TIM]	Strong	
+Sigma70	nupC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nupG	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nusA	+	[HIPP, HTTIM, ICWHO, IEP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	nusB	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	obgE	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ohsC	+	[ICWHO, TIM]	Strong	
+Sigma70	ompA	+	[ICWHO, TIM]	Strong	
+Sigma70	ompC	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	ompF	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ompN	+	[IC, ICWHO]	Weak	
+Sigma70	ompR	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ompX	+	[ICWHO, TIM]	Strong	
+Sigma70	opgG	+	[HIPP, ICWHO, IDA, RS-EPT-CBR, TIM]	Strong	
+Sigma70	opgH	+	[HIPP, ICWHO, IDA, RS-EPT-CBR, TIM]	Strong	
+Sigma70	osmB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	osmC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	osmE	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	osmY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	oxc	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	oxyR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	oxyS	+	[HIPP, ICWHO]	Weak	
+Sigma70	paaA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	paaY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pabA	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	panB	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	panC	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	panD	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	panF	+	[ICWHO, TIM]	Strong	
+Sigma70	patZ	+	[HTTIM, TASES]	Strong	
+Sigma70	pck	+	[HIPP, ICWHO, IDA, IMP]	Strong	
+Sigma70	pcm	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pcnB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pdeL	+	[HTTIM, ICWHO, IDA, IHBCE, TIM]	Strong	
+Sigma70	pdhR	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pdxJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pepA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pepD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pepP	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	pfkA	+	[HIPP, HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	pflA	+	[AH, TIM]	Strong	
+Sigma70	pflB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pgi	+	[HIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma70	pgk	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pgpA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	pgpB	+	[IHBCE, TIM]	Strong	
+Sigma70	pheA	+	[ICWHO, TIM]	Strong	
+Sigma70	pheL	+	[ICWHO, TIM]	Strong	
+Sigma70	pheP	+	[ICWHO, TIM]	Strong	
+Sigma70	pheU	+	[HIPP, ICWHO]	Weak	
+Sigma70	pheV	+	[HIPP, ICWHO]	Weak	
+Sigma70	phnC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnI	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnJ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnK	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnM	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnN	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnO	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phnP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	phoA	+	[HIPP, ICWHO, NTAS]	Weak	
+Sigma70	phoB	+	[HIPP, ICWHO, NTAS]	Weak	
+Sigma70	phoE	+	[ICWHO, TIM]	Strong	
+Sigma70	phoH	+	[ICWHO, TIM]	Strong	
+Sigma70	phoR	+	[HIPP, ICWHO, NTAS]	Weak	
+Sigma70	phoU	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	pitB	+	[HIPP, ICWHO]	Weak	
+Sigma70	plaR	+	[ICWHO, TIM]	Strong	
+Sigma70	pldA	+	[HIPP, ICWHO]	Weak	
+Sigma70	plsX	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	pncB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pnp	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pntA	+	[HIPP, ICWHO]	Weak	
+Sigma70	pntB	+	[HIPP, ICWHO]	Weak	
+Sigma70	polB	+	[AIPP, ICWHO]	Weak	
+Sigma70	poxB	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ppdD	+	[AIPP, ICWHO]	Weak	
+Sigma70	ppiA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ppiD	+	[ICWHO, TIM]	Strong	
+Sigma70	ppsA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pqiA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pqiB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pqiC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	preA	+	[HTTIM]	Strong	
+Sigma70	preT	+	[HTTIM]	Strong	
+Sigma70	prfA	+	[ICWHO, TIM]	Strong	
+Sigma70	priB	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	prlF	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	prmA	+	[ICWHO, TIM]	Strong	
+Sigma70	prmC	+	[ICWHO, TIM]	Strong	
+Sigma70	proK	+	[HIPP, ICWHO]	Weak	
+Sigma70	proL	+	[HIPP, ICWHO]	Weak	
+Sigma70	proM	+	[CV(RPF/TIM), HIPP, IMP, RPF, TIM]	Confirmed	
+Sigma70	proP	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	proS	+	[ICWHO, TIM]	Strong	
+Sigma70	proV	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	proW	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	proX	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	prpR	+	[HIPP, ICWHO]	Weak	
+Sigma70	prs	+	[ICWHO, TIM]	Strong	
+Sigma70	psiE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	psiF	+	[HIPP, ICWHO, NTAS, RSE, TIM]	Strong	
+Sigma70	pspF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pssA	+	[HIPP, HTTIM, ICWHO, IHBCE, IMP, RS-EPT-CBR]	Strong	
+Sigma70	pstA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	pstB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	pstC	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	pstS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pta	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pth	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ptrA	+	[TIM]	Strong	
+Sigma70	ptsG	+	[HIPP, TIM]	Strong	
+Sigma70	ptsH	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ptsI	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ptsN	+	[HIPP, ICWHO]	Weak	
+Sigma70	purA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	purB	+	[ICWHO, TIM]	Strong	
+Sigma70	purC	+	[ICWHO, TIM]	Strong	
+Sigma70	purD	+	[ICWHO, TIM]	Strong	
+Sigma70	purE	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	purF	+	[HIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma70	purH	+	[ICWHO, TIM]	Strong	
+Sigma70	purK	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	purL	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	purM	+	[ICWHO, TIM]	Strong	
+Sigma70	purN	+	[ICWHO, TIM]	Strong	
+Sigma70	purR	+	[ICWHO, TIM]	Strong	
+Sigma70	purT	+	[AIBSPD, IC, ICWHO, IMP]	Weak	
+Sigma70	putA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	putP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pykA	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	pykF	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	pyrC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	pyrD	+	[ICWHO, TIM]	Strong	
+Sigma70	pyrF	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	pyrH	+	[HIPP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	qseB	+	[ICWHO, TIM]	Strong	
+Sigma70	qseC	+	[ICWHO, TIM]	Strong	
+Sigma70	rapA	+	[AIPP, HIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rapZ	+	[HIPP, ICWHO]	Weak	
+Sigma70	rarA	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	rbfA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rbn	+	[AIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rbsA	+	[ICWHO, TIM]	Strong	
+Sigma70	rbsB	+	[ICWHO, TIM]	Strong	
+Sigma70	rbsC	+	[ICWHO, TIM]	Strong	
+Sigma70	rbsD	+	[ICWHO, TIM]	Strong	
+Sigma70	rbsK	+	[ICWHO, TIM]	Strong	
+Sigma70	rbsR	+	[ICWHO, TIM]	Strong	
+Sigma70	rcnA	+	[ICWHO, TIM]	Strong	
+Sigma70	rcnB	+	[ICWHO, TIM]	Strong	
+Sigma70	rcnR	+	[ICWHO, TIM]	Strong	
+Sigma70	rcsA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rcsB	+	[ICWHO, TIM]	Strong	
+Sigma70	rcsD	+	[ICWHO, TIM]	Strong	
+Sigma70	rdlD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	recA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	recB	+	[TIM]	Strong	
+Sigma70	recC	+	[HIPP, TIM]	Strong	
+Sigma70	recD	+	[TIM]	Strong	
+Sigma70	recF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	recG	+	[ICWHO, RS-EPT-CBR, TAS]	Strong	
+Sigma70	recJ	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma70	recN	+	[HIPP, ICWHO]	Weak	
+Sigma70	recO	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	recQ	+	[IHBCE]	Weak	
+Sigma70	recX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	relA	+	[CV(SM/TIM), HTTIM, ICWHO, SM, TIM]	Confirmed	
+Sigma70	relB	+	[ICWHO, TIM]	Strong	
+Sigma70	relE	+	[ICWHO, TIM]	Strong	
+Sigma70	rep	+	[HIPP, IHBCE, TIM]	Strong	
+Sigma70	rfaD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rfe	+	[AIPP, ICWHO]	Weak	
+Sigma70	rffC	+	[AIPP, ICWHO]	Weak	
+Sigma70	rffG	+	[AIPP, ICWHO]	Weak	
+Sigma70	rffH	+	[AIPP, ICWHO]	Weak	
+Sigma70	rffM	+	[AIPP, ICWHO]	Weak	
+Sigma70	rhaA	+	[ICWHO, TIM]	Strong	
+Sigma70	rhaB	+	[ICWHO, TIM]	Strong	
+Sigma70	rhaD	+	[ICWHO, TIM]	Strong	
+Sigma70	rhaR	+	[ICWHO, TIM]	Strong	
+Sigma70	rhaS	+	[ICWHO, TIM]	Strong	
+Sigma70	rhaT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ribA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ribD	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	ribE	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	ribF	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	rihB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rimK	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	rimM	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rimP	+	[HIPP, HTTIM, ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rirA	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	rlmE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rluA	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma70	rnb	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rnc	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rnd	+	[ICWHO, TIM]	Strong	
+Sigma70	rne	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rnlA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rnlB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rnpB	+	[AIPP, IC, ICWHO]	Weak	
+Sigma70	rpe	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpiB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rplB	+	[ICWHO, RPF]	Strong	
+Sigma70	rplC	+	[ICWHO, RPF]	Strong	
+Sigma70	rplD	+	[ICWHO, RPF]	Strong	
+Sigma70	rplI	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	rplP	+	[ICWHO, RPF]	Strong	
+Sigma70	rplQ	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rplS	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rplT	+	[AIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma70	rplU	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rplV	+	[ICWHO, RPF]	Strong	
+Sigma70	rplW	+	[ICWHO, RPF]	Strong	
+Sigma70	rplY	+	[AIPP, IHBCE]	Weak	
+Sigma70	rpmA	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpmC	+	[ICWHO, RPF]	Strong	
+Sigma70	rpmI	+	[AIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma70	rpoA	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpoD	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpoE	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	rpoH	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpoN	+	[HIPP, ICWHO]	Weak	
+Sigma70	rpoS	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpoZ	+	[ICWHO, RS-EPT-CBR, TAS]	Strong	
+Sigma70	rpsA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rpsB	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpsC	+	[ICWHO, RPF]	Strong	
+Sigma70	rpsD	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpsF	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	rpsJ	+	[ICWHO, RPF]	Strong	
+Sigma70	rpsK	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpsM	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpsO	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpsP	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rpsQ	+	[ICWHO, RPF]	Strong	
+Sigma70	rpsR	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	rpsS	+	[ICWHO, RPF]	Strong	
+Sigma70	rpsU	+	[HIPP, HTTIM, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	rraA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rraB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrfA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	rrfB	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrfC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma70	rrfD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrfE	+	[HIPP, ICWHO]	Weak	
+Sigma70	rrfF	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrfG	+	[HIPP, ICWHO]	Weak	
+Sigma70	rrfH	+	[HIPP, HTTIM]	Strong	
+Sigma70	rrlA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	rrlB	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrlC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma70	rrlD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrlE	+	[HIPP, ICWHO]	Weak	
+Sigma70	rrlG	+	[HIPP, ICWHO]	Weak	
+Sigma70	rrlH	+	[HIPP, HTTIM]	Strong	
+Sigma70	rrsA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	rrsB	+	[AIPP, HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrsC	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma70	rrsD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rrsE	+	[HIPP, ICWHO]	Weak	
+Sigma70	rrsG	+	[HIPP, ICWHO]	Weak	
+Sigma70	rrsH	+	[HIPP, HTTIM]	Strong	
+Sigma70	rsd	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rseA	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	rseB	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	rseC	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	rseD	+	[IHBCE, TIM]	Strong	
+Sigma70	rsmG	+	[TIM]	Strong	
+Sigma70	rsmH	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	rutR	+	[HIPP, ICWHO, RPF]	Strong	
+Sigma70	ruvC	+	[HIPP, ICWHO]	Weak	
+Sigma70	rybA	+	[TIM]	Strong	
+Sigma70	rydC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ryeA	+	[HIPP, IHBCE, IMP, TIM]	Strong	
+Sigma70	ryfD	+	[ICWHO, TIM]	Strong	
+Sigma70	ryhB	+	[HTTIM, ICWHO]	Strong	
+Sigma70	ryjB	+	[ICWHO, TIM]	Strong	
+Sigma70	safA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sbcC	+	[HIPP, ICWHO]	Weak	
+Sigma70	sbcD	+	[HIPP, ICWHO]	Weak	
+Sigma70	sdhA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sdhB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sdhC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sdhD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sdhX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sdiA	+	[ICWHO, TIM]	Strong	
+Sigma70	secB	+	[HIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	secG	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	serA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	serC	+	[ICWHO, TIM]	Strong	
+Sigma70	serT	+	[HIPP, HTTIM]	Strong	
+Sigma70	serU	+	[HIPP, ICWHO]	Weak	
+Sigma70	serV	+	[HIPP, ICWHO]	Weak	
+Sigma70	serW	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	serX	+	[HIPP, ICWHO]	Weak	
+Sigma70	setA	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	sfsA	+	[HIPP, ICWHO]	Weak	
+Sigma70	sgbE	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	sgbH	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	sgbU	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	sgrR	+	[AIPP, ICWHO]	Weak	
+Sigma70	sgrS	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	sgrT	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	shiA	+	[HTTIM, RS-EPT-CBR, TIM]	Strong	
+Sigma70	shoB	+	[TIM]	Strong	
+Sigma70	sibA	+	[ICWHO, TIM]	Strong	
+Sigma70	sibB	+	[ICWHO, TIM]	Strong	
+Sigma70	sibD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	sibE	+	[ICWHO, TIM]	Strong	
+Sigma70	sixA	+	[AIPP, ICWHO, IDA, TIM]	Strong	
+Sigma70	slmA	+	[HIPP, ICWHO]	Weak	
+Sigma70	slp	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	sodA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	sodB	+	[HTTIM, ICWHO, IMP, TIM]	Strong	
+Sigma70	sohB	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	sokB	+	[IHBCE, TIM]	Strong	
+Sigma70	sokC	+	[HIPP, IHBCE, TIM]	Strong	
+Sigma70	soxR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	soxS	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	speA	+	[HIPP, ICWHO]	Weak	
+Sigma70	speB	+	[HIPP, ICWHO]	Weak	
+Sigma70	speD	+	[HIPP, ICWHO, RS-EPT-CBR, RSE, TIM]	Strong	
+Sigma70	speE	+	[HIPP, ICWHO, RS-EPT-CBR, RSE, TIM]	Strong	
+Sigma70	spf	+	[HTTIM, IMP, RS-EPT-CBR]	Strong	
+Sigma70	spoT	+	[ICWHO, RS-EPT-CBR, TAS]	Strong	
+Sigma70	spy	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sraG	+	[HIPP, IHBCE, IMP, TIM]	Strong	
+Sigma70	srkA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	srlA	+	[ICWHO, TIM]	Strong	
+Sigma70	srlB	+	[ICWHO, TIM]	Strong	
+Sigma70	srlD	+	[ICWHO, TIM]	Strong	
+Sigma70	srlE	+	[ICWHO, TIM]	Strong	
+Sigma70	srlR	+	[ICWHO, TIM]	Strong	
+Sigma70	sroA	+	[AIPP, ICWHO]	Weak	
+Sigma70	sroC	+	[HIPP, IC, ICWHO]	Weak	
+Sigma70	sroD	+	[ICWHO, TIM]	Strong	
+Sigma70	ssb	+	[ICWHO, TIM]	Strong	
+Sigma70	ssnA	+	[IHBCE, TIM]	Strong	
+Sigma70	ssrA	+	[TIM]	Strong	
+Sigma70	ssrS	+	[AIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ssuA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ssuB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ssuC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ssuD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ssuE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	stfQ	+	[AIPP]	Weak	
+Sigma70	stpA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sucA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sucB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sucC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sucD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	sufA	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	sufB	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	sufC	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	sufD	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	sufE	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	sufS	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	sulA	+	[CV(RPF/TIM), HIPP, HTTIM, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	sutR	+	[IHBCE, IPI, TIM]	Strong	
+Sigma70	sxy	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	symE	+	[HIPP, ICWHO, TAS]	Weak	
+Sigma70	symR	+	[HIPP, ICWHO, TAS, TIM]	Strong	
+Sigma70	tatA	+	[ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	tatB	+	[ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	tatC	+	[ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	tatD	+	[ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	tcyJ	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tdh	+	[ICWHO, TIM]	Strong	
+Sigma70	tfaQ	+	[AIPP]	Weak	
+Sigma70	tff	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	thiB	+	[AIPP, ICWHO]	Weak	
+Sigma70	thiL	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	thiP	+	[AIPP, ICWHO]	Weak	
+Sigma70	thiQ	+	[AIPP, ICWHO]	Weak	
+Sigma70	thrA	+	[ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	thrB	+	[ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	thrC	+	[ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	thrL	+	[ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	thrT	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma70	thrU	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma70	thrV	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	thrW	+	[HIPP, ICWHO]	Weak	
+Sigma70	thyA	+	[IHBCE, TIM]	Strong	
+Sigma70	tnaA	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tnaB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tnaC	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tomB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	tonB	+	[ICWHO, TIM]	Strong	
+Sigma70	topA	+	[AIPP, HIPP, ICWHO, IMP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	torA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	torC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	torD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	torR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	tpiA	+	[HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	tpr	+	[CV(RPF/TIM), HIPP, HTTIM, ICWHO, IMP, RPF, TIM]	Confirmed	
+Sigma70	tpx	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	treB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	treC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	treR	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	trmD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trmH	+	[ICWHO, RS-EPT-CBR, TAS]	Strong	
+Sigma70	trpA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trpB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trpC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trpD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trpE	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trpL	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trpR	+	[CV(RPF/TIM), HIPP, ICWHO, RPF, TIM]	Confirmed	
+Sigma70	trpS	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	truB	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trxA	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	trxC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	tsaE	+	[HIPP, HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tsf	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tsr	+	[HIPP, ICWHO]	Weak	
+Sigma70	tsx	+	[HIPP, ICWHO, IHBCE, TIM]	Strong	
+Sigma70	ttdA	+	[HIPP, ICWHO]	Weak	
+Sigma70	ttdB	+	[HIPP, ICWHO]	Weak	
+Sigma70	ttdT	+	[HIPP, ICWHO]	Weak	
+Sigma70	tufA	+	[HIPP, ICWHO, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tufB	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma70	tynA	+	[TIM]	Strong	
+Sigma70	tyrA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	tyrB	+	[CV(RPF/RS-EPT-CBR), CV(RPF/TIM), HIPP, ICWHO, RPF, RS-EPT-CBR, TIM]	Confirmed	
+Sigma70	tyrP	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	tyrR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	tyrT	+	[CV(RPF/TIM), HIPP, HTTIM, ICWHO, IMP, RPF, TIM]	Confirmed	
+Sigma70	tyrU	+	[HIPP, ICWHO, IMP]	Weak	
+Sigma70	tyrV	+	[CV(RPF/TIM), HIPP, HTTIM, ICWHO, IMP, RPF, TIM]	Confirmed	
+Sigma70	ubiA	+	[HIPP, ICWHO]	Weak	
+Sigma70	ubiC	+	[HIPP, ICWHO]	Weak	
+Sigma70	ubiG	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	ubiH	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	ubiI	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	ubiX	+	[HIPP, HTTIM, ICWHO, TIM]	Strong	
+Sigma70	udp	+	[ICWHO, TIM]	Strong	
+Sigma70	ugpA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ugpB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ugpC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ugpE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ugpQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uhpT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uidR	+	[AIPP, ICWHO]	Weak	
+Sigma70	ulaA	+	[ICWHO, TIM]	Strong	
+Sigma70	ulaB	+	[ICWHO, TIM]	Strong	
+Sigma70	ulaC	+	[ICWHO, TIM]	Strong	
+Sigma70	ulaD	+	[ICWHO, TIM]	Strong	
+Sigma70	ulaE	+	[ICWHO, TIM]	Strong	
+Sigma70	ulaF	+	[ICWHO, TIM]	Strong	
+Sigma70	umpG	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	umpH	+	[ICWHO, TIM]	Strong	
+Sigma70	umuC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	umuD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	upp	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uraA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uspA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uvrA	+	[ICWHO, TIM]	Strong	
+Sigma70	uvrB	+	[ICWHO, TIM]	Strong	
+Sigma70	uvrC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uvrD	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	uvrY	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uxaA	+	[AIPP, ICWHO]	Weak	
+Sigma70	uxaB	+	[ICWHO, TIM]	Strong	
+Sigma70	uxaC	+	[AIPP, ICWHO]	Weak	
+Sigma70	uxuA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uxuB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	uxuR	+	[AIPP, ICWHO]	Weak	
+Sigma70	valS	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	valT	+	[HIPP, ICWHO]	Weak	
+Sigma70	valU	+	[HIPP, ICWHO]	Weak	
+Sigma70	valV	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	valW	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	valX	+	[HIPP, ICWHO]	Weak	
+Sigma70	valY	+	[HIPP, ICWHO]	Weak	
+Sigma70	waaA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	waaB	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	waaF	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	waaG	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaH	+	[AIPP, ICWHO]	Weak	
+Sigma70	waaJ	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaL	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	waaO	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaP	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaQ	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaS	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaU	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaY	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	waaZ	+	[HTTIM, ICWHO, TIM]	Strong	
+Sigma70	wcaA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	wcaB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	wecB	+	[AIPP, ICWHO]	Weak	
+Sigma70	wecC	+	[AIPP, ICWHO]	Weak	
+Sigma70	wecE	+	[AIPP, ICWHO]	Weak	
+Sigma70	wecF	+	[AIPP, ICWHO]	Weak	
+Sigma70	wza	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	wzb	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	wzc	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	wzxE	+	[AIPP, ICWHO]	Weak	
+Sigma70	wzyE	+	[AIPP, ICWHO]	Weak	
+Sigma70	wzzE	+	[AIPP, ICWHO]	Weak	
+Sigma70	xapA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	xapB	+	[HIPP, ICWHO, RSE, TIM]	Strong	
+Sigma70	xapR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	xerC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	xerD	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma70	xseA	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	xseB	+	[HIPP, ICWHO]	Weak	
+Sigma70	xylE	+	[AIBSPD, IC]	Weak	
+Sigma70	yacC	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yadS	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yadV	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yafN	+	[AIPP, ICWHO, IEP, TIM]	Strong	
+Sigma70	yafO	+	[AIPP, ICWHO, IEP, TIM]	Strong	
+Sigma70	yafP	+	[AIPP, ICWHO, IEP, TIM]	Strong	
+Sigma70	yafQ	+	[AIPP, ICWHO]	Weak	
+Sigma70	yagK	+	[ICWHO]	Weak	
+Sigma70	yaiA	+	[ICWHO, TIM]	Strong	
+Sigma70	yajG	+	[HIPP, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yajO	+	[HIPP, ICWHO]	Weak	
+Sigma70	ybbW	+	[AIPP, ICWHO]	Weak	
+Sigma70	ybbY	+	[AIPP, ICWHO]	Weak	
+Sigma70	ybdN	+	[AIPP, ICWHO]	Weak	
+Sigma70	ybdZ	+	[ICWHO, TIM]	Strong	
+Sigma70	ybeD	+	[HIPP, ICWHO, IDA, IEP, RS-EPT-CBR]	Strong	
+Sigma70	ybhF	+	[HIPP, IHBCE]	Weak	
+Sigma70	ybhG	+	[HIPP, IHBCE]	Weak	
+Sigma70	ybhL	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ybhR	+	[HIPP, IHBCE]	Weak	
+Sigma70	ybhS	+	[HIPP, IHBCE]	Weak	
+Sigma70	ybiB	+	[AIPP, HIPP, ICWHO]	Weak	
+Sigma70	ybjC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ybjN	+	[HIPP, ICWHO, IMP, TIM]	Strong	
+Sigma70	ycaR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yccA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ycdZ	+	[ICWHO]	Weak	
+Sigma70	yceI	+	[AIPP, ICWHO, IDA]	Strong	
+Sigma70	yceJ	+	[AIPP, ICWHO, IDA]	Strong	
+Sigma70	ycgZ	+	[HIPP, TIM]	Strong	
+Sigma70	ychA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ychF	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ychH	+	[AIPP, HTTIM, RS-EPT-CBR]	Strong	
+Sigma70	ychO	+	[AIPP, ICWHO]	Weak	
+Sigma70	ychQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yciB	+	[HIPP, ICWHO]	Weak	
+Sigma70	yciC	+	[HIPP, ICWHO]	Weak	
+Sigma70	yciE	+	[HIPP, ICWHO]	Weak	
+Sigma70	yciH	+	[AIPP, ICWHO, IDA, IEP, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yciW	+	[AIPP]	Weak	
+Sigma70	yciX	+	[IHBCE, TIM]	Strong	
+Sigma70	ydeI	+	[ICWHO]	Weak	
+Sigma70	ydeJ	+	[AIPP, ICWHO]	Weak	
+Sigma70	ydeM	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	ydeN	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	ydeO	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ydeP	+	[ICWHO, IHBCE, TIM]	Strong	
+Sigma70	ydfA	+	[ICWHO, TIM]	Strong	
+Sigma70	ydfB	+	[ICWHO, TIM]	Strong	
+Sigma70	ydfC	+	[ICWHO, TIM]	Strong	
+Sigma70	ydfD	+	[HIPP, ICWHO, TASES]	Weak	
+Sigma70	ydfE	+	[HIPP, ICWHO, TASES]	Weak	
+Sigma70	ydfW	+	[HIPP, TIM]	Strong	
+Sigma70	ydfX	+	[HIPP, TIM]	Strong	
+Sigma70	ydjM	+	[AIPP, ICWHO]	Weak	
+Sigma70	yeaE	+	[AIPP, ICWHO]	Weak	
+Sigma70	yeaR	+	[ICWHO, TIM]	Strong	
+Sigma70	yebB	+	[HIPP, ICWHO]	Weak	
+Sigma70	yebC	+	[HIPP, ICWHO]	Weak	
+Sigma70	yebE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yebG	+	[HIPP, ICWHO]	Weak	
+Sigma70	yefM	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yegR	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yegZ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yehF	+	[AIPP, TIM]	Strong	
+Sigma70	yeiB	+	[ICA, ICWHO]	Weak	
+Sigma70	yfaE	+	[ICWHO, TIM]	Strong	
+Sigma70	yfdE	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yfdV	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yfdX	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yffB	+	[IDA]	Strong	
+Sigma70	yfgG	+	[HTTIM, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yfiB	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yfiR	+	[IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	ygeA	+	[ICWHO, TIM]	Strong	
+Sigma70	ygeH	+	[ICWHO]	Weak	
+Sigma70	ygfB	+	[RS-EPT-CBR, TIM]	Strong	
+Sigma70	yhaV	+	[HIPP, ICWHO, RS-EPT-CBR]	Strong	
+Sigma70	yhbE	+	[HIPP, ICWHO, IHBCE, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yhcH	+	[ICWHO, TIM]	Strong	
+Sigma70	yhdT	+	[ICWHO, TIM]	Strong	
+Sigma70	yhfA	+	[ICWHO, TIM]	Strong	
+Sigma70	yhgH	+	[AIPP, ICWHO]	Weak	
+Sigma70	yhhY	+	[AIPP, ICWHO]	Weak	
+Sigma70	yhiD	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yhjR	+	[IHBCE, TIM]	Strong	
+Sigma70	yhjX	+	[TIM]	Strong	
+Sigma70	yiaK	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	yiaL	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	yiaM	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	yiaN	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	yiaO	+	[ICWHO, IMP, TIM]	Strong	
+Sigma70	yibN	+	[HIPP, IHBCE, TIM]	Strong	
+Sigma70	yifL	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yigA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yigB	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yihI	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yihS	+	[AIPP, RSE, TIM]	Strong	
+Sigma70	yihT	+	[AIPP, RSE, TIM]	Strong	
+Sigma70	yihU	+	[AIPP, RSE, TIM]	Strong	
+Sigma70	yihV	+	[AIPP, ICWHO, RSE, TIM]	Strong	
+Sigma70	yjbE	+	[ICWHO, TIM]	Strong	
+Sigma70	yjbF	+	[ICWHO, TIM]	Strong	
+Sigma70	yjbG	+	[ICWHO, TIM]	Strong	
+Sigma70	yjbH	+	[ICWHO, TIM]	Strong	
+Sigma70	yjcH	+	[AIPP, HTTIM, ICWHO]	Strong	
+Sigma70	yjeV	+	[ICWHO, TIM]	Strong	
+Sigma70	yjjQ	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yjjZ	+	[ICWHO, TIM]	Strong	
+Sigma70	ykgM	+	[AIPP, ICWHO]	Weak	
+Sigma70	ykgO	+	[AIPP, ICWHO]	Weak	
+Sigma70	ykgR	+	[ICWHO, TIM]	Strong	
+Sigma70	yliM	+	[ICWHO, TIM]	Strong	
+Sigma70	ymgA	+	[HIPP, TIM]	Strong	
+Sigma70	ymgC	+	[HIPP, TIM]	Strong	
+Sigma70	ymiA	+	[IHBCE, TIM]	Strong	
+Sigma70	ymiC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ynfE	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma70	ynfF	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma70	ynfG	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma70	ynfH	+	[AIPP, ICWHO, RPF]	Strong	
+Sigma70	ynfK	+	[AIPP, ICWHO, TIM]	Strong	
+Sigma70	yoaE	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yoaG	+	[ICWHO, TIM]	Strong	
+Sigma70	yobF	+	[ICWHO, TIM]	Strong	
+Sigma70	yoeB	+	[ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	yojI	+	[HIPP, ICWHO]	Weak	
+Sigma70	ypfN	+	[HIPP, ICWHO, IDA]	Strong	
+Sigma70	yqhD	+	[ICWHO, TIM]	Strong	
+Sigma70	yqjA	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	yrbG	+	[ICWHO, TIM]	Strong	
+Sigma70	yrbN	+	[HIPP, ICWHO, IHBCE, IMP, TIM]	Strong	
+Sigma70	ysgA	+	[AIPP, ICWHO]	Weak	
+Sigma70	ytiC	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	ytiD	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	zinT	+	[HIPP, ICWHO, TIM]	Strong	
+Sigma70	zntA	+	[HIPP, ICWHO, RS-EPT-CBR, TIM]	Strong	
+Sigma70	znuB	+	[ICWHO, TIM]	Strong	
+Sigma70	znuC	+	[ICWHO, TIM]	Strong	
+Sigma70	zwf	+	[ICWHO, TIM]	Strong	

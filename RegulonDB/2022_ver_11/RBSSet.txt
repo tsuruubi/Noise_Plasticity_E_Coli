@@ -1,0 +1,217 @@
+# Copies and Copyright-Notice
+#
+#      RegulonDB is free for academic/noncommercial use
+#
+#      User is not entitled to change or erase data sets of the RegulonDB
+#      database or to eliminate copyright notices from RegulonDB. Furthermore,
+#      User is not entitled to expand RegulonDB or to integrate RegulonDB partly
+#      or as a whole into other databank systems, without prior written consent
+#      from CCG-UNAM.
+#
+#      Please check the license at http://regulondb.ccg.unam.mx/menu/download/full_version/terms_and_conditions.jsp
+#
+# Citation
+#
+#      Tierrafría, V. H. et al. (2022). RegulonDB 11.0: Comprehensive high-throughput datasets on transcriptional regulation in Escherichia coli K-12,
+#      Microb Genom. 2022 May;8(5). doi: 10.1099/mgen.0.000833. PMID: 35584008. https://doi.org/10.1099/mgen.0.000833
+#
+#
+# Contact
+#
+#      Person: RegulonDB Team
+#      Web Page: http://regulondb.ccg.unam.mx/menu/about_regulondb/contact_us/index.jsp
+#          (regulondb@ccg.unam.mx)
+#
+#
+# Release: 11.0 Date:  08/22/2022
+# Genome version: U00096.3, Refseq version: NC_000913.3; GI:556503834
+# ___________________________________________________________________________
+# Columns:
+# (1) Identifier assigned by RegulonDB to the gene related to the Ribosome binding site (RBS)
+# (2) Gene related to the RBS
+# (3) RBS left end position in the genome
+# (4) RBS right end position in the genome
+# (5) DNA strand where the  rbs is located
+# (6) Center position of  RBS, relative to the gene start
+# (7) RBS sequence
+# (8) Evidence that supports the existence of the RBS
+# (9) Evidence confidence level (Confirmed, Strong, Weak)
+ECK120000026	ada	2310410	2310415	reverse	-7	ccttaaccagGGAGCTgatTAT		
+ECK120002270	aegA	2585531	2585536	reverse	-8	caaccaaaaaAGAAGGtcgtTAT		
+ECK120001089	aes	499980	499985	reverse	-9	gtaatttgaaAGGAGTttttgTAT		
+ECK120001351	ahpC	638931	638936	forward	-11	tcgaaaacacGGAGGAagtatagATG		
+ECK120002173	aldB	3756518	3756523	reverse	-9	ctcacaccgcAAGGAGacgatCAT		
+ECK120001753	amtB	472954	472959	forward	-9	acacagcaacAGGAACgaaaaATG		
+ECK120000043	apaG	51615	51620	reverse	-11	cgcgcctttgCAGGAGagttaacGAT		
+ECK120000052	araE	2982186	2982191	reverse	-6	tctctgctggCAGGAAaaAAT		
+ECK120000084	asd	3574889	3574894	reverse	-13	cacatctttgCAGGAAaaaaacgctTAT		
+ECK120004333	blc	4377729	4377734	reverse	-9	aaaaaccagtAAGGAAacattTAT		
+ECK120003524	cedA	1813670	1813675	reverse	-9	tatgcgtttaGTGAAGccagtAAT		
+ECK120001215	chiA	3469859	3469864	reverse	-8	tttacgtcacAAGGGAttatAAT		
+ECK120000153	clpB	2734178	2734183	reverse	-7	gatccgttatGGGAGGagtTAT		
+ECK120002868	copA	511386	511391	reverse	-9	aactgtcttaAAGGAGtgtttTAT		
+ECK120001425	corA	4001413	4001418	forward	-10	ttaagcattgGGAGTCccggtcATG		
+ECK120000156	cpdB	4436574	4436579	reverse	-11	cccgatgataAAAGGAtgtccctGAT		
+ECK120004317	cpxP	4105811	4105816	forward	-6	agattttgggAGCAAAtgATG		
+ECK120001196	creA	4635510	4635515	forward	-8	tagataaaaaTGGTAAcaatATG		
+ECK120001197	creB	4635996	4636001	forward	-8	ggcaataacaGAGGCGatttATG		
+ECK120000721	creC	4636682	4636687	forward	-11	ggatatagccTGAGGGgcctgtaATG		
+ECK120000141	creD	4638166	4638171	forward	-9	gccattgcaaAGGAGAagactATG		
+ECK120003901	csiE	2665422	2665427	forward	-10	tatgcttatgGGAGATctacagATG		
+ECK120000163	cstA	629881	629886	forward	-10	gacacgcacaCGGATAacaactATG		
+ECK120002070	cutA	4365361	4365366	reverse	-7	tctgttcttgCGAGGTgttTAT		
+ECK120003611	cutC	1958966	1958971	reverse	-298	aggagtaaaaATGGCAttactggaaatttgctgttacagcatggaatgtgcactaacggcgcagcaaaacggcgcagacagagttgaattatgcgcagccccaaaagaggggggcttaacgccgtcgttgggtgtactgaaatccgtgcgccagcgggtgacgatccctgtgcatccgataattcgcccacgcggtggtgatttttgctacagcgacggtgagtttgccgccattcttgaggatgtgcgcacggtccgcgaattaggttttcctggactggtgacgggcgttctcgatgttgacGGG		
+ECK120001385	cynR	358696	358701	reverse	-8	ggatttacttATAGGTtgcgAAT		
+ECK120000181	cysD	2876335	2876340	reverse	-8	cggtattgcaAAGGAAcggtTAT		
+ECK120000039	cysQ	4436743	4436748	forward	-9	tcacagagacGAGGTGgagaaATG		
+ECK120000210	dedA	2434746	2434751	reverse	-7	agtacaaggcATAGGCaaaTAT		
+ECK120001585	eamA	1621142	1621147	reverse	-7	tgaaattcagAGGCGGtagAAT		
+ECK120001307	endA	3090336	3090341	forward	-8	gttttaacacGGAGTAagtgATG		
+ECK120000265	exbB	3151991	3151996	reverse	-9	acttgcgtccTGGAGAtacacAGT		
+ECK120000266	exbD	3151252	3151257	reverse	-11	aaattacgcgCAGGATaatatccGAT		
+ECK120001484	fadD	1889752	1889757	reverse	-8	acgcattttaGAGGTGaagaATT		
+ECK120002681	fadH	3231653	3231658	forward	-9	ttttacatacTGGACAattttATG		
+ECK120000280	fecA	4516681	4516686	reverse	-6	aaatgatgatGGGGAAggTAT		
+ECK120000286	fecR	4517725	4517730	reverse	-10	ctgttccgtcTGGAGTatgggtTAT		
+ECK120000295	fhlA	2854327	2854332	forward	-8	tgctttcctgGAAGAAcaaaATG		
+ECK120000303	fimB	4540943	4540948	forward	-11	tctgtaattaTAAGGGaaaaacgATG		
+ECK120001324	fliA	2001798	2001803	reverse	-11	tcatataacgCAGGGCtgtttatCGT		
+ECK120000832	fliD	2003860	2003865	forward	-9	cgaaagataaAAGGAAatcgcATG		
+ECK120001355	fliS	2005291	2005296	forward	-9	atattcatcgGGAGACaggtcATG		
+ECK120001356	fliT	2005699	2005704	forward	-11	tctttgattcAGGACCcagtctgATG		
+ECK120000223	flk	2437938	2437943	forward	-9	tttcaggtatAAGGATacgtaATG		
+ECK120000350	fumB	4347335	4347340	reverse	-11	atacagagttACAGGCtggaagcTAT		
+ECK120000358	galS	2241674	2241679	reverse	-8	atctcataacAGGTAGtgaaTAT		
+ECK120000362	gcd	141233	141238	reverse	-10	atgaattgaaATGGTGtctcttTAT		
+ECK120001729	gcvA	2942577	2942582	reverse	-12	catttaacatCAAAGTttaatagcCAT		
+ECK120002441	glcB	3123814	3123819	reverse	-11	taagcgaaaaCGAGGAgataaacAAT		
+ECK120004106	glcC	3128260	3128265	forward	-9	acctgtgcacGAGGTCcgggaATG		
+ECK120004105	glcD	3128028	3128033	reverse	-9	cacaacaaagCGAAGCctactCAT		
+ECK120004104	glcE	3126530	3126535	reverse	-10	ttccctgaacTGGAGCgtttctGAT		
+ECK120002572	glcF	3125466	3125471	reverse	-9	gcggaactttGAGGAGcaggcTAT		
+ECK120004103	glcG	3124238	3124243	reverse	-9	gcccttgaaaAGGAATaacaaAAT		
+ECK120001349	glgS	3191946	3191951	reverse	-9	gcgataaccgGAGGATgtgctTAT		
+ECK120001550	glnE	3199652	3199657	reverse	-13	ttaatcaggcAAGGATaaaatcgctTAT		
+ECK120002080	glnK	472586	472591	forward	-9	aattctgaccGGAGGGgatctATG		
+ECK120000387	glpD	3562001	3562006	forward	-9	acgaaagtgaATGAGGgcagcATG		
+ECK120000388	glpE	3561829	3561834	reverse	-8	tttgtaaagaAAGAGAgacgCAT		
+ECK120000389	glpF	4118097	4118102	reverse	-9	attaactcttCAGGATccgatTAT		
+ECK120000391	glpK	4117230	4117235	reverse	-10	atatgactacGGGACAattaaaCAT		
+ECK120000393	glpR	3560613	3560618	reverse	-10	aaaataattcCAGGGAtttataAAT		
+ECK120002869	glsA	511625	511630	forward	-13	atctataaaaAGGAGTtaacaaaagATG		
+ECK120000401	glyA	2685514	2685519	reverse	-9	ttagctgagtCAGGAGatgcgGAT		
+ECK120002341	gntK	3577600	3577605	reverse	-10	tcttgtattgTGGGGGcaccacTTT		
+ECK120002323	gntP	4551304	4551309	reverse	-10	tcaaccaggtAAGGTAaaacgtTAT		
+ECK120002342	gntR	3578728	3578733	reverse	-4	tttgtaccttCAGGACGAT		
+ECK120002247	gntT	3546545	3546550	forward	-11	acaaatgaaaGGCCAGgtaaatcATG		
+ECK120002343	gntU	3577068	3577073	reverse	-9	tattaaaaaaGGCAAAtaagtAGT		
+ECK120001364	hdeA	3656747	3656752	reverse	-9	ctttatagttGAGGATattacGAT		
+ECK120001624	hpf	3346161	3346166	forward	-9	ccaaccgataAGGAAGacactATG		
+ECK120002443	hpt	141420	141425	forward	-8	taaatcatatGGTTAGagatATG		
+ECK120002032	hscA	2658942	2658947	reverse	-9	ttttaatttcTGGAAGctaaaCAT		
+ECK120000461	hyaA	1032121	1032126	forward	-15	gtgtcgcaagGAGGAGagacgtgcgatATG		
+ECK120000462	hyaB	1033239	1033244	forward	-12	gccaggcaatGAGGATaaacaggcATG		
+ECK120000463	hyaC	1035053	1035058	forward	-10	ttaacagcgaAGGAGAatcatcATG		
+ECK120000464	hyaD	1035759	1035764	forward	-8	ataagtaacaAGGAGCgttcATG		
+ECK120000465	hyaE	1036342	1036347	forward	-9	gatgacacagGAGGAGcagggATG		
+ECK120000466	hyaF	1036735	1036740	forward	-11	gaaccgcagcAGGAGCgtgcctcATG		
+ECK120000476	hypA	2850637	2850642	forward	-7	atagttaatgGGAGGCgatATG		
+ECK120000477	hypB	2850989	2850994	forward	-9	gaaatagaccAGGAGTgagcgATG		
+ECK120000478	hypC	2851851	2851856	forward	-10	tgaactggctGGAGACacagcgATG		
+ECK120000479	hypD	2852124	2852129	forward	-9	gttgtatggcGAGGAAaaataATG		
+ECK120000480	hypE	2853283	2853288	forward	-10	ccacggtagcGGCGGCcaggcgATG		
+ECK120000484	iclR	4223633	4223638	reverse	-7	tacagaaaaaAGAGACtgtCAT		
+ECK120000488	ilvC	3957957	3957962	forward	-10	cacaacatcaCGAGGAatcaccATG		
+ECK120000496	ilvY	3957829	3957834	reverse	-11	acgtcaacatCGAGGGctgtcccTGT		
+ECK120001717	intA	2756147	2756152	forward	-9	ctaaacgcagGGAGACtccccATG		
+ECK120000501	ispA	441110	441115	reverse	-11	cccttttacaCCGGACaatgagtAAT		
+ECK120000504	katG	4133819	4133824	forward	-13	taacactgtaGAGGGGagcacattgATG		
+ECK120000511	kdsA	1268147	1268152	forward	-15	cattttactcAAGATTaaggcgatcctATG		
+ECK120000512	kdsB	970841	970846	forward	-8	actgctgatgAGAGTAaatcATG		
+ECK120000530	livG	3594217	3594222	reverse	-13	aacggcgcagCGAAAGgagagcaggCAT		
+ECK120000531	livH	3596412	3596417	reverse	-11	gggcgggtttAGAAAGgttacctTAT		
+ECK120000533	livK	3597570	3597575	reverse	-12	acatcacgaaTGGGGAtttttgacTAT		
+ECK120000534	livM	3595491	3595496	reverse	-13	ctgggtcgccCGGAGGtagagaaagTAT		
+ECK120001889	lldD	3779814	3779819	forward	-10	agcattcgagGGAGAAaaacgcATG		
+ECK120001887	lldP	3777386	3777391	forward	-10	cgtggactccAGGAGAcctgcaATG		
+ECK120001888	lldR	3779039	3779044	forward	-12	tgtcttaacgTGGATGattccttaATG		
+ECK120002026	lrhA	2406650	2406655	reverse	-11	tgagccgccaGTAAGTgataataTAT		
+ECK120000544	lysR	2979009	2979014	forward	-9	ccggattgcgAGAGAGcgctaATG		
+ECK120000546	lysU	4354724	4354729	reverse	-9	agctggatttAGAGGAaccaaAAT		
+ECK120000556	malX	1699342	1699347	forward	-10	gttctctacgAGGAGTcgttttATG		
+ECK120000557	malY	1700945	1700950	forward	-9	gtccaggcatAAGGATaagatATG		
+ECK120000558	malZ	422504	422509	forward	-11	attttcatcaCAGGGGaattatgATG		
+ECK120001399	marR	1619107	1619112	forward	-10	attacttgccAGGGCAactaatGTG		
+ECK120000574	metA	4214265	4214270	forward	-12	cgtatgtagtGAGGTAatcaggttATG		
+ECK120000575	metB	4128657	4128662	forward	-12	acaaagcccaGGGAACttcatcacATG		
+ECK120000576	metC	3152223	3152228	forward	-10	gtataaaaacAGGAATcccgacATG		
+ECK120000578	metF	4132605	4132610	forward	-8	agcgattgatGAGGTAaggtATG		
+ECK120000581	metJ	4128401	4128406	reverse	-8	acgaagaggaTTAAGTatctCAT		
+ECK120000582	metK	3086692	3086697	forward	-11	attctctttaGGTGATattaaatATG		
+ECK120000583	metL	4129823	4129828	forward	-9	ggctgcaaacAAGGGGtaaaaATG		
+ECK120000586	mglB	2240353	2240358	reverse	-7	taagaaaaacCGGAGAtacCAT		
+ECK120001761	mobA	4042008	4042013	reverse	-11	cccacaataaAAGAGGcgatatcGGT		
+ECK120002294	mpl	4455771	4455776	forward	-11	agattaaaaaAGGATAgtgacgtATG		
+ECK120000610	mtr	3305824	3305829	reverse	-9	ttttcactggAGAGAAgccctCAT		
+ECK120000636	narL	1275836	1275841	reverse	-9	acagacgtccAAGGAGataccCAT		
+ECK120000639	narX	1277626	1277631	reverse	-10	aaagcctgaaGGAAGAggtttaCAT		
+ECK120000644	nfo	2250827	2250832	forward	-10	cgggtttaacAGGAGTcctcgcATG		
+ECK120002015	nlpD	2868758	2868763	reverse	-7	caatttttccTGGGGGataAAT		
+ECK120002047	npr	3347955	3347960	forward	-8	acgctggaaaAACGTAaaccATG		
+ECK120000653	nrdA	2344849	2344854	forward	-13	aattccaaaaACAGGTacgacatacATG		
+ECK120001988	nuoA	2405078	2405083	reverse	-8	gctacttttgATGAGTaagcAAT		
+ECK120001931	osmF	2219488	2219493	reverse	-9	gtaaaagaatGAGGAAagcatCAT		
+ECK120001358	osmY	4611383	4611388	forward	-10	gcaaacatacAGGAATaaatcgATG		
+ECK120002648	pdxB	2437860	2437865	reverse	-11	tcgtctcataCAGGTAacacaaaCGT		
+ECK120000693	pflB	953560	953565	reverse	-8	acttaagaagGTAGGTgttaCAT		
+ECK120000720	phoE	260106	260111	reverse	-8	taattaaaatCAGGAAtgaaAAT		
+ECK120001673	phoH	1084980	1084985	forward	-9	cagtcactatGGAGATcgcggATG		
+ECK120000722	phoP	1190455	1190460	reverse	-10	aattaagacaGGGAGAaataaaAAT		
+ECK120000727	phr	739494	739499	forward	-10	acttgcgccaTTCAGGagttttATG		
+ECK120002159	plaR	3742541	3742546	reverse	-11	gcgctaccatCAGGACgcgacaaAAT		
+ECK120000735	pntA	1677909	1677914	reverse	-8	aaaccgatggAAGGGAatatCAT		
+ECK120000736	pntB	1676367	1676372	reverse	-9	cgcaaaaattAAGGGGtaacaTAT		
+ECK120000737	polA	4046955	4046960	forward	-8	gataaacaggCACGGAcattATG		
+ECK120000762	proV	2804796	2804801	forward	-16	tagacaaataAAGGAAtctttctattgcATG		
+ECK120000763	proW	2805998	2806003	forward	-9	tagatcgtgaGGGGGTaaataATG		
+ECK120000764	proX	2807120	2807125	forward	-9	ctgccaaaaaAAGGAAtaacaATG		
+ECK120000725	pstS	3911531	3911536	reverse	-8	tgaatcctccCAGGAGacatTAT		
+ECK120001625	ptsN	3346566	3346571	forward	-9	ggcaggttctTAGGTGaaattATG		
+ECK120000784	purE	553112	553117	reverse	-14	ttgtgcaccaCAGGAGttttaagacgCAT		
+ECK120000787	purK	552599	552604	reverse	-7	ccggacccgcGAGGTGcggCAT		
+ECK120000789	purM	2621184	2621189	forward	-10	gtaacgcgtgGGGACCcaagcaGTG		
+ECK120000793	putP	1079292	1079297	forward	-10	aataatttttTGGAGActttagATG		
+ECK120002046	rapZ	3347101	3347106	forward	-11	gacgttgtgaGGAGAAacagtacATG		
+ECK120000829	rfaD	3793973	3793978	forward	-11	tccataattcGAAGGTtacagttATG		
+ECK120000833	rhaR	4098636	4098641	forward	-7	tctggccgagGTAGCCacgGTG		
+ECK120000834	rhaS	4097724	4097729	forward	-9	tgacgacatcAGGAGGccagtATG		
+ECK120001568	rnb	1348916	1348921	reverse	-6	gccaccaaaaTAGACAatTAT		
+ECK120000889	rpoN	3344697	3344702	forward	-17	cgttttagcaGGAGAGtacgattctgaacATG		
+ECK120000503	rpoS	2867559	2867564	reverse	-10	ggatcacgggTAGGAGccacctTAT		
+ECK120000516	rsmA	52435	52440	reverse	-7	aaaatgattgTTAACAcccAAT		
+ECK120004293	rtcB	3558086	3558091	reverse	-9	acaacgaaaaGAGAAAaacaaAAT		
+ECK120002224	rtcR	3558255	3558260	forward	-10	gtcttttataAGGATAtctaagATG		
+ECK120000919	sdaA	1896913	1896918	forward	-16	gtccagtcacCTTGTCaggagtattatcGTG		
+ECK120003471	slyA	1720834	1720839	reverse	-12	gcaagctaatTATAAGgagatgaaATT		
+ECK120000945	sohB	1329320	1329325	forward	-9	gtttaaccaaGGTGGGgactcGTG		
+ECK120000946	soxR	4277453	4277458	forward	-13	aagttaacttGAGGTAaagcgatttATG		
+ECK120000947	soxS	4277392	4277397	reverse	-11	tgaacactgaAAAGAGgcagattTAT		
+ECK120002029	treB	4466185	4466190	reverse	-7	gtcatctgccATGGGGcttTAT		
+ECK120002090	treR	4467250	4467255	reverse	-6	cacgttacagGACAACagGAT		
+ECK120000447	truA	2435648	2435653	reverse	-14	gaaactggtgCAGGAGtatctgtactAAT		
+ECK120001024	tsx	432022	432027	reverse	-11	ggattttcaaACAGTGgcatacaTAT		
+ECK120001029	tyrB	4267100	4267105	forward	-11	ccgtaaacctGGAGAAccatcgcGTG		
+ECK120001036	ugpB	3592334	3592339	reverse	-11	tcggtacaacAAGAGAgataaacGAT		
+ECK120001303	upp	2620880	2620885	reverse	-10	ctgcccctcaAAGGAGaaagagTAT		
+ECK120001048	usg	2436658	2436663	reverse	-11	ttgctatttcTGGAGTaaaccacCAT		
+ECK120001051	uvrB	813513	813518	forward	-10	caactccttcAGGTAGcgactcATG		
+ECK120004462	xapA	2524884	2524889	reverse	-8	ccctacagaaAAAGGAtatgTAT		
+ECK120002428	xapB	2523993	2523998	reverse	-10	aatgatgcgaCAAGGAaacgatTAT		
+ECK120001130	xapR	2522486	2522491	reverse	-11	atttattataTGGAGCacttaatTAT		
+ECK120001086	xseB	441356	441361	reverse	-15	gaaaaatattGAGAGTcagacattcatTAT		
+ECK120001094	ybgA	738990	738995	forward	-8	taaaccgctcAGGAGCagtaATG		
+ECK120001551	ygiF	3200971	3200976	reverse	-8	cataaccgatAAGTAAaggcCAT		
+ECK120004290	yhgH	3544761	3544766	forward	-118	gcaacgccacACTTCGgcattcagtccccatccgtgcagcagcacaagatgaacattcccctgacctttggtctgccaccagatgttattcatccgctattgttctcttttgacttacaaggatgaacatATG		
+ECK120002160	yiaK	3742719	3742724	forward	-11	tcaaaaaaacAAGGAAgcctgggATG		
+ECK120001766	yihI	4051334	4051339	forward	-10	aacggctaaaAGACGAaccattATG		
+ECK120001187	yjaB	4214129	4214134	reverse	-8	gaatgactaaAAGGAGagaaAAT		

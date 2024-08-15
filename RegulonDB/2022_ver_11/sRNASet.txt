@@ -1,0 +1,152 @@
+# Copies and Copyright-Notice
+#
+#      RegulonDB is free for academic/noncommercial use
+#
+#      User is not entitled to change or erase data sets of the RegulonDB
+#      database or to eliminate copyright notices from RegulonDB. Furthermore,
+#      User is not entitled to expand RegulonDB or to integrate RegulonDB partly
+#      or as a whole into other databank systems, without prior written consent
+#      from CCG-UNAM.
+#
+#      Please check the license at http://regulondb.ccg.unam.mx/menu/download/full_version/terms_and_conditions.jsp
+#
+# Citation
+#
+#      Tierrafría, V. H. et al. (2022). RegulonDB 11.0: Comprehensive high-throughput datasets on transcriptional regulation in Escherichia coli K-12,
+#      Microb Genom. 2022 May;8(5). doi: 10.1099/mgen.0.000833. PMID: 35584008. https://doi.org/10.1099/mgen.0.000833
+#
+#
+# Contact
+#
+#      Person: RegulonDB Team
+#      Web Page: http://regulondb.ccg.unam.mx/menu/about_regulondb/contact_us/index.jsp
+#          (regulondb@ccg.unam.mx)
+#
+#
+# Release: 11.0 Date:  08/22/2022
+# Genome version: U00096.3, Refseq version: NC_000913.3; GI:556503834
+# ___________________________________________________________________________
+# Columns:
+# (1) Gene identifier assigned by RegulonDB
+# (2) Gene name
+# (3) Blattner number (bnumber) of the gene
+# (4) Gene left end position in the genome
+# (5) Gene right end position in the genome
+# (6) DNA strand where the gene is coded
+# (7) Product name of the gene
+# (8) Evidence that supports the existence of the gene
+# (9) PMIDs list
+# (10) Evidence confidence level (Confirmed, Strong, Weak)
+# (11) All bnumber related to gene
+# (12) Other database's id  related to gene
+ECK120002653	sokC	b4413	16952	17010	forward	small regulatory RNA antitoxin SokC	[IMP|W|Inferred from mutant phenotype],[HIFS|W|Human inference of function from sequence]	10361310,1943701,	Weak	b4413	
+ECK120002641	sroA	b4762	75516	75608	reverse	small RNA SroA		12376536,28071751,28520932,		b4762	
+ECK120002667	sgrS	b4577	77367	77593	forward	small regulatory RNA SgrS	[IDA|S|Inferred from direct assay],[IE|W|Inferred from experiment],[IMP|W|Inferred from mutant phenotype]	15522088,15650111,23873911,25582129,28119418,28289085,29137641,30287822,30700509,32291821,33425989,	Strong	b4577	
+ECK125302576	ftsO	b4810	92485	92658	forward	small regulatory RNA FtsO	[IMP|W|Inferred from mutant phenotype]	33460557,	Weak	b4810	
+ECK120002606	tff	b4414	189712	189847	forward	putative small RNA T44	[ICA|W|Inferred by computational analysis]	11553332,	Weak	b4414	
+ECK125302575	ispZ	b4809	194784	194844	forward	small regulatory RNA IspZ	[IMP|W|Inferred from mutant phenotype]	33460557,	Weak	b4809	
+ECK125135291	eyeA	b4690	272580	272654	forward	CP4-6 prophage; small RNA EyeA				b4690	
+ECK125146691	nc1		297137	297304	reverse	small noncoding RNA involved in nucleoid organization	[IMP|W|Inferred from mutant phenotype]	22942248,	Weak		
+ECK120002574	sraA		458728	458784	reverse	small RNA SraA		11448770,11553332,			
+ECK120002469	ffs	b0455	476448	476561	forward	signal recognition particle 4.5S RNA		11904184,12702815,1331806,15611297,7525539,8073757,8772186,95791,		b0455	
+ECK120002642	chiX	b4585	507204	507287	forward	small regulatory RNA ChiX	[IMP|W|Inferred from mutant phenotype]	19400782,19426207,30287822,33748186,	Weak	b4585	
+ECK125303723	allZ	b4831	533629	533863	forward	small RNA AllZ				b4831	
+ECK125289860	ipeX		574367	574515	reverse	small RNA IpeX		16385048,			
+ECK125328227	sokE	b4835	607733	607792	reverse	small RNA SokE				b4835	
+ECK120002643	sroC	b4763	686681	686843	reverse	small regulatory RNA SroC	[IMP|W|Inferred from mutant phenotype]	25916829,26469694,29992897,34093460,	Weak	b4763	
+ECK125302574	chiZ	b4808	708236	708333	forward	small regulatory RNA ChiZ	[IMP|W|Inferred from mutant phenotype]	33460557,	Weak	b4808	
+ECK125276535	sdhX	b4764	765050	765150	forward	small regulatory RNA SdhX	[IMP|W|Inferred from mutant phenotype]	18467773,30541135,30591570,	Weak	b4764	
+ECK125303724	zbiJ	b4814	837435	837531	reverse	small regulatory RNA ZbiJ	[IDA|S|Inferred from direct assay]	33622723,34093460,	Strong	b4814	
+ECK120002592	rybA	b4416	852725	853064	reverse	small RNA RybA	[IMP|W|Inferred from mutant phenotype]	11445539,22336764,26076491,	Weak	b4416	
+ECK120002591	rybB	b4417	887979	888057	reverse	small regulatory RNA RybB	[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	11445539,17007876,17416652,21768388,22439016,25001303,25030700,25582129,26484242,26992034,30287822,	Weak	b4417	
+ECK125303710	flgO	b4826	1140986	1141063	forward	small RNA FlgO				b4826	
+ECK120002575	sraB	b4418	1146589	1146757	forward	small RNA SraB		11448770,12202758,		b4418	
+ECK125303707	bhsB	b4832	1169303	1169402	forward	small RNA BhsB				b4832	
+ECK120002608	C0293	b4806	1196711	1196782	forward	e14 prophage; small regulatory RNA C0293	[IMP|W|Inferred from mutant phenotype]	32061118,	Weak	b4806	
+ECK120002656	rdlA	b4420	1269323	1269389	forward	putative antisense regulatory RNA RdlA	[HIFS|W|Human inference of function from sequence]	12123448,	Weak	b4420	
+ECK120002658	rdlB	b4422	1269858	1269923	forward	putative antisense regulatory RNA RdlB	[IMP|W|Inferred from mutant phenotype],[HIFS|W|Human inference of function from sequence]	12123448,26469694,	Weak	b4422	
+ECK120002660	rdlC	b4424	1270393	1270460	forward	putative antisense regulatory RNA RdlC	[IMP|W|Inferred from mutant phenotype],[HIFS|W|Human inference of function from sequence]	12123448,26469694,	Weak	b4424	
+ECK125303716	narS	b4813	1279337	1279520	forward	putative small regulatory RNA NarS	[HIFS|W|Human inference of function from sequence]	31863581,	Weak	b4813	
+ECK120002661	rttR	b4425	1287066	1287236	reverse	small RNA RttR				b4425	
+ECK120002610	mcaS	b4426	1405658	1405751	reverse	small regulatory RNA McaS	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	22250746,22289118,22414234,30287822,30799856,34067197,	Strong	b4426	
+ECK125095415	fnrS	b4699	1409129	1409250	forward	small regulatory RNA FnrS	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	20070527,20075074,	Strong	b4699	
+ECK125165375	ralA	b4714	1413556	1413734	forward	Rac prophage; small regulatory RNA antitoxin RalA	[IMP|W|Inferred from mutant phenotype]	24748661,	Weak	b4714	
+ECK125303713	kilS	b4833	1418405	1418502	reverse	Rac prophage; small RNA KilS				b4833	
+ECK120002612	micC	b4427	1437121	1437231	forward	small regulatory RNA MicC	[IGI|W|Inferred from genetic interaction],[IEP|W|Inferred from expression pattern]	12069726,15466019,17264113,20068355,	Weak	b4427	
+ECK120030076	rydC	b4597	1491442	1491506	reverse	small regulatory RNA RydC	[IMP|W|Inferred from mutant phenotype]	15618228,30700509,31308070,	Weak	b4597	
+ECK120002663	sokB	b4429	1492119	1492175	forward	putative small regulatory RNA antitoxin SokB	[HIFS|W|Human inference of function from sequence]	10361310,16751270,17065468,	Weak	b4429	
+ECK125095180	mgrR	b4698	1622817	1622914	reverse	small regulatory RNA MgrR	[IMP|W|Inferred from mutant phenotype]	19889087,	Weak	b4698	
+ECK120002557	dicF	b1574	1649382	1649434	forward	Qin prophage; small regulatory RNA DicF	[IGI|W|Inferred from genetic interaction],[IMP|W|Inferred from mutant phenotype]	1552861,18388495,27822514,8763959,	Weak	b1574	
+ECK120002588	rydB	b4430	1764713	1764780	reverse	small regulatory RNA RydB	[IMP|W|Inferred from mutant phenotype]	11445539,12069726,21546360,	Weak	b4430	
+ECK120002576	rprA	b4431	1770372	1770477	forward	small regulatory RNA RprA	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	11251852,11448770,12410838,17264113,18826256,20455949,26264774,28479746,29294085,29905843,30287822,30562360,30802490,31186337,31552789,	Strong	b4431	
+ECK120002577	ryeA	b4432	1923066	1923337	forward	small antisense RNA RyeA		11448770,12069726,12762038,28314872,31270363,		b4432	
+ECK120002594	sdsR	b4433	1923104	1923207	reverse	small regulatory RNA SdsR	[IMP|W|Inferred from mutant phenotype]	11553332,18467773,25724987,26469694,32087965,	Weak	b4433	
+ECK125165376	micL	b4717	1958441	1958520	reverse	small regulatory RNA MicL-S	[IGI|W|Inferred from genetic interaction],[IMP|W|Inferred from mutant phenotype]	14622403,24722986,25030700,28373273,	Weak	b4717	
+ECK125303725	motR	b4828	1977208	1977302	reverse	small RNA MotR				b4828	
+ECK125229289	3'ETS-<i>leuZ</i>	b4759	1991748	1991814	reverse	small regulatory RNA 3'ETS	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	25891076,30061117,	Strong	b4759	
+ECK125135297	sdsN	b4719	1996921	1997057	forward	small regulatory RNA SdsN	[IMP|W|Inferred from mutant phenotype]	27166377,	Weak	b4719	
+ECK125303717	fliX	b4827	2001912	2002106	reverse	small RNA FliX				b4827	
+ECK120003633	dsrA	b1954	2025223	2025313	reverse	small regulatory RNA DsrA	[IMP|W|Inferred from mutant phenotype]	12069726,25262352,25582129,30287822,32845055,	Weak	b1954	
+ECK120029424	rseX	b4603	2033649	2033739	forward	small regulatory RNA RseX	[IDA|S|Inferred from direct assay]	16513633,25724987,30287822,34327153,	Strong	b4603	
+ECK120002616	isrC	b4435	2071317	2071511	forward	CP4-44 prophage; small RNA IsrC				b4435	
+ECK120002595	sibA	b4436	2153311	2153454	forward	small RNA SibA				b4436	
+ECK120002596	sibB	b4437	2153646	2153781	forward	small RNA SibB	[IMP|W|Inferred from mutant phenotype]	18710431,	Weak	b4437	
+ECK120002589	cyaR	b4438	2167114	2167200	forward	small regulatory RNA CyaR	[IMP|W|Inferred from mutant phenotype]	18619465,18978044,20627350,30287822,	Weak	b4438	
+ECK125289861	orzP		2204402	2204484	forward	small RNA OrzP					
+ECK120002505	micF	b4439	2313084	2313176	forward	small regulatory RNA MicF	[IDA|S|Inferred from direct assay],[IE|W|Inferred from experiment]	12069726,17009960,17264113,2193928,2478539,25246476,26774489,30287822,32157864,9478198,	Strong	b4439	
+ECK125229288	ryeG		2470472	2470665	reverse	small RNA RyeG	[IMP|W|Inferred from mutant phenotype]	20683441,26469694,	Weak		
+ECK120002645	sroE	b4761	2640595	2640686	reverse	small RNA SroE		11553332,		b4761	
+ECK125302578	timR	b4811	2653356	2653455	reverse	putative small regulatory RNA TimR	[HIFS|W|Human inference of function from sequence]	33172998,	Weak	b4811	
+ECK120002590	ryfA	b4440	2653855	2654158	forward	small regulatory RNA RyfA	[IMP|W|Inferred from mutant phenotype]	10673004,26469694,	Weak	b4440	
+ECK120002620	glmY	b4441	2691157	2691340	reverse	small regulatory RNA GlmY	[IMP|W|Inferred from mutant phenotype]	17854828,19734312,22355164,22661574,26531825,28977623,30040820,	Weak	b4441	
+ECK120030082	ohsC	b4608	2700520	2700598	forward	small regulatory RNA OhsC	[IMP|W|Inferred from mutant phenotype]	18710431,	Weak	b4608	
+ECK120030083	ryfD	b4609	2734153	2734295	reverse	small regulatory RNA RyfD	[IMP|W|Inferred from mutant phenotype]	26469694,	Weak	b4609	
+ECK125289863	raiZ	b4805	2737381	2737542	forward	small RNA RaiZ				b4805	
+ECK120002578	micA	b4442	2814802	2814874	forward	small regulatory RNA MicA	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	11448770,16204185,16313626,20976191,23594456,24163336,24244437,25030700,25046628,29467745,30287822,	Strong	b4442	
+ECK125135289	sokX	b4701	2887353	2887411	forward	small RNA SokX				b4701	
+ECK120002573	csrB	b4408	2924156	2924524	reverse	small regulatory RNA CsrB	[IDA|S|Inferred from direct assay]	11310739,11535784,11741870,16822857,17026754,17064377,18080813,20118252,24512078,24708042,28796489,30589862,9211896,	Strong	b4408	
+ECK120002579	gcvB	b4443	2942696	2942901	forward	small regulatory RNA GcvB	[IGI|W|Inferred from genetic interaction],[IMP|W|Inferred from mutant phenotype],[IEP|W|Inferred from expression pattern]	10972807,11448770,12069726,17264113,18312576,19118351,19221499,22020646,23316042,24391513,25358737,27588604,29905843,30447071,31553492,33169170,34065855,	Weak	b4443	
+ECK120002580	omrA	b4444	2976102	2976189	reverse	small regulatory RNA OmrA	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	11448770,11553332,16359331,18953042,20407422,22040174,32133913,	Strong	b4444	
+ECK120002593	omrB	b4445	2976304	2976385	reverse	small regulatory RNA OmrB	[IMP|W|Inferred from mutant phenotype]	16359331,18953042,	Weak	b4445	
+ECK120002541	ssrS	b2911	3055983	3056165	forward	6S RNA	[IDA|S|Inferred from direct assay]	10892648,1098044,29686109,4570237,4929322,6231216,	Strong	b2911	
+ECK120002597	sibC	b4446	3056851	3056991	forward	small regulatory RNA antitoxin SibC	[IMP|W|Inferred from mutant phenotype]	18710431,26020590,	Weak	b4446	
+ECK125135301	och5		3067187	3067344	forward	small regulatory RNA Och5	[IMP|W|Inferred from mutant phenotype]	26469694,	Weak		
+ECK120002623	sibD	b4447	3194721	3194865	reverse	small RNA SibD	[IMP|W|Inferred from mutant phenotype]	12069726,18710431,19350225,	Weak	b4447	
+ECK120030085	sibE	b4611	3195097	3195240	reverse	small RNA SibE	[IMP|W|Inferred from mutant phenotype]	18710431,	Weak	b4611	
+ECK120002511	rnpB	b3123	3270216	3270592	reverse	RNase P catalytic RNA component	[IDA|S|Inferred from direct assay]	6197186,	Strong	b3123	
+ECK120002582	sraG	b4449	3311183	3311398	forward	small regulatory RNA SraG	[IMP|W|Inferred from mutant phenotype]	11448770,27495318,	Weak	b4449	
+ECK120002583	arcZ	b4450	3350577	3350697	forward	small regulatory RNA ArcZ	[IMP|W|Inferred from mutant phenotype]	20457943,23659637,26469694,28794186,30287822,	Weak	b4450	
+ECK120002584	ryhB	b4451	3580922	3581016	reverse	small regulatory RNA RyhB	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	11917098,12069726,14617150,19541626,22083717,22096151,23671689,26637361,27085802,27651365,27757702,28119418,30107543,30287822,30700509,31002843,32209682,33748186,	Strong	b4451	
+ECK125158033	agrA	b4712	3648063	3648144	forward	small RNA AgrA		27651528,		b4712	
+ECK125158035	agrB	b4713	3648294	3648375	forward	small regulatory RNA AgrB	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	23408903,27651528,	Strong	b4713	
+ECK125135001	arrS	b4704	3657985	3658054	reverse	small regulatory RNA ArrS	[IMP|W|Inferred from mutant phenotype]	24600026,	Weak	b4704	
+ECK125242747	gadF	b4718	3658992	3659082	forward	small regulatory RNA GadF	[IMP|W|Inferred from mutant phenotype]	27588604,	Weak	b4718	
+ECK120002624	gadY	b4452	3664864	3664969	forward	small regulatory RNA GadY	[IDA|S|Inferred from direct assay],[IEP|W|Inferred from expression pattern]	15466020,21147125,21314918,31186337,	Strong	b4452	
+ECK120002627	rdlD	b4454	3700136	3700199	forward	antisense regulatory RNA RdlD	[IMP|W|Inferred from mutant phenotype]	12123448,15718303,32518184,	Weak	b4454	
+ECK125303721	xylZ	b4834	3729386	3729545	reverse	small RNA XylZ				b4834	
+ECK125240975	rirA	b4760	3808166	3808238	reverse	small regulatory RNA RirA	[IMP|W|Inferred from mutant phenotype],[IPI|W|Inferred from physical interaction]	27629414,	Weak	b4760	
+ECK125303709	uhpU	b4829	3845730	3845995	reverse	small RNA UhpU				b4829	
+ECK120015142	istR	b4616	3853118	3853257	reverse	small regulatory RNA IstR-1	[IDA|S|Inferred from direct assay],[IE|W|Inferred from experiment],[IMP|W|Inferred from mutant phenotype]	11448770,15620655,17499044,	Strong	b4616	
+ECK120015142	istR	b4616	3853118	3853257	reverse	small RNA IstR-2	[IDA|S|Inferred from direct assay],[IE|W|Inferred from experiment],[IMP|W|Inferred from mutant phenotype]	11448770,15620655,17499044,	Weak	b4616	
+ECK125289862	rbsZ	b4804	3937045	3937278	forward	small regulatory RNA RbsZ	[IMP|W|Inferred from mutant phenotype]	31761494,	Weak	b4804	
+ECK120002585	glmZ	b4456	3986432	3986603	forward	small regulatory RNA GlmZ	[IMP|W|Inferred from mutant phenotype]	11448770,17824929,22661574,28119418,28977623,30287822,32424019,	Weak	b4456	
+ECK125145757	esrE	b4707	4019978	4020229	forward	small RNA EsrE				b4707	
+ECK120002540	spf	b3864	4049899	4050009	forward	small regulatory RNA Spot 42	[IMP|W|Inferred from mutant phenotype],[IPI|W|Inferred from physical interaction]	12069726,12101127,1715853,18388495,23980183,26045496,30287822,6183253,	Weak	b3864	
+ECK120002586	csrC	b4457	4051036	4051281	forward	small regulatory RNA CsrC	[IDA|S|Inferred from direct assay],[IMP|W|Inferred from mutant phenotype]	12694612,15916613,17064377,19619561,24708042,28732463,30589862,	Strong	b4457	
+ECK125230238	cpxQ	b4716	4106330	4106387	forward	small regulatory RNA CpxQ	[IGI|W|Inferred from genetic interaction],[IMP|W|Inferred from mutant phenotype]	27048800,	Weak	b4716	
+ECK120002558	oxyS	b4458	4158278	4158394	reverse	small regulatory RNA OxyS	[IMP|W|Inferred from mutant phenotype]	16030151,16597239,18467773,19119855,21106118,21205841,23011127,24169950,25582129,25724987,25798870,25873159,26960359,27095210,28119418,30340824,7986015,9230301,	Weak	b4458	
+ECK120002647	sroH	b4691	4190327	4190487	reverse	small RNA SroH				b4691	
+ECK125303715	aceK-int	b4830	4218879	4218963	forward	small RNA AceK-int				b4830	
+ECK125302577	malH	b4807	4242531	4242633	reverse	small regulatory RNA MalH	[IMP|W|Inferred from mutant phenotype]	32356726,33043783,	Weak	b4807	
+ECK125256957	pspH	b4758	4263139	4263249	forward	small regulatory RNA PspH	[IMP|W|Inferred from mutant phenotype]	25266388,27588604,	Weak	b4758	
+ECK120002587	ryjA	b4459	4277926	4278066	reverse	small RNA RyjA		11448770,		b4459	
+ECK125256963	naRNA6		4325805	4325881	reverse	naRNA6		26307168,			
+ECK125256972	naRNA5		4325905	4325981	reverse	naRNA5		26307168,			
+ECK125256968	naRNA4		4326005	4326081	reverse	naRNA4	[IMP|W|Inferred from mutant phenotype]	26307168,	Weak		
+ECK125256964	naRNA3		4326105	4326181	reverse	naRNA3		26307168,			
+ECK125256959	naRNA2		4326205	4326281	reverse	naRNA2		26307168,			
+ECK125256969	naRNA1		4326305	4326381	reverse	naRNA1		26307168,			
+ECK125303719	aspX	b4825	4366839	4366951	reverse	small regulatory RNA AspX	[IMP|W|Inferred from mutant phenotype]	34210798,	Weak	b4825	
+ECK125135311			4441225	4441330	reverse	small RNA					
+ECK120030092	ryjB	b4624	4527977	4528066	forward	small RNA RyjB	[IMP|W|Inferred from mutant phenotype]	31744883,34967409,	Weak	b4624	
+ECK120030093	symR	b4625	4579835	4579911	forward	small regulatory RNA antitoxin SymR	[IMP|W|Inferred from mutant phenotype]	17462020,	Weak	b4625	

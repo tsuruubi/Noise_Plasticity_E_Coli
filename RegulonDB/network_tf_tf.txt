@@ -1,0 +1,511 @@
+# Copies and Copyright-Notice
+#
+#      RegulonDB is free for academic/noncommercial use
+#
+#      User is not entitled to change or erase data sets of the RegulonDB
+#      database or to eliminate copyright notices from RegulonDB. Furthermore,
+#      User is not entitled to expand RegulonDB or to integrate RegulonDB partly
+#      or as a whole into other databank systems, without prior written consent
+#      from CCG-UNAM.
+#
+#      Please check the license at http://regulondb.ccg.unam.mx/menu/download/full_version/terms_and_conditions.jsp
+#
+# Citation
+#
+#      Santos-Zavaleta A et al. (2019). RegulonDB v 10.5: tackling challenges to unify classic and high throughput knowledge of gene regulation in E. coli K-12.,
+#      Nucleic Acids Res. 2019 Jan 8;47(D1):D212-D220. doi: 10.1093/nar/gky1077.
+#
+#
+# Contact
+#
+#      Person: RegulonDB Team
+#      Web Page: http://regulondb.ccg.unam.mx/menu/about_regulondb/contact_us/index.jsp
+#          (regulondb@ccg.unam.mx)
+#
+#
+# Release: 10.9 Date: 06/29/2021
+# ___________________________________________________________________________
+#
+# Columns:
+#  (1) Transcription Factor (TF) name
+#  (2) TF  regulated by TF
+#  (3) Regulatory effect of the TF on the regulated gene (+ activator, - repressor, +- dual, ? unknown)
+#  (4) Evidence that supports the existence of the regulatory interaction
+#  (5) Evidence Type [Weak, Strong, Confirmed] For details see: http://regulondb.ccg.unam.mx/evidenceclassification
+#
+AccB	accB	-	[]	null	
+AcrR	acrR	-	[AIBSCS, APIORCISFBSCS, BCE, BPP, GEA]	Strong	
+AcrR	flhC	-	[]	null	
+AcrR	flhD	-	[]	null	
+AcrR	marA	-	[]	null	
+AcrR	marR	-	[]	null	
+AcrR	soxR	-	[]	null	
+AcrR	soxS	-	[APIORCISFBSCS, BPP, GEA]	Strong	
+Ada	ada	+	[]	null	
+Ada	ada	-	[]	null	
+Ada	aidB	+	[]	null	
+AdiY	gadX	+	[]	null	
+AgaR	agaR	-	[]	null	
+AidB	aidB	-	[]	null	
+AlaS	alaS	-	[]	null	
+AllR	allS	-	[]	null	
+AlsR	alsR	-	[]	null	
+AraC	araC	+	[]	null	
+AraC	araC	-	[]	null	
+ArcA	appY	+	[]	null	
+ArcA	betI	-	[]	null	
+ArcA	dpiA	+	[AIBSCS]	Weak	
+ArcA	fnr	-	[]	null	
+ArcA	gadE	+	[]	null	
+ArcA	gadX	+	[]	null	
+ArcA	lldR	-	[]	null	
+ArcA	puuR	-	[AIBSCS]	Weak	
+ArcA	xylR	+	[]	null	
+ArgP	argP	-	[]	null	
+ArgP	dnaA	+	[]	null	
+ArgR	argR	-	[EME]	null	
+ArsR	arsR	-	[]	null	
+AscG	prpR	-	[]	null	
+AsnC	asnC	-	[]	null	
+BaeR	baeR	+	[]	null	
+BasR	csgD	+	[]	null	
+BasR	putA	-	[]	null	
+BasR	qseB	+	[]	null	
+BetI	betI	-	[]	null	
+BolA	csgD	+	[]	null	
+BtsR	csgD	-	[]	null	
+BtsR	pdhR	-	[]	null	
+CRP	caiF	+	[]	null	
+CRP	chbR	+	[]	null	
+CRP	comR	-	[]	null	
+CRP	crp	+	[]	null	
+CRP	crp	-	[]	null	
+CRP	csgD	+	[]	null	
+CRP	csqR	+	[]	null	
+CRP	csqR	-	[]	null	
+CRP	cytR	+	[]	null	
+CRP	cytR	-	[]	null	
+CRP	dcuR	+	[]	null	
+CRP	dgoR	+	[]	null	
+CRP	dpiA	-	[]	null	
+CRP	exuR	-	[]	null	
+CRP	feaR	+	[]	null	
+CRP	fis	+	[]	null	
+CRP	fis	-	[]	null	
+CRP	flhC	+	[]	null	
+CRP	flhD	+	[]	null	
+CRP	fucR	+	[]	null	
+CRP	fur	+	[]	null	
+CRP	gadE	-	[]	null	
+CRP	gadX	-	[]	null	
+CRP	galS	+	[]	null	
+CRP	glcC	+	[]	null	
+CRP	glnG	+	[]	null	
+CRP	glnG	-	[]	null	
+CRP	glpR	+	[]	null	
+CRP	gutM	+	[]	null	
+CRP	hicB	+	[]	null	
+CRP	hupA	+	[]	null	
+CRP	hupB	+	[]	null	
+CRP	hyfR	+	[]	null	
+CRP	idnR	+	[]	null	
+CRP	lacI	+	[]	null	
+CRP	lsrR	+	[BPP, GEA, SM]	Strong	
+CRP	malI	+	[]	null	
+CRP	malI	-	[AIBSCS, BPP, GEA, SM]	Strong	
+CRP	malT	+	[]	null	
+CRP	marA	+	[]	null	
+CRP	marR	+	[]	null	
+CRP	mazE	+	[]	null	
+CRP	mazF	+	[]	null	
+CRP	melR	+	[]	null	
+CRP	mhpR	+	[]	null	
+CRP	mlc	+	[]	null	
+CRP	mlc	-	[]	null	
+CRP	nagC	+	[]	null	
+CRP	nagC	-	[]	null	
+CRP	ompR	+	[]	null	
+CRP	ompR	-	[]	null	
+CRP	oxyR	+	[]	null	
+CRP	pdhR	+	[]	null	
+CRP	plaR	-	[]	null	
+CRP	prpR	+	[]	null	
+CRP	puuR	-	[]	null	
+CRP	rbsR	+	[]	null	
+CRP	rhaR	+	[]	null	
+CRP	rhaS	+	[]	null	
+CRP	srlR	+	[]	null	
+CRP	uxuR	+	[]	null	
+CRP	xylR	+	[]	null	
+CRP	zraR	+	[]	null	
+CRP-Sxy	sxy	+	[]	null	
+CadC	cadC	+	[]	null	
+CdaR	cdaR	+	[]	null	
+CecR	cecR	-	[]	null	
+ChbR	chbR	+	[]	null	
+ChbR	chbR	-	[]	null	
+CpxR	baeR	+	[]	null	
+CpxR	cpxR	+	[]	null	
+CpxR	csgD	-	[]	null	
+CpxR	marA	+	[]	null	
+CpxR	marR	+	[]	null	
+Cra	betI	+	[]	null	
+Cra	crp	+	[]	null	
+Cra	csgD	+	[]	null	
+Cra	glcC	-	[]	null	
+Cra	marA	-	[]	null	
+Cra	marR	-	[]	null	
+Cra	pdeL	-	[]	null	
+Cra	pdhR	-	[]	null	
+CsgD	csgD	+	[]	null	
+CsgD	fliZ	-	[]	null	
+CspA	hns	+	[]	null	
+CsqR	csqR	-	[]	null	
+CusR	cusR	+	[]	null	
+CynR	cynR	-	[]	null	
+CysB	cbl	+	[]	null	
+CysB	cysB	-	[]	null	
+CytR	cytR	-	[]	null	
+Dan	ttdR	+	[]	null	
+DcuR	dpiA	+	[]	null	
+DgoR	dgoR	-	[]	null	
+DhaR	dhaR	-	[]	null	
+DinJ-YafQ	dinJ	-	[]	null	
+DinJ-YafQ	yafQ	-	[]	null	
+DnaA	dnaA	+	[]	null	
+DnaA	dnaA	-	[]	null	
+DpiA	appY	-	[]	null	
+DpiA	dpiA	+	[APIORCISFBSCS, BPP, GEA]	Strong	
+DsdC	dsdC	-	[]	null	
+EvgA	evgA	+	[]	null	
+EvgA	gadE	+	[]	null	
+EvgA	ydeO	+	[]	null	
+ExuR	exuR	-	[APIORCISFBSCS, GEA]	Weak	
+ExuR	uxuR	-	[]	null	
+FNR	arcA	+	[]	null	
+FNR	arcA	-	[]	null	
+FNR	cadC	+	[]	null	
+FNR	caiF	+	[]	null	
+FNR	dcuR	+	[]	null	
+FNR	dpiA	-	[]	null	
+FNR	fhlA	+	[]	null	
+FNR	fnr	-	[]	null	
+FNR	gadW	-	[]	null	
+FNR	gadX	-	[]	null	
+FNR	hyfR	-	[]	null	
+FNR	nac	-	[]	null	
+FNR	narL	-	[]	null	
+FNR	nfeR	+	[]	null	
+FNR	nikR	+	[]	null	
+FNR	pdhR	+	[]	null	
+FNR	pdhR	-	[]	null	
+FNR	soxR	-	[]	null	
+FNR	soxS	-	[]	null	
+FNR	tdcA	+	[]	null	
+FNR	yeiL	-	[]	null	
+FadR	accB	+	[]	null	
+FadR	fadR	+	[]	null	
+FadR	iclR	+	[]	null	
+FhlA	fhlA	+	[]	null	
+FhlA	hyfR	+	[]	null	
+Fis	crp	-	[]	null	
+Fis	cspA	+	[]	null	
+Fis	dnaA	-	[]	null	
+Fis	fis	-	[]	null	
+Fis	gadX	-	[]	null	
+Fis	glcC	-	[]	null	
+Fis	glnG	+	[]	null	
+Fis	hns	+	[]	null	
+Fis	hupA	+	[]	null	
+Fis	hupB	-	[]	null	
+Fis	marA	+	[]	null	
+Fis	marR	+	[]	null	
+Fis	mazE	+	[]	null	
+Fis	mazF	+	[]	null	
+Fis	xylR	-	[]	null	
+FlhDC	fliZ	+	[]	null	
+FliZ	csgD	-	[]	null	
+FliZ	flhC	-	[]	null	
+FliZ	flhD	-	[]	null	
+FliZ	gadE	-	[]	null	
+FliZ	mlrA	-	[]	null	
+FucR	fucR	+	[]	null	
+Fur	flhC	-	[]	null	
+Fur	flhD	-	[]	null	
+Fur	fnr	-	[]	null	
+Fur	fur	-	[]	null	
+Fur	metJ	-	[]	null	
+Fur	nac	-	[]	null	
+Fur	purR	-	[]	null	
+Fur	soxR	-	[]	null	
+Fur	soxS	-	[]	null	
+GadE	gadE	+	[]	null	
+GadE	gadW	+	[]	null	
+GadE	gadX	+	[]	null	
+GadE	lrp	+	[]	null	
+GadE	rcsA	+	[]	null	
+GadE-RcsB	gadX	+	[]	null	
+GadW	gadE	+	[]	null	
+GadW	gadW	-	[]	null	
+GadW	gadX	+	[]	null	
+GadW	gadX	-	[]	null	
+GadX	gadE	+	[AIBSCS, APIORCISFBSCS, BPP, GEA]	Strong	
+GadX	gadW	+	[]	null	
+GadX	gadW	-	[]	null	
+GadX	gadX	+	[]	null	
+GadX	hns	+	[]	null	
+GalR	galR	-	[]	null	
+GalS	galR	-	[]	null	
+GcvA	gcvA	-	[]	null	
+GlcC	glcC	-	[]	null	
+GntR	idnR	-	[]	null	
+GutM	gutM	+	[]	null	
+GutM	srlR	+	[]	null	
+H-NS	adiY	-	[]	null	
+H-NS	appY	-	[]	null	
+H-NS	bglJ	-	[]	null	
+H-NS	bolA	-	[]	null	
+H-NS	cadC	-	[]	null	
+H-NS	caiF	-	[]	null	
+H-NS	csgD	-	[]	null	
+H-NS	cspA	-	[]	null	
+H-NS	evgA	-	[]	null	
+H-NS	flhC	+	[]	null	
+H-NS	flhD	+	[]	null	
+H-NS	fliZ	+	[]	null	
+H-NS	gadE	-	[]	null	
+H-NS	gadW	-	[]	null	
+H-NS	gadX	-	[]	null	
+H-NS	gutM	+	[]	null	
+H-NS	hdfR	-	[]	null	
+H-NS	hns	-	[]	null	
+H-NS	leuO	-	[BPP]	Strong	
+H-NS	lrp	-	[]	null	
+H-NS	mazE	+	[]	null	
+H-NS	mazF	+	[]	null	
+H-NS	nhaR	-	[]	null	
+H-NS	rcsA	-	[]	null	
+H-NS	rcsB	-	[]	null	
+H-NS	srlR	+	[]	null	
+H-NS	stpA	-	[]	null	
+H-NS	ydeO	-	[]	null	
+H-NS	yjjQ	-	[]	null	
+HdfR	flhC	-	[]	null	
+HdfR	flhD	-	[]	null	
+HicB	hicB	-	[]	null	
+HigA	higA	-	[]	null	
+HigA	higB	-	[]	null	
+HigBA	higA	-	[]	null	
+HigBA	higB	-	[]	null	
+HipAB	hipA	-	[]	null	
+HipAB	hipB	-	[]	null	
+HipAB	mazE	-	[]	null	
+HipAB	mazF	-	[]	null	
+HipB	hipA	-	[]	null	
+HipB	hipB	-	[]	null	
+HipB	mazE	-	[]	null	
+HipB	mazF	-	[]	null	
+HprR	cusR	+	[]	null	
+HyfR	hyfR	+	[]	null	
+IHF	csgD	+	[]	null	
+IHF	fis	+	[]	null	
+IHF	flhC	-	[]	null	
+IHF	flhD	-	[]	null	
+IHF	fliZ	-	[]	null	
+IHF	fnr	+	[]	null	
+IHF	hipA	+	[]	null	
+IHF	hipB	+	[]	null	
+IHF	ihfA	-	[]	null	
+IHF	ihfB	-	[]	null	
+IHF	ompR	-	[]	null	
+IHF	plaR	-	[]	null	
+IHF	yeiL	+	[]	null	
+IclR	iclR	-	[]	null	
+IdnR	idnR	+	[]	null	
+IlvY	ilvY	-	[]	null	
+IscR	iscR	-	[]	null	
+LeuO	bglJ	+	[]	null	
+LeuO	cadC	-	[]	null	
+LeuO	leuO	+	[BPP, GEA, IC]	Strong	
+LeuO	leuO	-	[]	null	
+LeuO	yjjQ	+	[]	null	
+LexA	dinJ	-	[]	null	
+LexA	lexA	-	[]	null	
+LexA	uvrY	-	[]	null	
+LexA	yafQ	-	[]	null	
+LldR	lldR	+	[]	null	
+LldR	lldR	-	[]	null	
+LrhA	flhC	-	[]	null	
+LrhA	flhD	-	[]	null	
+LrhA	leuO	+	[BPP, GEA]	Strong	
+LrhA	lrhA	+	[]	null	
+Lrp	aidB	-	[]	null	
+Lrp	lrp	-	[]	null	
+Lrp	malT	+	[]	null	
+Lrp	stpA	+	[RSE]	null	
+Lrp	yeiL	+	[]	null	
+LsrR	lsrR	-	[]	null	
+LysR	lysR	-	[]	null	
+MalI	malI	-	[]	null	
+MarA	decR	+	[]	null	
+MarA	marA	+	[]	null	
+MarA	marR	+	[]	null	
+MarA	putA	+	[]	null	
+MarA	rob	-	[]	null	
+MarR	marA	-	[]	null	
+MarR	marR	-	[]	null	
+MatA	ecpR	+	[]	null	
+MatA	flhC	-	[]	null	
+MatA	flhD	-	[]	null	
+MatA	fliZ	-	[]	null	
+MazE	mazE	-	[BCE, GEA, SM]	Strong	
+MazE	mazF	-	[BCE, GEA, SM]	Strong	
+MazE-MazF	mazE	-	[BCE, GEA, SM]	Strong	
+MazE-MazF	mazF	-	[BCE, GEA, SM]	Strong	
+MelR	melR	-	[]	null	
+MetJ	metR	-	[]	null	
+MetR	metR	-	[BPP, GEA]	Strong	
+Mlc	malT	-	[]	null	
+Mlc	mlc	-	[]	null	
+MlrA	cadC	+	[]	null	
+MlrA	csgD	+	[]	null	
+MngR	mngR	-	[]	null	
+ModE	narL	+	[]	null	
+MprA	mprA	-	[]	null	
+MqsA	csgD	-	[]	null	
+MqsA	mqsA	-	[]	null	
+MraZ	mraZ	-	[]	null	
+MurR	murR	+	[]	null	
+MurR	murR	-	[]	null	
+Nac	asnC	-	[RSE]	null	
+Nac	feaR	+	[]	null	
+Nac	nac	-	[]	null	
+NagC	chbR	-	[]	null	
+NagC	nagC	-	[]	null	
+NarL	caiF	-	[]	null	
+NarL	dcuR	-	[]	null	
+NarL	dpiA	-	[]	null	
+NarL	nikR	-	[]	null	
+NemR	nemR	-	[]	null	
+NfeR	nfeR	-	[]	null	
+NhaR	nhaR	+	[]	null	
+NikR	nikR	-	[]	null	
+NimR	nimR	-	[BPP, GEA, ICWHO]	Strong	
+NorR	norR	-	[]	null	
+NsrR	dsdC	-	[]	null	
+NsrR	feaR	-	[]	null	
+NsrR	fhlA	-	[APIORCISFBSCS, GEA]	Weak	
+NsrR	fliZ	-	[APIORCISFBSCS, GEA]	Weak	
+NsrR	ihfA	-	[]	null	
+NsrR	lrp	-	[]	null	
+NsrR	norR	-	[]	null	
+NtrC	cbl	+	[]	null	
+NtrC	glnG	+	[]	null	
+NtrC	glnG	-	[]	null	
+NtrC	nac	+	[]	null	
+OmpR	bolA	-	[]	null	
+OmpR	cadC	-	[]	null	
+OmpR	csgD	+	[]	null	
+OxyR	fur	+	[]	null	
+OxyR	metR	+	[]	null	
+OxyR	oxyR	-	[]	null	
+PaaX	paaX	-	[]	null	
+PdeL	pdeL	+	[]	null	
+PdhR	mraZ	-	[]	null	
+PdhR	pdhR	-	[]	null	
+PepA	pepA	-	[]	null	
+PgrR	tyrR	-	[]	null	
+PhoB	argP	+	[]	null	
+PhoB	cra	-	[]	null	
+PhoB	cusR	+	[]	null	
+PhoB	feaR	-	[]	null	
+PhoB	gadW	+	[]	null	
+PhoB	gadX	+	[]	null	
+PhoB	phoB	+	[]	null	
+PhoB	prpR	-	[]	null	
+PhoB	ydfH	+	[]	null	
+PhoP	cysB	+	[]	null	
+PhoP	gadE	+	[]	null	
+PhoP	gadW	+	[]	null	
+PhoP	phoP	+	[]	null	
+PhoP	phoP	-	[]	null	
+PhoP	rstA	+	[]	null	
+PhoP	treR	-	[]	null	
+PhoP	ydeO	-	[]	null	
+PrpR	prpR	-	[]	null	
+PspF	pspF	-	[]	null	
+PurR	purR	-	[]	null	
+PutA	putA	-	[]	null	
+PuuR	puuR	-	[]	null	
+QseB	feaR	+	[]	null	
+QseB	feaR	-	[]	null	
+QseB	flhC	+	[]	null	
+QseB	flhD	+	[]	null	
+QseB	qseB	+	[]	null	
+RbsR	rbsR	-	[]	null	
+RcdA	csgD	+	[]	null	
+RcnR	rcnR	-	[BPP, GEA]	Strong	
+RcsAB	csgD	-	[]	null	
+RcsAB	flhC	-	[]	null	
+RcsAB	flhD	-	[]	null	
+RcsAB	rcsA	+	[]	null	
+RcsB	gadX	-	[]	null	
+RcsB	ydeO	+	[]	null	
+RcsB-BglJ	leuO	+	[]	null	
+RelB	relB	-	[]	null	
+RelB	relE	-	[]	null	
+RelB-RelE	relB	-	[]	null	
+RelB-RelE	relE	-	[]	null	
+RhaR	rhaR	+	[]	null	
+RhaR	rhaS	+	[]	null	
+RhaS	rhaR	+	[]	null	
+RhaS	rhaR	?	[]	null	
+RhaS	rhaS	+	[]	null	
+RhaS	rhaS	?	[]	null	
+Rob	marA	+	[]	null	
+Rob	marR	+	[]	null	
+Rob	rob	-	[]	null	
+RstA	csgD	-	[]	null	
+RutR	gadW	-	[]	null	
+RutR	gadX	-	[]	null	
+RutR	nemR	-	[]	null	
+RutR	rutR	-	[]	null	
+SdiA	gadW	+	[]	null	
+SgrR	sgrR	-	[]	null	
+SlyA	leuO	+	[]	null	
+SoxR	soxR	-	[]	null	
+SoxR	soxS	+	[]	null	
+SoxS	decR	+	[]	null	
+SoxS	fur	+	[]	null	
+SoxS	marA	+	[]	null	
+SoxS	marR	+	[]	null	
+SoxS	rob	-	[]	null	
+SoxS	soxS	-	[]	null	
+SrlR	gutM	-	[]	null	
+SrlR	srlR	-	[]	null	
+StpA	leuO	-	[]	null	
+StpA	stpA	-	[]	null	
+SutR	fliZ	-	[]	null	
+SutR	sutR	+	[]	null	
+SutR	sutR	-	[]	null	
+TorR	gadX	-	[]	null	
+TorR	torR	-	[]	null	
+TrpR	trpR	-	[]	null	
+TyrR	tyrR	-	[]	null	
+UidR	uidR	-	[]	null	
+UxuR	exuR	-	[]	null	
+UxuR	uxuR	-	[]	null	
+XylR	araC	-	[]	null	
+XylR	xylR	+	[]	null	
+YdeO	gadE	+	[]	null	
+YdeO	gadW	+	[]	null	
+YdeO	ydeO	-	[]	null	
+YefM	yefM	-	[]	null	
+YefM	yoeB	-	[]	null	
+YefM-YoeB	yefM	-	[]	null	
+YefM-YoeB	yoeB	-	[]	null	
+YeiL	yeiL	+	[]	null	
+YiaJ	plaR	-	[]	null	
+YjjQ	flhC	-	[]	null	
+YjjQ	flhD	-	[]	null	
+ZraR	zraR	+	[APIORCISFBSCS, BPP, GEA]	Strong	
