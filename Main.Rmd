@@ -917,6 +917,7 @@ for(i in 1:nrow(my_tmp)){
 }
 
 df_msr[!is.na(df_msr$Nb_of_Metabolite),] %>% nrow()
+df_msr[!is.na(df_msr$Nb_of_Metabolite),]$List_of_Metabolites %>% paste(collapse = ";") %>% str_split(pattern = ";") %>% unlist() %>% unique() %>% length()
 
 Sys.time()
 ```
