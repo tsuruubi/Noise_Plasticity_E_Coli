@@ -1,0 +1,106 @@
+# License
+#	# RegulonDB is free for academic/noncommercial use
+# User is not entitled to change or erase data sets of the RegulonDB
+# database or to eliminate copyright notices from RegulonDB. Furthermore,
+# User is not entitled to expand RegulonDB or to integrate RegulonDB partly
+# or as a whole into other databank systems, without prior written consent
+# from CCG-UNAM.
+# Please check the license at https://regulondb.ccg.unam.mx/manual/aboutUs/terms-conditions
+# Citation
+#	# Heladia Salgado, Socorro Gama-Castro, et al., RegulonDB v12.0: a comprehensive resource of transcriptional regulation in E. coli K-12,
+# Nucleic Acids Research, 2023;, gkad1072, https://doi.org/10.1093/nar/gkad1072
+# RegulonDB Release: 13.5
+# Contact
+#	email:regulondb@ccg.unam.mx
+#Date:
+#	01-28-2025
+## Columns:
+## (1) Code associated to evidence
+## (2) Name of the Evidence
+## (3) Group of the evidence (Code rule)
+## (4) Confidence Level of the evidence
+## (5) Object(s) were this evidence appears (Promoter,Transcription Units,Regulatory Interactions,Transcription Factors)
+## (6) Category of the Evidence
+1)evidence_code	2)evidence_name	3)evidence_group	4)confidence_level	5)object_type	6)evidence_category 
+EXP-IGI-FUNC-COMPLEMENTATION	Inferred by functional complementation		S	Transcription Factors	Classical experiment 
+EXP-IDA-UNPURIFIED-PROTEIN-NH	Assay of unpurified protein expressed in its native host		W	Transcription Factors	Classical experiment 
+EXP-CHIP-EXO-MANUAL	ChIP-exo evidence used in manual assertion	4	W	Regulatory Interactions	High-throughput binding 
+EXP-IEP-GENE-EXPRESSION-ANALYSIS	Gene expression analysis	8	W	Regulatory Interactions;Transcription Factors	Classical expression 
+EXP-HTP-HEP-MICROARRAY	High-throughput expression microarray evidence	8	W	Transcription Units;Regulatory Interactions	High-throughput expression 
+EXP-IMP-REACTION-BLOCKED	Reaction blocked in mutant		W	Regulatory Interactions	Classical binding 
+EXP-HTP-HEP-RNA-SEQ	High-throughput RNA-seq evidence	8	W	Promoter;Transcription Units;Regulatory Interactions	High-throughput expression 
+EXP-IEP-COREGULATION	Inferred through co-regulation		W	Transcription Units	Classical experiment 
+EXP-IMP-SITE-MUTATION	Site mutation	1	S	Promoter;Regulatory Interactions;Transcription Factors	Classical binding 
+EXP-IMP-POLAR-MUTATION	Polar mutation	12	S	Transcription Units	Classical experiment 
+COMP-HINF-ORTHOLOGY-EXP	Human inference of function based on ortholog with experimental function in closely related strain or species.		W	Transcription Factors	non-experimental 
+IC-ADJ-GENES-SAME-BIO-PROCESS	Products of adjacent genes in the same biological process		W	Transcription Units	non-experimental 
+EXP-IDA-PURIFIED-PROTEIN-HH	Assay of protein purified to homogeneity from a heterologous host		S	Transcription Factors	Classical experiment 
+IDA-PURIFIED-PROTEIN-NH	Assay of protein purified to homogeneity from its native host		S	Transcription Factors	Classical experiment 
+COMP-AINF-SIMILAR-TO-CONSENSUS	Automated inference based on similarity to consensus sequences	7	W	Regulatory Interactions	non-experimental 
+COMP-AINF-FN-FROM-SEQ	Automated inference of function from sequence		W	Transcription Factors	non-experimental 
+COMP-AINF-SINGLE-DIRECTON	Automated inference that a single-gene directon is a transcription unit 	13	W	Transcription Units	non-experimental 
+COMP-AINF-PATTERN-DISCOVERY	Automated inference based on sequence pattern discovery	7	W	Promoter;Regulatory Interactions	non-experimental 
+COMP-AINF-POSITIONAL-IDENTIFICATION	Automated inference of promoter position	7	W	Promoter	non-experimental 
+ND	No biological data available		W	Transcription Units	non-experimental 
+EXP	Inferred from experiment		W	Transcription Units;Regulatory Interactions;Transcription Factors	 
+AS	Author statement		W	Regulatory Interactions	non-experimental 
+IC	Inferred by curator		W	Promoter;Transcription Units;Regulatory Interactions	non-experimental 
+COMP	Inferred by computational analysis	7	W	Promoter;Regulatory Interactions;Transcription Factors	non-experimental 
+EXP-CHIP-SEQ-MANUAL	ChIP-seq evidence used in manual assertion	4	W	Regulatory Interactions	High-throughput binding 
+EXP-HTP-HDA-NUC-ACID-BINDING-GSELEX-CHIP	High-throughput genomic SELEX-chip evidence	5	W	Regulatory Interactions	High-throughput binding 
+COMP-HINF-ISM	Inferred from Sequence Model		W	Transcription Factors	non-experimental 
+COMP-HINF-ISA	Inferred from Sequence Alignment		W	Regulatory Interactions;Transcription Factors	non-experimental 
+COMP-HINF-PATTERN-DISCOVERY	Manually curated inference based on sequence pattern discovery	7	W	Regulatory Interactions	non-experimental 
+COMP-HINF-POSITIONAL-IDENTIFICATION	Human inference of promoter position	7	W	Promoter	non-experimental 
+COMP-HINF-SIMILAR-TO-CONSENSUS	A person inferred or reviewed a computer inference of sequence function based on similarity to a consensus sequence.	7	W	Regulatory Interactions	non-experimental 
+COMP-HINF-FN-FROM-SEQ	Human inference of function from sequence		W	Regulatory Interactions;Transcription Factors	non-experimental 
+COMP-HINF-IGC	Inferred from genomic context		W	Transcription Units	non-experimental 
+COMP-IBA	Inferred from Biological aspect from Ancestor		W	Transcription Units;Regulatory Interactions	non-experimental 
+COMP-AINF	Inferred computationally without human oversight	7	W	Promoter;Transcription Units;Regulatory Interactions;Transcription Factors	non-experimental 
+COMP-HINF	Inferred by a human based on computational evidence	7	W	Promoter;Transcription Units;Regulatory Interactions;Transcription Factors	non-experimental 
+EXP-CHIP-PCR-MANUAL	ChIP-PCR evidence used in manual assertion	4	W	Regulatory Interactions	High-throughput binding 
+EXP-IDA-BINDING-OF-PURIFIED-PROTEINS	Binding of purified proteins	2	S	Regulatory Interactions;Transcription Factors	Classical binding 
+EXP-IDA-PART-PURIFIED-PROTEIN-NH	Assay of protein partially-purified from its native host		W	Transcription Factors	Classical experiment 
+EXP-CHIP-PCR	ChIP-PCR evidence	4	W	Regulatory Interactions	High-throughput binding 
+EXP-IDA-PART-PURIFIED-PROTEIN-HH	Assay of protein partially-purified from a heterologous host		W	Transcription Factors	Classical experiment 
+EXP-HTP-HDA-NUC-ACID-BINDING-CHIP-SEQ	High-throughput ChIP-seq evidence	4	W	Regulatory Interactions	High-throughput binding 
+EXP-HTP-HDA-NUC-ACID-BINDING-CHIP-CHIP	High-throughput ChIP-chip evidence	4	W	Regulatory Interactions	High-throughput binding 
+EXP-IDA-BINDING-OF-CELLULAR-EXTRACTS	Binding of cellular extracts	3	W	Regulatory Interactions;Transcription Factors	Classical binding 
+EXP-HTP-HDA-NUC-ACID-BINDING-CHIP-EXO	High-throughput ChIP-exo evidence	4	W	Regulatory Interactions	High-throughput binding 
+EXP-IDA-HPT-TRANSCR-INIT-M-RACE-MAP	High-throughput transcription initiation mapping	10	W	Promoter	High-throughput protocol 
+EXP-IDA-TRANSCRIPTION-INIT-MAPPING	Transcription initiation mapping	15	S	Promoter	Classical experiment 
+EXP-IDA-PART-PURIFIED-PROTEIN	Assay of partially-purified protein 		W	Transcription Factors	Classical experiment 
+EXP-IDA-UNPURIFIED-PROTEIN	Assay of unpurified protein 		W	Transcription Factors	Classical experiment 
+EXP-IDA-RNA-POLYMERASE-FOOTPRINTING	RNA polymerase footprinting	9	S	Promoter	Classical experiment 
+EXP-IDA-PURIFIED-PROTEIN	Assay of protein purified  to homogeneity		W	Regulatory Interactions;Transcription Factors	Classical binding 
+EXP-IDA-BOUNDARIES-DEFINED	Boundaries of transcription experimentally identified	14	W	Transcription Units	Classical experiment 
+EXP-HTP-HDA-NUC-ACID-BINDING	Nucleic acid binding evidence		W	Promoter;Regulatory Interactions	High-throughput protocol 
+EXP-IDA-TRANSCRIPT-LEN-DETERMINATION	Length of transcript experimentally determined	11	S	Transcription Units	Classical experiment 
+EXP-TAS	Traceable author statement to experimental support		W	Promoter;Transcription Units;Regulatory Interactions	non-experimental 
+EXP-IGI	Inferred from genetic interaction		W	Regulatory Interactions;Transcription Factors	Classical binding 
+COMP-AINF-SEQ-ORTHOLOGY	Automated inference of function by sequence orthology		W	Transcription Factors	non-experimental 
+EXP-IMP	Inferred from mutant phenotype		W	Promoter;Transcription Units;Regulatory Interactions;Transcription Factors	Classical binding 
+EXP-IDA	Inferred from direct assay		W	Promoter;Transcription Units;Regulatory Interactions;Transcription Factors	Classical binding 
+EXP-IPI	Inferred from physical interaction		W	Promoter;Regulatory Interactions;Transcription Factors	Classical experiment 
+EXP-IEP	Inferred from expression pattern	8	W	Promoter;Transcription Units;Regulatory Interactions;Transcription Factors	Classical expression 
+EXP-HTP-HDA-NUC-ACID-BINDING	Inferred from high throughput direct assay		W	Regulatory Interactions	High-throughput protocol 
+HTP-HEP	Inferred from high throughput expression pattern		W	Transcription Units	High-throughput protocol 
+AS-TAS	Traceable author statement		W	Promoter;Transcription Units;Regulatory Interactions	non-experimental 
+AS-HYPO	Author hypothesis		W	Promoter;Transcription Units;Regulatory Interactions	non-experimental 
+AS-NAS	Non-traceable author statement		W	Promoter;Transcription Units;Regulatory Interactions	non-experimental 
+EXP-CHIP-CHIP-MANUAL	ChIP-chip evidence used in manual assertion	4	W	Regulatory Interactions	High-throughput binding 
+EXP-IDA-IN-VITRO-TRANSCRIPTION	in vitro transcription reconstitution assay evidence	8	W	Promoter	Classical expression 
+EXP-IDA-TRANSCRIPTION-INIT-MAPPING-PRIMER-EXTENSION-TSS	Primer extension assay for transcription start site determination	15		Promoter	 
+EXP-IDA-TRANSCRIPT-LEN-DETERMINATION-NORTHERN	Northern blot for transcription unit length determination evidence	11		Transcription Units	 
+EXP-IEP-RTPCR	Reverse transcription polymerase chain reaction evidence	8	W	Transcription Units;Regulatory Interactions	Classical expression 
+EXP-IEP-NORTHERN	Northern blot for expression pattern analysis evidence	8	W	Promoter;Regulatory Interactions	Classical expression 
+EXP-IEP-PRIMER-EXTENSION-FOR-EXPRESSION	Primer extension assay evidence for expression pattern analysis	8	W	Regulatory Interactions	Classical expression 
+EXP-HTP-HDA-NUC-ACID-BINDING-DAP-SEQ	High-throughput DNA affinity purification (DAP) sequencing	6	W	Regulatory Interactions	High-throughput binding 
+EXP-IEP-GFP	Green fluorescent protein reporter gene assay evidence	8	W	Regulatory Interactions	Classical expression 
+EXP-IEP-BETA-GAL	Beta-galactosidase reporter gene assay evidence	8	W	Transcription Units;Regulatory Interactions;Transcription Factors	Classical expression 
+EXP-IEP-QRTPCR	Quantitative reverse transcription polymerase chain reaction evidence	8	W	Regulatory Interactions	Classical expression 
+EXP-HTP-HDA-NUC-ACID-BINDING-3D-SEQ	High-throughput 3D-seq DNA-protein interaction mapping evidence		W	Regulatory Interactions	High-throughput binding 
+EXP-IEP-LUCIFERASE	Luciferase reporter gene assay evidence	8	W	Regulatory Interactions	Classical expression 
+EXP-IDA-BINDING-OF-CELLULAR-EXTRACTS-EMSA	Electrophoretic mobility shift assay with cellular extracts evidence	3	W	Regulatory Interactions	Classical binding 
+EXP-IDA-BINDING-OF-PURIFIED-PROTEINS-DNASE-FOOTPRINTING	DNAse footprinting evidence	2	S	Regulatory Interactions	Classical binding 
+EXP-IDA-BINDING-OF-PURIFIED-PROTEINS-EMSA	Electrophoretic mobility shift assay with purified protein evidence	2	S	Regulatory Interactions;Transcription Factors	Classical binding
