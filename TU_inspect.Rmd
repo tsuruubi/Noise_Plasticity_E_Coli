@@ -1,0 +1,285 @@
+---
+title: "Noise_Plasticity_Coupling_in_E.coli"
+author: "Tsuru"
+date: "2024/8/15"
+output: html_document
+---
+# 0. Set the codes public or private 
+```{r Set,warning=FALSE, message=FALSE}
+# TODO
+my_public<-FALSE # TRUE: public, FALSE: private 
+```
+# 1. General settings
+## 1.1. Load workspace
+```{r General,warning=FALSE, message=FALSE}
+# load("./Main.RData")
+```
+## 1.2. Save workspace
+```{r General,warning=FALSE, message=FALSE}
+# save.image("./Main.RData")
+```
+## 1.3. Library loading
+```{r General,warning=FALSE, message=FALSE}
+library(dplyr)# dataframe
+library(tidyverse)# dataframe
+library(magrittr)# pipe
+library(Hmisc) # use %nin%
+library(readxl) # read xlsx
+library(flowCore) # flow cytometry
+# library(flowViz) # flow cytometry
+
+library(stringr)# regular expression
+
+library(KernSmooth)
+library(ggplot2)# visualization
+library(gridExtra)# visualization
+library(grid)# visualization
+library(scales)# visualization
+library(ggrepel)# visualization
+library(ggfortify)
+library(reshape2) # dataframe
+library(cowplot)
+library(ggpubr)# visualization
+library(rstatix)# statistical test
+library(boot)
+library(qvalue)# statistical test
+library(ppcor)# calc. partial correlation coeff. 
+library(GGally)# visualization
+library(gtable)# visualization
+
+library(matrixStats) # rowMeans etc.
+library(preprocessCore)
+library(RColorBrewer)# visualization
+
+library(boot) # bootstrap
+
+library(fitdistrplus)
+
+library(clusterProfiler) # statistical test
+library(KEGGREST) # enrichment analysis
+
+library(FactoMineR) # PCA
+library(factoextra) # PCA
+library(viridis) # visualization
+
+Sys.time()
+```
+## 1.4. versatile user functions
+The [qw](https://ja.coder.work/so/r/240447) function in Perl.  
+The [createEmptyDf](https://htsuda.net/archives/2560) function.
+The [g_legend](https://github.com/hadley/ggplot2/wiki/Share-a-legend-between-two-ggplot2-graphs) function to extract legend.
+```{r General}
+qw <- function(...) {
+  sapply(match.call()[-1], deparse)
+}
+
+createEmptyDf = function( nrow, ncol, colnames = c() ){
+  data.frame( matrix( vector(), nrow, ncol, dimnames = list( c(), colnames ) ) )
+}
+
+g_legend<-function(a.gplot){
+  tmp <- ggplot_gtable(ggplot_build(a.gplot))
+  leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
+  legend <- tmp$grobs[[leg]]
+  return(legend)}
+
+pValue_sp_text=function(dtf){
+  pcor_sp<-cor.test(x=dtf[,1],y=dtf[,2],method="spearman")
+  rho_sp<-round(pcor_sp$estimate,digits = 2)
+  pv_sp<-ifelse(pcor_sp$p.value<0.05," P<0.05",paste(" P==",round(pcor_sp$p.value,digits = 1),sep = ""))
+  rhopvtxt_sp<-paste("list(italic(rho)==", rho_sp,", ",pv_sp,")")
+  return(rhopvtxt_sp)
+}
+
+pValue_pr_text=function(dtf){
+  pcor_pr<-cor.test(x=dtf[,1],y=dtf[,2],method="pearson")
+  r_pr<-round(pcor_pr$estimate,digits = 2)
+  pv_pr<-ifelse(pcor_pr$p.value<0.05," P<0.05",paste(" P==",round(pcor_pr$p.value,digits = 1),sep = ""))
+  rpvtxt_pr<-paste("list(italic(r)==", r_pr,", ",pv_pr,")")
+  return(rpvtxt_pr)
+}
+Sys.time()
+```
+## 1.5 Font size
+```{r General}
+my_fontsize<-16
+Sys.time()
+```
+## 1.6. External ssd/hdd
+```{r General}
+my_volume<-"/Volumes/DailyUse"
+my_playgrnd<-paste(my_volume,"Noise_Plasticity",sep="/")
+
+if (my_public){
+  my_playgrnd<-getwd()
+}
+
+Sys.time()
+```
+## 1.7. Versatile color palletes
+```{r General}
+mycolpal<-get_palette("lancet",9)
+print(c("#00468BFF","#ED0000FF","#42B540FF","#0099B4FF","#925E9FFF","#FDAF91FF","#AD002AFF","#ADB6B6FF","#1B1919FF"))
+mycolpal.BuRd<-c(get_palette(palette = "Blues", 4)[2:4],get_palette(palette = "Reds", 4)[2:4])
+print(c("#FEE5D9","#FCAE91","#FB6A4A","#CB181D"))
+print(c("#EFF3FF","#BDD7E7","#6BAED6","#2171B5"))
+Sys.time()
+```
+## 1.8. Legends
+```{r General,fig.height=2.5,fig.width=1,dpi=300}
+my_richness<-c("#440154FF","#46337EFF","#365C8DFF","#277F8EFF","#277F8EFF","#1FA187FF","#4AC16DFF","#9FDA3AFF","#FDE725FF") # based on viridis(n=8)
+my_tmp<-data.frame(x=seq(1,9),y=seq(1,9),z=seq(1,9),zz=c("01","02","08","09","10","03","04","05","06"))
+my_tmp$z<-factor(my_tmp$z,levels = seq(1,9))
+my_tmp$zz<-factor(my_tmp$zz,levels = my_tmp$zz)
+p<-ggscatter(my_tmp,x="x",y="y",color="zz",palette = my_richness,legend="right",legend.title="")
+q<-get_legend(p)
+as_ggplot(q)
+
+p<-ggbarplot(my_tmp,x="x",y="y",color="zz",fill="zz",palette = my_richness,legend="right",legend.title="")
+q<-get_legend(p)
+as_ggplot(q)
+
+
+my_richness2<-c("#440154FF","#46337EFF","#365C8DFF","#277F8EFF","#1FA187FF","#4AC16DFF","#9FDA3AFF","#FDE725FF") # based on viridis(n=8)
+my_tmp<-data.frame(x=seq(1,8),y=seq(1,8),z=seq(1,8))
+my_tmp$z<-factor(my_tmp$z,levels = rev(seq(1,8)))
+p<-ggscatter(my_tmp,x="x",y="y",color="z",palette = my_richness2,legend="right",legend.title="")
+p<-ggpar(p,font.legend = my_fontsize)
+q<-get_legend(p)
+as_ggplot(q)
+
+p<-ggbarplot(my_tmp,x="x",y="y",color="z",fill="z",palette = my_richness2,legend="right",legend.title="")
+p<-ggpar(p,font.legend = my_fontsize)
+q<-get_legend(p)
+as_ggplot(q)
+
+my_tmp<-data.frame(x=seq(1,3),y=seq(1,3),z=qw(E,F,G))
+my_tmp$z<-factor(my_tmp$z,levels = qw(E,F,G))
+p<-ggscatter(my_tmp,x="x",y="y",shape="z",legend="right",legend.title="")
+q<-get_legend(p)
+as_ggplot(q)
+
+
+Sys.time()
+```
+
+# 2. Name Space
+## 2.1. Define namse space of genes
+```{r Global_Bnb,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
+# gene name of W3110
+genename.w3110<-paste(getwd(),"W3110_genes","w3110_gnftr.csv",sep="/") %>%
+  read_csv() %>%
+  data.frame()
+# gene name of MG1655 including CDS, ncRNA, tRNA, rRNA
+genename.mg1655<-paste(getwd(),"MG1655_genes","MG1655_gnftr.csv",sep="/") %>%
+  read_csv() %>%
+  data.frame()
+genename.mg1655<-genename.mg1655[,c(2:ncol(genename.mg1655))]
+colnames(genename.mg1655)[colnames(genename.mg1655)=="locus_tag"]<-"Bnb"
+colnames(genename.mg1655)[colnames(genename.mg1655)=="GeneID"]<-"EntrezID"
+# Essentiality (Goodal 2018 mBio)
+dess<-paste(getwd(),"W3110_genes","ESSCDSList_Goodall.txt",sep="/") %>%
+  read_delim(col_names =qw(Name,ECKnb) ) %>%
+  data.frame()
+dess$Essentiality<-"essential"
+dess<-dess %>% select(ECKnb,Essentiality)
+
+dBnb<-genename.mg1655
+dBnb<-dBnb[!is.na(dBnb$Bnb),]
+Sys.time()
+```
+# 3. Transcription Unit
+## 3.1. Promoter-Mediated Phenotypic Noise
+https://doi.org/10.1371/journal.pgen.1002443
+Dataset S1
+```{r FlowData,warning=FALSE, message=FALSE}
+df_pn<-paste(getwd(),"Promoter_Noise","pgen.1002443.s010.xls",sep="/") %>%
+  read_xls(range = "A1:F1833")
+colnames(df_pn)<-qw(Bnb,Mean_log_gfp,SD_log_gfp,Mean_gfp,SD_gfp,Noise)
+Sys.time()
+```
+
+## 3.1. ECOCYC ver. 28.5 (March,2025) 
+```{r FlowData,warning=FALSE, message=FALSE}
+df_gn<-paste(getwd(),"Promoter_Noise","TUSmartTable_EcoCyc_ver28_5","All_genes.txt",sep="/") %>%
+  read_delim()
+df_gn<-df_gn %>% select(`Gene Name`,`Accession-1...2`,`Accession-2`,`Transcription Units`)
+colnames(df_gn)<-qw(Gene,Bnb,ECKnb,TUs)
+df_gn$TUs<-df_gn$TUs %>% str_replace_all(pattern = " // ",";")
+df_gn$Gene_Essentiality<-"nonessential"
+df_gn[df_gn$ECKnb %in% dess$ECKnb,]$Gene_Essentiality<-"essential"
+df_gn[df_gn$Gene_Essentiality=="essential",] %>% nrow()
+
+df_tu<-paste(getwd(),"Promoter_Noise","TUSmartTable_EcoCyc_ver28_5","All_transcription_unit.txt",sep="/") %>%
+  read_delim()
+colnames(df_tu)<-qw(TU,Prom_TU,Genes_TU,Bnb_TU,ECKnb_TU)
+df_tu$Genes_TU<-df_tu$Genes_TU %>% str_replace_all(pattern = " // ",";")
+df_tu$Bnb_TU<-df_tu$Bnb_TU %>% str_replace_all(pattern = " // ",";")
+df_tu$ECKnb_TU<-df_tu$ECKnb_TU %>% str_replace_all(pattern = " // ",";")
+df_tu<-df_tu[!is.na(df_tu$ECKnb_TU),]
+df_tu<-df_tu[grepl(x = df_tu$ECKnb_TU,pattern = "^ECK"),]
+df_tu$Ess_ECKnb_TU<-NA
+df_tu$Ess_Gene_TU<-NA
+i<-1
+for (i in 1:nrow(df_tu)){
+  my_ecks<-df_tu$ECKnb_TU[i] %>% str_split(pattern = ";") %>% unlist()
+  my_ecks<-my_ecks[my_ecks %in% df_gn[df_gn$Gene_Essentiality=="essential",]$ECKnb]
+  if(length(my_ecks)>0){
+    my_gns<-df_gn[df_gn$ECKnb %in% my_ecks,]$Gene
+    df_tu$Ess_ECKnb_TU[i]<-my_ecks %>% paste(.,collapse=";")
+    df_tu$Ess_Gene_TU[i]<-my_gns %>% paste(.,collapse=";")
+  }
+}
+
+df_tu$Bnb_Promlib<-NA # Bnb in promoter library
+df_tu$Gene_Promlib<-NA
+i<-1
+for(i in 1:nrow(df_tu)){
+  my_bs<-df_tu$Bnb_TU[i] %>% str_split(pattern = ";") %>% unlist()
+  my_bs<-my_bs[my_bs %in% df_pn[!is.na(df_pn$Noise),]$Bnb]
+  if(length(my_bs)>0){
+    df_tu$Bnb_Promlib[i]<-my_bs %>% paste(.,collapse = ";")
+    df_tu$Gene_Promlib[i]<-df_gn[df_gn$Bnb %in% my_bs,]$Gene %>% paste(.,collapse = ";")
+    
+  }
+}
+
+my_df<-df_tu[(!is.na(df_tu$Ess_Gene_TU))&(!is.na(df_tu$Bnb_Promlib)),]
+
+# TODO
+# write_csv(my_df,paste(getwd(),"Promoter_Noise","Output","All_TU_containing_Ess_pre.csv",sep="/"))
+
+Sys.time()
+```
+
+
+## 3.1.Load the reviewed TU 
+```{r FlowData,warning=FALSE, message=FALSE}
+df_tu_reviwed<-paste(getwd(),"Promoter_Noise","Output","All_TU_containing_Ess_reviewed.xlsx",sep="/") %>%
+  read_xlsx()
+  # if a TU driven by a focal promoter has a essential gene positioned downstream of the promoter, then the promoter is defined as an essential promoter
+  # gene essentiality is based on the common essential genes between three datasets (TRADIS,KO,PEC)
+my_gns<-df_tu_reviwed[!is.na(df_tu_reviwed$Corresponding_Promlib),]$Corresponding_Promlib %>% 
+  paste(.,collapse=";") %>%
+  str_split(.,pattern =";") %>%
+  unlist() %>%
+  unique()
+my_df<-df_pn
+my_df$PromoterEssentiality<-"nonessential"
+my_df[my_df$Bnb %in% df_gn[df_gn$Gene %in% my_gns,]$Bnb,]$PromoterEssentiality<-"essential"
+my_df$TU_containing_EssentialGenes<-NA
+for(i in 1:nrow(my_df)){
+  if(my_df$PromoterEssentiality[i]=="essential"){
+    my_df$TU_containing_EssentialGenes[i]<-df_tu_reviwed[grepl(x=df_tu_reviwed$Bnb_Promlib,pattern = my_df$Bnb[i]),]$TU %>%
+      unique() %>%
+      paste(.,collapse = ";")
+  }
+}
+
+# TODO
+# write_csv(my_df,paste(getwd(),"Promoter_Noise","Output","Promoter_Noise_Essentiality.csv",sep="/"))
+
+Sys.time()
+```
+
+
