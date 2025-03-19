@@ -1,7 +1,7 @@
 ---
 title: "Noise_Plasticity_Coupling_in_E.coli"
 author: "Tsuru"
-date: "2024/8/15"
+date: "2025/3/9"
 output: html_document
 ---
 # 0. Set the codes public or private 
@@ -61,6 +61,14 @@ library(KEGGREST) # enrichment analysis
 library(FactoMineR) # PCA
 library(factoextra) # PCA
 library(viridis) # visualization
+
+library(Biostrings)
+library(msa)
+library(seqinr)
+library(ape)
+library(ggtree)
+
+library(ggpmisc) # stat_poly_eq
 
 Sys.time()
 ```
@@ -165,7 +173,7 @@ Sys.time()
 
 # 2. Name Space
 ## 2.1. Define namse space of genes
-```{r Global_Bnb,warning=FALSE, message=FALSE,fig.height=1.4,fig.width=1.4,dpi=300}
+```{r Global_Bnb,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 # gene name of W3110
 genename.w3110<-paste(getwd(),"W3110_genes","w3110_gnftr.csv",sep="/") %>%
   read_csv() %>%
@@ -177,12 +185,43 @@ genename.mg1655<-paste(getwd(),"MG1655_genes","MG1655_gnftr.csv",sep="/") %>%
 genename.mg1655<-genename.mg1655[,c(2:ncol(genename.mg1655))]
 colnames(genename.mg1655)[colnames(genename.mg1655)=="locus_tag"]<-"Bnb"
 colnames(genename.mg1655)[colnames(genename.mg1655)=="GeneID"]<-"EntrezID"
-# Essentiality
+# Essentiality (Goodal 2018 mBio)
 dess<-paste(getwd(),"W3110_genes","ESSCDSList_Goodall.txt",sep="/") %>%
   read_delim(col_names =qw(Name,ECKnb) ) %>%
   data.frame()
 dess$Essentiality<-"essential"
 dess<-dess %>% select(ECKnb,Essentiality)
+
+
+my_cond_ess<-c("b2507","b3281","b3956","b0109","b0243") # identified by a growth test using ko strians as detailed below
+my_no_ko<-c("b1131","b0886","b0733")
+my_removal_gn<-c(my_cond_ess,my_no_ko)
+
+# # Essentiality (Tong 2020 mBio)
+# dess_mltcbn<-paste(getwd(),"Essentiality","mbio.02259-20-st001.xlsx",sep="/") %>%
+#   read_xlsx(sheet = "S1A - Endpoint Biomass") %>%
+#   data.frame()
+# colnames(dess_mltcbn)[1]<-"Bnb"
+# dess_mltcbn<-dess_mltcbn %>% select(-Gene)
+# my_df<-dess_mltcbn %>% pivot_longer(cols = -Bnb,names_to = "Carbon",values_to = "Growth")
+# my_q1<-my_df$Growth %>% quantile()
+# my_q3<-my_q1[4]
+# my_q1<-my_q1[2]
+# Growth_thr<-mean(my_df[(my_df$Growth>=my_q1)&(my_df$Growth<my_q3),]$Growth)-3*sd(my_df$Growth)
+# ggscatter(dess_mltcbn,x="Glucose",y="Glycerol",size=0.3,alpha=0.3)+
+#   geom_hline(yintercept = Growth_thr,color="Green")+
+#   geom_vline(xintercept = Growth_thr,color="Green")
+# 
+# 
+# # Essentiality (Baba 2006 MolSystBiol)
+# dess_ko<-paste(getwd(),"Essentiality","Baba_2006_MSB_TableS3.xlsx",sep="/") %>%
+#   read_xlsx() %>%
+#   data.frame()
+# dess_ko<-dess_ko[grepl(dess_ko$Bnb,pattern = "^b"),]
+# KO_Growth_thr<-0.000000001 # 0.084 for slow growth Baba et al., Fig.6
+# dess_ko$CondEssentiality<-"nonessential"
+# dess_ko[is.na(dess_ko$LB_22hr),]$CondEssentiality<-"essential"
+# dess_ko[(!is.na(dess_ko$MOPS_48hr))&(dess_ko$MOPS_48hr<KO_Growth_thr),]$CondEssentiality<-"conditional"
 
 dBnb<-genename.mg1655
 dBnb<-dBnb[!is.na(dBnb$Bnb),]
@@ -292,7 +331,7 @@ my_fcs$Gate<-factor(my_fcs$Gate,levels=qw(In,Out))
 p1<-ggscatter(my_fcs[my_fcs$Name=="pgk",],x="logFITC",y="logFSC",
           size=0.3,alpha=0.3,color="Gate",palette = c("#ED0000FF","black"),
           legend="")+
-  annotate("text",x=-Inf,y=Inf,label="pgk",hjust = -0.5,vjust = 1,size=5)+
+  annotate("text",x=-Inf,y=Inf,label="pgk",hjust = -0.5,vjust = 1,size=5,fontface="italic")+
   scale_x_continuous(breaks=seq(0,4,1),limits=c(-0.1,4))+
   scale_y_continuous(breaks=seq(0,4,1),limits=c(-0.1,4.5))+
   xlab(expression(log[10]~"YFP FI [a.u.]"))+
@@ -303,7 +342,7 @@ p1
 p2<-ggscatter(my_fcs[my_fcs$Name=="carA",],x="logFITC",y="logFSC",
           size=0.3,alpha=0.3,color="Gate",palette = c("#00468BFF","black"),
           legend="")+
-  annotate("text",x=-Inf,y=Inf,label="carA",hjust = -0.5,vjust = 1,size=5)+
+  annotate("text",x=-Inf,y=Inf,label="carA",hjust = -0.5,vjust = 1,size=5,fontface="italic")+
     scale_x_continuous(breaks=seq(0,4,1),limits=c(-0.1,4))+
   scale_y_continuous(breaks=seq(0,4,1),limits=c(-0.1,4.5))+
   xlab(expression(log[10]~"YFP FI [a.u.]"))+
@@ -316,7 +355,7 @@ p3<-gghistogram(my_fcs[(my_fcs$Name=="pgk")&(my_fcs$Gate=="In"),],
                 fill="#ED0000FF",color ="#ED0000FF",size=0.02,alpha=0.4,
                 add="mean", add.params = list(size=0.5,linetype=5),
                 ylab="Relative frequency")+
-  annotate("text",x=-Inf,y=Inf,label="pgk",hjust = -0.5,vjust = 1,size=5)+
+  annotate("text",x=-Inf,y=Inf,label="pgk",hjust = -0.5,vjust = 1,size=5,fontface="italic")+
   xlab(expression(log[10]~"YFP FI [a.u.]"))+
   scale_y_continuous(breaks=seq(0,2,1),limits=c(-0.1,2.5))+
   scale_x_continuous(breaks=seq(0,4,1),limits=c(-0.1,4))
@@ -328,7 +367,7 @@ p4<-gghistogram(my_fcs[(my_fcs$Name=="carA")&(my_fcs$Gate=="In"),],
                 fill="#00468BFF",color ="#00468BFF",size=0.02,alpha=0.4,
                 add="mean", add.params = list(size=0.5,linetype=5),
                 ylab="Relative frequency")+
-  annotate("text",x=-Inf,y=Inf,label="carA",hjust = -0.5,vjust = 1,size=5)+
+  annotate("text",x=-Inf,y=Inf,label="carA",hjust = -0.5,vjust = 1,size=5,fontface="italic")+
   xlab(expression(log[10]~"YFP FI [a.u.]"))+
   scale_y_continuous(breaks=seq(0,2,1),limits=c(-0.1,2.5))+
   scale_x_continuous(breaks=seq(0,4,1),limits=c(-0.1,4))
@@ -374,9 +413,29 @@ for(i in 1:nrow(my_df)){
   my_df$SD_logAvFITC[i]<-sd(my_tmp$log10Av_FITC,na.rm=T)
 }
 df_plst<-my_df
+
+# dess_mltcbn_sbst<-dess_mltcbn[dess_mltcbn$Bnb %in% df_plst$Bnb,]
+# dess_mltcbn_sbst<-dess_mltcbn_sbst %>% select(Bnb,Glucose,Glycerol,Mannose)
+# dess_mltcbn_sbst$CondEssentiality<-"nonessential"
+# my_condess<-c(dess_mltcbn_sbst[dess_mltcbn_sbst$Glucose<Growth_thr,]$Bnb,
+#   dess_mltcbn_sbst[dess_mltcbn_sbst$Glycerol<Growth_thr,]$Bnb,
+#   dess_mltcbn_sbst[dess_mltcbn_sbst$Mannose<Growth_thr,]$Bnb
+# ) %>% unique()
+# dess_mltcbn_sbst[dess_mltcbn_sbst$Bnb %in% my_condess,]$CondEssentiality<-"conditional"
+# 
+# dess_ko_sbst<-dess_ko[dess_ko$Bnb %in% df_plst$Bnb,]
+# 
+# # my_tmp<-dess_mltcbn_sbst %>% select(Bnb,CondEssentiality)
+# my_tmp<-dess_ko_sbst %>% select(Bnb,CondEssentiality)
+# df_plst<-left_join(df_plst,my_tmp)
+# df_plst[df_plst$Essentiality=="essential",]$CondEssentiality<-"essential"
+
+df_plst$StringentSet<-TRUE
+df_plst[df_plst$Bnb %in% my_removal_gn,]$StringentSet<-FALSE
+
 Sys.time()
 ```
-## 4.2. Mean Epop vs. SD of Epop
+## 4.2. Mean Epop vs. SD of Epop (Plasticity)
 ```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=3,fig.height=3}
 p<-ggscatter(df_plst,x="Mean_logAvFITC",y="SD_logAvFITC",
              size=1,alpha=0.5,
@@ -392,7 +451,7 @@ p
 
 p<-ggscatter(df_plst,x="Mean_logAvFITC",y="SD_logAvFITC",
              size=2,alpha=0.5,
-             label = "Name",repel = T,label.select =qw(pgk,carA),font.label = c(16),
+             label = "Name",repel = T,label.select =qw(pgk,carA),font.label = c(16,"italic"),
              legend="",
              xlab="Mean",ylab="SD of mean",
              cor.coef = TRUE,
@@ -404,6 +463,12 @@ p<-ggscatter(df_plst,x="Mean_logAvFITC",y="SD_logAvFITC",
   ylab(expression(SD~of~E[pop]))
 p<-ggpar(p,font.x=my_fontsize,font.y=my_fontsize,font.tickslab = my_fontsize)
 p
+
+
+df_plst %>% 
+  group_by(Essentiality) %>%
+cor_test(vars = Mean_logAvFITC,vars2 = SD_logAvFITC,method="spearman")
+
 Sys.time()
 ```
 ## 4.3. Calc. Noise (DMv)
@@ -432,8 +497,8 @@ p1<-ggscatter(df_noise,x="log10Av_FITC",y="log10SD_FITC",
     xlab(expression(E[pop]))+
     ylab(expression(V[pop]))+
   # geom_vline(xintercept = c(7,10),linetype=2,size=0.5)+
-  geom_line(data=df_noise,aes(x=log10Av_FITC,y=RMv), colour="magenta", size=0.5)+
-  geom_line(data=SmthSp_v,aes(x=logx,y=SS), colour="deepskyblue", size=1)
+  geom_line(data=df_noise,aes(x=log10Av_FITC,y=RMv), colour="magenta", size=1.75)+ # 0.5
+  geom_line(data=SmthSp_v,aes(x=logx,y=SS), colour="deepskyblue", size=0.75) # 1
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
 
@@ -464,14 +529,26 @@ p3<-ggscatter(my_df, x="log10Av_FITC",y="log10SD_FITC",
   scale_size(range = c(0.2, 3))+
     xlab(expression(E[pop]))+
     ylab(expression(V[pop]))+
-  geom_line(data=df_noise,aes(x=log10Av_FITC,y=RMv), colour="magenta", size=0.5)+
-  geom_line(data=SmthSp_v,aes(x=logx,y=SS), colour="deepskyblue", size=0.75)
+  geom_line(data=df_noise,aes(x=log10Av_FITC,y=RMv), colour="magenta", size=1.75)+ # 0.5
+  geom_line(data=SmthSp_v,aes(x=logx,y=SS), colour="deepskyblue", size=0.75) # 0.75
 p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p3
+
+p4<-ggplot()+
+  xlab(expression(E[pop]))+
+    ylab(expression(V[pop]))+
+  geom_line(data=df_noise,aes(x=log10Av_FITC,y=RMv), colour="magenta", size=1.75)+ # 0.5
+  geom_line(data=SmthSp_v,aes(x=logx,y=SS), colour="deepskyblue", size=0.75)+ # 0.75
+  scale_y_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.5),limits = c(0.095,0.573))+
+  theme_pubr()
+p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p4
+  
 Sys.time()
 ```
 ## 4.5. Noise-plasticity coupling
-```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=3,fig.height=3}
+### 4.5.1. 89 genes
+```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=3.5,fig.height=3}
 df_plst_noise<-df_plst
 df_plst_noise$Mean_DMv<-NA
 for(i in 1:nrow(df_plst_noise)){
@@ -484,9 +561,10 @@ df_plst_noise<-left_join(df_plst_noise,my_tmp)
 p1<-ggscatter(df_plst_noise,x="SD_logAvFITC",y="Mean_DMv",
           color="Essentiality",palette = mycolpal[c(1,2)],
           cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
-          cor.coeff.args = list(method = "spearman", label.x = 0.2, label.y=0.07, label.sep = "\n",size=5),
-          alpha = 0.5, size=0.5,legend="")+
-  scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+          cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=5),
+          alpha = 0.5, size=2,legend="")+
+   scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+  scale_x_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.43))+
     xlab(expression("SD of"~E[pop]))+
     ylab(expression("Mean DM"[V]))
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
@@ -506,7 +584,7 @@ p2
 
 p3<-ggscatter(df_plst_noise[df_plst_noise$Essentiality=="nonessential",],x="SD_logAvFITC",y="Mean_DMv",
           color=mycolpal[1],
-          label="Name",repel=T,label.select = list(criteria = "`x` > 0.25 | `y` > 0.02"),
+          label="Name",repel=T,label.select = list(criteria = "`x` > 0.25 | `y` > 0.02"),font.label = c("italic"),
           cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
           cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=5),
           alpha = 0.5, size=2,legend="")+
@@ -519,7 +597,7 @@ p3
 
 p4<-ggscatter(df_plst_noise[df_plst_noise$Essentiality=="essential",],x="SD_logAvFITC",y="Mean_DMv",
           color=mycolpal[2],
-          label="Name",repel=T,label.select = list(criteria = "`x` > 0.21 | `y` > 0.02"),
+          label="Name",repel=T,label.select = list(criteria = "`x` > 0.21 | `y` > 0.02"),font.label = c("italic"),
           cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
           cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=5),
           alpha = 0.5, size=2,legend="")+
@@ -545,7 +623,65 @@ p5
 
 Sys.time()
 ```
+### 4.5.2. Genes without conditional essential genes
+```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=3.5,fig.height=3}
+df_plst_noise_sbst<-df_plst_noise[df_plst_noise$StringentSet,]
+
+p1<-ggscatter(df_plst_noise_sbst,x="SD_logAvFITC",y="Mean_DMv",
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
+          cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=5),
+          alpha = 0.5, size=2,legend="")+
+   scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+  scale_x_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.43))+
+    xlab(expression("SD of"~E[pop]))+
+    ylab(expression("Mean DM"[V]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+p2<-ggscatter(df_plst_noise_sbst,x="SD_logAvFITC",y="Mean_DMv",
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
+          cor.coeff.args = list(method = "spearman", label.x = 0.2, label.y=0.07, label.sep = "\n",size=5),
+          alpha = 0.5, size=0.5,legend="")+
+  scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.12))+
+  stat_cor(aes(color = Essentiality), label.x = 0.1, size=4,method = "spearman")+
+    xlab(expression("SD of"~E[pop]))+
+    ylab(expression("Mean DM"[V]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+p3<-ggscatter(df_plst_noise_sbst[df_plst_noise_sbst$Essentiality=="nonessential",],x="SD_logAvFITC",y="Mean_DMv",
+          color=mycolpal[1],
+          label="Name",repel=T,label.select = list(criteria = "`x` > 0.25 | `y` > 0.02"),font.label = c("italic"),
+          cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
+          cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=5),
+          alpha = 0.5, size=2,legend="")+
+  scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+  scale_x_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.43))+
+    xlab(expression("SD of"~E[pop]))+
+    ylab(expression("Mean DM"[V]))
+p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p3
+
+p4<-ggscatter(df_plst_noise_sbst[df_plst_noise_sbst$Essentiality=="essential",],x="SD_logAvFITC",y="Mean_DMv",
+          color=mycolpal[2],
+          label="Name",repel=T,label.select = list(criteria = "`x` > 0.21 | `y` > 0.02"),font.label = c("italic"),
+          cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
+          cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=5),
+          alpha = 0.5, size=2,legend="")+
+  scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+  scale_x_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.43))+
+    xlab(expression("SD of"~E[pop]))+
+    ylab(expression("Mean DM"[V]))
+p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p4
+
+
+Sys.time()
+```
 ## 4.6. Comparison on Noise/Plasticity between essential and nonessential genes
+### 4.6.1. 89 genes
 ```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=3.5,fig.height=3}
 p1<-ggboxplot(df_plst_noise,x="Essentiality",y="SD_logAvFITC",
           color="Essentiality",palette = mycolpal[c(1,2)],
@@ -571,9 +707,37 @@ p2
 
 print(paste("Nb. of essential genes:",nrow(df_plst_noise[df_plst_noise$Essentiality=="essential",]),sep=" "))
 print(paste("Nb. of nonessential genes:",nrow(df_plst_noise[df_plst_noise$Essentiality=="nonessential",]),sep=" "))
-
 Sys.time()
 ```
+### 4.6.2. Genes without conditional essential genes
+```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=3.5,fig.height=3}
+p1<-ggboxplot(df_plst_noise_sbst,x="Essentiality",y="SD_logAvFITC",
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          add="jitter",add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          xlab="",
+          legend="")+
+  stat_compare_means(size=5,label.y = 0.45)+
+  scale_y_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.08,0.5))+
+    ylab(expression("SD of"~E[pop]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+p2<-ggboxplot(df_plst_noise_sbst,x="Essentiality",y="Mean_DMv",
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          add="jitter",add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          xlab="",
+          legend="")+
+  stat_compare_means(size=5,label.y = 0.1)+
+scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.12))+
+    ylab(expression(Mean~DM[V]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+print(paste("Nb. of essential genes:",nrow(df_plst_noise_sbst[df_plst_noise_sbst$Essentiality=="essential",]),sep=" "))
+print(paste("Nb. of nonessential genes:",nrow(df_plst_noise_sbst[df_plst_noise_sbst$Essentiality=="nonessential",]),sep=" "))
+Sys.time()
+```
+
 # 5. Transcriptional Regulators
 ## 5.1. Retrieve Transcriptional Regulators (TRs)
 TRN based on RegulonDB & Ecocyc
@@ -918,7 +1082,6 @@ for(i in 1:nrow(my_tmp)){
 
 df_msr[!is.na(df_msr$Nb_of_Metabolite),] %>% nrow()
 df_msr[!is.na(df_msr$Nb_of_Metabolite),]$List_of_Metabolites %>% paste(collapse = ";") %>% str_split(pattern = ";") %>% unlist() %>% unique() %>% length()
-
 Sys.time()
 ```
 ## 5.4. Integrate all regulatory infomation and Noise/Plasticity data into one
@@ -936,6 +1099,7 @@ df_reg$Nb_TRcom<-0 # TRcoms
 df_reg$Nb_SR<-0 # all seonsory regulators
 df_reg$Nb_MSR<-0 # metabolic sensory regulators
 df_reg$Nb_Mtblt<-0
+df_reg$MSR<-NA
 
 df_trn<-df_trn[df_trn$gene_id %in% df_reg$Bnb,]
 df_trn<-df_trn[df_trn$effect %nin% "?",]
@@ -964,6 +1128,9 @@ for(i in 1:nrow(df_reg)){
     }
     df_reg$Nb_MSR[i]<-length(unique(my_tmp[my_tmp$regulator %in% my_msr,]$regulator))
     df_reg$Nb_Mtblt[i]<-my_sum
+    if(df_reg$Nb_MSR[i]>0){
+      df_reg$MSR[i]<-unique(my_tmp[my_tmp$regulator %in% my_msr,]$regulator) %>% paste(.,collapse=";")
+    }
   }
 }
 
@@ -985,9 +1152,46 @@ df_reg$MSR_flag<-factor(df_reg$MSR_flag,levels=c("Absence","Presence"))
 
 dtf<-left_join(df_reg,df_plst_noise)
 
+my_sigmas<-qw(RpoD,RpoE,RpoN,RpoH,RpoS,FliA,FecI)
+my_sig_comb<-qw(RpoD,RpoD_RpoX,RpoX,NA)
+dtf$Sigma<-NA
+dtf$Sigma_label<-NA
+i<-1
+for(i in 1:nrow(dtf)){
+  if(dtf$Nb_reg[i]>0){
+    my_tmp<-dtf$Regulator[i] %>% str_split(.,pattern=";") %>% unlist()
+    my_tmp<-my_tmp[my_tmp %in% my_sigmas]
+    if(length(my_tmp)>0){
+      my_tmp <-my_tmp[order(my_tmp)]
+      dtf$Sigma[i]<-my_tmp %>% paste(.,collapse = ";")
+      if(length(my_tmp)==1){
+        if(my_tmp=="RpoD"){
+          dtf$Sigma_label[i]<-"RpoD"
+        }
+        if(my_tmp=="RpoS"){
+          dtf$Sigma_label[i]<-"RpoS"
+        }
+      }
+      if(length(my_tmp)>1){
+        my_tmp2<-my_tmp[my_tmp %in% "RpoD"]
+        if(length(my_tmp2)>0){
+          my_tmp3<-my_tmp[my_tmp %in% "RpoS"]
+          if(length(my_tmp3)>0){
+            dtf$Sigma_label[i]<-"RpoD_RpoS"
+          }else{
+            dtf$Sigma_label[i]<-"RpoD"
+          }
+        }
+      }
+    }
+  }
+}
+dtf[is.na(dtf$Sigma_label),]$Sigma_label<-"No_RpoDS"
+
+
 Sys.time()
 ```
-## 5.5.
+## 5.5. Comparison in the number of regulators between essential and nonessential genes
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
 #TRs
 p1<-ggdotplot(dtf,x="Essentiality",y="Nb_reg",
@@ -1013,6 +1217,8 @@ p2<-ggdotplot(dtf,x="Essentiality",y="Nb_MSR",
 p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p2
 
+dtf %>% levene_test(Nb_reg~Essentiality)
+dtf %>% levene_test(Nb_MSR~Essentiality)
 
 Sys.time()
 ```
@@ -1156,6 +1362,7 @@ p4.1
 Sys.time()
 ```
 ## 5.8. Correlation between Noise/Plasticity and Nb of Metabolic sensory regulators (MSRs)
+### 5.8.1. 89 genes
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_MSR)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1224,12 +1431,88 @@ p4<-ggerrorplot(my_df2,x="Nb_MSR",y="Mean_DMv",
           ylab(expression("Mean"~DM[V]))
 p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p4
+
+
 Sys.time()
 ```
-## 5.9. Cumulative analysis for 5.8
-Following a previous study
+### 5.8.2. Genes without conditional essential genes
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
+my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_MSR)),Nb_genes=0)
+for(i in 1:nrow(my_tmp)){
+  my_tmp$Nb_genes[i]<-dtf[(dtf$Essentiality=="nonessential")&(dtf$Nb_MSR==my_tmp$Nb_MSR[i]),] %>% nrow()
+}
+my_range<-my_tmp[my_tmp$Nb_genes>0,]$Nb_MSR
+my_df<-dtf[(dtf$Essentiality=="nonessential")&(dtf$Nb_MSR %in% my_range),]
+my_df<-my_df[my_df$StringentSet,]
+
+# Partial Correlation test using Spearman's R
+pcor.test(x = my_df$Nb_MSR,y = my_df$SD_logAvFITC,z = my_df$Nb_reg,method = "spearman")
+
+# Wilcoxon
+my_df %>% wilcox_test(Mean_DMv ~ MSR_flag)
+
+
+# Plasticity
+p1<-ggerrorplot(my_df,x="Nb_MSR",y="SD_logAvFITC",
+          desc_stat = "mean_sd",
+          add = "jitter",add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          color=mycolpal[1],alpha=0.3,
+          legend="")+
+          stat_cor(data =my_df,aes(x=Nb_MSR,y=SD_logAvFITC), label.x = 1, size=5,method = "spearman", label.sep = "\n")+
+  scale_y_continuous(breaks = get_breaks(by=0.1,from=0.1,to=0.4),limits = c(0.07,0.5))+
+          xlab(expression("Number of MSRs"))+
+          ylab(expression("SD of"~E[pop]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+# Noise
+p2<-ggerrorplot(my_df,x="Nb_MSR",y="Mean_DMv",
+          desc_stat = "mean_sd",
+          add = "jitter",add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          color=mycolpal[1],alpha=0.3,
+          legend="")+
+          scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+          stat_cor(data =my_df,aes(x=Nb_MSR,y=Mean_DMv), label.x = 3.5,label.y = 0.08, size=5,method = "spearman", label.sep = "\n")+
+          xlab(expression("Number of MSRs"))+
+          ylab(expression("Mean"~DM[V]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+
+my_df2<-dtf[(dtf$Essentiality=="essential")&(dtf$Nb_MSR %in% my_range),]
+# Plasticity
+p3<-ggerrorplot(my_df2,x="Nb_MSR",y="SD_logAvFITC",
+          desc_stat = "mean_sd",
+          add = "jitter",add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          color=mycolpal[2],alpha=0.3,
+          legend="")+
+          stat_cor(data =my_df2,aes(x=Nb_MSR,y=SD_logAvFITC), label.x = 1, size=5,method = "spearman", label.sep = "\n")+
+  scale_y_continuous(breaks = get_breaks(by=0.1,from=0.1,to=0.4),limits = c(0.07,0.5))+
+          xlab(expression("Number of MSRs"))+
+          ylab(expression("SD of"~E[pop]))
+p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p3
+
+# Noise
+p4<-ggerrorplot(my_df2,x="Nb_MSR",y="Mean_DMv",
+          desc_stat = "mean_sd",
+          add = "jitter",add.params = list(size = 0.5, jitter = 0.2,alpha=0.5),
+          color=mycolpal[2],alpha=0.3,
+          legend="")+
+          scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+          stat_cor(data =my_df2,aes(x=Nb_MSR,y=Mean_DMv), label.x = 1.5,label.y = 0.08, size=5,method = "spearman", label.sep = "\n")+
+          xlab(expression("Number of MSRs"))+
+          ylab(expression("Mean"~DM[V]))
+p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p4
+
+
+Sys.time()
+```
+## 5.9. Cumulative analysis by sliding Noise
+Following a previous study (Fig. 2)
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4468965/
-Fig. 2
+### 5.9.1. Nonessential genes
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
 my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_MSR)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1293,7 +1576,288 @@ p3
 
 Sys.time()
 ```
-## 5.10. Correlation between Noise/Plasticity and Nb of TRcoms
+### 5.9.2. Pooled genes
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
+my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf$Nb_MSR)),Nb_genes=0)
+for(i in 1:nrow(my_tmp)){
+  my_tmp$Nb_genes[i]<-dtf[(dtf$Nb_MSR==my_tmp$Nb_MSR[i]),] %>% nrow()
+}
+my_range<-my_tmp[my_tmp$Nb_genes>0,]$Nb_MSR
+my_df<-dtf[(dtf$Nb_MSR %in% my_range),]
+
+my_df<-my_df[order(my_df$Mean_DMv,decreasing = T),]
+my_df$Cum_Nb_MSR<-0
+my_df$Cum_Nb_MSR_SE<-0
+my_df$Cum_Nb_TR<-0
+my_df$Cum_Nb_TR_SE<-0
+my_df$Cum_Plasticity<-0
+my_df$Cum_Plasticity_SE<-0
+for(i in 6:nrow(my_df)){
+  ## MSR
+  my_df$Cum_Nb_MSR[i]<-my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]$Nb_MSR %>% mean()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]$Nb_MSR %>% sd()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df$Cum_Nb_MSR_SE[i]/sqrt(nrow(my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]))
+  ## TR
+  my_df$Cum_Nb_TR[i]<-my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]$Nb_reg %>% mean()
+  my_df$Cum_Nb_TR_SE[i]<-my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]$Nb_reg %>% sd()
+  my_df$Cum_Nb_TR_SE[i]<-my_df$Cum_Nb_TR_SE[i]/sqrt(nrow(my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]))
+  ## Plasticity
+  my_df$Cum_Plasticity[i]<-my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]$SD_logAvFITC %>% mean()
+  my_df$Cum_Plasticity_SE[i]<-my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]$SD_logAvFITC %>% sd()
+  my_df$Cum_Plasticity_SE[i]<-my_df$Cum_Plasticity_SE[i]/sqrt(nrow(my_df[my_df$Mean_DMv>my_df$Mean_DMv[i],]))
+}
+
+p1<-ggplot(my_df[my_df$Cum_Nb_MSR_SE>0,],aes(x=Mean_DMv,y=Cum_Nb_MSR))+
+  geom_line(color="gray10",alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_MSR-Cum_Nb_MSR_SE, ymax=Cum_Nb_MSR+Cum_Nb_MSR_SE),color="gray10",alpha=0.5)+
+  scale_y_continuous(breaks = get_breaks(by=1,from=1),limits = c(1,4))+
+  theme_pubr()+
+  ylab(expression("Number of"~MSRs))+
+  xlab(expression(Mean~DM[V]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+p1i<-ggplot(my_df[my_df$Cum_Nb_MSR_SE>0,],aes(x=Mean_DMv,y=Cum_Nb_MSR))+
+  geom_line(color="gray10",alpha=0.8,size=1)+
+  geom_pointrange(aes(ymin=Cum_Nb_MSR-Cum_Nb_MSR_SE, ymax=Cum_Nb_MSR+Cum_Nb_MSR_SE),color="gray10",alpha=0.8,size=1)+
+  scale_x_continuous(breaks = get_breaks(by=0.04,from=0),limits = c(-0.02,0.05))+
+  scale_y_continuous(breaks = get_breaks(by=2,from=2),limits = c(1,4.5))+
+  theme_pubr()+
+  theme(axis.title = element_blank(),
+        axis.ticks = element_line(linewidth = 1),
+        axis.ticks.length = unit(0.5,"cm"),
+        axis.line = element_line(linewidth = 1,),
+        )
+p1i<-ggpar(p1i,font.xtickslab = my_fontsize*3,font.ytickslab = my_fontsize*3)
+p1i
+
+
+p2<-ggplot(my_df[my_df$Cum_Plasticity_SE>0,],aes(x=Mean_DMv,y=Cum_Plasticity))+
+  geom_line(color="gray10",alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Plasticity-Cum_Plasticity_SE, ymax=Cum_Plasticity+Cum_Plasticity_SE),color="gray10",alpha=0.5)+
+  scale_y_continuous(breaks = get_breaks(by=0.05,from = 0.1),limits = c(0.15,0.3))+
+  theme_pubr()+
+  ylab(expression("SD of"~E[pop]))+
+  xlab(expression(Mean~DM[V]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+p3<-ggplot(my_df[my_df$Cum_Nb_TR_SE>0,],aes(x=Mean_DMv,y=Cum_Nb_TR))+
+  geom_line(color="gray10",alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_TR-Cum_Nb_TR_SE, ymax=Cum_Nb_TR+Cum_Nb_TR_SE),color="gray10",alpha=0.5)+
+  scale_y_continuous(breaks = get_breaks(by=2,from=2),limits = c(2,8))+
+  theme_pubr()+
+  ylab(expression("Number of"~TRs))+
+  xlab(expression(Mean~DM[V]))
+p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p3
+    
+
+Sys.time()
+```
+## 5.10. Cumulative analysis by sliding Plasticity
+### 5.10.1. Nonessential genes 
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
+my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_MSR)),Nb_genes=0)
+for(i in 1:nrow(my_tmp)){
+  my_tmp$Nb_genes[i]<-dtf[(dtf$Essentiality=="nonessential")&(dtf$Nb_MSR==my_tmp$Nb_MSR[i]),] %>% nrow()
+}
+my_range<-my_tmp[my_tmp$Nb_genes>0,]$Nb_MSR
+my_df<-dtf[(dtf$Essentiality=="nonessential")&(dtf$Nb_MSR %in% my_range),]
+
+my_df<-my_df[order(my_df$SD_logAvFITC,decreasing = T),]
+my_df$Cum_Nb_MSR<-0
+my_df$Cum_Nb_MSR_SE<-0
+my_df$Cum_Nb_TR<-0
+my_df$Cum_Nb_TR_SE<-0
+my_df$Cum_Noise<-0
+my_df$Cum_Noise_SE<-0
+for(i in 6:nrow(my_df)){
+  ## MSR
+  my_df$Cum_Nb_MSR[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_MSR %>% mean()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_MSR %>% sd()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df$Cum_Nb_MSR_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+  ## TR
+  my_df$Cum_Nb_TR[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_reg %>% mean()
+  my_df$Cum_Nb_TR_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_reg %>% sd()
+  my_df$Cum_Nb_TR_SE[i]<-my_df$Cum_Nb_TR_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+  ## Noise
+  my_df$Cum_Noise[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Mean_DMv %>% mean()
+  my_df$Cum_Noise_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Mean_DMv %>% sd()
+  my_df$Cum_Noise_SE[i]<-my_df$Cum_Noise_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+}
+
+p1<-ggplot(my_df[my_df$Cum_Nb_MSR_SE>0,],aes(x=SD_logAvFITC,y=Cum_Nb_MSR))+
+  geom_line(color=mycolpal[1],alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_MSR-Cum_Nb_MSR_SE, ymax=Cum_Nb_MSR+Cum_Nb_MSR_SE),color=mycolpal[1],alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=1,from=1),limits = c(1,4))+
+  theme_pubr()+
+  ylab(expression("Number of"~MSRs))+
+  xlab(expression("SD of"~E[pop]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+p2<-ggplot(my_df[my_df$Cum_Noise_SE>0,],aes(x=SD_logAvFITC,y=Cum_Noise))+
+  geom_line(color=mycolpal[1],alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Noise-Cum_Noise_SE, ymax=Cum_Noise+Cum_Noise_SE),color=mycolpal[1],alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=0.02,from = 0),limits = c(0,0.04))+
+  theme_pubr()+
+  ylab(expression(Mean~DM[V]))+
+  xlab(expression("SD of"~E[pop]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+p3<-ggplot(my_df[my_df$Cum_Nb_TR_SE>0,],aes(x=SD_logAvFITC,y=Cum_Nb_TR))+
+  geom_line(color=mycolpal[1],alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_TR-Cum_Nb_TR_SE, ymax=Cum_Nb_TR+Cum_Nb_TR_SE),color=mycolpal[1],alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=2,from=2),limits = c(2,8))+
+  theme_pubr()+
+  ylab(expression("Number of"~TRs))+
+  xlab(expression("SD of"~E[pop]))
+p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p3
+    
+
+Sys.time()
+```
+### 5.10.2. Essential genes 
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
+my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf[dtf$Essentiality=="essential",]$Nb_MSR)),Nb_genes=0)
+for(i in 1:nrow(my_tmp)){
+  my_tmp$Nb_genes[i]<-dtf[(dtf$Essentiality=="essential")&(dtf$Nb_MSR==my_tmp$Nb_MSR[i]),] %>% nrow()
+}
+my_range<-my_tmp[my_tmp$Nb_genes>0,]$Nb_MSR
+my_df<-dtf[(dtf$Essentiality=="essential")&(dtf$Nb_MSR %in% my_range),]
+
+my_df<-my_df[order(my_df$SD_logAvFITC,decreasing = T),]
+my_df$Cum_Nb_MSR<-0
+my_df$Cum_Nb_MSR_SE<-0
+my_df$Cum_Nb_TR<-0
+my_df$Cum_Nb_TR_SE<-0
+my_df$Cum_Noise<-0
+my_df$Cum_Noise_SE<-0
+for(i in 6:nrow(my_df)){
+  ## MSR
+  my_df$Cum_Nb_MSR[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_MSR %>% mean()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_MSR %>% sd()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df$Cum_Nb_MSR_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+  ## TR
+  my_df$Cum_Nb_TR[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_reg %>% mean()
+  my_df$Cum_Nb_TR_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_reg %>% sd()
+  my_df$Cum_Nb_TR_SE[i]<-my_df$Cum_Nb_TR_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+  ## Noise
+  my_df$Cum_Noise[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Mean_DMv %>% mean()
+  my_df$Cum_Noise_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Mean_DMv %>% sd()
+  my_df$Cum_Noise_SE[i]<-my_df$Cum_Noise_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+}
+
+p1<-ggplot(my_df[my_df$Cum_Nb_MSR_SE>0,],aes(x=SD_logAvFITC,y=Cum_Nb_MSR))+
+  geom_line(color=mycolpal[2],alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_MSR-Cum_Nb_MSR_SE, ymax=Cum_Nb_MSR+Cum_Nb_MSR_SE),color=mycolpal[2],alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=0.4,from=0),limits = c(-0.01,1.5))+
+  theme_pubr()+
+  ylab(expression("Number of"~MSRs))+
+  xlab(expression("SD of"~E[pop]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+p2<-ggplot(my_df[my_df$Cum_Noise_SE>0,],aes(x=SD_logAvFITC,y=Cum_Noise))+
+  geom_line(color=mycolpal[2],alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Noise-Cum_Noise_SE, ymax=Cum_Noise+Cum_Noise_SE),color=mycolpal[2],alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=0.01,from = -0.01),limits = c(-0.01,0.02))+
+  theme_pubr()+
+  ylab(expression(Mean~DM[V]))+
+  xlab(expression("SD of"~E[pop]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+p3<-ggplot(my_df[my_df$Cum_Nb_TR_SE>0,],aes(x=SD_logAvFITC,y=Cum_Nb_TR))+
+  geom_line(color=mycolpal[2],alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_TR-Cum_Nb_TR_SE, ymax=Cum_Nb_TR+Cum_Nb_TR_SE),color=mycolpal[2],alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=1,from=0),limits = c(0,3))+
+  theme_pubr()+
+  ylab(expression("Number of"~TRs))+
+  xlab(expression("SD of"~E[pop]))
+p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p3
+    
+
+Sys.time()
+```
+### 5.10.3. Pooled genes 
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
+my_tmp<-data_frame(Nb_MSR=seq(0,max(dtf$Nb_MSR)),Nb_genes=0)
+for(i in 1:nrow(my_tmp)){
+  my_tmp$Nb_genes[i]<-dtf[(dtf$Nb_MSR==my_tmp$Nb_MSR[i]),] %>% nrow()
+}
+my_range<-my_tmp[my_tmp$Nb_genes>0,]$Nb_MSR
+my_df<-dtf[(dtf$Nb_MSR %in% my_range),]
+
+my_df<-my_df[order(my_df$SD_logAvFITC,decreasing = T),]
+my_df$Cum_Nb_MSR<-0
+my_df$Cum_Nb_MSR_SE<-0
+my_df$Cum_Nb_TR<-0
+my_df$Cum_Nb_TR_SE<-0
+my_df$Cum_Noise<-0
+my_df$Cum_Noise_SE<-0
+for(i in 6:nrow(my_df)){
+  ## MSR
+  my_df$Cum_Nb_MSR[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_MSR %>% mean()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_MSR %>% sd()
+  my_df$Cum_Nb_MSR_SE[i]<-my_df$Cum_Nb_MSR_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+  ## TR
+  my_df$Cum_Nb_TR[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_reg %>% mean()
+  my_df$Cum_Nb_TR_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Nb_reg %>% sd()
+  my_df$Cum_Nb_TR_SE[i]<-my_df$Cum_Nb_TR_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+  ## Noise
+  my_df$Cum_Noise[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Mean_DMv %>% mean()
+  my_df$Cum_Noise_SE[i]<-my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]$Mean_DMv %>% sd()
+  my_df$Cum_Noise_SE[i]<-my_df$Cum_Noise_SE[i]/sqrt(nrow(my_df[my_df$SD_logAvFITC>my_df$SD_logAvFITC[i],]))
+}
+
+p1<-ggplot(my_df[my_df$Cum_Nb_MSR_SE>0,],aes(x=SD_logAvFITC,y=Cum_Nb_MSR))+
+  geom_line(color="gray10",alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_MSR-Cum_Nb_MSR_SE, ymax=Cum_Nb_MSR+Cum_Nb_MSR_SE),color="gray10",alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=1,from=1),limits = c(1,4))+
+  theme_pubr()+
+  ylab(expression("Number of"~MSRs))+
+  xlab(expression("SD of"~E[pop]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+p2<-ggplot(my_df[my_df$Cum_Noise_SE>0,],aes(x=SD_logAvFITC,y=Cum_Noise))+
+  geom_line(color="gray10",alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Noise-Cum_Noise_SE, ymax=Cum_Noise+Cum_Noise_SE),color="gray10",alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=0.02,from = 0),limits = c(0,0.04))+
+  theme_pubr()+
+  ylab(expression(Mean~DM[V]))+
+  xlab(expression("SD of"~E[pop]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+p3<-ggplot(my_df[my_df$Cum_Nb_TR_SE>0,],aes(x=SD_logAvFITC,y=Cum_Nb_TR))+
+  geom_line(color="gray10",alpha=0.5)+
+  geom_pointrange(aes(ymin=Cum_Nb_TR-Cum_Nb_TR_SE, ymax=Cum_Nb_TR+Cum_Nb_TR_SE),color="gray10",alpha=0.5)+
+  scale_x_continuous(breaks=get_breaks(by=0.05,from=0.05),limits=c(0.05,0.25))+
+  scale_y_continuous(breaks = get_breaks(by=2,from=2),limits = c(2,8))+
+  theme_pubr()+
+  ylab(expression("Number of"~TRs))+
+  xlab(expression("SD of"~E[pop]))
+p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p3
+    
+
+Sys.time()
+```
+## 5.11. Correlation between Noise/Plasticity and Nb of TRcoms (Pooled)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-data_frame(Nb_TRcom=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_TRcom)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1328,7 +1892,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-## 5.11. Correlation between Noise/Plasticity and Nb of TR (Nonessential)
+## 5.12. Correlation between Noise/Plasticity and Nb of TR (Nonessential)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 my_tmp<-data_frame(Nb_TR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_reg)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1364,7 +1928,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-## 5.12. Correlation between Noise/Plasticity and Nb of TR (Essential)
+## 5.13. Correlation between Noise/Plasticity and Nb of TR (Essential)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 my_tmp<-data_frame(Nb_TR=seq(0,max(dtf[dtf$Essentiality=="essential",]$Nb_reg)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1400,7 +1964,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-## 5.13. Correlation between Noise/Plasticity and Nb of Sensory regulators (SRs)
+## 5.14. Correlation between Noise/Plasticity and Nb of Sensory regulators (SRs)
 ```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-data_frame(Nb_SR=seq(0,max(dtf[dtf$Essentiality=="nonessential",]$Nb_SR)),Nb_genes=0)
 for(i in 1:nrow(my_tmp)){
@@ -1435,8 +1999,131 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-# 6. Growth characteristics
-## 6.1. Medium information
+## 5.15 Noise-plasticity coupling with controling the number of MSRs
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=7,dpi=300}
+# MSR>2
+for (i in 0:3){
+  my_nb<-i #2
+p1<-ggscatter(dtf[dtf$Nb_MSR>my_nb,],x="SD_logAvFITC",y="Mean_DMv",
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
+          cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=6),
+          alpha = 0.5, size=2,legend="")+
+   scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+  scale_x_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.43))+
+    xlab(expression("SD of"~E[pop]))+
+    ylab(expression("Mean DM"[V]))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+
+# MSR<3
+p2<-ggscatter(dtf[dtf$Nb_MSR<my_nb+1,],x="SD_logAvFITC",y="Mean_DMv",
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
+          cor.coeff.args = list(method = "spearman", label.x = 0.25, label.y=0.08, label.sep = "\n",size=6),
+          alpha = 0.5, size=2,legend="")+
+   scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+  scale_x_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.43))+
+    xlab(expression("SD of"~E[pop]))+
+    ylab(expression("Mean DM"[V]))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+
+
+print(p1+p2)
+}
+
+
+
+Sys.time()
+```
+## 5.16 Enrichment analysis for sigma factors
+```{r TR}
+my_t2g<-dtf %>% select(Sigma_label,Name)
+my_df<-dtf[order(dtf$SD_logAvFITC,decreasing = T),]
+my_genelist<-my_df$SD_logAvFITC
+names(my_genelist)<-my_df$Name
+my_res<-GSEA(geneList = my_genelist,TERM2GENE = my_t2g,minGSSize = 3,pvalueCutoff = 1)
+my_res@result
+```
+## 5.17 MSR identities
+```{r TR,warning=FALSE, message=FALSE,fig.height=3,fig.width=7,dpi=300}
+my_tr<-dtf[!is.na(dtf$MSR),]$MSR %>% paste(., collapse = ";") %>% str_split(.,pattern=";") %>% unlist() %>% unique()
+my_msr<-list()
+my_gn<-list()
+my_esnes<-list()
+my_df<-dtf[!is.na(dtf$MSR),]
+k<-0
+for(i in 1:length(my_tr)){
+  my_tg<-my_tr[i]
+  my_tmp<-my_df[grepl(x = my_df$MSR,pattern = my_tg),]
+  for(j in 1:nrow(my_tmp)){
+    k<-k+1
+    my_msr[[k]]<-my_tr[i]
+    my_gn[[k]]<-my_tmp$Name[j]
+    my_esnes[[k]]<-my_tmp$Essentiality[j]
+  }
+}
+my_df<-data.frame(MSR=my_msr %>% unlist(),
+                  Name=my_gn %>% unlist(),
+                  Essentiality=my_esnes %>% unlist())
+my_df$Count<-1
+my_df$Essentiality<-factor(my_df$Essentiality,levels=qw(nonessential,essential))
+my_df<-my_df[order(my_df$MSR),]
+
+p<-ggbarplot(my_df, x="MSR", y="Count",
+          legend="",ylab="Number of genes",
+  fill = "Essentiality", color = "Essentiality", palette = mycolpal[c(1,2)])+
+  rotate_x_text()
+p<-ggpar(p,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p
+```
+
+# 6. Mapping KEGG pathways (previous dataset, default)
+## 6.1. load the KEGG dataset
+```{r Prep_gseKEGG,warning=FALSE, message=FALSE,fig.height=4,fig.width=4,dpi=300}
+dkegg_prev<-paste(getwd(),"KEGG_prev","KEGG_prev.xlsx",sep="/") %>% read_xlsx()
+dkegg_prev$EntrezID<-NA
+i<-1
+for(i in 1:nrow(dkegg_prev)){
+  my_tmp<-dkegg_prev$Bnb[i] %>% str_split(.,pattern = ",") %>% unlist()
+  dkegg_prev$EntrezID[i]<-df_plst_noise$EntrezID %>% paste(.,collapse = ",")
+}
+
+for(i in 1:nrow(dkegg_prev)){
+  my_tmp<-dkegg_prev$EntrezID[i] %>% str_split(.,pattern = ",") %>% unlist()
+  my_df<-data.frame(Pathway_ID=dkegg_prev$Pathway_ID[i],
+                    EntrezID=my_tmp)
+  if(i==1){
+    dkegg.each.gsea_prev<-my_df
+  }else{
+    dkegg.each.gsea_prev<-bind_rows(dkegg.each.gsea_prev,my_df)
+  }
+}
+
+dkegg.each_prev<-dkegg.each.gsea_prev
+my_df<-df_plst_noise%>% select(EntrezID,Bnb)
+my_df$EntrezID<-my_df$EntrezID%>% as.character()
+dkegg.each_prev<-left_join(dkegg.each_prev,my_df)
+
+# Update
+dkegg<-dkegg_prev
+dkegg.each<-dkegg.each_prev
+dkegg.each.gsea<-dkegg.each.gsea_prev
+
+my_df<-df_plst_noise
+my_df$KEGGpathID<-NA
+my_df$KEGGpath<-NA
+for(i in 1:nrow(my_df)){
+  my_tmp<-dkegg[grepl(x = dkegg$Bnb,pattern = my_df$Bnb[i]),]
+  if(nrow(my_tmp)){
+    my_df$KEGGpathID[i]<-my_tmp$Pathway_ID %>% paste(.,collapse = ";")
+    my_df$KEGGpath[i]<-my_tmp$Pathway_name %>% paste(.,collapse = ";")
+  }
+}
+
+Sys.time()
+```
+# 7. Growth characteristics of YFP fusion strains
+## 7.1. Medium information
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=2.5,fig.width=7,dpi=300}
 groinfo<-paste(getwd(),"Growth_Curve","fileinfo.txt",sep = "/") %>%
   read_delim(delim = "\t",show_col_types = F) %>%
@@ -1551,7 +2238,7 @@ my_tmp
 
 Sys.time()
 ```
-## 6.2. Correlation between Growth rate and Supplement richness
+## 7.2. Correlation between Growth rate and Supplement richness
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_df<-Growth
 p<-ggscatter(my_df, x = "Richness", y = "MeanGrowth_h",
@@ -1566,7 +2253,7 @@ p
 
 Sys.time()
 ```
-## 6.3. Calc. Correlation between Growth rate/Richness and Noise/Expression level
+## 7.3. Calc. Correlation between Growth rate/Richness and Noise/Expression level
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-Growth %>% select(Medium,MeanGrowth_h,Richness)
 df_gr<-left_join(df_noise,my_tmp)
@@ -1675,8 +2362,8 @@ p6<-ggscatter(my_df,x="Cor_rich_DMv",y="Q_rich_DMv",
 p6
 Sys.time()
 ```
-## 6.4. Relationship between Growth rate/Richness and Noise/Expression level
-### 6.4.1. all genes
+## 7.4. Relationship between Growth rate/Richness and Noise/Expression level
+### 7.4.1. all genes
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 # Bootstrapping for one sample
 my_mean <- function(d, i){
@@ -1711,8 +2398,8 @@ p2
 
 Sys.time()
 ```
-### 6.4.2. nonessential genes
-```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
+### 7.4.2. nonessential genes
+```{7 Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 # Bootstrapping for one sample
 my_mean <- function(d, i){
   mean(d[i])
@@ -1745,7 +2432,7 @@ p2
 
 Sys.time()
 ```
-### 6.4.3. essential genes
+### 7.4.3. essential genes
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 # Bootstrapping for one sample
 my_mean <- function(d, i){
@@ -1779,8 +2466,8 @@ p2
 
 Sys.time()
 ```
-## 6.5. Relationship between Growth rate/Richness and Noise/Expression level
-### 6.5.1. all genes
+## 7.5. Relationship between Growth rate/Richness and Noise/Expression level
+### 7.5.1. all genes
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 # Bootstrapping for one sample
 my_mean <- function(d, i){
@@ -1815,7 +2502,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-### 6.5.2. nonessential genes
+### 7.5.2. nonessential genes
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 # Bootstrapping for one sample
 my_mean <- function(d, i){
@@ -1850,7 +2537,7 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-### 6.5.3. nonessential genes
+### 7.5.3. nonessential genes
 ```{r Growth,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 # Bootstrapping for one sample
 my_mean <- function(d, i){
@@ -1885,8 +2572,8 @@ p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,
 p2
 Sys.time()
 ```
-# 7. PCA
-## 7.1. Expression levels
+# 8. PCA
+## 8.1. Expression levels
 ```{r PCA,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 mypcs<-paste("PC",seq(1:3),sep="")
 my_tmp<-Growth %>% select(Medium,MeanGrowth_h)
@@ -1921,7 +2608,7 @@ df_pca_exprs<-left_join(Growth,df_pca_exprs)
 
 Sys.time()
 ```
-## 7.2. DMv
+## 8.2. DMv
 ```{r PCA,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 mypcs<-paste("PC",seq(1:3),sep="")
 my_tmp<-Growth %>% select(Medium,MeanGrowth_h)
@@ -1955,7 +2642,7 @@ df_pca_dmv<-pc_scores_dmv %>% select(Medium,PC1,PC2)
 df_pca_dmv<-left_join(Growth,df_pca_dmv)
 Sys.time()
 ```
-## 7.3. PC1 vs. PC2 in Expression level
+## 8.3. PC1 vs. PC2 in Expression level
 ```{r PCA,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_df<-df_pca_exprs
 my_df$Medium_Series<-factor(my_df$Medium_Series,levels=qw(E,F,G))
@@ -2005,7 +2692,7 @@ p4
 
 Sys.time()
 ```
-## 7.4. PC1 vs. PC2 in Noise
+## 8.4. PC1 vs. PC2 in Noise
 ```{r PCA,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_df<-df_pca_dmv
 my_df$Medium_Series<-factor(my_df$Medium_Series,levels=qw(E,F,G))
@@ -2055,7 +2742,7 @@ p4
 # my_df2 %>% anova_test(PC1 ~ Richness)
 Sys.time()
 ```
-# 8. Schematics
+# 9. Schematics
 ```{r Schematics,warning=FALSE, message=FALSE,fig.height=2.5,fig.width=3.5,dpi=300}
 my_count<-100000
 my_df = data.frame(
@@ -2078,9 +2765,458 @@ p<-ggpar(p,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = c(size=0),font
 p
 Sys.time()
 ```
-# 9. ENV Dataset
-## 9.1. correlation analysis
-```{r ENV,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
+# 10. Growth characteristis of KO strains
+## 10.1. Growth test under selected environments
+```{r Growth_KO,warning=FALSE, message=FALSE,fig.height=2.5,fig.width=7,dpi=300}
+df_kogr_fileinfo<-paste(getwd(),"Growth","fileinfo.xlsx",sep="/") %>%
+  read_xlsx()
+
+df_kogr_fileinfo[df_kogr_fileinfo$Strain_ID=="IntS",]$Bnb<-"b2349"
+
+my_xlfiles<-c("20250228.xlsx","20250302.xlsx","20250303.xlsx","20250304.xlsx")
+my_sheets<-paste("Sheet",seq(2,10),sep="")
+my_xlrange<-"B25:Y40"
+
+i<-1
+for(j in 1:length(my_xlfiles)){
+  for(i in 1:length(my_sheets)){
+    my_dat<-paste(getwd(),"Growth",my_xlfiles[j],sep="/") %>%
+      read_xlsx(sheet = my_sheets[i],range = my_xlrange,col_names = paste("Col",seq(1,24),sep=""))
+    my_dat<-my_dat %>% pivot_longer(cols =everything(),names_to = "Col",values_to = "RawOD")
+    my_dat$Row<-paste(rep(LETTERS[1:16],each=24))
+    my_dat$Col<-my_dat$Col %>% str_remove_all(pattern = "Col") %>% as.numeric()
+    my_dat$RowCol<-paste(my_dat$Row,my_dat$Col,sep="")
+    my_dat$Plate<-i
+    my_dat$PlateRowCol<-paste(paste("P",my_dat$Plate,sep=""),my_dat$RowCol,sep="_")
+    my_dat$Xlfile<-my_xlfiles[j]
+    my_dat<-my_dat %>% select(Xlfile,Plate,Row,Col,RowCol,PlateRowCol,RawOD)
+    if((j==1)&(i==1)){
+      my_df<-my_dat
+    }else{
+      my_df<-bind_rows(my_df,my_dat)
+    }
+  }
+}
+
+
+df_kogr<-df_kogr_fileinfo
+my_days<-qw(Day1,Day3,Day4,Day5)
+for(i in 1:length(my_days)){
+  my_df2<-my_df[my_df$Xlfile==my_xlfiles[i],]
+  my_df2<-my_df2 %>% select(PlateRowCol,RawOD)
+  colnames(my_df2)[2]<-paste("ODraw",my_days[i],sep="_")
+  df_kogr<-left_join(df_kogr,my_df2)
+}
+
+# Day3
+df_kogr$ODsbtrct_Day3<-NA
+for(p in 1:max(df_kogr$Plate)){
+  my_pl<-df_kogr[df_kogr$Plate==p,]
+  my_df<-my_pl[(my_pl$Strain_ID=="Blank")&(my_pl$Outer_Inner=="Inner"),]
+  my_bkgrnd<-mean(my_df$ODraw_Day3)+5*sd(my_df$ODraw_Day3)
+  df_kogr[df_kogr$Plate==p,]$ODsbtrct_Day3<-df_kogr[df_kogr$Plate==p,]$ODraw_Day3-my_bkgrnd
+}
+
+# Day4
+df_kogr$ODsbtrct_Day4<-NA
+for(p in 1:max(df_kogr$Plate)){
+  my_pl<-df_kogr[df_kogr$Plate==p,]
+  my_df<-my_pl[(my_pl$Strain_ID=="Blank")&(my_pl$Outer_Inner=="Inner"),]
+  my_bkgrnd<-mean(my_df$ODraw_Day4)+5*sd(my_df$ODraw_Day4) # Difinition of significant growth
+  df_kogr[df_kogr$Plate==p,]$ODsbtrct_Day4<-df_kogr[df_kogr$Plate==p,]$ODraw_Day4-my_bkgrnd
+}
+
+# Day5
+df_kogr$ODsbtrct_Day5<-NA
+for(p in 1:max(df_kogr$Plate)){
+  my_pl<-df_kogr[df_kogr$Plate==p,]
+  my_df<-my_pl[(my_pl$Strain_ID=="Blank")&(my_pl$Outer_Inner=="Inner"),]
+  my_bkgrnd<-mean(my_df$ODraw_Day5)+5*sd(my_df$ODraw_Day5) # Difinition of significant growth
+  df_kogr[df_kogr$Plate==p,]$ODsbtrct_Day5<-df_kogr[df_kogr$Plate==p,]$ODraw_Day5-my_bkgrnd
+}
+
+
+
+my_df<-df_kogr_fileinfo[(df_kogr_fileinfo$Plate==1)&(df_kogr_fileinfo$Replicate==1),]
+my_df<-my_df[!is.na(my_df$Bnb),]
+my_df<-my_df %>% select(Strain_ID,Bnb)
+
+# Use Day4 
+my_env<-df_kogr_fileinfo$Medium %>% unique
+i<-1
+j<-1
+for(i in 1:length(my_env)){
+  my_tmp<-df_kogr[(df_kogr$Medium==my_env[i])&
+                    (df_kogr$Outer_Inner=="Inner")&
+                    (!is.na(df_kogr$Bnb)),]
+  my_df1<-my_df
+  my_df1$Medium<-my_env[i]
+  my_df1$Mean_ODsbstrct<-NA
+  my_df1$SD_ODsbstrct<-NA
+  my_df1$BiolRepl_Total<-NA
+  my_df1$BiolRepl_SignifGrowth<-NA
+  my_df1$SignifGrowth<-"No Growth"
+  for(j in 1:nrow(my_df1)){
+    my_tmp2<-my_tmp[my_tmp$Bnb==my_df1$Bnb[j],]
+    my_df1$Mean_ODsbstrct[j]<-my_tmp2$ODsbtrct_Day4 %>% mean()
+    my_df1$SD_ODsbstrct[j]<-my_tmp2$ODsbtrct_Day4 %>% sd()
+    my_df1$BiolRepl_Total[j]<-nrow(my_tmp2)
+    my_df1$BiolRepl_SignifGrowth[j]<-nrow(my_tmp2[my_tmp2$ODsbtrct_Day4>0,])
+    if(c(my_df1$BiolRepl_SignifGrowth[j]/my_df1$BiolRepl_Total[j])>c(1/2)){
+      my_df1$SignifGrowth[j]<-"Growth"
+    }
+  }
+  if(i==1){
+    df_kogr_summary<-my_df1
+  }else{
+    df_kogr_summary<-bind_rows(df_kogr_summary,my_df1)
+  }
+}
+
+my_df<-df_kogr_fileinfo %>% select(Medium,Medium_Info,Environment_ID,Carbon,Use)
+my_df<-my_df %>% distinct(Medium,.keep_all = TRUE)
+my_df<-my_df[!is.na(my_df$Use)|my_df$Medium=="LB",]
+my_df$EnvLabel<-paste(my_df$Carbon,my_df$Environment_ID,sep="_")
+my_df[my_df$Medium=="LB",]$EnvLabel<-"LB"
+my_df<-my_df %>% select(Medium,EnvLabel)
+
+df_kogr_summary<-df_kogr_summary[df_kogr_summary$Medium %in% my_df$Medium,]
+df_kogr_summary<-left_join(df_kogr_summary,my_df)
+
+df_kogr_summary[df_kogr_summary$SignifGrowth=="No Growth",]$Bnb %>% unique()
+
+# write_csv(df_kogr_summary,file = paste(getwd(),"Growth","Output","Growth_KOstrains.csv",sep="/"))
+
+```
+## 10.2. 384-well Plate overview (Day3)
+```{r Growth_KO,warning=FALSE, message=FALSE}
+# p: plate id
+# i: row
+# j: col
+textcol<-"black"
+ODsbtrct_thr<-0
+p<-1
+for(p in 1:max(df_kogr$Plate)){
+  my_pl<-df_kogr[df_kogr$Plate==p,]
+  my_thr<-ODsbtrct_thr
+  my_pl$ODaboveThr<-0
+  my_pl[my_pl$ODsbtrct_Day3>my_thr,]$ODaboveThr<-1
+  my_pl$ODaboveThr<-factor(my_pl$ODaboveThr,levels=c(1,0))
+  my_pl$Col<-factor(my_pl$Col,levels=seq(1,24))
+  my_pl$Row<-factor(my_pl$Row,levels=rev(LETTERS[1:16]))
+  f <- ggplot(my_pl, aes(x=Col, y=Row, fill=ODaboveThr))+
+  geom_tile(colour="white", size=0.2)+
+  guides(fill="none")+
+  labs(x="", y="", title=paste("Plate ID:",p))+
+  scale_y_discrete(expand=c(0, 0))+
+  scale_x_discrete(expand=c(0, 0), breaks=seq(1,24),position = "top")+
+  scale_fill_manual(values=c("#d53e4f","gray90"))+
+  geom_text(aes(label=RowCol),size=2.5)+
+  theme_classic(base_size=10)+
+  theme(legend.position="right", legend.direction="vertical",
+        legend.title=element_text(colour=textcol),
+        legend.margin=margin(grid::unit(0, "cm")),
+        legend.text=element_text(colour=textcol, size=7, face="bold"),
+        legend.key.height=grid::unit(0.8, "cm"),
+        legend.key.width=grid::unit(0.2, "cm"),
+        axis.text.x=element_text(size=10),
+        axis.text.y=element_text(size=10),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.ticks=element_line(size=0.4),
+        # plot.background=element_blank(),
+        # panel.border=element_blank(),
+        panel.border = element_rect(fill = NA, linewidth =1.5),
+        plot.margin=margin(0.7, 0.4, 0.1, 0.2, "cm"),
+        plot.title=element_text(colour=textcol, hjust=0, size=14, face="bold"),
+        panel.background = element_rect(fill = "white", colour = "black", linewidth = 1.2),
+        aspect.ratio=85.48/127.76
+      )
+  print(f)
+}
+```
+## 10.3. 384-well Plate overview (Day4)
+```{r Growth_KO,warning=FALSE, message=FALSE}
+# p: plate id
+# i: row
+# j: col
+textcol<-"black"
+ODsbtrct_thr<-0
+p<-1
+for(p in 1:max(df_kogr$Plate)){
+  my_pl<-df_kogr[df_kogr$Plate==p,]
+  my_thr<-ODsbtrct_thr
+  my_pl$ODaboveThr<-0
+  my_pl[my_pl$ODsbtrct_Day4>my_thr,]$ODaboveThr<-1
+  my_pl$ODaboveThr<-factor(my_pl$ODaboveThr,levels=c(1,0))
+  my_pl$Col<-factor(my_pl$Col,levels=seq(1,24))
+  my_pl$Row<-factor(my_pl$Row,levels=rev(LETTERS[1:16]))
+  f <- ggplot(my_pl, aes(x=Col, y=Row, fill=ODaboveThr))+
+  geom_tile(colour="white", size=0.2)+
+  guides(fill="none")+
+  labs(x="", y="", title=paste("Plate ID:",p))+
+  scale_y_discrete(expand=c(0, 0))+
+  scale_x_discrete(expand=c(0, 0), breaks=seq(1,24),position = "top")+
+  scale_fill_manual(values=c("#d53e4f","gray90"))+
+  geom_text(aes(label=RowCol),size=2.5)+
+  theme_classic(base_size=10)+
+  theme(legend.position="right", legend.direction="vertical",
+        legend.title=element_text(colour=textcol),
+        legend.margin=margin(grid::unit(0, "cm")),
+        legend.text=element_text(colour=textcol, size=7, face="bold"),
+        legend.key.height=grid::unit(0.8, "cm"),
+        legend.key.width=grid::unit(0.2, "cm"),
+        axis.text.x=element_text(size=10),
+        axis.text.y=element_text(size=10),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.ticks=element_line(size=0.4),
+        # plot.background=element_blank(),
+        # panel.border=element_blank(),
+        panel.border = element_rect(fill = NA, linewidth =1.5),
+        plot.margin=margin(0.7, 0.4, 0.1, 0.2, "cm"),
+        plot.title=element_text(colour=textcol, hjust=0, size=14, face="bold"),
+        panel.background = element_rect(fill = "white", colour = "black", linewidth = 1.2),
+        aspect.ratio=85.48/127.76
+      )
+  print(f)
+}
+```
+## 10.4. 384-well Plate overview (Day5)
+```{r Growth_KO,warning=FALSE, message=FALSE}
+# p: plate id
+# i: row
+# j: col
+textcol<-"black"
+ODsbtrct_thr<-0
+p<-1
+for(p in 1:max(df_kogr$Plate)){
+  my_pl<-df_kogr[df_kogr$Plate==p,]
+  my_thr<-ODsbtrct_thr
+  my_pl$ODaboveThr<-0
+  my_pl[my_pl$ODsbtrct_Day5>my_thr,]$ODaboveThr<-1
+  my_pl$ODaboveThr<-factor(my_pl$ODaboveThr,levels=c(1,0))
+  my_pl$Col<-factor(my_pl$Col,levels=seq(1,24))
+  my_pl$Row<-factor(my_pl$Row,levels=rev(LETTERS[1:16]))
+  f <- ggplot(my_pl, aes(x=Col, y=Row, fill=ODaboveThr))+
+  geom_tile(colour="white", size=0.2)+
+  guides(fill="none")+
+  labs(x="", y="", title=paste("Plate ID:",p))+
+  scale_y_discrete(expand=c(0, 0))+
+  scale_x_discrete(expand=c(0, 0), breaks=seq(1,24),position = "top")+
+  scale_fill_manual(values=c("#d53e4f","gray90"))+
+  geom_text(aes(label=RowCol),size=2.5)+
+  theme_classic(base_size=10)+
+  theme(legend.position="right", legend.direction="vertical",
+        legend.title=element_text(colour=textcol),
+        legend.margin=margin(grid::unit(0, "cm")),
+        legend.text=element_text(colour=textcol, size=7, face="bold"),
+        legend.key.height=grid::unit(0.8, "cm"),
+        legend.key.width=grid::unit(0.2, "cm"),
+        axis.text.x=element_text(size=10),
+        axis.text.y=element_text(size=10),
+        axis.title.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.ticks=element_line(size=0.4),
+        # plot.background=element_blank(),
+        # panel.border=element_blank(),
+        panel.border = element_rect(fill = NA, linewidth =1.5),
+        plot.margin=margin(0.7, 0.4, 0.1, 0.2, "cm"),
+        plot.title=element_text(colour=textcol, hjust=0, size=14, face="bold"),
+        panel.background = element_rect(fill = "white", colour = "black", linewidth = 1.2),
+        aspect.ratio=85.48/127.76
+      )
+  print(f)
+}
+```
+## 10.5. Growth at Day4
+```{r Growth_KO,warning=FALSE, message=FALSE,fig.height=3,fig.width=12,dpi=300}
+my_df<-df_kogr[(df_kogr$Strain_ID %in% df_kogr_summary$Strain_ID)&(df_kogr$Outer_Inner=="Inner"),]
+my_tmp<-df_plst_noise %>% select(Bnb,Name,Essentiality,Mean_logAvFITC,SD_logAvFITC,Mean_DMv,EntrezID)
+my_df<-left_join(my_df,my_tmp)
+my_df[my_df$Bnb=="b2349",]$Name<-"intS"
+my_df$Name<-factor(my_df$Name,levels=c(my_tmp[order(my_tmp$SD_logAvFITC,decreasing = T),]$Name,"intS"))
+my_df$Label<-paste("Δ",my_df$Name,sep="")
+my_df$Label<-factor(my_df$Label,levels=paste("Δ",levels(my_df$Name),sep=""))
+levels(my_df$Label)
+my_df$Class<-"Sample"
+my_df[my_df$Name=="intS",]$Class<-"Control"
+my_df$Class<-factor(my_df$Class,levels=qw(Sample,Control))
+my_envs<-c("LB","E6","F6","G6","E1","F1","G1")
+
+for(i in 1:length(my_envs)){
+  my_df1<-my_df[my_df$Medium==my_envs[i],] %>%
+    as.data.frame() %>%
+    select(Medium,Bnb,Name,Label,Class,ODsbtrct_Day4)
+  my_df1<-my_df1[order(my_df1$Label),]
+  my_df1$Label<-factor(my_df1$Label,levels =my_df1$Label %>% unique())
+  stat.test<-my_df1 %>%
+    t_test(ODsbtrct_Day4~Label,ref.group = "ΔintS",p.adjust.method = "BH")
+  stat.test$p.adj.signif2<-stat.test$p.adj.signif
+  stat.test[stat.test$p.adj.signif!="ns",]$p.adj.signif2<-"*"
+    # wilcox_test(ODsbtrct_Day4~Label,ref.group = "ΔintS",p.adjust.method = "BH")
+  p<-ggerrorplot(my_df1,x="Label",y="ODsbtrct_Day4", alpha=0.5,
+                 desc_stat = "mean_sd",
+                 ylim=c(-0.1,2.3),
+            color="Class",palette = c(mycolpal[1],"black"),legend="",
+            xlab="Keio strains",ylab="Cell density (OD)",
+            add="jitter",add.params = list(size=1,alpha=0.5))+
+    stat_pvalue_manual(stat.test,  label = "p.adj.signif2", 
+                       x="group2",y=max(my_df1$ODsbtrct_Day4,na.rm = T)+0.03, hide.ns = TRUE)+
+  geom_hline(yintercept = my_df1[my_df1$Name=="intS",]$ODsbtrct_Day4 %>% mean())+
+    # annotate("text",x=-Inf,y=Inf,label=my_envs[i],hjust = -0.1,vjust = 1.5,size=3)+
+    font("x.text",face="italic")+
+    rotate_x_text()
+  print(p)
+}
+
+
+```
+## 10.6. Growth at Day5
+```{r Growth_KO,warning=FALSE, message=FALSE,fig.height=3,fig.width=12,dpi=300}
+my_df<-df_kogr[(df_kogr$Strain_ID %in% df_kogr_summary$Strain_ID)&(df_kogr$Outer_Inner=="Inner"),]
+my_tmp<-df_plst_noise %>% select(Bnb,Name,Essentiality,Mean_logAvFITC,SD_logAvFITC,Mean_DMv,EntrezID)
+my_df<-left_join(my_df,my_tmp)
+my_df[my_df$Bnb=="b2349",]$Name<-"intS"
+my_df$Name<-factor(my_df$Name,levels=c(my_tmp[order(my_tmp$SD_logAvFITC,decreasing = T),]$Name,"intS"))
+my_df$Label<-paste("Δ",my_df$Name,sep="")
+my_df$Label<-factor(my_df$Label,levels=paste("Δ",levels(my_df$Name),sep=""))
+levels(my_df$Label)
+my_df$Class<-"Sample"
+my_df[my_df$Name=="intS",]$Class<-"Control"
+my_df$Class<-factor(my_df$Class,levels=qw(Sample,Control))
+my_envs<-c("LB","E6","F6","G6","E1","F1","G1")
+
+for(i in 1:length(my_envs)){
+  my_df1<-my_df[my_df$Medium==my_envs[i],] %>%
+    as.data.frame() %>%
+    select(Medium,Bnb,Name,Label,Class,ODsbtrct_Day5)
+  my_df1<-my_df1[order(my_df1$Label),]
+  my_df1$Label<-factor(my_df1$Label,levels =my_df1$Label %>% unique())
+  stat.test<-my_df1 %>%
+    t_test(ODsbtrct_Day5~Label,ref.group = "ΔintS",p.adjust.method = "BH")
+  stat.test$p.adj.signif2<-stat.test$p.adj.signif
+  stat.test[stat.test$p.adj.signif!="ns",]$p.adj.signif2<-"*"
+    # wilcox_test(ODsbtrct_Day5~Label,ref.group = "ΔintS",p.adjust.method = "BH")
+  p<-ggerrorplot(my_df1,x="Label",y="ODsbtrct_Day5", alpha=0.5,
+                 desc_stat = "mean_sd",
+                 ylim=c(-0.1,2.3),
+            color="Class",palette = c(mycolpal[1],"black"),legend="",
+            xlab="Keio strains",ylab="Cell density (OD)",
+            add="jitter",add.params = list(size=1,alpha=0.5))+
+    stat_pvalue_manual(stat.test,  label = "p.adj.signif2", 
+                       x="group2",y=max(my_df1$ODsbtrct_Day5,na.rm = T)+0.03, hide.ns = TRUE)+
+  geom_hline(yintercept = my_df1[my_df1$Name=="intS",]$ODsbtrct_Day5 %>% mean())+
+    annotate("text",x=-Inf,y=Inf,label=my_envs[i],hjust = -0.1,vjust = 1.5,size=3)+
+    font("x.text",face="italic")+
+    rotate_x_text()
+  print(p)
+}
+
+
+```
+## 10.6.Comparison of growth yild between day 4 and day 5
+```{r Growth_KO,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
+my_df<-df_kogr_fileinfo[(df_kogr_fileinfo$Plate==1)&(df_kogr_fileinfo$Replicate==1),]
+my_df<-my_df[!is.na(my_df$Bnb),]
+my_df<-my_df %>% select(Strain_ID,Bnb)
+
+# Use Day4 
+my_env<-df_kogr_fileinfo$Medium %>% unique
+i<-1
+j<-1
+for(i in 1:length(my_env)){
+  my_tmp<-df_kogr[(df_kogr$Medium==my_env[i])&
+                    (df_kogr$Outer_Inner=="Inner")&
+                    (!is.na(df_kogr$Bnb)),]
+  my_df1<-my_df
+  my_df1$Medium<-my_env[i]
+  my_df1$Mean_ODsbstrct_Day4<-NA
+  my_df1$SD_ODsbstrct_Day4<-NA
+  my_df1$BiolRepl_Total<-NA
+  my_df1$BiolRepl_SignifGrowth_Day4<-NA
+  my_df1$SignifGrowth_Day4<-"No Growth"
+  my_df1$Mean_ODsbstrct_Day5<-NA
+  my_df1$SD_ODsbstrct_Day5<-NA
+  my_df1$BiolRepl_SignifGrowth_Day5<-NA
+  my_df1$SignifGrowth_Day5<-"No Growth"
+  for(j in 1:nrow(my_df1)){
+    my_tmp2<-my_tmp[my_tmp$Bnb==my_df1$Bnb[j],]
+    my_df1$Mean_ODsbstrct_Day4[j]<-my_tmp2$ODsbtrct_Day4 %>% mean()
+    my_df1$SD_ODsbstrct_Day4[j]<-my_tmp2$ODsbtrct_Day4 %>% sd()
+    my_df1$BiolRepl_Total[j]<-nrow(my_tmp2)
+    my_df1$BiolRepl_SignifGrowth_Day4[j]<-nrow(my_tmp2[my_tmp2$ODsbtrct_Day4>0,])
+    if(c(my_df1$BiolRepl_SignifGrowth_Day4[j]/my_df1$BiolRepl_Total[j])>c(1/2)){
+      my_df1$SignifGrowth_Day4[j]<-"Growth"
+    }
+    my_df1$Mean_ODsbstrct_Day5[j]<-my_tmp2$ODsbtrct_Day5 %>% mean()
+    my_df1$SD_ODsbstrct_Day5[j]<-my_tmp2$ODsbtrct_Day5 %>% sd()
+    my_df1$BiolRepl_Total[j]<-nrow(my_tmp2)
+    my_df1$BiolRepl_SignifGrowth_Day5[j]<-nrow(my_tmp2[my_tmp2$ODsbtrct_Day5>0,])
+    if(c(my_df1$BiolRepl_SignifGrowth_Day5[j]/my_df1$BiolRepl_Total[j])>c(1/2)){
+      my_df1$SignifGrowth_Day5[j]<-"Growth"
+    }
+  }
+  if(i==1){
+    df_kogr_day45<-my_df1
+  }else{
+    df_kogr_day45<-bind_rows(df_kogr_day45,my_df1)
+  }
+}
+
+my_df<-df_kogr_fileinfo %>% select(Medium,Medium_Info,Environment_ID,Carbon,Use)
+my_df<-my_df %>% distinct(Medium,.keep_all = TRUE)
+my_df<-my_df[!is.na(my_df$Use)|my_df$Medium=="LB",]
+my_df$EnvLabel<-paste(my_df$Carbon,my_df$Environment_ID,sep="_")
+my_df[my_df$Medium=="LB",]$EnvLabel<-"LB"
+my_df<-my_df %>% select(Medium,EnvLabel)
+
+df_kogr_day45<-df_kogr_day45[df_kogr_day45$Medium %in% my_df$Medium,]
+df_kogr_day45<-left_join(df_kogr_day45,my_df)
+
+df_kogr_day45[df_kogr_day45$SignifGrowth_Day4=="No Growth",]$Bnb %>% unique()
+df_kogr_day45[df_kogr_day45$SignifGrowth_Day5=="No Growth",]$Bnb %>% unique()
+
+
+formula <- y ~ 0+x
+ggscatter(df_kogr_day45,x="Mean_ODsbstrct_Day4",y="Mean_ODsbstrct_Day5",size=0.3,alpha=0.3,
+          xlab="Cell density after 60 h",ylab="Cell density after 84 h")+
+  stat_smooth(method = "lm", formula = formula) +
+  stat_poly_eq(parse=T, aes(label = paste(stat(eq.label),stat(rr.label),sep="*\", \"*")), formula=formula)
+```
+## 10.7.
+```{r Growth_KO,warning=FALSE, message=FALSE,fig.height=3,fig.width=12,dpi=300}
+my_df<-df_kogr_summary
+my_tmp<-df_plst_noise %>% select(Bnb,Name,Essentiality,Mean_logAvFITC,SD_logAvFITC,Mean_DMv,EntrezID)
+my_df<-left_join(my_df,my_tmp)
+my_df[my_df$Bnb=="b2349",]$Name<-"IntS"
+my_df$Name<-factor(my_df$Name,levels=c(my_tmp[order(my_tmp$SD_logAvFITC,decreasing = T),]$Name,"IntS"))
+my_df$Rel_OD<-NA
+my_df<-my_df[my_df$Medium!="LB",]
+my_df[my_df$SignifGrowth=="No Growth",]$Mean_ODsbstrct<-0
+my_envs<-c("E6","F6","G6","E1","F1","G1")
+for(i in 1:length(my_envs)){
+  my_df[my_df$Medium==my_envs[i],]$Rel_OD<-my_df[my_df$Medium==my_envs[i],]$Mean_ODsbstrct/my_df[(my_df$Strain_ID=="IntS")&(my_df$Medium==my_envs[i]),]$Mean_ODsbstrct
+}
+ggboxplot(my_df,x="Name",y="Rel_OD",add="jitter",add.params = list(size=1,alpha=0.8))+rotate_x_text()+
+  geom_hline(yintercept = 1,color="gray")
+
+ggscatter(my_df[my_df$Medium=="F6",],x="Rel_OD",y="SD_logAvFITC",cor.coef = TRUE)
+
+
+my_df1<-my_tmp
+my_df1$Mean_Rel_OD<-NA
+my_df1$Med_Rel_OD<-NA
+for(i in 1:nrow(my_df1)){
+  my_df1$Mean_Rel_OD[i]<-my_df[my_df$Bnb==my_df1$Bnb[i],]$Rel_OD %>% mean(na.rm=T)
+  my_df1$Med_Rel_OD[i]<-my_df[my_df$Bnb==my_df1$Bnb[i],]$Rel_OD %>% median()
+}
+
+ggscatter(my_df1,x="Mean_Rel_OD",y="SD_logAvFITC",cor.coef = TRUE)
+```
+# 11. ENV Dataset
+## 11.1. correlation analysis
+```{r ENV,warning=FALSE, message=FALSE,fig.height=3,fig.width=3.5,dpi=300}
 df_env<-paste(getwd(),"ENV_Dataset/df_env.csv",sep="/") %>%
   read_csv()
 my_tmp<-df_env %>% select(Bnb,DMenv)
@@ -2088,12 +3224,12 @@ my_df<-left_join(df_plst_noise,my_tmp)
 
 p1<-ggscatter(my_df[my_df$Essentiality=="nonessential",],y="SD_logAvFITC",x="DMenv",
           color="Essentiality",palette = mycolpal[1],
-          label="Name",repel = T, label.select = list(criteria = "`x` > 0.8 | `y` > 0.25"),
+          label="Name",repel = T, label.select = list(criteria = "`x` > 0.8 | `y` > 0.25"),font.label = c("italic"),
           cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
-          cor.coeff.args = list(method = "spearman", label.y = 0.4, label.x=-0.2, label.sep = "\n",size=5),
+          cor.coeff.args = list(method = "spearman", label.y = 0.45, label.x=0.2, label.sep = "\n",size=5),
           alpha = 0.5, size=2,legend="")+
   scale_x_continuous(breaks = get_breaks(by=1,from = 0,to=2),limits = c(-0.6,2.3))+
-  scale_y_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.45))+
+  scale_y_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.5),limits = c(0.07,0.5))+
   geom_hline(yintercept = median(my_df[my_df$Essentiality=="nonessential",]$SD_logAvFITC),linetype="dashed",color=mycolpal[1])+
   geom_vline(xintercept = median(my_df[my_df$Essentiality=="nonessential",]$DMenv),linetype="dashed",color=mycolpal[1])+
     ylab(expression("SD of"~E[pop]))+
@@ -2103,12 +3239,12 @@ p1
 
 p2<-ggscatter(my_df[my_df$Essentiality=="essential",],y="SD_logAvFITC",x="DMenv",
           color="Essentiality",palette = mycolpal[2],
-          label="Name",repel = T, label.select = list(criteria = "`x` > 0.1 | `y` > 0.2"),
+          label="Name",repel = T, label.select = list(criteria = "`x` > 0.1 | `y` > 0.2"),font.label = c("italic"),
           cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
           cor.coeff.args = list(method = "spearman", label.y = 0.4, label.x=0.07, label.sep = "\n",size=5),
           alpha = 0.5, size=2,legend="")+
   scale_x_continuous(breaks = get_breaks(by=1,from = 0,to=2),limits = c(-0.6,2.3))+
-  scale_y_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.4),limits = c(0.07,0.45))+
+  scale_y_continuous(breaks = get_breaks(by=0.1,from = 0.1,to=0.5),limits = c(0.07,0.5))+
   geom_hline(yintercept = median(my_df[my_df$Essentiality=="essential",]$SD_logAvFITC),linetype="dashed",color=mycolpal[2])+
   geom_vline(xintercept = median(my_df[my_df$Essentiality=="essential",]$DMenv),linetype="dashed",color=mycolpal[2])+
     ylab(expression("SD of"~E[pop]))+
@@ -2118,7 +3254,7 @@ p2
 
 p3<-ggscatter(my_df[my_df$Essentiality=="nonessential",],y="Mean_DMv",x="DMenv",
           color="Essentiality",palette = mycolpal[1],
-          label="Name",repel = T, label.select = list(criteria = "(`x` > 0.8 & `y` > 0)|`y` > 0.04"),
+          label="Name",repel = T, label.select = list(criteria = "(`x` > 0.8 & `y` > 0)|`y` > 0.04"),font.label = c("italic"),
           cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
           cor.coeff.args = list(method = "spearman", label.y = 0.09, label.x=0.8, label.sep = "\n",size=5),
           alpha = 0.5, size=2,legend="")+
@@ -2131,7 +3267,7 @@ p3
 
 p4<-ggscatter(my_df[my_df$Essentiality=="essential",],y="Mean_DMv",x="DMenv",
           color="Essentiality",palette = mycolpal[2],
-          label="Name",repel = T, label.select = list(criteria = "`x` > 0.1 | `y` > 0.01"),
+          label="Name",repel = T, label.select = list(criteria = "`x` > 0.1 | `y` > 0.01"),font.label = c("italic"),
           cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
           cor.coeff.args = list(method = "spearman", label.y = 0.09, label.x=0.8, label.sep = "\n",size=5),
           alpha = 0.5, size=2,legend="")+
@@ -2142,19 +3278,191 @@ p4<-ggscatter(my_df[my_df$Essentiality=="essential",],y="Mean_DMv",x="DMenv",
 p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p4
 
+p5<-ggscatter(my_df,y="Mean_DMv",x="DMenv",
+          color="Essentiality",palette = mycolpal,
+          # label="Name",repel = T, label.select = list(criteria = "`x` > 0.1 | `y` > 0.01"),
+          cor.coef = TRUE, # Add correlation coefficient. see ?stat_cor
+          cor.coeff.args = list(method = "spearman", label.y = 0.09, label.x=0.8, label.sep = "\n",size=5),
+          alpha = 0.5, size=2,legend="")+
+  scale_x_continuous(breaks = get_breaks(by=1,from = 0,to=2),limits = c(-0.6,2.3))+
+  scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.02,0.1))+
+    ylab(expression("Mean"~DM[V]))+
+    xlab(expression("DM"[env]))
+p5<-ggpar(p5,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p5
+
 Sys.time()
 ```
-## 9.2. Statistical test
+## 11.2. Statistical test
 ```{r ENV,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_tmp<-df_env %>% select(Bnb,DMenv)
 my_df<-left_join(df_plst_noise,my_tmp)
 my_df %>% wilcox_test(DMenv ~ Essentiality)
 
+Sys.time()
+```
+## 11.3.
+```{r ENV,warning=FALSE, message=FALSE,fig.height=6,fig.width=12,dpi=300}
+my_df<-df_env
+my_df$Nb_reg<-0
+my_df$TR<-NA
+my_df$Sigma<-NA
+i<-2
+for(i in 1:nrow(my_df)){
+  my_tmp<-TRN[TRN$gene_id == my_df$Bnb[i],]
+  if(nrow(my_tmp)>0){
+    my_df$Nb_reg[i]<-my_tmp$regulator %>% unique() %>% length()
+    my_df$TR[i]<-my_tmp$regulator %>% unique() %>% paste(.,collapse = ";")
+    my_sig<-my_tmp[my_tmp$category=="sigma",]
+    if(nrow(my_sig)>0){
+      my_sig$regulator<-factor(my_sig$regulator,levels=my_sigmas)
+      my_sig<-my_sig[order(my_sig$regulator),]
+      my_df$Sigma[i]<-my_sig$regulator %>% unique() %>% paste(.,collapse = ";")
+    }
+  }
+}
+my_df[is.na(my_df$Sigma),]$Sigma<-"Null"
+my_df$Sigma %>% unique()
+
+my_level<-c("Null","RpoD","RpoE","RpoH","RpoN","RpoS","FecI","FliA","RpoD;RpoE","RpoD;RpoH","RpoD;RpoN","RpoD;RpoS","RpoD;FliA","RpoN;RpoH","RpoH;RpoS","RpoE;RpoH","RpoN;RpoS","RpoD;RpoE;RpoH","RpoD;RpoH;RpoS","RpoD;RpoN;RpoS","RpoD;RpoE;RpoN;RpoS")
+my_df$Sigma<-factor(my_df$Sigma,levels=my_level)
+
+
+
+ggboxplot(my_df[(my_df$Nb_reg<7)&(my_df$Nb_reg>0),],x="Sigma",y="DMenv",color="Sigma",
+          facet.by = "Nb_reg",legend="",
+          add = "jitter",add.params = list(size=0.6,alpha=0.3,position = position_jitter(w = 0.01, h = 0)))+
+  rotate_x_text()
+
+ggboxplot(my_df[(my_df$Nb_reg<7)&(my_df$Nb_reg>0),],x="Sigma",y="DMenv",color="Essentiality",palette = mycolpal[c(2,1)],
+          facet.by = "Nb_reg",legend="",
+          add = "jitter",add.params = list(size=0.6,alpha=0.3,position = position_jitter(w = 0.01, h = 0)))+
+  rotate_x_text()
+
+ggboxplot(my_df[(my_df$Nb_reg>0),],x="Sigma",y="DMenv",color="Essentiality",palette = mycolpal[c(2,1)],
+          facet.by = "Nb_reg",legend="",
+          add = "jitter",add.params = list(size=0.6,alpha=0.3,position = position_jitter(w = 0.01, h = 0)))+
+  rotate_x_text()
+
+```
+## 11.4.
+```{r ENV,warning=FALSE, message=FALSE,fig.height=6,fig.width=12,dpi=300}
+my_df<-TRN
+my_df$Essentiality<-"nonessential"
+my_df[my_df$gene_id %in% dBnb[dBnb$ECKnb %in% dess$ECKnb,]$Bnb,]$Essentiality<-"essential"
+
+
+my_regs<-qw(ArgP,MraZ,NagC)
+my_reg<-my_regs[3]
+my_df[my_df$regulator==my_reg,] %>% nrow()
+my_df[(my_df$regulator==my_reg)&(my_df$Essentiality=="essential"),] %>% nrow()
+
+```
+# 12. Promoter-mediated Noise
+## 12.1. Define PromDM
+```{r Prom_med_Noise,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
+df_prom_noise<-paste(getwd(),"Promoter_Noise","Output","Promoter_Noise_Essentiality.csv",sep="/") %>%
+  read_csv()
+df_prom_noise$PromoterEssentiality<-factor(df_prom_noise$PromoterEssentiality,levels = qw(nonessential,essential))
+df_prom_noise<-df_prom_noise[!is.na(df_prom_noise$Mean_gfp),]
+
+df_prom_noise<-df_prom_noise[order(df_prom_noise$Mean_log_gfp),]
+df_prom_noise<-transform(df_prom_noise,PromRunMed=NA,PromSmoothSp=NA,PromDM=NA)
+df_prom_noise$PromRunMed<-runmed(df_prom_noise$SD_log_gfp,41)
+PromSSvislist<-createEmptyDf(nrow=1000,ncol=2, colnames = qw(logx,SS))
+PromSSvislist$logx=seq(min(df_prom_noise$Mean_log_gfp),max(df_prom_noise$Mean_log_gfp),length=nrow(PromSSvislist))
+misplist<-list()
+misplist[[1]]<-smooth.spline(data.frame(x=df_prom_noise$Mean_log_gfp,y=df_prom_noise$PromRunMed),df=12)
+PromSSvislist$SS<-predict(misplist[[1]],PromSSvislist$logx)[[2]]
+df_prom_noise$PromSmoothSp<-predict(misplist[[1]],df_prom_noise$Mean_log_gfp)[[2]]
+df_prom_noise$PromDM<-df_prom_noise$SD_log_gfp-df_prom_noise$PromSmoothSp
+
+my_limit<-PromSSvislist[PromSSvislist$SS==max(PromSSvislist$SS),]$logx
+df_prom_noise$DetectLimit<-"Above"
+df_prom_noise[df_prom_noise$Mean_log_gfp<my_limit,]$DetectLimit<-"Under"
+
+my_df<-df_env %>% select(Bnb,MEANenv,DMenv)
+df_prom_noise<-left_join(df_prom_noise,my_df)
+df_prom_noise_sbst<-df_prom_noise[df_prom_noise$DetectLimit=="Above",]
+
+
+# Relationship between mean and promoter-mediated noise
+p1<-ggscatter(df_prom_noise,x="Mean_log_gfp",y="SD_log_gfp",
+              color="PromoterEssentiality",palette = mycolpal[c(1,2)],
+              # cor.coef = TRUE,
+              # cor.coeff.args = list(method = "spearman", label.x = 1.5, label.y=0.8, label.sep = "\n",size=5),
+              alpha=0.5,size=0.3,legend="")+
+  xlab(expression("E"[pop]~"in promoter"))+
+  ylab(expression("V"[pop]~"in promoter"))+
+  # scale_x_continuous(breaks = get_breaks(by = 2, from = -2),limits =  c(-2, 4))+
+  scale_y_continuous(breaks = get_breaks(by = 0.1, from = 0.1),limits =  c(0.08, 0.31))+
+  geom_vline(xintercept = my_limit,linetype=2)+
+  geom_line(data=df_prom_noise,aes(x=Mean_log_gfp,y=PromRunMed),colour="magenta", size=1.75)+
+  geom_line(data=PromSSvislist,aes(x=logx,y=SS),colour="deepskyblue", size=0.75)
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
 
 Sys.time()
 ```
+## 12.2. Relationship between DMprom and DMenv
+```{r Prom_med_Noise,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
+p1<-ggscatter(df_prom_noise_sbst,x="PromDM",y="DMenv",
+              color="PromoterEssentiality",palette = mycolpal[c(1,2)],
+              cor.coef = TRUE,
+              cor.coeff.args = list(method = "spearman", label.x = 0.06, label.y=2.2, label.sep = "\n",size=5),
+              alpha=0.5,size=0.3,legend="")+
+  xlab(expression("DM"[prom]))+
+  ylab(expression("DM"[env]))+
+  scale_x_continuous(breaks = get_breaks(by = 0.05, from = 0),limits =  c(-0.05, 0.14))+
+  scale_y_continuous(breaks = get_breaks(by = 1, from = 0),limits =  c(-0.6, 2.7))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
 
-# 10. Promoter Analysis
+p2<-ggscatter(df_prom_noise_sbst[df_prom_noise_sbst$PromoterEssentiality=="nonessential",],x="PromDM",y="DMenv",
+              color="PromoterEssentiality",palette = mycolpal[c(1)],
+              cor.coef = TRUE,
+              cor.coeff.args = list(method = "spearman", label.x = 0.06, label.y=2.2, label.sep = "\n",size=5),
+              alpha=0.5,size=0.3,legend="")+
+  xlab(expression("DM"[prom]))+
+  ylab(expression("DM"[env]))+
+  scale_x_continuous(breaks = get_breaks(by = 0.05, from = 0),limits =  c(-0.05, 0.14))+
+  scale_y_continuous(breaks = get_breaks(by = 1, from = 0),limits =  c(-0.6, 2.7))
+p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p2
+
+p3<-ggscatter(df_prom_noise_sbst[df_prom_noise_sbst$PromoterEssentiality=="essential",],x="PromDM",y="DMenv",
+              color="PromoterEssentiality",palette = mycolpal[c(2)],
+              cor.coef = TRUE,
+              cor.coeff.args = list(method = "spearman", label.x = 0.06, label.y=2.2, label.sep = "\n",size=5),
+              alpha=0.5,size=0.3,legend="")+
+  xlab(expression("DM"[prom]))+
+  ylab(expression("DM"[env]))+
+  scale_x_continuous(breaks = get_breaks(by = 0.05, from = 0),limits =  c(-0.05, 0.14))+
+  scale_y_continuous(breaks = get_breaks(by = 1, from = 0),limits =  c(-0.6, 2.7))
+p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p3
+
+Sys.time()
+```
+## 12.3. Relationship between DMprom and DMv
+```{r Prom_med_Noise,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
+my_df<-left_join(df_plst_noise,df_prom_noise_sbst)
+p1<-ggscatter(my_df,x="PromDM",y="Mean_DMv",
+              color="Essentiality",palette = mycolpal[c(1,2)],
+              cor.coef = TRUE,
+              cor.coeff.args = list(method = "spearman", label.x = 0.01, label.y=0.04, label.sep = "\n",size=5),
+              alpha=0.5,size=0.3,legend="")+
+  xlab(expression("DM"[prom]))+
+  ylab(expression("DM"[v]))+
+  scale_x_continuous(breaks = get_breaks(by = 0.04, from = -0.02),limits =  c(-0.025, 0.07))+
+  scale_y_continuous(breaks = get_breaks(by = 0.04, from = -0.02),limits =  c(-0.025, 0.07))
+p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
+p1
+
+Sys.time()
+```
+# 13. Promoter Analysis
+## 13.1 load sigma 70 promoters
 ```{r Promoter,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 df_sigma70<-paste(getwd(),"Sigmulon/Output/Sigma70_Promoters.csv",sep = "/") %>%
   read_csv()
@@ -2187,25 +3495,291 @@ for(i in 1:nrow(my_df)){
     my_df$Nb_of_pro[i]<-nrow(my_tmp)
   }
 }
-ggscatter(my_df[my_df$Essentiality=="nonessential",],x="Ave_Lv_dist",y="Mean_DMv",
+
+df_sigm_summary<-my_df
+
+ggscatter(df_sigm_summary[df_sigm_summary$Essentiality=="nonessential",],x="Ave_Lv_dist",y="Mean_DMv",
           cor.coef = TRUE,cor.coeff.args = list(method = "spearman", label.x = 4, label.y=0.07, label.sep = "\n",size=5),
           alpha=0.5)
-
-ggscatter(my_df[my_df$Essentiality=="nonessential",],x="Ave_Lv_dist",y="SD_logAvFITC",
+ggscatter(df_sigm_summary[df_sigm_summary$Essentiality=="nonessential",],x="Ave_Lv_dist",y="SD_logAvFITC",
           cor.coef = TRUE,cor.coeff.args = list(method = "spearman", label.x = 4, label.y=0.35, label.sep = "\n",size=5),
           alpha=0.5)
 
-ggscatter(my_df[my_df$Essentiality=="nonessential",],x="Nb_of_pro",y="Mean_DMv",alpha=0.5)
-ggscatter(my_df[my_df$Essentiality=="nonessential",],x="Nb_of_pro",y="SD_logAvFITC",alpha=0.5)
+
+my_bn<-list()
+my_sigma70<-list()
+k<-0
+for(i in 1:nrow(df_sigm_summary)){
+  if(!is.na(df_sigm_summary$Sigma70_pro[i])){
+    my_tmp<-df_sigm_summary$Sigma70_pro[i] %>%
+      str_split(pattern = ";") %>% 
+      unlist()
+    for(j in 1:length(my_tmp)){
+      k<-k+1
+      my_bn[[k]]<-df_sigm_summary$Bnb[i]
+      my_sigma70[[k]]<-my_tmp[j]
+    }
+  }
+}
+my_df<-data.frame(Bnb=my_bn %>% unlist(),
+                  Sigma70_pro=my_sigma70 %>% unlist())
+my_tmp<-df_plst_noise %>% select(Bnb,Name,Essentiality)
+my_df<-left_join(my_df,my_tmp)
+my_tmp<-df_sigma70 %>% select(`Promoter Name`,Minus_10_box,Minus_35_box,Concat_35_10_box)
+colnames(my_tmp)[1]<-"Sigma70_pro"
+my_df<-left_join(my_df,my_tmp)
+df_sigma70_summary<-my_df
+
 
 Sys.time()
 ```
+## 13.2. Phylogenetic tree in conatenate seqs of -35 and -10 elements
+```{r Seq_Anal,warning=FALSE, message=FALSE,fig.height=10,fig.width=6,dpi=300}
+my_df<-df_sigma70_summary[!is.na(df_sigma70_summary$Concat_35_10_box),]
+my_df$label<-paste(my_df$Name,my_df$Sigma70_pro,sep="_")
+Boxseqs<-my_df$Concat_35_10 %>% DNAStringSet()
+names(Boxseqs)<-my_df$label
+
+seqalign<-msa(Boxseqs,method = "ClustalOmega",order = "input")
+alignment_seqinr<-msaConvert(seqalign,type="seqinr::alignment")
+distances<-seqinr::dist.alignment(alignment_seqinr,"identity") # compute the distance matrix from the alignment
+tree<-ape::nj(distances) # compute the neighbor-joining tree
+
+cls <- list(Nes=my_df[my_df$Essentiality=="nonessential",]$label,
+            Ess=my_df[my_df$Essentiality=="essential",]$label)
+
+tree <- groupOTU(tree, cls)
+mycolpal<-get_palette("lancet",9)
+
+p<-ggtree(tree)+
+    geom_tippoint(aes(color=group))+
+  scale_color_manual(values=c(mycolpal[2],mycolpal[1],"gray60"))+ 
+  theme(legend.position="")+
+  geom_tiplab(offset = 0.01,size=3)+
+  # geom_tiplab(aes(subset=(group=="Synthetic")),offset=0.01, size=3)+
+  geom_treescale(offset=-2.5,width=0.1)+ xlim_tree(0.65)
+p
+
+my_df1<-data.frame(name=names(Boxseqs),seq=seq(1,length(names(Boxseqs))))
+my_df1$name<-factor(my_df1$name,levels = get_taxa_name(p))
+my_order<-my_df1[order(my_df1$name),]$seq
+Boxseqs2<-Boxseqs[my_order]
+my_aln<-seqalign<-msa(Boxseqs2,method = "ClustalOmega",order = "input")
+class(my_aln)<-"DNAMultipleAlignment"
+ggmsa(my_aln, color = "Chemistry_NT", font = "DroidSansMono", char_width = 0.5, seq_name = TRUE ,)
+
+Sys.time()
+```
+## 13.3. Phylogenetic tree in Binding sites of Transcriptional Regulators
+```{r Seq_Anal,warning=FALSE, message=FALSE,fig.height=6,fig.width=6,dpi=600}
+df_TF_RISet<-paste(getwd(),"RegulonDB","2025_ver_12","TF_RISet.tsv",sep="/") %>%
+  read_delim()
+df_TUSet<-paste(getwd(),"RegulonDB","2025_ver_12","TUSet.tsv",sep="/") %>%
+  read_delim(skip = 28)
+df_GeneProductSet<-paste(getwd(),"RegulonDB","2025_ver_12","GeneProductSet.tsv",sep="/") %>%
+  read_delim(skip=29)
+df_TuPromOperonTFSet<-paste(getwd(),"RegulonDB","2025_ver_12","TuPromOperonTFSet.tsv",sep="/") %>%
+  read_delim()
+
+## TU
+my_df<-df_TuPromOperonTFSet %>% select(`1)tuId`,`2)tuName`,`7)promoterId`,`8)promoterName`,`14)tuGenesBnumber`)
+my_tu<-list()
+my_bn<-list()
+k<-0
+for(i in 1:nrow(df_plst_noise)){
+  my_bni<-df_plst_noise$Bnb[i]
+  my_tmp<-my_df[grepl(x = my_df$`14)tuGenesBnumber`,pattern = my_bni),]
+  if(nrow(my_tmp)>0){
+    for(j in 1:nrow(my_tmp)){
+      k<-k+1
+      my_tu[[k]]<-my_tmp$`1)tuId`[j]
+      my_bn[[k]]<-my_bni
+    }
+  }
+}
+my_df2<-data.frame(Bnb=my_bn %>% unlist(),
+                   tuID=my_tu %>% unlist())
+colnames(my_df)[1]<-"tuID"
+my_df2<-left_join(my_df2,my_df)
+
+## Gene
+my_df<-df_GeneProductSet %>% select(`1)geneId`,`2)geneName`,`3)bnumber`)
+colnames(my_df)<-qw(geneID,geneName,Bnb)
+my_df<-my_df[my_df$Bnb %in% df_plst_noise$Bnb,]
+my_df<-my_df %>% select(Bnb,geneID,geneName)
 
 
+## TFBS
+my_df2$riID<-NA
+for(i in 1:nrow(my_df2)){
+  my_tu<-my_df2$tuID[i]
+  my_tmp<-df_TF_RISet[grepl(x=df_TF_RISet$`19)targetTuOrGene`,pattern = my_tu),]
+  if(nrow(my_tmp)>0){
+    my_df2$riID[i]<-my_tmp$`1)riId` %>% paste(.,collapse=";")
+  }
+  if(!is.na(my_df2$`7)promoterId`[i])){
+    my_pro<-my_df2$`7)promoterId`[i]
+    my_tmp<-df_TF_RISet[grepl(x=df_TF_RISet$`12)promoterID`,pattern = my_pro),]
+    if(nrow(my_tmp)>0){
+      if(!is.na(my_df2$riID[i])){
+        my_chr1<-my_df2$riID[i]
+        my_chr2<-my_tmp$`1)riId` %>% paste(.,collapse=";")
+        my_chr<-paste(my_chr1,my_chr2,sep=";")
+        my_chr<-my_chr %>% str_split(.,pattern=";") %>% unlist() %>% unique() %>% paste(.,collapse=";")
+        my_df2$riID[i]<-my_chr
+      }else{
+        my_df2$riID[i]<-my_tmp$`1)riId` %>% paste(.,collapse=";")
+      }
+    }
+  }
+}
+my_df$riID<-NA
+for(i in 1:nrow(my_df)){
+  my_gn<-my_df$geneID[i]
+  my_tmp<-df_TF_RISet[grepl(x=df_TF_RISet$`19)targetTuOrGene`,pattern = my_gn),]
+  if(nrow(my_tmp)>0){
+    my_df$riID[i]<-my_tmp$`1)riId` %>% paste(.,collapse=";")
+  }
+}
 
-# 11. Noise_ch dataset
+df_ri<-my_df
+df_ri$tuID<-NA
+# df_ri$promoterID<-NA
+# df_ri$tuGenesBnb<-NA
+i<-2
+for(i in 1:nrow(df_ri)){
+  my_bn<-df_ri$Bnb[i]
+  my_tmp<-my_df2[my_df2$Bnb==my_bn,]
+  if(nrow(my_tmp)>0){
+    my_tmp<-my_tmp[!is.na(my_tmp$riID),]
+    if(nrow(my_tmp)>0){
+          df_ri$tuID[i]<-my_tmp$tuID %>% paste(.,collapse=";")
+      if(!is.na(df_ri$riID[i])){
+        my_chr1<-paste(my_tmp$riID,collapse=";")
+        my_chr2<-paste(df_ri$riID[i],collapse = ";")
+        my_chr<-paste(my_chr1,my_chr2,sep = ";")
+        df_ri$riID[i]<- my_chr
+      }else{
+        df_ri$riID[i]<-paste(my_tmp$riID,collapse=";")
+      }
+    }
+  }
+}
+
+my_ri<-df_ri[!is.na(df_ri$riID),]$riID %>%
+  paste(.,collapse=";") %>%
+  str_split(.,pattern = ";") %>%
+  unlist() %>%
+  unique()
+
+df_TF_RISet_sbst<-df_TF_RISet[df_TF_RISet$`1)riId` %in% my_ri,]
+df_TF_RISet_sbst<-df_TF_RISet_sbst %>% select(`1)riId`,`4)regulatorName`,`19)targetTuOrGene`,`10)tfrsSeq`)
+colnames(df_TF_RISet_sbst)<-qw(riID,Regulator,Target,tfrsSeq)
+df_TF_RISet_sbst$BindingSite<-NA
+df_TF_RISet_sbst$BindingSite<-df_TF_RISet_sbst$tfrsSeq %>% str_remove_all(.,pattern = "[[a-z]]")
+
+my_ri<-list()
+my_bn<-list()
+k<-0
+for(i in 1:nrow(df_ri)){
+  if(!is.na(df_ri$riID[i])){
+    my_tmp<-df_ri$riID[i] %>% str_split(.,pattern=";") %>% unlist()
+    for(j in 1:length(my_tmp)){
+      k<-k+1
+      my_ri[k]<-my_tmp[j]
+      my_bn[k]<-df_ri$Bnb[i]
+    }
+  }
+}
+my_df<-data.frame(riID=my_ri %>% unlist(),
+                  Bnb=my_bn %>% unlist())
+my_df<-left_join(my_df,df_TF_RISet_sbst)
+my_df<-left_join(my_df,df_plst_noise)
+df_TF_RI_plst_noise<-my_df %>% select(riID,Bnb,Name,Essentiality,everything())
+
+
+my_reg<-qw(CRP,Fis,Nac,Lrp)
+tree_list<-list()
+msa_list<-list()
+for(i in 1:length(my_reg)){
+  my_df<-df_TF_RI_plst_noise[df_TF_RI_plst_noise$Regulator==my_reg[i],]
+  my_df<-my_df %>% distinct(Bnb,Regulator,tfrsSeq,.keep_all = TRUE)
+  my_df<-my_df[!is.na(my_df$BindingSite),]
+  my_df$label<-paste(my_df$Name,my_df$Regulator,my_df$riID,sep="_")
+  Boxseqs<-my_df$BindingSite %>% DNAStringSet()
+  names(Boxseqs)<-my_df$label
+  
+  seqalign<-msa(Boxseqs,method = "ClustalOmega")
+  alignment_seqinr<-msaConvert(seqalign,type="seqinr::alignment")
+  distances<-seqinr::dist.alignment(alignment_seqinr,"identity") # compute the distance matrix from the alignment
+  tree<-ape::nj(distances) # compute the neighbor-joining tree
+  cls <- list(Nes=my_df[my_df$Essentiality=="nonessential",]$label,
+              Ess=my_df[my_df$Essentiality=="essential",]$label)
+  tree <- groupOTU(tree, cls)
+  
+  if(length(cls$Nes)>0&length(cls$Ess)>0){
+      p<-ggtree(tree)+
+      geom_tippoint(aes(color=group))+
+      scale_color_manual(values=c(mycolpal[2],mycolpal[1],"gray60"))+ 
+      theme(legend.position="")+
+      geom_tiplab(offset = 0.01,size=3)+
+      # geom_tiplab(aes(subset=(group=="Synthetic")),offset=0.01, size=3)+
+      geom_treescale(offset=-2.5,width=0.1)+ xlim_tree(0.8)
+  }
+  if(length(cls$Nes)>0&length(cls$Ess)==0){
+      p<-ggtree(tree)+
+      geom_tippoint(aes(color=group))+
+      scale_color_manual(values=c(mycolpal[1],mycolpal[1],"gray60"))+ 
+      theme(legend.position="")+
+      geom_tiplab(offset = 0.01,size=3)+
+      # geom_tiplab(aes(subset=(group=="Synthetic")),offset=0.01, size=3)+
+      geom_treescale(offset=-2.5,width=0.1)+ xlim_tree(0.8)
+  }
+  if(length(cls$Nes)==0&length(cls$Ess)>0){
+      p<-ggtree(tree)+
+      geom_tippoint(aes(color=group))+
+      scale_color_manual(values=c(mycolpal[2],mycolpal[2],"gray60"))+ 
+      theme(legend.position="")+
+      geom_tiplab(offset = 0.01,size=3)+
+      # geom_tiplab(aes(subset=(group=="Synthetic")),offset=0.01, size=3)+
+      geom_treescale(offset=-2.5,width=0.1)+ xlim_tree(0.8)
+  }
+  
+  my_df1<-data.frame(name=names(Boxseqs),seq=seq(1,length(names(Boxseqs))))
+  my_df1$name<-factor(my_df1$name,levels = get_taxa_name(p))
+  my_order<-my_df1[order(my_df1$name),]$seq
+  Boxseqs2<-Boxseqs[my_order]
+  my_aln<-seqalign<-msa(Boxseqs2,method = "ClustalOmega",order = "input")
+  class(my_aln)<-"DNAMultipleAlignment"
+  q<-ggmsa(my_aln, color = "Chemistry_NT", font = "DroidSansMono", char_width = 0.5, seq_name = TRUE ,)
+  
+  tree_list[[i]]<-p
+  msa_list[[i]]<-q
+
+  print(p)
+  print(q)
+}
+
+Sys.time()
+```
+## 13.4.
+```{r Seq_Anal,warning=FALSE, message=FALSE,fig.height=3.5,fig.width=6,dpi=600}
+tree_list[1]
+msa_list[1]
+```
+## 13.5.
+```{r Seq_Anal,warning=FALSE, message=FALSE,fig.height=6,fig.width=6,dpi=600}
+tree_list[2]
+msa_list[2]
+```
+## 13.6.
+```{r Seq_Anal,warning=FALSE, message=FALSE,fig.height=3,fig.width=6,dpi=600}
+tree_list[3]
+msa_list[3]
+```
+# 14. Noise_ch dataset
 https://doi.org/10.1126/science.1188308
-## 11.1. Calc. DM_noise_ch protein burst size
+## 14.1. Calc. DM_noise_ch protein burst size
 ```{r Noise_ch,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 df_tani<-paste(getwd(),"NOISE_CH_DataSet","TableS6.xlsx",sep = "/") %>%
   read_xlsx() %>%
@@ -2266,7 +3840,7 @@ p2
 
 Sys.time()
 ```
-## 11.2. Relationship between protein burst size and Noise/Plasticity
+## 14.2. Relationship between protein burst size and Noise/Plasticity
 ```{r Noise_ch,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_mean<-exp(mean(log(df_tani_sbst$Syn_PROperGamma_RNA),na.rm = T)) 
 p1<-ggscatter(df_tani_sbst,y = "SD_logAvFITC",x="Syn_PROperGamma_RNA",
@@ -2329,7 +3903,7 @@ p4
 
 Sys.time()
 ```
-## 11.3.
+## 14.3.
 ```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=4.5,fig.height=3}
 my_tmp<-dtf %>% select(Bnb,Nb_MSR)
 my_df<-left_join(df_tani_sbst,my_tmp)
@@ -2369,10 +3943,53 @@ p2
 
 Sys.time()
 ```
+## 14.4.
+```{r Noise_Plasticity,warning=FALSE, message=FALSE, fig.width=3.5,fig.height=3}
+df_tani_rna<-paste(getwd(),"NOISE_CH_DataSet","TableS6.xlsx",sep = "/") %>%
+  read_xlsx() %>%
+  data.frame()
+df_tani_rna<-df_tani_rna %>% select(B.Number,Mean_Protein,Noise_Protein,Mean_RNAseq,Life.time_RNAseq,A..mRNA.per.cell.cycle._RNAseq,B..proteins.mRNA._RNAseq, Mean_RNA.FISH,Noise_RNA.FISH)
+colnames(df_tani_rna)<-qw(Bnb,TNMean,TNNoise,RNAcopy,RNAlifetime,RNAperCellCycle,PROperRNA,TNMean_RNA,TNNoise_RNA)
+df_tani_rna$Essentiality<-"nonessential"
+df_tani_rna[df_tani_rna$Bnb %in% dBnb[dBnb$ECKnb %in% dess$ECKnb,]$Bnb,]$Essentiality<-"essential"
+df_tani_rna$Essentiality<-factor(df_tani_rna$Essentiality,levels=qw(nonessential,essential))
+df_tani_rna$Mean_RNA_log<-df_tani_rna$TNMean_RNA %>% log10()
+df_tani_rna$Noise_RNA_log<-df_tani_rna$TNNoise_RNA %>% log10()
+my_res<-lm(data = df_tani_rna,formula = Noise_RNA_log~Mean_RNA_log)
+df_tani_rna$DMv_RNA<-df_tani_rna$Noise_RNA_log-df_tani_rna$Mean_RNA_log*my_res$coefficients[2]+my_res$coefficients[1]
+df_tani_rna<-df_tani_rna[!is.na(df_tani_rna$Mean_RNA_log),]
+my_df<-df_env %>% select(Bnb,MEANenv,DMenv)
+df_tani_rna<-left_join(df_tani_rna,my_df)
+ggscatter(df_tani_rna,x="Mean_RNA_log",y="Noise_RNA_log",
+          size=1,alpha=0.5,
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          legend="",
+          )+
+  xlab(expression(log[10]~mean~mRNA~copy))+
+  ylab(expression(log[10]~CV^2))+
+  geom_smooth(method="lm")+
+  stat_regline_equation(label.x = -1, label.y = 0.1)
+ggscatter(df_tani_rna,y="DMv_RNA",x="DMenv",
+          size=1,alpha=0.5,
+          color="Essentiality",palette = mycolpal[c(1,2)],
+          cor.coef = TRUE,
+          legend="",
+          )+
+  xlab(expression(DM[env]))+
+  ylab(expression(DM[RNA]))
+ggscatter(df_tani_rna[df_tani_rna$Essentiality=="nonessential",],y="DMv_RNA",x="DMenv",
+          size=1,alpha=0.5,
+          color="Essentiality",palette = mycolpal[c(1)],
+          cor.coef = TRUE,
+          legend="",
+          )+
+  xlab(expression(DM[env]))+
+  ylab(expression(DM[RNA]))
 
-# 12. Noise_pl dataset
+```
+# 15. Noise_pl dataset
 https://doi.org/10.1371/journal.pbio.3001491
-## 12.1. Load the Noise_pl dataset
+## 15.1. Load the Noise_pl dataset
 ```{r Noise_pl,warning=FALSE, message=FALSE,fig.height=5,fig.width=10,dpi=300}
 durdat<-paste(getwd(),"NOISE_PL_DataSet","processed_datasets","dataset_with_noise_estimates.csv",sep="/") %>% # all data
   read_csv(skip = 1)
@@ -2390,7 +4007,7 @@ colnames(df_urch)[colnames(df_urch)=="blattner"]<-"Bnb"
 ggviolin(durdat,x="condition",y="noise",ylim=c(0,0.4),draw_quantiles = 0.5,palette="lancet",fill="condition",legend="")+ rotate_x_text(90)
 Sys.time()
 ```
-## 12.2. Correlation between DMnoise_ch and DMnoise_pl
+## 15.2. Correlation between DMnoise_ch and DMnoise_pl
 ```{r Noise_pl,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_df<-left_join(df_urch,df_tani)
 my_df<-my_df %>% select(Bnb,TNDM,noise,mycond)
@@ -2424,7 +4041,7 @@ for (i in 1:length(myurcond)){
 }
 Sys.time()
 ```
-## 12.3. Correlation between DMv and DMnoise_pl
+## 15.3. Correlation between DMv and DMnoise_pl
 ```{r Noise_pl,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_df<-left_join(df_urch,df_plst_noise)
 my_df<-my_df %>% select(Bnb,Mean_DMv,noise,mycond)
@@ -2457,7 +4074,7 @@ for (i in 1:length(myurcond)){
 }
 Sys.time()
 ```
-# Output
+# 16. Output
 ```{r Output,warning=FALSE, message=FALSE,fig.height=3,fig.width=3,dpi=300}
 my_df<-df_plst_noise %>% select(Name,Bnb,Essentiality,Mean_logAvFITC,SD_logAvFITC,Mean_DMv)
 my_tmp<-dtf %>% select(Bnb,Regulator)
@@ -2483,98 +4100,7 @@ my_df<-df_msr %>% select(regulator,Nb_of_Metabolite,List_of_Metabolites)
 
 Sys.time()
 ```
+```{r}
 
-
-
-
-
-
-# 9. Enrichment Analysis
-
-
-## 9.1. KEGG pathways
-Prepare KEGG pathways
-```{r Prep_gseKEGG,warning=FALSE, message=FALSE,fig.height=4,fig.width=4,dpi=300}
-dkegg.each  <- keggLink("pathway", "eco") %>%
-  tibble(Pathway_ID = sub("path:", "", .), Bnb = sub("eco:", "", names(.))) %>%
-  as.data.frame()
-dkegg.each<-dkegg.each[,which(colnames(dkegg.each) %in% qw(Pathway_ID,Bnb))]
-dkegg.each<-left_join(dkegg.each,genename.mg1655[,which(colnames(genename.mg1655) %in% qw(Bnb,EntrezID))],by="Bnb")
-dkegg.each$PrsAbs<-"Abs"
-dkegg.each[dkegg.each$Bnb %in% df_plst_noise$Bnb,]$PrsAbs<-"Prs" 
-
-dkegg <- keggList("pathway", "eco") %>% 
-    tibble(Pathway_ID = sub("path:", "", names(.)), Pathway_name = .) %>%
-  as.data.frame()
-
-
-dkegg$Pathway_name<-str_remove_all(dkegg$Pathway_name," - Escherichia coli K-12 MG1655")
-dkegg$Pathway_name<-str_extract(dkegg$Pathway_name,"([^;]+)|(.*)")
-dkegg$size<-0
-dkegg$Bnb<-NA
-dkegg$EntrezID<-NA
-
-# Use genes which are present in dBnb.comp
-for(i in 1:nrow(dkegg)){
-  dkegg$Bnb[i]<-paste(unique(dkegg.each[(dkegg.each$Pathway_ID==dkegg$Pathway_ID[i])&(dkegg.each$PrsAbs=="Prs"),]$Bnb),collapse = ",")
-  dkegg$size[i]<-str_count(dkegg$Bnb[i],",")+1
-  dkegg$EntrezID[i]<-paste(unique(dkegg.each[(dkegg.each$Pathway_ID==dkegg$Pathway_ID[i])&(dkegg.each$PrsAbs=="Prs"),]$EntrezID),collapse = ",")
-}
-
-# Filter gene sets comprising of less than five genes or more than 300 genes out
-dkegg<-dkegg[dkegg$size>4&dkegg$size<301,]
-dkegg$label<-seq(1,nrow(dkegg))
-
-dkegg.each.gsea<-dkegg.each[(dkegg.each$PrsAbs=="Prs")&dkegg.each$Pathway_ID %in% dkegg$Pathway_ID,]
-dkegg.each.gsea<-dkegg.each.gsea[,which(colnames(dkegg.each.gsea) %in% qw(Pathway_ID,EntrezID))]
-
-Sys.time()
-```
-## 9.2. GSEA in KEGG
-```{r All_GSEA_KEGG,warning=FALSE, message=FALSE,fig.height=8,fig.width=6,dpi=300}
-gene_list <- df_plst_noise$SD_logAvFITC# Create a vector of the gene universe
-gene_list <- df_plst_noise$Mean_DMv# Create a vector of the gene universe
-names(gene_list)<-df_plst_noise$EntrezID
-gene_list = sort(gene_list, decreasing = TRUE) # sort the list in decreasing order (required for clusterProfiler)
-
-## KEGG Pathway analysis
-res_gsea <- GSEA(geneList     = gene_list,
-              TERM2GENE = dkegg.each.gsea,
-               nPerm        = 10000,
-               minGSSize    = 5, # 5
-               maxGSSize    = 300, # 300
-               pvalueCutoff = 1, # <------------ set 1 to obtain enrichment scores for all gene sets 
-               pAdjustMethod = "BH") #fdr
-gene_count<-res_gsea@result %>% group_by(ID) %>% summarise(count = sum(str_count(core_enrichment, "/")+1))
-dot_df<- left_join(res_gsea@result, gene_count, by = "ID") %>% mutate(GeneRatio = count/setSize)
-dot_df<- left_join(dot_df,dkegg[,which(colnames(dkegg) %in% qw(Pathway_ID,label,Pathway_name))],by=c("ID"="Pathway_ID"))
-dot_df$type="Sensitive"
-dot_df$type[dot_df$NES < 0]="Robust"
-dot_df$type<-factor(dot_df$type,levels=c("Sensitive","Robust"))
-dot_df<-dot_df[order(dot_df$enrichmentScore,decreasing = F),]
-Sys.time()
 ```
 
-
-
-
-
-
-
-
-
-
-#
-#
-#
-# Instrumental Noise
-```{r InstNoise,warning=FALSE, message=FALSE}
-dinst<-paste(dirname(getwd()),"Instrumental_Noise",sep = "/")
-dfinst1<-data.frame(read.csv(paste(dinst,"beadsstats_20210603.csv",sep = "/"),stringsAsFactors=F))
-dfinst1<-transform(dfinst1,YYMMDD=20210603)
-dfinst1<-subset(dfinst1,dfinst1$PEclass=="P4"|dfinst1$PEclass=="P5"|dfinst1$PEclass=="P6")
-dfinst2<-data.frame(read.csv(paste(dinst,"beadsstats_20210608.csv",sep = "/"),stringsAsFactors=F))
-dfinst2<-transform(dfinst2,YYMMDD=20210608)
-dfinst2<-subset(dfinst2,dfinst2$PEclass=="P2"|dfinst2$PEclass=="P3"|dfinst2$PEclass=="P4"|dfinst2$PEclass=="P5")
-dfinst<-rbind(dfinst1,dfinst2)
-```
