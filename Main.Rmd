@@ -70,6 +70,12 @@ library(ggtree)
 
 library(ggpmisc) # stat_poly_eq
 
+library(ggmsa) # multiple sequence analysis
+
+library(svglite) # used for ggsave (save figs as svg files)
+library(ggplotify) # plot to ggplot
+
+
 Sys.time()
 ```
 ## 1.4. versatile user functions
@@ -122,6 +128,9 @@ if (my_public){
   my_playgrnd<-getwd()
 }
 
+my_figout<-paste(getwd(),"Output/Figures",sep="/")
+my_supplfigout<-paste(getwd(),"Output/Suppl_Figures",sep="/")
+
 Sys.time()
 ```
 ## 1.7. Versatile color palletes
@@ -160,12 +169,15 @@ p<-ggbarplot(my_tmp,x="x",y="y",color="z",fill="z",palette = my_richness2,legend
 p<-ggpar(p,font.legend = my_fontsize)
 q<-get_legend(p)
 as_ggplot(q)
+#TODO ggsave(file="Fig2a_colorbar.svg", path=my_figout,dpi = 300, width = 1, height = 2.5)
+
 
 my_tmp<-data.frame(x=seq(1,3),y=seq(1,3),z=qw(E,F,G))
 my_tmp$z<-factor(my_tmp$z,levels = qw(E,F,G))
 p<-ggscatter(my_tmp,x="x",y="y",shape="z",legend="right",legend.title="")
 q<-get_legend(p)
 as_ggplot(q)
+#TODO ggsave(file="Fig2a_symbol.svg", path=my_figout,dpi = 300, width = 1, height = 2.5)
 
 
 Sys.time()
@@ -338,6 +350,7 @@ p1<-ggscatter(my_fcs[my_fcs$Name=="pgk",],x="logFITC",y="logFSC",
   ylab(expression(log[10]~"FSC [a.u.]"))
 p1<-ggpar(p1,font.x=my_fontsize,font.y=my_fontsize,font.tickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig1d_pgk.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 p2<-ggscatter(my_fcs[my_fcs$Name=="carA",],x="logFITC",y="logFSC",
           size=0.3,alpha=0.3,color="Gate",palette = c("#00468BFF","black"),
@@ -349,6 +362,8 @@ p2<-ggscatter(my_fcs[my_fcs$Name=="carA",],x="logFITC",y="logFSC",
   ylab(expression(log[10]~"FSC [a.u.]"))
 p2<-ggpar(p2,font.x=my_fontsize,font.y=my_fontsize,font.tickslab = my_fontsize)
 p2
+#TODO ggsave(file="Fig1d_carA.svg", path=my_figout,dpi = 300, width = 3, height = 3)
+
 
 p3<-gghistogram(my_fcs[(my_fcs$Name=="pgk")&(my_fcs$Gate=="In"),],
                 x="logFITC",y="density",bins=100,
@@ -361,6 +376,8 @@ p3<-gghistogram(my_fcs[(my_fcs$Name=="pgk")&(my_fcs$Gate=="In"),],
   scale_x_continuous(breaks=seq(0,4,1),limits=c(-0.1,4))
 p3<-ggpar(p3,font.x=my_fontsize,font.y=my_fontsize,font.tickslab = my_fontsize)
 p3
+#TODO ggsave(file="Fig1e_pgk.svg", path=my_figout,dpi = 300, width = 3, height = 3)
+
 
 p4<-gghistogram(my_fcs[(my_fcs$Name=="carA")&(my_fcs$Gate=="In"),],
                 x="logFITC",y="density",bins=100,
@@ -373,6 +390,8 @@ p4<-gghistogram(my_fcs[(my_fcs$Name=="carA")&(my_fcs$Gate=="In"),],
   scale_x_continuous(breaks=seq(0,4,1),limits=c(-0.1,4))
 p4<-ggpar(p4,font.x=my_fontsize,font.y=my_fontsize,font.tickslab = my_fontsize)
 p4
+#TODO ggsave(file="Fig1e_carA.svg", path=my_figout,dpi = 300, width = 3, height = 3)
+
 Sys.time()
 ```
 # 4. Calc. Plasticity and Noise
@@ -463,7 +482,7 @@ p<-ggscatter(df_plst,x="Mean_logAvFITC",y="SD_logAvFITC",
   ylab(expression(SD~of~E[pop]))
 p<-ggpar(p,font.x=my_fontsize,font.y=my_fontsize,font.tickslab = my_fontsize)
 p
-
+#TODO ggsave(file="Fig2c.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 df_plst %>% 
   group_by(Essentiality) %>%
@@ -501,6 +520,7 @@ p1<-ggscatter(df_noise,x="log10Av_FITC",y="log10SD_FITC",
   geom_line(data=SmthSp_v,aes(x=logx,y=SS), colour="deepskyblue", size=0.75) # 1
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig3a_all.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 p2<-ggscatter(df_noise,x="log10Av_FITC",y="DMv",
           color="Essentiality",palette = mycolpal[c(1,2)],
@@ -533,6 +553,7 @@ p3<-ggscatter(my_df, x="log10Av_FITC",y="log10SD_FITC",
   geom_line(data=SmthSp_v,aes(x=logx,y=SS), colour="deepskyblue", size=0.75) # 0.75
 p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p3
+#TODO ggsave(file="Fig3a_rep.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 p4<-ggplot()+
   xlab(expression(E[pop]))+
@@ -569,6 +590,7 @@ p1<-ggscatter(df_plst_noise,x="SD_logAvFITC",y="Mean_DMv",
     ylab(expression("Mean DM"[V]))
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig4a_pool.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 p2<-ggscatter(df_plst_noise,x="SD_logAvFITC",y="Mean_DMv",
           color="Essentiality",palette = mycolpal[c(1,2)],
@@ -594,6 +616,7 @@ p3<-ggscatter(df_plst_noise[df_plst_noise$Essentiality=="nonessential",],x="SD_l
     ylab(expression("Mean DM"[V]))
 p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p3
+#TODO ggsave(file="Fig4a_nes.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 p4<-ggscatter(df_plst_noise[df_plst_noise$Essentiality=="essential",],x="SD_logAvFITC",y="Mean_DMv",
           color=mycolpal[2],
@@ -607,6 +630,7 @@ p4<-ggscatter(df_plst_noise[df_plst_noise$Essentiality=="essential",],x="SD_logA
     ylab(expression("Mean DM"[V]))
 p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p4
+#TODO ggsave(file="Fig4a_ess.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 # check robustness of the correlation coeff. by removing the three outliers (genes showing very high DMv).
 p5<-ggscatter(df_plst_noise[(df_plst_noise$Essentiality=="essential")&(df_plst_noise$Mean_DMv<0.01),],x="SD_logAvFITC",y="Mean_DMv",
@@ -693,6 +717,7 @@ p1<-ggboxplot(df_plst_noise,x="Essentiality",y="SD_logAvFITC",
     ylab(expression("SD of"~E[pop]))
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig2d.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 p2<-ggboxplot(df_plst_noise,x="Essentiality",y="Mean_DMv",
           color="Essentiality",palette = mycolpal[c(1,2)],
@@ -704,6 +729,7 @@ scale_y_continuous(breaks = get_breaks(by=0.04,from = 0,to=0.08),limits = c(-0.0
     ylab(expression(Mean~DM[V]))
 p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p2
+#TODO ggsave(file="Fig3b.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 print(paste("Nb. of essential genes:",nrow(df_plst_noise[df_plst_noise$Essentiality=="essential",]),sep=" "))
 print(paste("Nb. of nonessential genes:",nrow(df_plst_noise[df_plst_noise$Essentiality=="nonessential",]),sep=" "))
@@ -1390,6 +1416,7 @@ p1<-ggerrorplot(my_df,x="Nb_MSR",y="SD_logAvFITC",
           ylab(expression("SD of"~E[pop]))
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig2g_nes.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 # Noise
 p2<-ggerrorplot(my_df,x="Nb_MSR",y="Mean_DMv",
@@ -1403,7 +1430,7 @@ p2<-ggerrorplot(my_df,x="Nb_MSR",y="Mean_DMv",
           ylab(expression("Mean"~DM[V]))
 p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p2
-
+#TODO ggsave(file="Fig3c_nes.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 my_df2<-dtf[(dtf$Essentiality=="essential")&(dtf$Nb_MSR %in% my_range),]
 # Plasticity
@@ -1418,6 +1445,7 @@ p3<-ggerrorplot(my_df2,x="Nb_MSR",y="SD_logAvFITC",
           ylab(expression("SD of"~E[pop]))
 p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p3
+#TODO ggsave(file="Fig2g_ess.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 # Noise
 p4<-ggerrorplot(my_df2,x="Nb_MSR",y="Mean_DMv",
@@ -1431,7 +1459,7 @@ p4<-ggerrorplot(my_df2,x="Nb_MSR",y="Mean_DMv",
           ylab(expression("Mean"~DM[V]))
 p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p4
-
+#TODO ggsave(file="Fig3c_ess.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 Sys.time()
 ```
@@ -1552,6 +1580,7 @@ p1<-ggplot(my_df[my_df$Cum_Nb_MSR_SE>0,],aes(x=Mean_DMv,y=Cum_Nb_MSR))+
   xlab(expression(Mean~DM[V]))
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig3d_nes.svg", path=my_figout,dpi = 300, width = 4, height = 3)
 
 p2<-ggplot(my_df[my_df$Cum_Plasticity_SE>0,],aes(x=Mean_DMv,y=Cum_Plasticity))+
   geom_line(color=mycolpal[1],alpha=0.5)+
@@ -1630,7 +1659,7 @@ p1i<-ggplot(my_df[my_df$Cum_Nb_MSR_SE>0,],aes(x=Mean_DMv,y=Cum_Nb_MSR))+
         )
 p1i<-ggpar(p1i,font.xtickslab = my_fontsize*3,font.ytickslab = my_fontsize*3)
 p1i
-
+#TODO ggsave(file="Fig3d_pool.svg", path=my_figout,dpi = 300, width = 4, height = 3)
 
 p2<-ggplot(my_df[my_df$Cum_Plasticity_SE>0,],aes(x=Mean_DMv,y=Cum_Plasticity))+
   geom_line(color="gray10",alpha=0.5)+
@@ -2250,6 +2279,7 @@ p<-ggscatter(my_df, x = "Richness", y = "MeanGrowth_h",
   scale_x_continuous(breaks = get_breaks(by=1,from = 1,to = 8),limits=c(1,8))
 p<-ggpar(p,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p
+#TODO ggsave(file="Fig1c.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 Sys.time()
 ```
@@ -2659,6 +2689,7 @@ p1<-ggscatter(data=my_df,x="PC1",y="PC2",alpha=1,size=3,
   scale_y_continuous(expand = expansion(mult = c(0.2, 0.1)))
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig2a.svg", path=my_figout,dpi = 300, width = 3, height = 3)
 
 p2<-ggscatter(data=my_df,x="MeanGrowth_h",y="PC1",alpha=1,size=3,
              color = "Richness",palette = viridis(n = my_count),
@@ -2743,7 +2774,7 @@ p4
 Sys.time()
 ```
 # 9. Schematics
-```{r Schematics,warning=FALSE, message=FALSE,fig.height=2.5,fig.width=3.5,dpi=300}
+```{r Schematics,warning=FALSE, message=FALSE,fig.height=3,fig.width=4,dpi=300}
 my_count<-100000
 my_df = data.frame(
    med = factor(rep(c(3,1,5,7), each=my_count)),
@@ -2763,6 +2794,8 @@ p<-ggdensity(my_df, x = "yfp", fill = "med",
   ylab("Relative frequency")
 p<-ggpar(p,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = c(size=0),font.ytickslab = c(size=0),ticks = FALSE,font.legend = my_fontsize)
 p
+#TODO ggsave(file="Fig2b.svg", path=my_figout,dpi = 300, width = 4, height = 3)
+
 Sys.time()
 ```
 # 10. Growth characteristis of KO strains
@@ -3236,6 +3269,7 @@ p1<-ggscatter(my_df[my_df$Essentiality=="nonessential",],y="SD_logAvFITC",x="DMe
     xlab(expression("DM"[env]))
 p1<-ggpar(p1,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p1
+#TODO ggsave(file="Fig2e_nes.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 p2<-ggscatter(my_df[my_df$Essentiality=="essential",],y="SD_logAvFITC",x="DMenv",
           color="Essentiality",palette = mycolpal[2],
@@ -3251,6 +3285,7 @@ p2<-ggscatter(my_df[my_df$Essentiality=="essential",],y="SD_logAvFITC",x="DMenv"
     xlab(expression("DM"[env]))
 p2<-ggpar(p2,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p2
+#TODO ggsave(file="Fig2e_ess.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 p3<-ggscatter(my_df[my_df$Essentiality=="nonessential",],y="Mean_DMv",x="DMenv",
           color="Essentiality",palette = mycolpal[1],
@@ -3264,6 +3299,7 @@ p3<-ggscatter(my_df[my_df$Essentiality=="nonessential",],y="Mean_DMv",x="DMenv",
     xlab(expression("DM"[env]))
 p3<-ggpar(p3,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p3
+#TODO ggsave(file="Fig4b_nes.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 p4<-ggscatter(my_df[my_df$Essentiality=="essential",],y="Mean_DMv",x="DMenv",
           color="Essentiality",palette = mycolpal[2],
@@ -3277,6 +3313,7 @@ p4<-ggscatter(my_df[my_df$Essentiality=="essential",],y="Mean_DMv",x="DMenv",
     xlab(expression("DM"[env]))
 p4<-ggpar(p4,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p4
+#TODO ggsave(file="Fig4b_ess.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 p5<-ggscatter(my_df,y="Mean_DMv",x="DMenv",
           color="Essentiality",palette = mycolpal,
@@ -3290,6 +3327,7 @@ p5<-ggscatter(my_df,y="Mean_DMv",x="DMenv",
     xlab(expression("DM"[env]))
 p5<-ggpar(p5,font.y=my_fontsize,font.x=my_fontsize,font.xtickslab = my_fontsize,font.ytickslab = my_fontsize)
 p5
+#TODO ggsave(file="Fig4b_pool.svg", path=my_figout,dpi = 300, width = 3.5, height = 3)
 
 Sys.time()
 ```
